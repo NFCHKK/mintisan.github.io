@@ -1,0 +1,6 @@
+
+# markdown source files 
+*.md
+
+# backup files
+*.bak
