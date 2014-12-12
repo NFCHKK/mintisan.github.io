@@ -15,6 +15,7 @@ http://git-scm.com/
 - [Learn Version Control with Git][8]
 - [专为设计师而写的GitHub快速入门教程][9]
 - [Learn Git Branching][10]
+- [学习git笔记](http://blog.chinaunix.net/uid-22547469-id-4561454.html)
 
 
 
