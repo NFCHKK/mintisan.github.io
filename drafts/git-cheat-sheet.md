@@ -81,6 +81,11 @@ $ git log
 
 ```
 $ git log --pretty=oneline
+
+$ git log --oneline master
+
+$ git checkout master
+$ git log origin/master
 ```
 
 ```
@@ -133,32 +138,66 @@ $ git tag <tag-name>
 
 ## UPDATE & PUBLISH
 
+▼List the remote connections you have to other repositories.
+```
+$ git remote
+```
+
+▼Same as the above command, but include the URL of each connection.
 ```
 $ git remote -v
 ```
 
 
 ```
-$ git remote show <remote>
+$ git remote show <name>
 ```
 
 ```
-$ git remote add <remote> <url>
+$ git remote add <name> <url>
 ```
 
+▼Remove the connection to the remote repository called <name>.
+```
+$ git remote rm <name>
+```
+
+▼Rename a remote connection from <old-name> to <new-name>.
+```
+$ git remote rename <old-name> <new-name>
+```
+
+Fetch all of the branches from the repository. This also downloads all of the required commits and files from the other repository.
 ```
 $ git fetch <remote>
 ```
 
+Same as the above command, but only fetch the specified branch.
+```
+$ git fetch <remote> <branch>
+```
 
+`git pull` : fetch, then merge.
 ```
 $ git pull <remote> <branch>
 ```
 
+This simply moves your local changes onto the top of what everybody else has already contributed.
+```
+$ git checkout master
+$ git pull --rebase origin
+```
+
 ★
 ```
-$ git push <remote> :<branch>
+$ git push <remote> <branch>
 ```
+
+Push all of your local branches to the specified remote.
+```
+$ git push <remote> --all
+```
+
 
 ★
 ```
@@ -178,7 +217,7 @@ $ git rebase <base>
 
 $ git rebase -i <base>
 ```
-To everybody else, it will look like the entire feature was developed in a single series of well-planned commits.Keep a project’s history clean and meaningful.
+To everybody else, it will look like the entire feature was developed in a single series of well-planned commits.Keep a project’s history clean and meaningful.Many developers prefer rebasing over merging, since it’s like saying, “I want to put my changes on top of what everybody else has done.”
 
 **ATTENTION** : Don’t Rebase Public History
 
