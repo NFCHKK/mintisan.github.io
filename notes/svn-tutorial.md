@@ -2,7 +2,28 @@
 
 > 集中式版本管理工具集大成者。
 
-- [术语](./svn-tutorial.html#terminologies)
+- 术语(Terminologies)
+- 安装(Setup)
+- 使用(usage)
+    + 新建（create）一个远程仓库（repo)
+    + 检出（checkout）
+    + 本地操作：新建文件（new）、删除（delete）、修改（modified）、重命名（rename）
+    + 提交（commit）
+    + 日志（log）
+    + 比较（diff）
+    + 清除（clean up）
+    + 撤销修改（revert）
+    + 返回特定版本（revert to this version）
+    + 更新（update）
+    + 冲突（conflicts）
+    + 锁（lock/unlock）
+    + 分支（branches）
+    + 节点（tags）
+- 问题（Issues）
+- 书籍（Books）
+
+
+
 
 ## 术语（Terminologies）
 
