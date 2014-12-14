@@ -12,6 +12,7 @@ http://git-scm.com/
 - [Altassian][4]
 - [廖雪峰的Git教程][5] & [Gitbook版][6]
 - [git - 简易指南][7]
+- [Think like a Git](http://think-like-a-git.net/)
 - [Learn Version Control with Git][8]
 - [专为设计师而写的GitHub快速入门教程][9]
 - [Learn Git Branching][10]
