@@ -1014,69 +1014,149 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>git-index</title></head><body><article class="markdown-body"><h1 id="git"><a name="user-content-git" href="#git" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git 学习资源</h1>
-<h2 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>官方网站</h2>
-<p><a href="http://git-scm.com/">http://git-scm.com/</a></p>
-<h2 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>教程</h2>
-<ul>
-<li><a href="http://git-scm.com/docs/gittutorial">官方教程</a></li>
-<li><a href="http://code.tutsplus.com/tutorials/easy-version-control-with-git--net-7449">Easy Version Control with Git</a></li>
-<li><a href="http://marklodato.github.io/visual-git-guide/index-en.html">A Visual Git Reference</a></li>
-<li><a href="https://www.atlassian.com/git/">Altassian</a></li>
-<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">廖雪峰的Git教程</a> &amp; <a href="http://lvwzhen.gitbooks.io/git-tutorial/">Gitbook版</a></li>
-<li><a href="http://www.bootcss.com/p/git-guide/">git - 简易指南</a></li>
-<li><a href="http://think-like-a-git.net/">Think like a Git</a></li>
-<li><a href="http://www.git-tower.com/learn/">Learn Version Control with Git</a></li>
-<li><a href="http://www.ui.cn/project.php?id=20957">专为设计师而写的GitHub快速入门教程</a></li>
-<li><a href="http://pcottle.github.io/learnGitBranching/">Learn Git Branching</a></li>
-<li><a href="http://blog.chinaunix.net/uid-22547469-id-4561454.html">学习git笔记</a></li>
-<li><a href="http://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a></li>
-<li><a href="http://yedingding.com/2013/09/11/practical-git-flow-for-startups.html">实用 GIT 工作流</a></li>
-</ul>
-<h2 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>托管</h2>
-<ul>
-<li><a href="https://github.com/">Github</a></li>
-<li><a href="https://bitbucket.org/">Bitbucket</a></li>
-<li><a href="https://www.gitlab.com/">Gitlab</a></li>
-<li><a href="https://www.codeplex.com/">CodePlex</a></li>
-<li><a href="http://cloudhost.io/">CloudHost</a></li>
-<li><a href="http://www.cloudbees.com/">CloudBees</a></li>
-<li><a href="https://www.assembla.com/home">Assembla</a></li>
-<li><a href="http://gitblit.com/">Gitblit</a></li>
-<li><a href="https://codeplane.com/">CodePlan</a></li>
-<li><a href="http://www.getgitorious.com/">Gitorious</a></li>
-<li><a href="http://projectlocker.com/">ProjectLocker</a></li>
-<li><a href="https://unfuddle.com/">Unfuddle</a></li>
-<li><a href="https://code.csdn.net/">CSDN Code</a></li>
-<li><a href="https://code.jd.com/">JD Code</a></li>
-<li><a href="http://code.taobao.org/">Taobao Code</a></li>
-<li><a href="https://gitcafe.com/">Gitcafe</a></li>
-<li><a href="https://gitshell.com/">GitShell</a></li>
-<li><a href="http://www.gitcd.com/index.htm">GitCD</a></li>
-<li><a href="https://geakit.com/">集盒</a></li>
-<li><a href="https://git.oschina.net/">OSChina</a></li>
-<li><a href="https://coding.net/">Coding</a></li>
-<li><a href="http://code.huihoo.com/">Huihoo Code</a></li>
-<li><a href="http://www.svnchina.com/">SVN China</a></li>
-</ul>
-<h2 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>书籍</h2>
-<ul>
-<li>Git Community Book 中文版</li>
-<li>Git Magic</li>
-<li>Git Pocket Guide</li>
-<li>Git Recipes</li>
-<li>Git Succinctly</li>
-<li>Git 使用指南</li>
-<li>Git 魔法</li>
-<li>Git- Version Control for Everyone</li>
-<li>Gitolite Essentials</li>
-<li>Git使用体会</li>
-<li>Git权威指南</li>
-<li>Pragmatic Guide to Git</li>
-<li>Pro Git(cn)</li>
-<li>Pro Git-读书笔记</li>
-<li><a href="http://git-scm.com/book/en/v2">Pro Git</a></li>
-<li>Version Control with Git(2nd）</li>
-<li>版本控制之道：使用 Git</li>
-<li>看日记学Git</li>
-</ul></article></body></html>
+</style><title>git-tutorial</title></head><body><article class="markdown-body"><h1 id="git-gerrit"><a name="user-content-git-gerrit" href="#git-gerrit" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Git &amp; Gerrit 学习笔记</h1>
+<ol>
+<li>初始化git仓库<br />
+<pre><code>$ git clone ssh://[username] : [path] / [project name]
+</code></pre></li>
+<li>配置 Git 配置环境<br />
+<pre><code>$ git config --global user.name &quot;xxxx&quot;
+$ git config --global user.email &quot;xxxx&quot;
+</code></pre></li>
+<li>安装Hook钩子（Gerrit所需必用）<br />
+<pre><code>$ scp -p -P 29418 [username]@192.168.0.241:hooks/commit-msg .git/hooks/
+</code></pre></li>
+<li>进行<code>edit-&gt;add-&gt;commit</code>过程，并用<code>status</code>和<code>log</code>查看当前<code>git</code>的状态<br />
+<pre><code>## 添加readme.txt
+$ touch readme.txt
+## 文件修改添加到暂存区
+$ git add readme.txt
+## 或者添加所有被改变的文件
+$ git add .
+## 添加到本地仓库的当前分支上
+$ git commit -m &quot;xxxxx&quot;
+## 查看当前本地仓库的状态
+$ git status
+## 查看提交历史记录
+$ git log
+## 如果参数太多，可以使用单行版
+$ git log --pretty=oneline
+</code></pre></li>
+<li>如果在<code>edit-&gt;add-&gt;commit</code>过程中，修改了工作区的内容，却反悔了,想丢弃工作区的修改<br />
+<pre><code>$ git checkout -- [file name]
+</code></pre></li>
+<li>如果在<code>edit-&gt;add-&gt;commit</code>过程中，<code>commit</code>之后反悔了，则可以回滚到上一版本；或者可以用<code>reflog</code>回到任意你想回到的版本<br />
+<pre><code>## 回到上一个版本
+$ git reset --hard HEAD
+
+## git提供了一个git reflog命令来记录你的每一次命令。
+git reflog
+
+## 再回到未来某个版本
+$ git reset --hard [xxxxxxx]
+</code></pre></li>
+<li>当你不但乱改了工作区的内容，还修改了暂存区的内容，想丢弃修改，分两步：<br />
+1：git reset HEAD file<br />
+2: git checkout &ndash; file<br />
+假设你删除了某个文件，有两个选择，第一是你确实想删除某个文件，那就是：<br />
+git rm file<br />
+第二就是在你删错了，想还原，那就是：<br />
+git checkout &ndash; file<br />
+创建sshkey：<br />
+ssh-keygen -t rsa -C &ldquo;<a href="mailto:youemail@example.com">youemail@example.com</a>&ldquo;<br />
+接下来一路回车，生成两个文件：id_rsa是私匙，不能泄露。id_rsa.pub是公匙。可以放心告诉任何人<br />
+登陆github，add ssh key，title任意填写，key里边粘贴id_rsa.pub内容即可。<br />
+远端先创建一个仓库，点击Create a new repo,填写仓库名字learngit，其他默认，点击Create repository。<br />
+关联一个远程库：<br />
+git remote add origin <a href="mailto:git@github.com">git@github.com</a>:guangmangdz/learngit.git<br />
+接下来再推送：<br />
+git push -u origin master,实际上就是把当前分支推送到远程。由于远端库是空的，所以加了-u参数，以后可以不加。<br />
+从现在起，只要本地做了提交，就可以通过命令：<br />
+git push origin master，把本地master分支最新更改推送之github。<br />
+从远程库克隆：<br />
+git clone <a href="mailto:git@github.com">git@github.com</a>:xxxxxxxx/xxxxx.git<br />
+接下来：分支管理<br />
+创建分支，例如dev：<br />
+git checkout -b dev<br />
+也可以用一下两条命令创建：<br />
+git branch dev，创建dev分支<br />
+git checkout dev,切换到dev分支<br />
+列出当前分支：<br />
+git branch<br />
+合并分支：<br />
+git merge dev，操作前提是已经处于master分支状态<br />
+合并完成后，就可以放心的删除dev分支了：<br />
+git branch -d dev<br />
+察看git分支合并图：<br />
+git lob &ndash;graph<br />
+正常的合并是fast forward模式，当然也可以禁用：<br />
+git merge &ndash;no-ff -m &ldquo;merge with no-ff&rdquo; dev<br />
+首先，master分支应该是非常稳定的，也就是用来发布新版本，平时不用在上面干活。干活都在dev分支上，也就是说，你和你的小伙伴们每个人都在dev分支上干活，每个人都有自己的分支，是不是的往dev分支上合并就可以了。<br />
+bug分支：<br />
+假如这种情况，你正在dev分支下写代码，但还没写完，又不能提交，而此时接到一个紧急处理bug的紧急任务，且该人物来源于master分支。可以先用git stash将当前工作现场储存起来。<br />
+bug解决完了，再回到dev分支，如何恢复现场？<br />
+1：git stash apply，恢复后，stash不删除，需要调用git stash drop<br />
+2: git stash pop，恢复同时把stash内容也删除。<br />
+feature分支：<br />
+开发过程中，有无穷无尽的新功能添加进来，但你不希望一些实验性质的代码把主分支搞乱了，所以，每添加一个新功能，最好新建一个feature分支，在上面开发。<br />
+git checkout -b feature<br />
+开发完成后，切回dev，准备合并<br />
+git checkout dev<br />
+但是！突然该功能要求取消，必须销毁这个分支：<br />
+git branch -d feature,正常的话会提示销毁失败，因为还未合并，所以就来了下面的命令：<br />
+git branch -D feature，强制删除一个分支<br />
+多人写作：<br />
+察看远程库信息：<br />
+git remote<br />
+加-v可以察看更详细的信息：<br />
+git remote -v<br />
+推送分支：<br />
+git push origin master<br />
+git push origin dev<br />
+你的小伙伴想在dev分支下开发，就必须创建远程origin的dev分支到本地：<br />
+git checkout -b dev origin/dev<br />
+多人写作工作模式通常如下：<br />
+1、首先，试图用git push origin branch-name推送自己的修改<br />
+2、如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并<br />
+3、如果合并有冲突，则解决冲突，并在本地提交<br />
+4、没有冲突或者解决冲突后，在用git push origin branch-name推送就能成功<br />
+5、如果git pull提示“no tracking infor&hellip;”，说明本地分支和远程分支的链接关系没有创建，用命令git branch &ndash;set-upstream branch-name origin/branch-name<br />
+标签管理：<br />
+发布一个新版本时，通常大一个标签。这个标签唯一确定了打标签时刻的版本。标签也是版本库的一个快照。<br />
+git tag xxx<br />
+察看所有标签：<br />
+git tag<br />
+给历史某次提交的commit id打标签：<br />
+git tag vx.x xxxxxxx<br />
+创建带说明的标签：<br />
+git tag -a vx.x -m &ldquo;tags shuoming&rdquo; xxxxxxx<br />
+打错了标签，也可以删除：<br />
+git tag -d Vx.x<br />
+推送某个标签到远程：<br />
+git push origin vx.x<br />
+一次性推送所有未推送的标签到远程：<br />
+git push origin &ndash;tags<br />
+删除远程标签（需先删除本地标签）：<br />
+git tag -d v0.9<br />
+git push origin :refs/tags/v0.9<br />
+让git显示颜色：<br />
+git config &ndash;global color.ui true<br />
+git可以忽略特殊文件，所有配置文件在：<br />
+<a href="https://github.com/github/gitignore">https://github.com/github/gitignore</a><br />
+.gitignore文件本身也需要放到版本库里<br />
+最后说说搭建git服务器：<br />
+1、ubuntu或debian及其，安装git<br />
+sudo apt-get install git<br />
+2、创建一个git用户，用来运行git服务<br />
+sudo adduser git<br />
+3、创建证书登陆：<br />
+收集所有需要登陆的用户的公匙，把所有公匙导入到home/git/.ssh/authorized_keys文件里，易行一个。<br />
+4、初始化git仓库：<br />
+sudo git init &ndash;bare sample.git<br />
+5、把owner改为git：<br />
+sudo chown -R git:git sample.git<br />
+6、禁用shell登陆：编辑etc/passwd<br />
+git<img align="absmiddle" alt="x" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/x.png" title="x" width="20px" />1001:1001:,,,:/home/git:/bin/bash<br />
+改为<br />
+git<img align="absmiddle" alt="x" height="20px" src="https://assets-cdn.github.com/images/icons/emoji/x.png" title="x" width="20px" />1001:1001:,,,:/home/git:/usr/bin/git-shell</li>
+</ol></article></body></html>

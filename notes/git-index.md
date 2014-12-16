@@ -18,6 +18,7 @@ http://git-scm.com/
 - [Learn Git Branching][10]
 - [学习git笔记](http://blog.chinaunix.net/uid-22547469-id-4561454.html)
 - [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
+- [实用 GIT 工作流](http://yedingding.com/2013/09/11/practical-git-flow-for-startups.html)
 
 ## 托管
 - [Github][11]
