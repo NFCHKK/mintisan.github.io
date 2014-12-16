@@ -17,8 +17,7 @@ http://git-scm.com/
 - [专为设计师而写的GitHub快速入门教程][9]
 - [Learn Git Branching][10]
 - [学习git笔记](http://blog.chinaunix.net/uid-22547469-id-4561454.html)
-
-
+- [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 
 ## 托管
 - [Github][11]
