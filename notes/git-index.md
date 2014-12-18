@@ -49,7 +49,7 @@ http://git-scm.com/
 
 ## 书籍
 
-- Git Community Book 中文版
+- [Git Community Book 中文版](http://gitbook.liuhui998.com/index.html)
 - Git Magic
 - Git Pocket Guide
 - Git Recipes
