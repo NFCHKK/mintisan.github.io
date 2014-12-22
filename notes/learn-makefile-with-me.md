@@ -1,8 +1,8 @@
 # 跟我一起学 Makefile
 
-[TOC]
-
 by [陈皓](http://blog.csdn.net/haoel/article/details/2886/)
+
+[TOC]
 
 
 ## 概述

@@ -1,5 +1,7 @@
 # Sublime 学习资源
 
+[TOC]
+
 ## 官网
 - http://www.sublimetext.com/
 - https://sublime.wbond.net/

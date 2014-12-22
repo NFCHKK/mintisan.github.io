@@ -1,4 +1,10 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+<!DOCTYPE html><html><head>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    
+<meta charset="utf-8"><style>body {
   width: 45em;
   border: 1px solid #ddd;
   outline: 1300px solid #fff;
@@ -1015,6 +1021,7 @@ body .markdown-body
   }
 }
 </style><title>learn-makefile-with-me</title></head><body><article class="markdown-body"><h1 id="makefile"><a name="user-content-makefile" href="#makefile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>跟我一起学 Makefile</h1>
+<p>by <a href="http://blog.csdn.net/haoel/article/details/2886/">陈皓</a></p>
 <div class="toc">
 <ul>
 <li><a href="#makefile">跟我一起学 Makefile</a><ul>
@@ -1116,7 +1123,6 @@ body .markdown-body
 <li><a href="#_49">后序</a></li>
 </ul>
 </div>
-<p>by <a href="http://blog.csdn.net/haoel/article/details/2886/">陈皓</a></p>
 <h2 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>概述</h2>
 <p>什么是makefile？或许很多Winodws程序员都不知道这个东西，因为那些Windows IDE都为你做了这个工作，但我觉得要做一个好的和professional的程序员，makefile还是要懂的。这就好像现在有这么多的HTML的编辑器，但如果你想成为一个专业人士，你还是要了解HTML的标识的含义。特别在Unix下的软件编译，你就不能不自己写makefile了，会不会写makefile，从一个侧面说明了一个人是否具备完成大型工程的能力。</p>
 <p>因为，makefile关系到了整个工程的编译规则。一个工程中的源文件不计数，其按类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为makefile就像一个Shell脚本一样，其中也可以执行操作系统的命令。</p>

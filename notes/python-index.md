@@ -1,5 +1,6 @@
 # Python 学习资源
 
+[TOC]
 
 ## 官网
 - https://www.python.org/
