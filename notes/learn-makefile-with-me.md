@@ -1,6 +1,6 @@
 # 跟我一起学 Makefile
 
-by [陈皓](http://blog.csdn.net/haoel/article/details/2886/)
+Written by [陈皓](http://blog.csdn.net/haoel/article/details/2886/)
 
 [TOC]
 
