@@ -301,7 +301,7 @@ GNU make工作时的执行步骤如下：（想来其它的make也是类似）
 foo.o : foo.c defs.h # foo模块
     cc -c -g foo.c
 ```
-看到这个例子，各位应该不是很陌生了，前面也已说过，foo.o是我们的目标，foo.c和defs.h是目标所依赖的源文件，而只有一个命令“cc -c -g foo.c”（以Tab键开头）。这个规则告诉我们两件事：
+看到这个例子，各位应该不是很陌生了，前面也已说过，foo.o是我们的目标，foo.c和defs.h是目标所依赖的源文件，而只有一个命令“cc -c -g foo.c”（以`Tab键`开头）。这个规则告诉我们两件事：
 
 1. 文件的依赖关系：foo.o依赖于foo.c和defs.h的文件，如果foo.c和defs.h的文件日期要比foo.o文件日期要新，或是foo.o不存在，那么依赖关系发生。
 2. 如何生成（或更新）foo.o文件：也就是那个cc命令，它说明了如何生成foo.o这个文件（当然foo.c文件include了defs.h文件）
@@ -317,17 +317,19 @@ targets : prerequisites
 targets : prerequisites ; command
     ...
 ```
-targets是文件名，以空格分开，可以使用通配符。一般来说，我们的目标基本上是一个文件，但也有可能是多个文件。
+`targets`是文件名，以空格分开，可以使用通配符。一般来说，我们的目标基本上是一个文件，但也有可能是多个文件。
 
-command是命令行，如果其不与“target:prerequisites”在一行，则必须以[Tab键]开头，如果和prerequisites在一行，那么可以用分号做为分隔。
+> 补充：（甚至可以不是文件，而是标签，或者说是伪目标）
 
-prerequisites也就是目标所依赖的文件（或依赖目标）。如果其中的某个文件要比目标文件要新，那么，目标就被认为是“过时的”，被认为是需要重生成的。这个在前面已经讲过了。
+`command`是命令行，如果其不与“target:prerequisites”在一行，则必须以`[Tab键]`开头，如果和prerequisites在一行，那么可以用`分号`做为分隔。
+
+`prerequisites`也就是目标所依赖的文件（或依赖目标）。如果其中的某个文件要比目标文件要新，那么，目标就被认为是“过时的”，被认为是需要重生成的。这个在前面已经讲过了。
 
 如果命令太长，可使用反斜框（‘\’）作为换行符。make对一行上有多少个字符没有限制。
 
 规则告诉make两件事，文件的依赖关系和如何成成目标文件。
 
-一般来说，make会以UNIX的标准Shell，也就是/bin/sh来执行命令。
+一般来说，make会以UNIX的标准Shell，也就是`/bin/sh`来执行命令。
 
 ### 三、在规则中使用通配符
 
@@ -335,7 +337,7 @@ prerequisites也就是目标所依赖的文件（或依赖目标）。如果其�
 
 波浪号（“~”）字符在文件名中也有比较特殊的用途。如果是“~/test”，这就表示当前用户的$HOME目录下的test目录，而“~hchen/test”则表示用户hchen的宿主目录下的test目录（这些都是Unix下的小知识了，make也支持），而在Windows或是MS-DOS下，用户没有宿主目录，波浪号所指的目录则根据环境变量“HOME”而定。
 
-通配符代替了一系列的文件，如“*.c”表示所以后缀为c的文件。一个需要我们注意的是，如果我们的文件名中有通配符，如：“*”，可以用转义字符“\”，如“\*”来表示真实的“*”字符，而不是任意长度的字符串。
+通配符代替了一系列的文件，如“\*.c”表示所有后缀为c的文件。一个需要我们注意的是，如果我们的文件名中有通配符，如：“*”，可以用转义字符“\\”，如“\\\*”来表示真实的“\*”字符，而不是任意长度的字符串。
 ```
 clean:
 
@@ -349,21 +351,21 @@ lpr -p $?
 
 touch print
 ```
-上面这个例子说明了通配符也可以在我们的规则中，目标print依赖于所有的[.c]文件，其中的“$?”是一个自动化变量。
+上面这个例子说明了通配符也可以在我们的规则中，目标`print`依赖于所有的[.c]文件，其中的`$?`是一个自动化变量。
 ```
 objects = *.o
 ```
-上面这个例子，表示了通符同样可以用在变量中。并不是说[*.o]会展开， 不！objects的值就是“*.o”。Makefile中的变量其实就是C/C++中的宏。如果你要让通配符在变量中展开，也就是让objects的值是所有[.o]的文件名的集合，可以这样：
+上面这个例子，表示了通配符同样可以用在变量中。并不是说[\*.o]会展开， 不！objects的值就是“\*.o”。Makefile中的变量其实就是C/C++中的宏。如果你要让通配符在变量中展开，也就是让objects的值是所有[.o]的文件名的集合，可以这样：
 ```
 objects := $(wildcard *.o)
 ```
-这种用法由关键字“wildcard”指出。
+这种用法由关键字`wildcard`指出。
 
 ### 四、文件搜寻
 
 在一些大的工程中，有大量的源文件，通常的做法是把这许多的源文件分类，并存放在不同的目录中。当make需要去找寻文件的依赖关系时，可以在文件前加上路径，但最好的方法是把一个路径告诉make，让make在自动去找。
 
-Makefile文件中的特殊变量“VPATH”就是完成这个功能的，如果没有指明这个变量，make只会在当前的目录中去找寻依赖文件和目标文件。如果定义了这个变量，make就会在当前目录找不到的情况下，到所指定的目录中去找寻文件了。
+**Makefile文件中的特殊变量“VPATH”就是完成这个功能的，如果没有指明这个变量，make只会在当前的目录中去找寻依赖文件和目标文件。如果定义了这个变量，make就会在当前目录找不到的情况下，到所指定的目录中去找寻文件了。**
 ```
 VPATH = src:../headers
 ```
@@ -373,11 +375,11 @@ VPATH = src:../headers
 
 另一个设置文件搜索路径的方法是使用make的“vpath”关键字（注意，它是全小写的），这不是变量，这是一个make的关键字，这和上面提到的那个VPATH变量很类似，但是它更为灵活。vpath可指定不同的文件在不同的搜索目录中，它的使用方法有三种：
 
-1. vpath <pattern> <directories> : 为符合模式<pattern>的文件指定搜索目录<>directories
-2. vpath <pattern> : 清除符合模式<pattern>的文件的搜索目录
+1. vpath < pattern \> < directories \> : 为符合模式< pattern \>的文件指定搜索目录< directories \>
+2. vpath < pattern \> : 清除符合模式< pattern \>的文件的搜索目录
 3. vpath : 清除所有已被设置好了的文件搜索目录
 
-vapth使用方法中的<pattern>需要包含“%”字符。“%”的意思是匹配零或若干字符，例如，“%.h”表示所有以“.h”结尾的文件。<pattern>指定了要搜索的文件集，而<directories>则指定了的文件集的搜索的目录。例如：
+vapth使用方法中的< pattern \>需要包含“%”字符。“%”的意思是匹配零或若干字符，例如，“%.h”表示所有以“.h”结尾的文件。< pattern \>指定了要搜索的文件集，而< directories \>则指定了的文件集的搜索的目录。例如：
 
 vpath %.h ../headers  该语句表示，要求make在“../headers”目录下搜索所有以“.h”结尾的文件（如果某文件在当前目录没有找到的话）
 
@@ -486,11 +488,10 @@ littleoutput : text.g
 
 ...
 ```
-targets定义了一系列的目标文件，可以有通配符，是目标的一个集合。
 
-target-parrtern是指明了targets的模式，也就是目标集模式。
-
-prereq-parrterns是目标的依赖模式，它对target-parrtern形成的模式再进行一次依赖目标的定义。
+- `targets`定义了一系列的目标文件，可以有通配符，是目标的一个集合。
+- `target-parrtern`是指明了targets的模式，也就是目标集模式。
+- `prereq-parrterns`是目标的依赖模式，它对`target-parrtern`形成的模式再进行一次依赖目标的定义。
 
 这样描述这三个东西，可能还没说清楚，还是举个例子来说明一下吧。如果我们的<targets-parrtern>定义成“%.o”，意思是我们的<targets>集合中都是以“.o”结尾的，而如果我们的<prereq-patterns>定义成“%.c”，意思是对<target-parrtern>所形成的目标集进行二次定义，计算方法是取模式中的“%”（也就是去掉了[.o]这个结尾），并为其加上[.c]这个结尾，形成的新集合。
 
@@ -516,6 +517,17 @@ bar.o : bar.c
 
     $(CC) -c $(CFLAGS) bar.c -o bar.o
 ```
+> 补充：最为常用的6个自动变量（来自Linux就是这个范儿.Page 298）
+
+| 变量名 | 作  用 |
+|:---------:|:----|
+| $@ | 目标的文件名 |
+| $< | 第一个条件的文件名 |
+| $? | 时间戳在目标之后的所有条件，并以空格隔开这些条件 |
+| $^ | 所有条件的文件名，并以空格隔开，且排除了重复的条件 |
+| $+ | 与`$^`类似，只是没有排除重复的条件 |
+| $* | 目标的主文件名，不包含扩展名 |
+
 试想，如果我们的“%.o”有几百个，那种我们只要用这种很简单的“静态模式规则”就可以写完一堆规则，实在是太有效率了。“静态模式规则”的用法很灵活，如果用得好，那会一个很强大的功能。再看一个例子：
 ```
 files = foo.elc bar.o lose.o
@@ -546,7 +558,7 @@ main.o : main.c defs.h
 ```
 于是由编译器自动生成依赖关系，你就不必再手动书写若干文件的依赖关系。需要提醒一句的是，如果你使用GNU的C/C++编译器，你得用“-MM”参数，不然“-M”参数会把一些标准库的头文件也包含进来。
 
-gcc -M main.c的输出是：
+`gcc -M main.c`的输出是：
 ```
     main.o: main.c defs.h /usr/include/stdio.h /usr/include/features.h \
     /usr/include/sys/cdefs.h /usr/include/gnu/stubs.h \
@@ -558,7 +570,8 @@ gcc -M main.c的输出是：
     /usr/lib/gcc-lib/i486-suse-linux/2.95.3/include/stdarg.h \
     /usr/include/bits/stdio_lim.h
 ```
-gcc -MM main.c的输出则是：
+
+`gcc -MM main.c`的输出则是：
 ```
     main.o: main.c defs.h
 ```
@@ -598,58 +611,60 @@ include $(sources:.c=.d)
 
 ## 书写命令
 
-每条规则中的命令和操作系统Shell的命令行是一致的，make会一按顺序一条一条的执行命令，每条命令的开头必须以[Tab]键开头，除非命令是紧跟在依赖规则后面的分号后的。在命令行之间中的空格或是空行会被忽略，但是如果该空格或空行是以Tab键开头的，那么make会认为其是一个空命令。
+每条规则中的命令和操作系统Shell的命令行是一致的，make会按照顺序一条一条的执行命令，每条命令的开头必须以[Tab]键开头，除非命令是紧跟在依赖规则后面的分号后的。在命令行之间中的空格或是空行会被忽略，但是如果该空格或空行是以Tab键开头的，那么make会认为其是一个空命令。
 
 make命令默认是被“/bin/sh”解释执行的，除非指定一个其它的Shell。Makefile中“#”是注释符，很像C/C++中的“//”，其后的本行字符都被注释。
 
 ### 一、显示命令
 
 通常，make会把其要执行的命令行在命令执行前输出到屏幕上。当我们用“@”字符在命令行前，那么这个命令将不被make显示出来，最具代表性的例子是，我们用这个功能来像屏幕显示一些信息。如：
-
+```
 @echo 正在编译XXX模块......
-
+```
 当make执行时，会输出“正在编译XXX模块......”字串，但不会输出命令，如果没有“@”，那么，make将输出：
-
+```
 echo 正在编译XXX模块......
 正在编译XXX模块......
-
+```
 如果make执行时，带入make参数“-n”或“--just-print”，那么其只是显示命令，但不会执行命令，这个功能很有利于我们调试我们的Makefile，看看我们书写的命令是执行起来是什么样子的或是什么顺序的。
+
+>补充：好技能，get it.
 
 而make参数“-s”或“--slient”则是全面禁止命令的显示。
 
 ### 二、命令执行
 
-当依赖目标新于目标时，也就是当规则的目标需要被更新时，make会一条一条的执行其后的命 令。需要注意的是，如果你要让上一条命令的结果应用在下一条命令时，你应该使用分号分隔这两条命令。比如你的第一条命令是cd命令，你希望第二条命令得在 cd之后的基础上运行，那么你就不能把这两条命令写在两行上，而应该把这两条命令写在一行上，用分号分隔。如：
+当依赖目标新于目标时，也就是当规则的目标需要被更新时，make会一条一条的执行其后的命令。需要注意的是，如果你要让上一条命令的结果应用在下一条命令时，你应该使用分号分隔这两条命令。比如你的第一条命令是cd命令，你希望第二条命令得在 cd之后的基础上运行，那么你就不能把这两条命令写在两行上，而应该把这两条命令写在一行上，用分号分隔。如：
 
 示一：
 ```
 exec:
-cd /home/hchen
-pwd
+    cd /home/hchen
+    pwd
 ```
 示例二：
 ```
 exec:
-cd /home/hchen; pwd
+    cd /home/hchen; pwd
 ```
 当我们执行“make exec”时，第一个例子中的cd没有作用，pwd会打印出当前的Makefile目录，而第二个例子中，cd就起作用了，pwd会打印出“/home/hchen”。
 
-make一般是使用环境变量SHELL中所定义的系统Shell来执行命令，默认情况下使用 UNIX的标准Shell——/bin/sh来执行命令。但在MS-DOS下有点特殊，因为MS-DOS下没有SHELL环境变量，当然你也可以指定。如 果你指定了UNIX风格的目录形式，首先，make会在SHELL所指定的路径中找寻命令解释器，如果找不到，其会在当前盘符中的当前目录中寻找，如果再 找不到，其会在PATH环境变量中所定义的所有路径中寻找。MS-DOS中，如果你定义的命令解释器没有找到，其会给你的命令解释器加上诸如 “.exe”、“.com”、“.bat”、“.sh”等后缀。
+make一般是使用环境变量SHELL中所定义的系统Shell来执行命令，默认情况下使用 UNIX的标准Shell——/bin/sh来执行命令。但在MS-DOS下有点特殊，因为MS-DOS下没有SHELL环境变量，当然你也可以指定。如果你指定了UNIX风格的目录形式，首先，make会在SHELL所指定的路径中找寻命令解释器，如果找不到，其会在当前盘符中的当前目录中寻找，如果再 找不到，其会在PATH环境变量中所定义的所有路径中寻找。MS-DOS中，如果你定义的命令解释器没有找到，其会给你的命令解释器加上诸如 “.exe”、“.com”、“.bat”、“.sh”等后缀。
 
 
 
 ### 三、命令出错
 
-每当命令运行完后，make会检测每个命令的返回码，如果命令返回成功，那么make会执行下 一条命令，当规则中所有的命令成功返回后，这个规则就算是成功完成了。如果一个规则中的某个命令出错了（命令退出码非零），那么make就会终止执行当前 规则，这将有可能终止所有规则的执行。
+每当命令运行完后，make会检测每个命令的返回码，如果命令返回成功，那么make会执行下 一条命令，当规则中所有的命令成功返回后，这个规则就算是成功完成了。如果一个规则中的某个命令出错了（命令退出码非零），那么make就会终止执行当前规则，这将有可能终止所有规则的执行。
 
-有些时候，命令的出错并不表示就是错误的。例如mkdir命令，我们一定需要建立一个目录，如 果目录不存在，那么mkdir就成功执行，万事大吉，如果目录存在，那么就出错了。我们之所以使用mkdir的意思就是一定要有这样的一个目录，于是我们 就不希望mkdir出错而终止规则的运行。
+有些时候，命令的出错并不表示就是错误的。例如mkdir命令，我们一定需要建立一个目录，如果目录不存在，那么mkdir就成功执行，万事大吉，如果目录存在，那么就出错了。我们之所以使用mkdir的意思就是一定要有这样的一个目录，于是我们就不希望mkdir出错而终止规则的运行。
 
 为了做到这一点，忽略命令的出错，我们可以在Makefile的命令行前加一个减号“-”（在Tab键之后），标记为不管命令出不出错都认为是成功的。如：
 ```
 clean:
--rm -f *.o
+    -rm -f *.o
 ```
-还有一个全局的办法是，给make加上“-i”或是“--ignore-errors”参数， 那么，Makefile中所有命令都会忽略错误。而如果一个规则是以“.IGNORE”作为目标的，那么这个规则中的所有命令将会忽略错误。这些是不同级 别的防止命令出错的方法，你可以根据你的不同喜欢设置。
+还有一个全局的办法是，给make加上“-i”或是“--ignore-errors”参数， 那么，Makefile中所有命令都会忽略错误。而如果一个规则是以“.IGNORE”作为目标的，那么这个规则中的所有命令将会忽略错误。这些是不同级别的防止命令出错的方法，你可以根据你的不同喜欢设置。
 
 还有一个要提一下的make的参数的是“-k”或是“--keep-going”，这个参数的意思是，如果某规则中的命令出错了，那么就终目该规则的执行，但继续执行其它规则。
 
@@ -657,17 +672,17 @@ clean:
 
 ### 四、嵌套执行make
 
-在一些大的工程中，我们会把我们不同模块或是不同功能的源文件放在不同的目录中，我们可以在每 个目录中都书写一个该目录的Makefile，这有利于让我们的Makefile变得更加地简洁，而不至于把所有的东西全部写在一个Makefile中， 这样会很难维护我们的Makefile，这个技术对于我们模块编译和分段编译有着非常大的好处。
+在一些大的工程中，我们会把我们不同模块或是不同功能的源文件放在不同的目录中，我们可以在每个目录中都书写一个该目录的Makefile，这有利于让我们的Makefile变得更加地简洁，而不至于把所有的东西全部写在一个Makefile中， 这样会很难维护我们的Makefile，这个技术对于我们模块编译和分段编译有着非常大的好处。
 
 例如，我们有一个子目录叫subdir，这个目录下有个Makefile文件，来指明了这个目录下文件的编译规则。那么我们总控的Makefile可以这样书写：
 ```
 subsystem:
-cd subdir && $(MAKE)
+    cd subdir && $(MAKE)
 ```
 其等价于：
 ```
 subsystem:
-$(MAKE) -C subdir
+    $(MAKE) -C subdir
 ```
 定义$(MAKE)宏变量的意思是，也许我们的make需要一些参数，所以定义成一个变量比较利于维护。这两个例子的意思都是先进入“subdir”目录，然后执行make命令。
 
@@ -712,12 +727,12 @@ export variable
 ```
 如果你要传递所有的变量，那么，只要一个export就行了。后面什么也不用跟，表示传递所有的变量。
 
-需要注意的是，有两个变量，一个是SHELL，一个是MAKEFLAGS，这两个变量不管你是 否export，其总是要传递到下层Makefile中，特别是MAKEFILES变量，其中包含了make的参数信息，如果我们执行“总控 Makefile”时有make参数或是在上层Makefile中定义了这个变量，那么MAKEFILES变量将会是这些参数，并会传递到下层 Makefile中，这是一个系统级的环境变量。
+需要注意的是，有两个变量，一个是SHELL，一个是MAKEFLAGS，这两个变量不管你是否export，其总是要传递到下层Makefile中，特别是MAKEFILES变量，其中包含了make的参数信息，如果我们执行“总控 Makefile”时有make参数或是在上层Makefile中定义了这个变量，那么MAKEFILES变量将会是这些参数，并会传递到下层 Makefile中，这是一个系统级的环境变量。
 
 但是make命令中的有几个参数并不往下传递，它们是“-C”,“-f”,“-h”“-o”和“-W”（有关Makefile参数的细节将在后面说明），如果你不想往下层传递参数，那么，你可以这样来：
 ```
 subsystem:
-cd subdir && $(MAKE) MAKEFLAGS=
+    cd subdir && $(MAKE) MAKEFLAGS=
 ```
 如果你定义了环境变量MAKEFLAGS，那么你得确信其中的选项是大家都会用到的，如果其中有“-t”,“-n”,和“-q”参数，那么将会有让你意想不到的结果，或许会让你异常地恐慌。
 
@@ -738,20 +753,20 @@ make: Leaving directory `/home/hchen/gnu/make'
 如果Makefile中出现一些相同命令序列，那么我们可以为这些相同的命令序列定义一个变量。定义这种命令序列的语法以“define”开始，以“endef”结束，如：
 ```
 define run-yacc
-yacc $(firstword $^)
-mv y.tab.c $@
+    yacc $(firstword $^)
+    mv y.tab.c $@
 endef
 ```
 这里，“run-yacc”是这个命令包的名字，其不要和Makefile中的变量重名。在 “define”和“endef”中的两行就是命令序列。这个命令包中的第一个命令是运行Yacc程序，因为Yacc程序总是生成“y.tab.c”的文 件，所以第二行的命令就是把这个文件改改名字。还是把这个命令包放到一个示例中来看看吧。
 ```
 foo.c : foo.y
-$(run-yacc)
+    $(run-yacc)
 ```
 我们可以看见，要使用这个命令包，我们就好像使用变量一样。在这个命令包的使用中，命令包 “run-yacc”中的“$^”就是“foo.y”，“$@”就是“foo.c”（有关这种以“$”开头的特殊变量，我们会在后面介绍），make在执 行命令包时，命令包中的每个命令会被依次独立执行。
 
 ## 使用变量
 
-在Makefile中的定义的变量，就像是C/C 语言中的宏一样，他代表了一个文本字串，在Makefile中执行的时候其会自动原模原样地展开在所使用的地方。其与C/C 所不同的是，你可以在Makefile中改变其值。在Makefile中，变量可以使用在“目标”，“依赖目标”，“命令”或是Makefile的其它部 分中。
+在Makefile中的定义的变量，就像是C/C++语言中的宏一样，他代表了一个文本字串，在Makefile中执行的时候其会自动原模原样地展开在所使用的地方。其与C/C++所不同的是，你可以在Makefile中改变其值。在Makefile中，变量可以使用在“目标”，“依赖目标”，“命令”或是Makefile的其它部 分中。
 
 变量的命名字可以包含字符、数字，下划线（可以是数字开头），但不应该含有“:”、“#”、 “=”或是空字符（空格、回车等）。变量是大小写敏感的，“foo”、“Foo”和“FOO”是三个不同的变量名。传统的Makefile的变量名是全大 写的命名方式，但我推荐使用大小写搭配的变量名，如：MakeFlags。这样可以避免和系统的变量冲突，而发生意外的事情。
 
@@ -765,7 +780,7 @@ $(run-yacc)
 ```
 objects = program.o foo.o utils.o
 program : $(objects)
-cc -o program $(objects)
+    cc -o program $(objects)
 
 $(objects) : defs.h
 ```
@@ -773,12 +788,12 @@ $(objects) : defs.h
 ```
 foo = c
 prog.o : prog.$(foo)
-$(foo)$(foo) -$(foo) prog.$(foo)
+    $(foo)$(foo) -$(foo) prog.$(foo)
 ```
 展开后得到：
 ```
 prog.o : prog.c
-cc -c prog.c
+    cc -c prog.c
 ```
 当然，千万不要在你的Makefile中这样干，这里只是举个例子来表明Makefile中的变量在使用处展开的真实样子。可见其就是一个“替代”的原理。
 
@@ -796,7 +811,7 @@ bar = $(ugh)
 ugh = Huh?
 
 all:
-echo $(foo)
+    echo $(foo)
 ```
 我们执行“make all”将会打出变量$(foo)的值是“Huh?”（ $(foo)的值是$(bar)，$(bar)的值是$(ugh)，$(ugh)的值是“Huh?”）可见，变量是可以使用后面的变量来定义的。
 
@@ -837,10 +852,10 @@ x := foo
 上面都是一些比较简单的变量使用了，让我们来看一个复杂的例子，其中包括了make的函数、条件表达式和一个系统变量“MAKELEVEL”的使用：
 ```
 ifeq (0,${MAKELEVEL})
-cur-dir := $(shell pwd)
-whoami := $(shell whoami)
-host-type := $(shell arch)
-MAKE := ${MAKE} host-type=${host-type} whoami=${whoami}
+    cur-dir := $(shell pwd)
+    whoami := $(shell whoami)
+    host-type := $(shell arch)
+    MAKE := ${MAKE} host-type=${host-type} whoami=${whoami}
 endif
 ```
 关于条件表达式和函数，我们在后面再说，对于系统变量“MAKELEVEL”，其意思是，如果我们的make有一个嵌套执行的动作（参见前面的“嵌套使用make”），那么，这个变量会记录了我们的当前Makefile的调用层数。
@@ -863,7 +878,7 @@ FOO ?= bar
 其含是，如果FOO没有被定义过，那么变量FOO的值就是“bar”，如果FOO先前被定义过，那么这条语将什么也不做，其等价于：
 ```
 ifeq ($(origin FOO), undefined)
-FOO = bar
+    FOO = bar
 endif
 ```
 
@@ -944,9 +959,9 @@ sources := $($(a1)_objects:.o=.c)
 再来看一个这种技术和“函数”与“条件语句”一同使用的例子：
 ```
 ifdef do_sort
-func := sort
+    func := sort
 else
-func := strip
+    func := strip
 endif
 
 bar := a d b g q c
@@ -960,7 +975,7 @@ foo := $($(func) $(bar))
 dir = foo
 $(dir)_sources := $(wildcard $(dir)/*.c)
 define $(dir)_print
-lpr $($(dir)_sources)
+    lpr $($(dir)_sources)
 endef
 ```
 这个例子中定义了三个变量：“dir”，“foo_sources”和“foo_print”。
@@ -1027,8 +1042,8 @@ define指示符后面跟的是变量的名字，而重起一行定义变量的�
 下面的这个示例展示了define的用法：
 ```
 define two-lines
-echo foo
-echo $(bar)
+    echo foo
+    echo $(bar)
 endef
 ```
 
@@ -1061,16 +1076,16 @@ make运行时的系统环境变量可以在make开始运行时被载入到Makefi
 ```
 prog : CFLAGS = -g
 prog : prog.o foo.o bar.o
-$(CC) $(CFLAGS) prog.o foo.o bar.o
+    $(CC) $(CFLAGS) prog.o foo.o bar.o
 
 prog.o : prog.c
-$(CC) $(CFLAGS) prog.c
+    $(CC) $(CFLAGS) prog.c
 
 foo.o : foo.c
-$(CC) $(CFLAGS) foo.c
+    $(CC) $(CFLAGS) foo.c
 
 bar.o : bar.c
-$(CC) $(CFLAGS) bar.c
+    $(CC) $(CFLAGS) bar.c
 ```
 在这个示例中，不管全局的$(CFLAGS)的值是什么，在prog目标，以及其所引发的所有规则中（prog.o foo.o bar.o的规则），$(CFLAGS)的值都是“-g”
 
@@ -1105,9 +1120,9 @@ normal_libs =
 
 foo: $(objects)
 ifeq ($(CC),gcc)
-$(CC) -o foo $(objects) $(libs_for_gcc)
+    $(CC) -o foo $(objects) $(libs_for_gcc)
 else
-$(CC) -o foo $(objects) $(normal_libs)
+    $(CC) -o foo $(objects) $(normal_libs)
 endif
 ```
 可见，在上面示例的这个规则中，目标“foo”可以根据变量“$(CC)”值来选取不同的函数库来编译程序。
@@ -1117,12 +1132,12 @@ endif
 当我们的变量$(CC)值是“gcc”时，目标foo的规则是：
 ```
 foo: $(objects)
-$(CC) -o foo $(objects) $(libs_for_gcc)
+    $(CC) -o foo $(objects) $(libs_for_gcc)
 ```
 而当我们的变量$(CC)值不是“gcc”时（比如“cc”），目标foo的规则是：
 ```
 foo: $(objects)
-$(CC) -o foo $(objects) $(normal_libs)
+    $(CC) -o foo $(objects) $(normal_libs)
 ```
 当然，我们还可以把上面的那个例子写得更简洁一些：
 ```
@@ -1130,13 +1145,13 @@ libs_for_gcc = -lgnu
 normal_libs =
 
 ifeq ($(CC),gcc)
-libs=$(libs_for_gcc)
+    libs=$(libs_for_gcc)
 else
-libs=$(normal_libs)
+    libs=$(normal_libs)
 endif
 
 foo: $(objects)
-$(CC) -o foo $(objects) $(libs)
+    $(CC) -o foo $(objects) $(libs)
 ```
 
 ### 二、语法
@@ -1194,18 +1209,18 @@ ifdef
 bar =
 foo = $(bar)
 ifdef foo
-frobozz = yes
+    frobozz = yes
 else
-frobozz = no
+    frobozz = no
 endif
 ```
 示例二：
 ```
 foo =
 ifdef foo
-frobozz = yes
+    frobozz = yes
 else
-frobozz = no
+    frobozz = no
 endif
 ```
 第一个例子中，“$(frobozz)”值是“yes”，第二个则是“no”。
