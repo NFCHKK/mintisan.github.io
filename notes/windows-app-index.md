@@ -25,12 +25,21 @@
 - [UltraEdit](http://www.ultraedit.com/)([Editplus](https://www.editplus.com/)/[Notepad++](http://notepad-plus-plus.org/)) : 老牌编辑器
 - [Beyond Compare](http://www.scootersoftware.com/) : 文件比较器
 - [Source Insight](http://www.sourceinsight.com/) : 代码阅读器
+- [SlickEdit](http://www.slickedit.com/) ：Source Insight的远房表亲
 - [SecureCRT](http://www.vandyke.com/products/securecrt/) : 不仅仅是一个串口助手
 - [PowerCMD](http://www.powercmd.com/)： A Better Command Prompt Replacement Tool
+- [Cmder](http://bliker.github.io/cmder/) ：同上强大好用
+- [Git for Windows](http://msysgit.github.io/)：打包好了，直接用
 
-## 版本管理
-- [Git for Windows](http://msysgit.github.io/)：Windows...
-- [Github for Windows](https://windows.github.com/)：用来自己同步同步还蛮方便的
-- [TortoiseGit](https://github.com/TortoiseGit) : 分布式版本管理工具终结者（Git）
-- [TortoiseSVN](http://tortoisesvn.net/) + [VisualSVN](https://www.visualsvn.com/) : 集中式版本管理工具集大成者（SVN）
+## 其他
+- [Internet Download Manager](http://www.internetdownloadmanager.com/)：老牌好用下载软件
+- [Vector Magic](http://vectormagic.com/home) ：将非矢量图转换为矢量图的神器
+- [ShareX](https://getsharex.com/)：截图、注释、上传，复制 URL 一条龙
+- [f.lux](https://justgetflux.com/)：屏幕色温调节软件
 
+
+## 下载网站
+
+- [小众软件](http://www.appinn.com/)
+- [善用佳软](http://xbeta.info/)
+- [异次元软件世界](http://www.iplaysoft.com/)
