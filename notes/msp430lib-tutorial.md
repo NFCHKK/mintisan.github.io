@@ -1,34 +1,6 @@
-# MSP430驱动库学习笔记
+# MSP430 驱动库学习笔记
 
-**目录**
-
-- 开发环境
-- 定时器
-- 库文件概览
-    + 新建工程
-- 例程
-    +  基础篇
-        *  时钟
-        *  内部Flash
-        *  ADC
-        *  DAC
-    +  通信篇
-        *  UART
-        *  IIC
-        *  SPI
-        *  USB
-        *  SDIO
-    +  其他篇
-        *  CRC
-        *  AES
-- 实践
-    + 显示屏(OLED)
-    + 重力传感器(LIS3DH)
-    + 外部Flash(MX66L51235F)
-    + 蓝牙透传(CC2540)
-- RTOS
-    + PT
-    + μC/OS
+[TOC]
 
 
 ## 开发环境
@@ -1557,12 +1529,12 @@ int fputs(const char *_ptr, register FILE *_fp)
 
 
 #### IIC
-
+[to be continued...]
 
 
 
 #### SPI
-
+[to be continued...]
 
 
 
@@ -1601,10 +1573,6 @@ int fputs(const char *_ptr, register FILE *_fp)
 ### 蓝牙透传(CC2540)
 
 **通信模块：UART**
-
-430与蓝牙模块实现透传功能：430以约定的波特率（未实现波特率自动调整）将输出发送到CC2540的串口，CC2540接收串口数据，通过内部增强型51串口的DMA方式将其发送出去。
-
-参见[CC2540蓝牙协议栈学习笔记](http://172.16.2.120:9000/notes/CC2540%E8%93%9D%E7%89%99%E5%8D%8F%E8%AE%AE%E6%A0%88%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html)
 
 ## RTOS
 
