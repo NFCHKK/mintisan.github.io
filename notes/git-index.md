@@ -10,6 +10,7 @@ http://git-scm.com/
 ## 教程
 - [官方教程][1]
 - [Easy Version Control with Git][2]
+- [猴子都能懂 Git 的入门](http://backlogtool.com/git-guide/cn/)
 - [A Visual Git Reference][3]
 - [Altassian][4]
 - [廖雪峰的Git教程][5] & [Gitbook版][6]
@@ -21,6 +22,7 @@ http://git-scm.com/
 - [学习git笔记](http://blog.chinaunix.net/uid-22547469-id-4561454.html)
 - [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 - [实用 GIT 工作流](http://yedingding.com/2013/09/11/practical-git-flow-for-startups.html)
+- [Git Tutorial](http://www.tutorialspoint.com/git/)
 
 ## 托管
 - [Github][11]

@@ -30,6 +30,7 @@
 - [PowerCMD](http://www.powercmd.com/)： A Better Command Prompt Replacement Tool
 - [Cmder](http://bliker.github.io/cmder/) ：同上强大好用
 - [Git for Windows](http://msysgit.github.io/)：打包好了，直接用
+- [Replace Studio](http://www.funduc.com/replace_studio_pro.htm)：文本替换
 
 ## 其他
 - [Internet Download Manager](http://www.internetdownloadmanager.com/)：老牌好用下载软件
@@ -41,5 +42,11 @@
 ## 下载网站
 
 - [小众软件](http://www.appinn.com/)
+- [软件小品](http://www.appcheers.com/)
+- [软件盒子](http://www.itopdog.cn/index.php)
+- [软矿](http://www.x-berry.com/)
+- [悟软](http://www.wusoft.net/)
 - [善用佳软](http://xbeta.info/)
 - [异次元软件世界](http://www.iplaysoft.com/)
+- [PortableApps](http://portableapps.com/)
+- [绿色软件](http://www.portablesoft.org/)
