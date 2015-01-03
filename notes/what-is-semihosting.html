@@ -1,8 +1,9 @@
 <!DOCTYPE html><html><head>
 
-   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="HandheldFriendly" content="true">
+
 
 <meta charset="utf-8"><style>body {
   width: 45em;
@@ -1020,70 +1021,64 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>windows-app-index</title></head><body><article class="markdown-body"><h1 id="windows"><a name="user-content-windows" href="#windows" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Windows 常用效率软件</h1>
+</style><title>what-is-semihosting</title></head><body><article class="markdown-body"><h1 id="what-is-semihosting"><a name="user-content-what-is-semihosting" href="#what-is-semihosting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What is Semihosting?</h1>
+<p>by <a href="http://www.lpcware.com/content/faq/lpcxpresso/semihosting">LPCWARE : What is Semihosting?</a></p>
 <div class="toc">
 <ul>
-<li><a href="#windows">Windows 常用效率软件</a><ul>
-<li><a href="#_1">系统管理</a></li>
-<li><a href="#_2">文件查找</a></li>
-<li><a href="#_3">笔记记录</a></li>
-<li><a href="#_4">编程开发</a></li>
-<li><a href="#_5">其他</a></li>
-<li><a href="#_6">下载网站</a></li>
+<li><a href="#what-is-semihosting">What is Semihosting?</a><ul>
+<li><a href="#background-to-semihosting">Background to Semihosting</a></li>
+<li><a href="#semihosting-implementation">Semihosting implementation</a></li>
+<li><a href="#semihosting-performance">Semihosting Performance</a></li>
+<li><a href="#important-notes-about-using-semihosting">Important notes about using semihosting</a></li>
+<li><a href="#semihosting-specification">Semihosting Specification</a></li>
+<li><a href="#for-more-information">For more information&hellip;</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<h2 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>系统管理</h2>
+<h2 id="background-to-semihosting"><a name="user-content-background-to-semihosting" href="#background-to-semihosting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Background to Semihosting</h2>
+<p>When creating a new embedded application, it can sometimes be useful during the early stages of development to be able to output debug status messages to indicate what is happening as your application executes.</p>
+<p>Traditionally, this might be done by piping the messages over, say, a serial cable connected to a terminal program running on your PC. LPCXpresso also offers an alternative to this, called semihosting. Semihosting provides a mechanism for code running on the target board to use the facilities of the PC running the IDE. The most common example of this is for the strings passed to a printf being displayed in the IDE&rsquo;s console view.</p>
+<p>The term &ldquo;semihosting&rdquo; was originally termed by ARM in the early <strong>1990s</strong>, and basically indicates that part of the functionality is carried out by the host (the PC with the debug tools running on it), and partly by the target (your board). The original intention was to provide i/o in a target environment where no real peripheral-based i/o was available at all.</p>
+<blockquote>
+<p>Semihosting翻译成“半主机”，就是让mcu来“借用”下pc的i/o口来交互，所以这才是“半”的来源吧。而且，是上个世纪90年代的产物，对于有摩尔定律的集成电路行业来说有点老了。</p>
+</blockquote>
+<h2 id="semihosting-implementation"><a name="user-content-semihosting-implementation" href="#semihosting-implementation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Semihosting implementation</h2>
+<p>The way it is actually implemented by the tools depends upon which target CPU you are running on. With Cortex-M based MCUs, the bottom level of the C library contains a special <code>BKPT</code> instruction. The execution of this is trapped by the debug tools which determine what operation is being requested - in the case of a printf, for example, this will effectively be a &ldquo;write character to stdout&rdquo;. The debug tools will then read the character from the memory of the target board - and display it in the console window within the IDE.</p>
+<p>Semihosting also provides support for a number of other I/O operations. For example it provides the ability for scanf to read its input from the IDE console. It also allows file operations, such that fopen can open a file on your PC&rsquo;s hard drive, and fscanf can then be used to read from that file.</p>
+<p>On ARM7/9 based targets the same principles of working are used, but implemented using the <code>SWI / SVC</code> instruction rather than the BKPT.</p>
+<blockquote>
+<p>通过软中断来实现，具体的指令在ARM7/9和Cortex-M上是不同的。其过程可以大致如下：当mcu执行到printf的地方时候，触发一个软中断，调试器在接收到这个软中断时，就去读区mcu需要显示的内容（内容的地址是双方规定好的，这也是Semihosting协议的一部分），然后将其显示在IDE的窗口中，然后让mcu接着往下走（不过可能在接到中断之后就先让它往下走，然后读取内存中的内容，这样mcu的中断时间就短多了）；当然scanf的过程刚好相反。</p>
+</blockquote>
+<h2 id="semihosting-performance"><a name="user-content-semihosting-performance" href="#semihosting-performance" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Semihosting Performance</h2>
+<p>It is fair to say that the semihosting mechanism does not provide a high performance i/o system. Each time a semihosting operation takes place, the processor is basically stopped whilst the data transfer takes place. The time this takes depends somewhat on the target CPU, the debug probe/link (thus Red Probe+ provides a much enhanced semihosting speed over LPC-Link), the PC hardware and the PC operating system. But it takes a definite period of time, which may make your code appear to run more slowly.</p>
+<blockquote>
+<p>简而言之，速度狠不行。并且没有给一个量化的实例值。</p>
+</blockquote>
+<h2 id="important-notes-about-using-semihosting"><a name="user-content-important-notes-about-using-semihosting" href="#important-notes-about-using-semihosting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Important notes about using semihosting</h2>
+<p>When you have linked with the semihosting library, your application will no longer work standalone - <strong>it will only work when connected to the debugger</strong>.</p>
+<p>Semihosting operations cause the CPU to drop into &ldquo;debug state&rdquo;, which means that for the duration of the data transfer between the target and the host PC no code (including interrupts) will get executed on the target. <strong>Thus if you application uses interrupts, then it is normally advisable to avoid the use of semihosting whilst interrupts are active.</strong> If you still need to use printf, then you can retarget the bottom level of the C library to use an alternative communication channel, such as a UART. </p>
+<blockquote>
+<p>提的注意点，其实就是缺点么。<br />
+1. 当我们用半主机的库时，就和对应的调试器绑定了。就这一点来说，还不如重定向，至少只要串口久可以了，但是速度有待商榷。咦，不是说在出现性能问题之前，性能就不是问题么。<br />
+ 2. 不要在有中断的情况下使用Semihosting，最好把它关掉，不然就可能把你的中断给抢断了，不要怪我没提醒过你。<br />
+ 3. 如果用仅仅是用串口，用重定向就好了，其实就是串口＋重定向的作用与调试器＋Semihosting的作用是一样的，只是前者显示在串口窗口，后者显示在IDE的串口而已。不过成本显然前者更有优势，后者只不过是买调试器顺便送个串口。</p>
+</blockquote>
+<h2 id="semihosting-specification"><a name="user-content-semihosting-specification" href="#semihosting-specification" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Semihosting Specification</h2>
+<p>The semihosting mechanism used within LPCXpresso based on the specification contained in the following document available from ARM&rsquo;s website&hellip;</p>
+<p>=&gt; ARM Developer Suite (ADS) v1.2 Debug Target Guide, Chapter 5. Semihosting</p>
 <ul>
-<li><a href="http://cn.ejie.me/">Clover</a> : 给资源管理器加上类似Chrome的标签</li>
-<li><a href="http://www.stardock.com/products/fences/">Fence</a> : 桌面图标管理</li>
-<li><a href="http://www.winpatrol.com/">Winpatrol</a> : 管理启动项和服务小工具</li>
-<li><a href="https://www.piriform.com/CCLEANER">CCleaner</a> : 清除注册表和程序小工具</li>
-<li><a href="http://www.tune-up.com/">TuneUp Utilities</a> : 系统管理瑞士军刀</li>
-<li><a href="http://www.goodsync.com/">Goodsync</a> : 同步文件好帮手</li>
+<li><a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0058d/CIHBDHFF.html">Online html</a></li>
+<li><a href="http://infocenter.arm.com/help/topic/com.arm.doc.dui0058d/DUI0058.pdf">PDF version</a></li>
 </ul>
-<h2 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>文件查找</h2>
+<blockquote>
+<p>从这段文字中获得信息是，同学们啊，Semihosting 这个概念很老了，是ADS时代的产物了，速度也不行了，跟不上时代的发展了。但是，后来的那些各种碉堡了的调试设计思路都和我差不多，大家了解了解我，然后再去用其他的，如ITM, <a href="https://segger.com/jlink-real-time-terminal.html">RTT</a>,<a href="https://www.segger.com/j-link-j-scope.html">JLink-Scope</a>就好了。</p>
+</blockquote>
+<h2 id="for-more-information"><a name="user-content-for-more-information" href="#for-more-information" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>For more information&hellip;</h2>
 <ul>
-<li><a href="http://www.voidtools.com/">Everything</a>(<a href="http://www.listary.com/">Listary</a>) : 极快速硬盘文件查找</li>
-<li><a href="http://www.launchy.net/">Launchy</a>(<a href="http://xbeta.info/altrun.htm">ALTRun</a>) : 快速启动安装的应用程序</li>
-<li><a href="http://www.ghisler.com/">Total Commander</a> : 资源管理器之集大成者</li>
+<li><a href="http://www.lpcware.com/content/faq/lpcxpresso/using-printf">Using printf()</a></li>
+<li><a href="http://www.lpcware.com/content/faq/lpcxpresso/library-variants">What are none, nohost and semihost libraries?</a></li>
 </ul>
-<h2 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>笔记记录</h2>
-<ul>
-<li><a href="https://www.evernote.com/">Evernote</a>(<a href="https://note.youdao.com/">有道云笔记</a>/<a href="http://wiz.cn/">为知笔记Wiz</a>)</li>
-<li><a href="https://getpocket.com/">Pocket</a>(<a href="https://www.instapaper.com/">Instapaper</a>) : 文章临时缓冲区</li>
-</ul>
-<h2 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>编程开发</h2>
-<ul>
-<li><a href="http://www.sublimetext.com/">Sublime Text</a> : 号称史上最性感的编辑器</li>
-<li><a href="http://www.ultraedit.com/">UltraEdit</a>(<a href="https://www.editplus.com/">Editplus</a>/<a href="http://notepad-plus-plus.org/">Notepad++</a>) : 老牌编辑器</li>
-<li><a href="http://www.scootersoftware.com/">Beyond Compare</a> : 文件比较器</li>
-<li><a href="http://www.sourceinsight.com/">Source Insight</a> : 代码阅读器</li>
-<li><a href="http://www.slickedit.com/">SlickEdit</a> ：Source Insight的远房表亲</li>
-<li><a href="http://www.vandyke.com/products/securecrt/">SecureCRT</a> : 不仅仅是一个串口助手</li>
-<li><a href="http://www.powercmd.com/">PowerCMD</a>： A Better Command Prompt Replacement Tool</li>
-<li><a href="http://bliker.github.io/cmder/">Cmder</a> ：同上强大好用</li>
-<li><a href="http://msysgit.github.io/">Git for Windows</a>：打包好了，直接用</li>
-<li><a href="http://www.funduc.com/replace_studio_pro.htm">Replace Studio</a>：文本替换</li>
-</ul>
-<h2 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>其他</h2>
-<ul>
-<li><a href="http://www.internetdownloadmanager.com/">Internet Download Manager</a>：老牌好用下载软件</li>
-<li><a href="http://vectormagic.com/home">Vector Magic</a> ：将非矢量图转换为矢量图的神器</li>
-<li><a href="https://getsharex.com/">ShareX</a>：截图、注释、上传，复制 URL 一条龙</li>
-<li><a href="https://justgetflux.com/">f.lux</a>：屏幕色温调节软件</li>
-</ul>
-<h2 id="_6"><a name="user-content-_6" href="#_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>下载网站</h2>
-<ul>
-<li><a href="http://www.appinn.com/">小众软件</a></li>
-<li><a href="http://www.appcheers.com/">软件小品</a></li>
-<li><a href="http://www.itopdog.cn/index.php">软件盒子</a></li>
-<li><a href="http://www.x-berry.com/">软矿</a></li>
-<li><a href="http://www.zdfans.com/">ZdFans</a></li>
-<li><a href="http://www.wusoft.net/">悟软</a></li>
-<li><a href="http://xbeta.info/">善用佳软</a></li>
-<li><a href="http://www.iplaysoft.com/">异次元软件世界</a></li>
-<li><a href="http://portableapps.com/">PortableApps</a></li>
-<li><a href="http://www.portablesoft.org/">绿色软件</a></li>
-</ul></article></body></html>
+<blockquote>
+<p>我会说LPC给的扩展阅读很不走心么。</p>
+</blockquote></article></body></html>

@@ -45,6 +45,7 @@
 - [软件小品](http://www.appcheers.com/)
 - [软件盒子](http://www.itopdog.cn/index.php)
 - [软矿](http://www.x-berry.com/)
+- [ZdFans](http://www.zdfans.com/)
 - [悟软](http://www.wusoft.net/)
 - [善用佳软](http://xbeta.info/)
 - [异次元软件世界](http://www.iplaysoft.com/)
