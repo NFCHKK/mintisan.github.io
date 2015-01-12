@@ -217,12 +217,101 @@ gb = 4
 ```
 
 ## Matlab实现篇
+
+为了便于模块化，这里将代价函数另存为一个新的文件`get_fitness.m`，此处与上面的代价函数一致，也是采用简单的累加和来进行测试。
 ```matlab
-To Be Continued...
+function y = get_fitness(x,dim)
+%UNTITLED3 Summary of this function goes here
+%   Detailed explanation goes here
+
+    y = 0;
+    for i = 1:1:dim
+        y = y + (x(:,i)-0.1*i)^2;
+    end
+
+end
+```
+
+算法的主文件为`SimpleHeuristicOptimization.m`，其过程与 Python 的写法非常类似，都比较接近自然语言。
+```matlab
+%% 简单启发式优化算法
+clc
+
+%% 0. 参数
+num = 5;
+dim = 3;
+ub = 100;
+lb = -100;
+gen = 1000;
+particle_sol = zeros(num,dim);
+particle_fit = zeros(num,1);
+
+%% 1. 初始化
+particle_sol = lb + (ub - lb) * rand(num,dim);
+for i =1:1:num
+    particle_fit(i,1) = get_fitness(particle_sol(i,:),dim);
+end
+
+%% 2. 训练
+while gen >= 0
+    % 2.1 select random particles
+    r0 = unidrnd(num);
+    r1 = r0;
+    while r0 == r1
+        r1 = unidrnd(num); 
+    end
+    % 2.2 generate new_sol particle_sol from sol
+    new_particle_sol = particle_sol(r0,:);
+    rj = unidrnd(dim);
+    new_particle_sol(:,rj) = particle_sol(r0,rj) + (2*(0.5 - rand(1,1))) * (particle_sol(r0,rj) - particle_sol(r1,rj));
+    new_particle_fit = get_fitness(new_particle_sol,dim);
+    
+    % 2.3 greedy select
+    if new_particle_fit < particle_fit(r0,1);
+        particle_sol(r0,:) = new_particle_sol;
+        particle_fit(r0,:) = new_particle_fit;
+    end
+    
+    gen = gen - 1;
+end
+
+%% 3. 输出结果
+particle_sol 
+
+gbestindex = find(particle_fit==min(particle_fit))
+gbestsol = particle_sol(gbestindex,:)
+gbestfit = particle_fit(gbestindex,:)
+```
+
+**结果**的值都差不多，但是感觉 Matlab 写起来没 Python 自然。
+```
+
+particle_sol =
+
+    0.1000    0.2000    0.3000
+    0.1000    0.2000    0.3000
+    0.1000    0.2000    0.3000
+    0.1000    0.2000    0.3000
+    0.1000    0.2000    0.3000
+
+
+gbestindex =
+
+     5
+
+
+gbestsol =
+
+    0.1000    0.2000    0.3000
+
+
+gbestfit =
+
+  2.4193e-012
 ```
 
 ## 总结
 
-在简单的数值计算上，整体的C实现相比于Python实现并无多大的时间上的优势，因为一些如循环模块，随机数的产生上，Python的内置方式可能更加的高效。此外，还没有算上Python的那些`plot`第三方的库，绝对的完胜。
+在简单的数值计算上，整体的C实现相比于Python实现和Matlab实现并无多大的时间上的优势，因为一些如循环模块，随机数的产生上，Python的内置方式可能更加的高效。此外，还没有算上Python的那些`plot`第三方的库，绝对的完胜。（小程序么，没那么复杂。所以差距可能不是太大。）
 
-建议：采用Python来完成算法原型的实现，如果效率不够，关键部分用C补充。
+建议：采用 Python 和 Matlab 来完成算法原型的实现，如果效率不够，关键部分用 C 补充。
