@@ -1,5 +1,6 @@
 <!DOCTYPE html><html><head>
 
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="HandheldFriendly" content="true">
@@ -1095,7 +1096,7 @@ MSP430 Driver Library is a collection of high level APIs that speed up software 
 <li>MSP430i2xx</li>
 </ul>
 <p>现在将下载好的<code>msp430_driverlib_1_90_00_65.zip</code>解压之后，进入<code>.\msp430_driverlib_1_90_00_65\driverlib_1_90_00_65</code>文件夹，其目录如下所示：</p>
-<p><img alt="MSP430驱动库目录" src="http://study-note.qiniudn.com/msp430lib-MSP430驱动库目录.png" /></p>
+<p><img alt="MSP430驱动库目录" src="http://mint-blog.qiniudn.com/msp430lib-MSP430驱动库目录.png" /></p>
 <p>由于我们的芯片是<code>MSP430F5510</code>，所以关心的是带<code>MSP430F5xx_6xx</code>的内容，</p>
 <ul>
 <li>文档：<code>\doc\MSP430F5xx_6xx</code></li>
@@ -1105,10 +1106,10 @@ MSP430 Driver Library is a collection of high level APIs that speed up software 
 <h3 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>新建工程</h3>
 <p>文档相当于一个字典，当我们需要查什么是在去看。这里先简要的介绍了如何快速的建立以驱动库为基础的模板工程。<br />
 1、<code>Project-&gt;New CCS Project</code>填写工程名，选择器件类型，按<code>Finish</code>完成。</p>
-<p><img alt="NewCCSProject" src="http://study-note.qiniudn.com/msp430lib-NewCCSProject.png" /></p>
+<p><img alt="NewCCSProject" src="http://mint-blog.qiniudn.com/msp430lib-NewCCSProject.png" /></p>
 <p>2、配置项目并添加驱动库</p>
 <p>新建完工程之后，其工程目录如下图所示：</p>
-<p><img alt="工程目录" src="http://study-note.qiniudn.com/msp430lib-工程目录.png" /></p>
+<p><img alt="工程目录" src="http://mint-blog.qiniudn.com/msp430lib-工程目录.png" /></p>
 <ul>
 <li><code>Includes</code>：这里就是我们刚才在选择器件类型时，CCS帮我们自动添加的头文件，主要是MSP430的寄存器头文件。</li>
 <li><code>Lnk_msp430f5510.cmd</code>：这是链接之后生成的内存分布图，指定了变量在哪一块内存地址上，代码段在哪一段Flash地址上。</li>
@@ -1116,9 +1117,9 @@ MSP430 Driver Library is a collection of high level APIs that speed up software 
 <li><code>MSP430F5510.ccxml</code>：这是我们的配置文件，CCS识别MSP430项目基本就靠这个配置文件。</li>
 </ul>
 <p>在项目上点击右键，选择<code>Properties-&gt;Optimization</code>，将其优化等级关闭，其原因是在调试的时候，CCS过度的优化，将它认为无用的变量和语句忽略掉，是的，连语句也给忽略掉了，强(keng)大(die)的编译器。</p>
-<p><img alt="关闭编译优化" src="http://study-note.qiniudn.com/msp430lib-关闭编译优化.png" /></p>
+<p><img alt="关闭编译优化" src="http://mint-blog.qiniudn.com/msp430lib-关闭编译优化.png" /></p>
 <p>然后，将我们需要的驱动库<code>\driverlib\MSP430F5xx_6xx</code>复制到我们实际文件夹的目录，并且打开<code>Include Options-&gt;Add..-&gt;Workspalce-&gt;Toggle the GPIO-&gt;MSP430F5xx_6xx</code>，完成头文件的添加。其作用就是在我们引用头文件的时候，不用添加绝对路径的地址，因为CCS会将其设置为系统当前路径，和C语言以及MSP430的头文件的待遇一样。</p>
-<p><img alt="添加库文件路径" src="http://study-note.qiniudn.com/msp430lib-添加库文件路径.png" /></p>
+<p><img alt="添加库文件路径" src="http://mint-blog.qiniudn.com/msp430lib-添加库文件路径.png" /></p>
 <p>3、添加自己的代码</p>
 <p>默认项目新建完成之后，main函数的代码非常简单。<br />
 <pre><code class="c">/*
@@ -1189,7 +1190,7 @@ void main(void)
 </code></pre></p>
 <p>这里我们直接引用MSP430的驱动库<code>#include "driverlib.h"</code>，就是因为我们在之前的头文件中进行了配置。</p>
 <p>另外，在修改之前需要说明的是，<code>PortA</code>相当于<code>Port1 + Port2</code>，这里为了和原理图上的一直，均改成以数字结尾。</p>
-<p><img alt="MSP430F5510芯片引脚图" src="http://study-note.qiniudn.com/msp430lib-MSP430F5510芯片引脚图.png" /></p>
+<p><img alt="MSP430F5510芯片引脚图" src="http://mint-blog.qiniudn.com/msp430lib-MSP430F5510芯片引脚图.png" /></p>
 <p>这里我们将其进行简化改写，来使其翻转一个GPIO即可。修改之后如下：</p>
 <pre><code class="c">#include &quot;driverlib.h&quot;
 
@@ -1226,9 +1227,9 @@ void main(void)
 <p>可以看到，其代码过程与我们的思路是完全一致的，可读性也比较高。当我们需要某个模块时，我们只要去找文档查我们需要的API即可，如<code>MSP430F5xx_6xx_DriverLib_Users_Guide-1_90_00_65.pdf</code>。</p>
 <p>4、编译运行</p>
 <p>可以在项目右键上点击<code>Build Project</code></p>
-<p><img alt="编译结果" src="http://study-note.qiniudn.com/msp430lib-编译结果.png" /></p>
+<p><img alt="编译结果" src="http://mint-blog.qiniudn.com/msp430lib-编译结果.png" /></p>
 <p>这里我们可以看到右边有一大堆黄色的东西，那是因为CCS默认开启了它的<code>ULP Advisor</code>，简而言之，它就是一套TI建议的编程规范，按照它建议编写出来的代码具有更强的健壮性。不过话说连自己的库也是没有遵循自己的代码规范，看来这个规范的推行是多么的困难；或者说改变一个人自认为舒服的习惯是多么的困难，即使明知改变对自己是有利的。</p>
-<p><img alt="ULPAdvisor" src="http://study-note.qiniudn.com/msp430lib-ULPAdvisor.png" /></p>
+<p><img alt="ULPAdvisor" src="http://mint-blog.qiniudn.com/msp430lib-ULPAdvisor.png" /></p>
 <p>最后，我们只需要点击那个<code>小虫子</code>，就可以下载并调试代码了。</p>
 <h2 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>例程</h2>
 <h3 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>基础篇</h3>
@@ -1243,7 +1244,7 @@ void main(void)
 <li>DCOCLK，数控振荡器，为内部晶振，由RC震荡回路构成； </li>
 <li>VLOCLK，内部低频振荡器，12kHz标准振荡器。 </li>
 </ol>
-<p><img alt="MSP430时钟源" src="http://study-note.qiniudn.com/msp430lib-MSP430时钟源.png" /></p>
+<p><img alt="MSP430时钟源" src="http://mint-blog.qiniudn.com/msp430lib-MSP430时钟源.png" /></p>
 <p>在MSP430单片机内部一共有三个<strong>时钟信号</strong>：</p>
 <ol>
 <li>ACLK，Auxiliary Clock，辅助时钟，通常由LFXT1CLK或VLOCLK作为时钟源，可以通过软件控制更改时钟的分频系数；  </li>

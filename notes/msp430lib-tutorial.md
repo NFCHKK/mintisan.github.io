@@ -1590,13 +1590,13 @@ int fputs(const char *_ptr, register FILE *_fp)
 
 [1]: http://www.ti.com/tool/ccstudio-msp430
 [2]: http://www.ti.com/tool/msp430driverlib
-[3]: http://study-note.qiniudn.com/msp430lib-MSP430驱动库目录.png
-[4]: http://study-note.qiniudn.com/msp430lib-NewCCSProject.png
-[5]: http://study-note.qiniudn.com/msp430lib-工程目录.png
-[6]: http://study-note.qiniudn.com/msp430lib-关闭编译优化.png
-[7]: http://study-note.qiniudn.com/msp430lib-添加库文件路径.png
-[8]: http://study-note.qiniudn.com/msp430lib-MSP430F5510芯片引脚图.png
-[9]: http://study-note.qiniudn.com/msp430lib-MSP430时钟源.png
+[3]: http://mint-blog.qiniudn.com/msp430lib-MSP430驱动库目录.png
+[4]: http://mint-blog.qiniudn.com/msp430lib-NewCCSProject.png
+[5]: http://mint-blog.qiniudn.com/msp430lib-工程目录.png
+[6]: http://mint-blog.qiniudn.com/msp430lib-关闭编译优化.png
+[7]: http://mint-blog.qiniudn.com/msp430lib-添加库文件路径.png
+[8]: http://mint-blog.qiniudn.com/msp430lib-MSP430F5510芯片引脚图.png
+[9]: http://mint-blog.qiniudn.com/msp430lib-MSP430时钟源.png
 [10]: http://wenku.baidu.com/view/32a4cf6e011ca300a6c39098.html
-[11]: http://study-note.qiniudn.com/msp430lib-编译结果.png
-[12]: http://study-note.qiniudn.com/msp430lib-ULPAdvisor.png
+[11]: http://mint-blog.qiniudn.com/msp430lib-编译结果.png
+[12]: http://mint-blog.qiniudn.com/msp430lib-ULPAdvisor.png
