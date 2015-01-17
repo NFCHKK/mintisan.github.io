@@ -34,6 +34,7 @@
 
 
 ## 书籍
+- [用Python做科学计算](http://sebug.net/paper/books/scipydoc/index.html)
 - [PythonBooks][16]
 - [IntroductoryPythonBooks][17]
 - [Learn Python The Hard Way][18]
