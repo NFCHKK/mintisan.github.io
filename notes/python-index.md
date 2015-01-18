@@ -30,11 +30,13 @@
 - [Python4cn][13]
 - [Python中文精华][14]
 - [Python机器学习][15]
+- [Reddit Python](http://www.reddit.com/r/python)
 
 
 
 ## 书籍
 - [用Python做科学计算](http://sebug.net/paper/books/scipydoc/index.html)
+- [Python Scientific Lecture Notes](http://scipy-lectures.github.io/)
 - [PythonBooks][16]
 - [IntroductoryPythonBooks][17]
 - [Learn Python The Hard Way][18]
@@ -63,28 +65,136 @@
 - [Problem Solving with Algorithms and Data Structures using Python][41]
 - [The Art and Craft of Programming Python Edition][42]
 - [Python Programming][43]
-
+- [Neural Networks and Deep Learning][49]
 
 
 
 ## 开源库
-- [IPython][44]
+### 科学研究
+- [Numpy](http://www.numpy.org/)
+- [Scipy](http://www.scipy.org/)
+- [Matplotlib](http://matplotlib.org/)
 - [PyBrain][45]
 - [scikit learn][46]
+- [Pandas](http://pandas.pydata.org/)
 - [Theano][47]
 - [Shogun][48]
-- [Neural Networks and Deep Learning][49]
-- [15个最受欢迎的Python开源框架][50]
+
+### 嵌入式相关
+- [PyUSB](http://walac.github.io/pyusb/)
+- [PySerial](http://pyserial.sourceforge.net/)
+- [PyQt](http://sourceforge.net/projects/pyqt/)
+- [PyET](http://www.nongnu.org/pyet/)
+
+### Web框架
+- [Django][50]
+- [Flask](http://flask.pocoo.org/)
+- [Web2py](http://www.web2py.com/)
+- [Tornado](http://www.tornadoweb.org/en/stable/)
+- [webpy](http://webpy.org/)
+- [Scrapy](http://scrapy.org/)
 
 
 
 ## 开发环境
+- [IntegratedDevelopmentEnvironments - Python Wiki](https://wiki.python.org/moin/IntegratedDevelopmentEnvironments)
+- [Python(x,y)](http://code.google.com/p/pythonxy/)
 - [PyCharm][51]
 - [Sublime Text][52]
 - [PyDev][53] 
 - [PTVS][54]
 - [Aptana][55]
+- [IPython][44]
+- [PortablePython](http://portablepython.com/)
+- [Aptana](http://www.aptana.com/)
 
+下面是来自StackOverFlow的[终结贴](http://stackoverflow.com/questions/81584/what-ide-to-use-for-python)
+
+```
+Rapid Application Development -.
+                                           Integrated DB Support -+   |
+                                                GUI Designer  -+  |   |
+                                             Unit Testing -+   |  |   |
+                                        Code Templates -.  |   |  |   |
+                                       Code Folding -+  |  |   |  |   |
+                           UML Editing / Viewing -+  |  |  |   |  |   |
+                              Line Numbering -+   |  |  |  |   |  |   |
+                         Bracket Matching -+  |   |  |  |  |   |  |   |
+                          Smart Indent -+  |  |   |  |  |  |   |  |   |
+         Source Control Integration -+  |  |  |   |  |  |  |   |  |   |
+                   Error Markup  -+  |  |  |  |   |  |  |  |   |  |   |
+  Integrated Python Debugging -+  |  |  |  |  |   |  |  |  |   |  |   |
+    Multi-Language Support -+  |  |  |  |  |  |   |  |  |  |   |  |   |
+  Auto Code Completion -+   |  |  |  |  |  |  |   |  |  |  |   |  |   |
+ Commercial / Free --+  |   |  |  |  |  |  |  |   |  |  |  |   |  |   |
+ Cross Platform -+   |  |   |  |  |  |  |  |  |   |  |  |  |   |  |   |
+                _|___|__|___|__|__|__|__|__|__|___|__|__|__|___|__|___|_
+                |CP|C/F|AC|MLS|PD|EM|SC|SI|BM|LN|UML|CF|CT|UT|UID|DB|RAD|comments
+                +--+---+--+---+--+--+--+--+--+--+---+--+--+--+---+--+---+
+
+ BlackAdder     |Y | C |  |   |  |  |  |Y |  |  |   |Y |  |  |   |  |   |
+ BlueFish       |L |   |  |   |  |  |  |  |  |  |   |  |  |  |   |  |   |
+ ConTEXT        |W | C |  |   |  |  |  |  |  |  |   |  |  |  |   |  |   |
+ DABO           |Y |   |  |   |  |  |  |  |  |  |   |  |  |  |   |  |   |
+ DreamPie       |  | F |Y |   |  |  |  |Y |  |  |   |  |  |  |   |  |   |
+ Dr.Python      |  | F |  |   |  |Y |  |  |  |  |   |  |  |  |   |  |   |
+ Editra         |Y | F |Y | Y |  |  |Y |Y |Y |Y |   |Y |  |  |   |  |   |
+ Emacs          |Y | F |Y | Y |Y |Y |Y |Y |Y |Y | Y |Y |Y |Y |   |  |   |
+ Eric Ide       |Y | F |Y |   |Y |Y |  |Y |  |Y |   |Y |  |Y |   |  |   |
+ E-Texteditor   |W |   |  |   |  |  |  |  |  |  |   |  |  |  |   |  |   |
+ Geany          |Y | F |Y*| Y |  |  |  |Y |Y |Y |   |Y |  |  |   |  |   |*very limited
+ Gedit          |Y | F |Y¹| Y |  |  |  |Y |Y |Y |   |  |Y²|  |   |  |   |¹ with plugin ² sort of
+ Idle           |Y | F |Y |   |  |  |  |  |  |  |   |  |  |  |   |  |   |
+ JEdit          |Y | F |  | Y |  |  |  |  |Y |Y |   |Y |  |  |   |  |   |
+ KDevelop       |Y | F |  | Y |  |  |Y |Y |Y |Y |   |Y |  |  |   |  |   |
+ Komodo         |Y |C/F|Y | Y |Y |Y |Y |Y |Y |Y |   |Y |Y |Y |   |Y |   |
+ NetBeans*      |Y | F |Y | Y |Y |  |Y |Y |Y |Y | Y |Y |Y |Y |   |  | Y |*pre-v7.0
+ NotePad++      |W | F |  | Y |  |  |  |Y*|  |Y |   |  |  |  |   |  |   |*with plugin
+ Pfaide         |W | C |Y | Y |  |  |  |Y |Y |Y |   |Y |Y |  |   |  |   |
+ PIDA           |LW| F |Y | Y |  |  |  |Y |Y |Y |   |Y |  |  |   |  |   |VIM based
+ PTVS           |W | F |Y | Y |Y |Y |Y |Y |Y |Y |   |Y |  |  |Y* |  | Y |*WPF bsed
+ PyCharm        |Y | C |Y | Y*|Y |  |Y |Y |Y |Y |   |Y |  |Y |   |  |   |*javascript
+ PyDev(Eclipse) |Y | F |Y | Y |Y |Y |Y |Y |Y |Y | Y |Y |Y |Y |   |  |   |
+ Pyscripter     |W | F |Y |   |Y |Y |  |Y |  |Y |   |  |Y |Y |   |  |   |
+ PythonWin      |W | F |Y |   |Y |  |  |Y |Y |  |   |Y |  |  |   |  |   |
+ SciTE          |Y | F |  | Y |  |Y |  |  |Y |Y |   |Y |Y |  |   |  |   |
+ ScriptDev      |W | C |Y | Y |Y |Y |  |Y |Y |Y |   |Y |Y |  |   |  |   |
+ SPE            |  | F |Y |   |  |  |  |  |  |  | Y |  |  |  |   |  |   |
+ Spyder         |Y | F |Y |   |Y |Y |  |Y |Y |Y |   |  |  |  |   |  |   |
+ Sublime Text   |Y |C/F|Y | Y |  |  |  |Y |Y |Y |   |Y |Y |  |   |  |   |extensible w/python
+ TextMate       |M |   |  | Y |  |  |  |Y |Y |Y |   |Y |Y |  |   |  |   |
+ UliPad         |Y | F |Y | Y |Y |  |  |Y |Y |  |   |  |Y |Y |   |  |   |
+ Vim            |Y | F |Y | Y |Y |Y |Y |Y |Y |Y |   |Y |Y |Y |   |  |   |
+ WingIde        |Y | C |Y | Y*|Y |Y |Y |Y |Y |Y |   |Y |Y |Y |   |  |   |*support for C
+ Zeus           |W | C |  |   |  |  |Y |Y |Y |Y |   |Y |Y |  |   |  |   |
+                +--+---+--+---+--+--+--+--+--+--+---+--+--+--+---+--+---+
+                |CP|C/F|AC|MLS|PD|EM|SC|SI|BM|LN|UML|CF|CT|UT|UID|DB|RAD|
+                |__|___|__|___|__|__|__|__|__|__|___|__|__|__|___|__|___|
+```
+
+Acronyms used:
+
+- CP - Cross Platform
+- C - Commercial
+- F - Free
+- AC - Automatic Code-completion
+- MLS - Multi-Language Support
+- PD - Integrated Python Debugging
+- EM - ErrorMarkup
+- SC - Source Control integration
+- SI - Smart Indent
+- BM - Bracket Matching
+- LN - Line Numbering
+- UML - UML editing / viewing
+- CF - Code Folding
+- CT - Code Templates
+- UT - Unit Testing
+- UID - GUI Designer (for example, Qt, Eric, ..)
+- DB - integrated database support
+- RAD - Rapid application development support
+- L - Linux
+- W - Windows
+- M - Mac
 
   [1]: http://python.cn/
   [2]: http://wiki.woodpecker.org.cn/moin/
@@ -135,7 +245,7 @@
   [47]: http://deeplearning.net/software/theano/
   [48]: http://www.raetschlab.org/suppl/shogun
   [49]: http://neuralnetworksanddeeplearning.com/
-  [50]: http://blog.jobbole.com/72306/
+  [50]: https://www.djangoproject.com/
   [51]: http://www.jetbrains.com/products.html#python
   [52]: http://www.sublimetext.com/
   [53]: http://pydev.org/index.html
