@@ -1,12 +1,12 @@
-本简历生成自 Brian Hann的[ markdown-resume-js](https://github.com/c0bra/markdown-resume-js)。
+By [markdown-resume-js](https://github.com/c0bra/markdown-resume-js)
 
-## 准备环境
+## Setup Environment
 
-1. 安装 [Node.js ](http://nodejs.org/)
-2. 安装[wkhtmltopdf](http://wkhtmltopdf.org/)
+1. [Node.js ](http://nodejs.org/)
+2. [wkhtmltopdf](http://wkhtmltopdf.org/)
 
 
-## 生成简历
+## Usage
 
 ```
 # For usage on the command line
