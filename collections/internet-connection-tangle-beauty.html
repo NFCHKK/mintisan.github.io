@@ -1,0 +1,1091 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>internet-connection-tangle-beauty</title></head><body><article class="markdown-body"><h1 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>互联网创业变或不变的三个关键词：连接、纠缠、让美发生</h1>
+<p><a href="http://www.36kr.com/p/219149.html">From</a></p>
+<div class="toc">
+<ul>
+<li><a href="#_1">互联网创业变或不变的三个关键词：连接、纠缠、让美发生</a><ul>
+<li><a href="#_2">一、连接，连接，连接一切</a><ul>
+<li><a href="#1">1、连接的方式在不断改变，但连接永恒。</a></li>
+<li><a href="#2">2、实体世界、精神世界、客观世界的连接</a></li>
+<li><a href="#3">3、连接一切的价值所在</a></li>
+</ul>
+</li>
+<li><a href="#_3">二、纠缠，纠缠，不断纠缠</a><ul>
+<li><a href="#1_1">1、无纠缠不连接。</a></li>
+<li><a href="#2_1">2、交互成就一切纠缠态的连接</a></li>
+<li><a href="#3_1">3、纠缠越深，交互越多，价值越大。</a></li>
+</ul>
+</li>
+<li><a href="#_4">三、让美发生</a><ul>
+<li><a href="#1_2">1、美是一切人类价值的终极追求</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>本文作者叶东东(子皮) 为<a href="http://tisiwi.com/">天使湾创投</a>合伙人，目前负责天使湾天使投资业务。天使湾于2010年成立，投资过洋码头、大姨吗、小恩爱、美妆心得、扇贝、下厨房、风先生等一批知名互联网项目，2014年后\特别关注人工智能、虚拟金融、新型社交、企业级服务、O2O等。作者微信：fanleeye，微博：@Fanlee，Email：<a href="mailto:ydd@tisiwi.com">ydd@tisiwi.com</a>（最希望被连接的方式）。</p>
+<p>我估计，在 IT 领域创业或投资的朋友们可能是中国最为焦虑的群体之一，因为这个行业实在变化太快了。当所有人都在讨论互联网下一个趋势，下一个方向，下一个热点是什么的时候，2015 年我们是否也可逆向思考：究竟什么是互联网不大会变的，或变的究竟是什么？</p>
+<h2 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>一、连接，连接，连接一切</h2>
+<h3 id="1"><a name="user-content-1" href="#1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1、连接的方式在不断改变，但连接永恒。</h3>
+<p>在 2012 年知乎上讨论互联网的下一个十年的主题中，曾也讨论了一下未来趋势，其中我分享的一个核心观点在 2014 年进行了迭代：过去十几年，互联网只是将固态的信息介质液态化，一切看得见、摸得着的信息介质如纸媒（信件、报纸、书籍、杂志、地图、日记本）、影音（胶卷、录像带、VCD、卡带）、通讯（座机、广播）、传统游戏（棋牌），办公（文档）以及所有商品交易信息进行全面数字化，连接到网络后，信息的全面液态化使得现实世界一下子变平，极致提高了信息的流动性与传播效率；而下一个十年，将是液态信息气态化，由信息如水进化到信息如空气，一切数据将无处不在，无时不在，无处无时不感知不交互不迭代。</p>
+<p>在这个观点中，<strong>第一个，关系到连接的信息介质</strong>。是的，互联网的发展，首先的前提应该是连接的信息介质。为了简便，在这里我将信息介质广义的定义为包括信息存储、计算与传感。</p>
+<p>追溯历史，信息介质从记事结绳、山洞石壁、动物甲骨到了羊皮竹简、丝帛纸张，到了 20 世纪实现全面大一统，都变成了硅晶体管。在硅时代，信息的存储容量，存储体积与存储时间都有极大的成就，一个小小的 U 盘上已经出现可以容纳 1TB 的容量，而存储时间已研发出了能够保存 100 万年的介质。然而，信息科技的发展远不止如此，IBM 认为，硅片将在未来三到四次的技术迭代中消失，以此他们在未来五年，将把其总收入的大部分投放到非硅基电脑芯片、量子计算机和仿人脑计算中，几可预见，纳米科学的发展使得计算机一定是朝着更微型化、更不可思议的存储与计算能力而去；另一方面，物联网的发展使得信息介质又多了一个维度——传感器，温度、光、压力、磁、气体、湿度、声音、味觉等各种传感器的快速发展，使得各种智能硬件层出不穷的出现，万物互联的时代已提前到来。</p>
+<p>于是，我们不得不思考一个问题：<strong>信息介质极致的越来越小（体积），越来越大（容量），越来越强（计算能力），越来越有feeling（感知能力），这会导致什么样的变化发生？</strong>这就过渡到了我的第二个观点，<strong>连接的信息终端</strong>。</p>
+<p><strong>第二个，连接的信息终端一定会多元化，且无所不在。</strong>是不是所有能够联网的终端 100% 都会被智能化，这还不能确定，考虑到成本，会有很多微型的传感器终端只用来量化物理世界的数据，但是，作为存储、计算、传感的当下最代表性的联网终端——移动智能手机，开始步入技术的成熟期甚至衰落期，这是不争的事实。在手机是功能机时代，由巨大笨重转变为小巧便携后，多数人只是在关注手机的外观，是翻盖还是直板，是音乐手机还是拍照手机，一夜之间乔布斯将手机变成了一台触摸屏交互的微型联网终端，从而重新定义了手机，现在也是如此，智能手机到现在更多人已经只聚焦在从薄到更薄，是小巧还是大屏，是柔性还是透明，这是一个很明显的成熟信号，也是一个变相衰落的信号。</p>
+<p>在 2014 年 8 月，我读了 Ray Kurzweil 的《奇点临近》，不少观点对我启发很大，其一观点他认为，一项技术的生命周期可分为 7 个不同阶段：前导阶段，发明阶段，发展阶段，技术成熟阶段（也是新技术虚假冒充者阶段），新技术盲目乐观阶段，旧技术回光返照阶段，新技术完全胜利阶段。库兹韦尔列举了马车，留声机，电子书籍的例子，马车不赘述，留声机从爱迪生发明至 1949 年成熟，到如何被虚假冒充者——盒式磁带冲击，最终被 CD 彻底淘汰的例子完全符合这 7 个阶段的推演，而 kindle 等几年前就充当了虚假冒充者，但是很显然，所有人都能预见纸质书籍被彻底取代只是时间问题。</p>
+<p>现在，没几年就取代功能机的智能手机，也正在慢慢进入成熟期，相信很快，扰乱智能手机的虚假冒充者，即新技术介入者就会出现，是智能眼镜，智能手表，虚拟现实头盔，智能机器人，还是如雷·库兹韦尔所预言的“<strong>到21世纪的第二个十年，大部分计算将不会只是出现在这样的矩形设备中，而是分布在整个环境里，计算将无处不在，在墙里，在我们的家具里，在我们的衣服里，以及我们的身体和大脑里</strong>”，我未从可知。但是，如果我们相信技术的指数增长序列（越来越陡峭），那么真正的变革者会在蛰伏一段时间后一夜之间发生。</p>
+<p><img alt="" src="http://a.36krcnd.com/photo/2015/d938740e1a8a82a6ae10b9996c5b4ee9.png" /></p>
+<p><strong>第三个，连接的速度也在不断快速进化。</strong>Google 在美国田纳西州与堪萨斯州的一些城市已经为用户提供了每秒 1 千兆的宽带服务，而当人们还在讨论每秒千兆的意义在何处的时候，Google 已经在研发每秒 10 千兆的光纤传输技术了，而在实验室英国南安普顿大学的研究团队制造的光纤其速度接近了光速，即大约 10TB/S。除了传统光纤，美国马里兰大学的科学家却正在研制以空气为材质的新型光纤，即空气光纤，摆脱了固体材料性能的局限，可实现在太空中的任意地方进行超远距离通信。当我们还在质疑用户需不需要这么快的联网速度时，我们并不知道其实互联网已经早就超越了连接过去十几年主要局限于人与信息（狭义），人与人，人与商品的连接了。</p>
+<p>互联网的根本只是在于一个连接，但是当万事万物全部进行连接，连接的范畴越来广泛，连接的终端越来越强大，连接的速度越来越快，连接的交互方式越来越自然，使得看上去这个分布式网络是极速熵增的，但背后的实质却是负熵的，也即自组织的有规律的，这是非常可怕的力量。而真正最可怕的，互联网只有一个，再这么切割防御，互联网永远只有一个！<strong>所谓“后互联网时代”，其实就是集全世界的力量在共同打造一个云端神经大脑，人类以各种看似无序的方式有序的以上帝视角在创造另一个现实映射世界，精神世界，客观世界。</strong></p>
+<h3 id="2"><a name="user-content-2" href="#2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2、实体世界、精神世界、客观世界的连接</h3>
+<p>英国哲学家卡尔·波普尔（Karl R·Popper）将人类社会分组成三部分：<strong>实体世界（physical world）、精神或心理世界（mental/psychological world）以及人类思维产物的世界（world of products of the human mind）</strong>。</p>
+<p>所以，在波普尔的三世界理论中，我的理解是：第一世界是由物理世界构成，包括人类自身在内的全部宇宙自然界客体和事件组成的现实世界，我们称之为实体世界；第二世界是特指人类智慧生命在心理活动、心理状态等精神事件组成的熵增世界，我们称之为精神 / 心理世界；第三世界是由人类从精神世界中所有创造出来的思维产物再自组织的负熵世界，比如书籍创造的世界，绘画创造的世界，计算机创造的虚拟现实世界……</p>
+<p>互联网从 1995 年正式商业化而面向大众的这二十年，这三个世界都在相继被连接，最早脱颖而出的是连接实体世界的互联网产品。如雅虎的崛起（1994），中国各大门户，社会型动物在实体世界第一映射反应的就是社会事件，于是发生第一优先级的连接是比较正常的；电商的崛起也非常之早，如 Amazone（1995），Alibaba（1999），人类社会第二大活动即为经济事件，商业被最快速度连接也是合理的，只是各自的连接切入点，方式各不相同罢了；再如 Priceline（1998），携程（1999），连接人们旅行服务的需求也很顺理成章。</p>
+<p>与实体世界的连接差不多阶段，人类精神世界的连接也开始了。1995 年，MSN 网络正式开张，ICQ 于 1996 年诞生，OICQ1998 年上线。为什么将 MSN 类都归为第二世界的连接？在我看来，网络即时通讯工具从来旨不在通“讯”那么简单，核心通的还是人背后的精神状态，心理活动的连接，通的是各种欲望的连接。第二世界的连接一直在不断衍变，从 PC 客户端到网页端 Facebook（2004），Twitter（2006），再到移动端 WhatsApp（2009），微信（2011），Instagram（2012）。</p>
+<p>第三世界的连接最为特别，因为我们仔细研究会发现，前两个世界的连接都必须与人相关，或者说与人无关的连接是没有意义的，但在客观世界的连接，除了人与再组织的客观知识之间相连接之外，客观知识之间本身也会发生各种连接，也就是说客观世界是可以自成体系，是有自主连接能力，思考能力的，无数的计算机与计算机之间也可以通过人类思维制定的规则智能连接。应该说，互联网的诞生，最早的需求就是从人与客观世界的连接才发展起来的，只是雅虎最早的索引工具是手工输入的，最终集大成者是 Google（1998），百度（2000）。在第三世界，自搜索引擎的连接后，后继比较典型的就是问答类网站的出现，用问答的方式连接人类的思维产物，Quora（2009），知乎（2011）。</p>
+<p><strong>但是，三个世界的连接都在变化。</strong></p>
+<p>（1）<strong>实体世界的连接还在无限扩展，同时被全面虚拟化。</strong>实体世界的连接，随着移动互联网在连接方式上的巨大变化，其触角变得更广，从社会活动，商业活动，出行方式，涉及到了周边生活服务的连接，O2O 在信息、物流、服务、支付四大体系的连接实则是对过去互联网实体世界连接十几年发展积淀的一次综合检验；其二，各种廉价传感器的蓬勃发展，物联网也被纳入了本来纯以人为中心的互联网范畴，无数智能硬件必定不可逆的继续朝实体世界的全面数字化与万物联动而发展；其三，实体世界最后一块难啃没被连接的价值单元——货币，也将被虚拟金融打破区域集中化而真正网络化连接。当衣食住行全部数字化，然后被连接，人们在网络上就完成了现实世界的全面映射，完全生活在虚拟空间不是不可能了。</p>
+<p>（2）<strong>精神世界的连接趋于多元化，垂直细分化，四维化。</strong>这取决于经济基础上升后，人类的自我诉求会更加凸显，价值观更趋于丰富，在过去多奇葩多极品的人在全球几十亿分布节点下，不同细分的人群都可以在精神层面上得到连接；同时，在抛却物理空间的局限下，又能在时间维度上得到连接，完全不同价值观的人群，可以因为同一个情绪同一个事件，在不同的碎片时间得到共鸣。比如，我就很看好真正意义上以纯精神为主的虚拟恋爱服务，无数男女（不管老少）在精神上希望有恋爱的享受体验，但这种体验在虚拟空间因为超越肉体器官参数的束缚反而更容易实现，恋爱体验不应该只保鲜停留在青春时期，而可以做到随着不同时间阶段继续存续的体验，这在没有互联网尤其没有移动互联网的时代是做不到的。</p>
+<p>（3）<strong>客观世界的连接趋于人工智能化，所有人类思维的价值信息在类神经元的唯一一个互联网连接后，一定会自主学习，自主连接从而自主进化。</strong>为什么全球两大搜索引擎巨头都全力以赴、不遗余力地投身于人工智能的研究？因为唯有搜索引擎的连接背后纯粹是人机交互的，人类主动意识输入指令，机器通过数据挖掘与学习输出反馈，而人类的输入方式唯有几种，文字、语音、图像，所以机器只能围绕人类这几种输入方式来分别掌握语义、语音、图像识别技术，还不得不加成一个深度学习算法这样的吸血光环，所以，作为第三世界的典型应用搜索引擎，其连接朝人工智能衍变是必然也是不可逆的，而问答类网站的第三世界连接为人工智能积累了学习人类思维非常重要的一个数据库，也极具价值。</p>
+<p>（4）<strong>多重世界交叉连接，现实与虚拟的界限将越来越模糊。</strong>其一，所谓 AR（增强现实）实际上就是第一与第二世界的交叉连接，用户为何需要在现实世界中叠加虚拟场景？绝大多数真正有价值的应用场景是通过对第一世界的增强现实，辅助或加强用户在第二世界的感知。AR 应用价值的大规模实现需要两个前提，一个是实体世界的连接已经完全虚拟化，万物万事万人互联的基础已经完备，还有就是需要一个实现第一第二世界连接的非常好用的交互终端出现，目前来看 Google Glass 面临很大问题，微软 Hololens 也不好说。其二，以 CloudBrain 为超级承载的智能机器人出现（如 JIBO 这样的智能家庭机器人），就代表了第一世界与第三世界的连接开始 work，正是这一点又揭示了 Google 为何在一年之内连续收购 8 家机器人公司，还有 DeepMind 此类人工智能非常关键的深度学习算法公司。其三，所谓 VR（虚拟现实）就是第二与第三世界的连接，以 Facebook 收购的 Oculus 为代表，但是现在看来用户真正能够长时间融入 VR 世界而不对第一世界的人体本身造成任何影响还有很多问题亟需解决。</p>
+<p>我对三个世界相互交叉连接的当下看法：三个世界的交叉连接代表 AR，智能机器人，VR 中，AR 的价值应用场景还比较有限，基础连接还没完全到位，VR 除了游戏之外也很难快速切入，特别是对人体的健康伤害不彻底解决，瓶颈很大，两者都还面临着非常大的挑战，唯一最具可行性的当下反而可能是家用智能机器人的尝试。</p>
+<p>另外，畅想下未来的话，个人一直偏执的认为，人类未来必然会将三个世界融合，也就是第一第二第三世界融为一体，我是赞同雷库兹韦尔的人机（脑机）结合观点的，未来的生命必将是混合生命。人类本身也将被彻底数字化，固态生命虚无化，现实与虚拟皆是假象，这已涉及到哲学范畴，在此不作深度讨论，感兴趣者可观看一部电影《The Thirteenth Floor》。</p>
+<h3 id="3"><a name="user-content-3" href="#3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3、连接一切的价值所在</h3>
+<p>我对截止到 2014 年 12 月 31 日全球 TOP25 市值的 IT 企业进行了统计，其中涉及连接方式的企业（包括连接终端与连接介质）13 家，涉及三个世界连接的企业（包括第一、第二、第三世界）10 家，前者总市值 23812 亿美金，后者总市值 14530 亿美金，前者是后者的 1.64 倍。因为样本数只放到了 25 个，不一定很客观。但是有一点可以肯定的是，随着连接方式与三个世界的连接都将在未来几年发生重大变化时，这个榜单也会发生很大的变化。</p>
+<p><img alt="" src="http://a.36krcnd.com/photo/2015/b76690cca113ed22a0e32a456979f577.png" /></p>
+<h2 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>二、纠缠，纠缠，不断纠缠</h2>
+<h3 id="1_1"><a name="user-content-1_1" href="#1_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1、无纠缠不连接。</h3>
+<p>注意，这里的“纠缠”指的是量子力学“量子纠缠”的一个非学术性的通俗语义。所谓量子纠缠，是在量子力学中发现有共同来源的两个微观粒子之间存在着某种纠缠关系：即，不管它们被分开多远，对一个粒子扰动，另一个粒子（不管相距多远）立即就知道了。 量子纠缠的这种超距作用已经被世界上许多试验室证实，量子纠缠超越了人类对第一世界四维时空的理解，因其不受四维时空约束，从而是非局域的，它的一个潜在推理就是：<strong>万事万物在冥冥之中皆存在深层次的内在联系。</strong></p>
+<p>量子纠缠是物理学概念，借用这个概念是因为我发现互联网的三世界连接跟量子纠缠的“纠缠态”有类似之处，极具相关性联想。人类因为对财富的纠缠态，才会产生商品贸易的 B2B 连接以及各种证券交易的人性连接，一盆郁金香、一束兰花、一行字符串（比特币）都曾让我们疯狂，因为对性愉悦的纠缠态，才会产生各种陌生人社交应用，只要出现一个美女头像，无数雄性荷尔蒙本能驱动着去连接，因为对美的追求、自我存在感的纠缠态，才会需要无数美化皮囊的 P 图应用，自欺欺人的连接到虚拟世界以自我陶醉，对喜好之物价格的纠缠态才需要淘宝的连接让“屌丝们”得到些许安慰。再比如拿我们天使湾自己投资的一些项目来看，人类对爱情的痴怨纠缠态连接出了小恩爱，女人对每月来一次的悲喜交加纠缠态连接出了大姨吗，所有吃货对美食的纠缠态连接出了下厨房…………太多太多，无以复举，大家可自行推演。<strong>人类与种植在DNA里的各种欲望交织成万千纠缠态，这些纠缠态是超距的，是完全可以脱离空间，甚至时间的，只要有纠缠态，他们迟早会连接，即使没有互联网</strong>。</p>
+<p>所以，只要人类还没有摆脱肉身的各种欲望基因操控（很多是 DNA 代码里直接写入的参数），纠缠态就一直会存在。而只要人类的纠缠态还存在，那么围绕这些纠缠态的连接就不会停止，无论过去是通过喇叭，丝帛，壁画，纸张，还是现代的计算机与互联网，只是后者以指数型的增长全方位的加速与放大了连接。有些纠缠态随着经济基础与社会结构的变化会发生变化，比如文化喜好的纠缠态，但是多数纠缠态是不会变的，比如性、美食、健康、爱情。</p>
+<h3 id="2_1"><a name="user-content-2_1" href="#2_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2、交互成就一切纠缠态的连接</h3>
+<p>互联网过去的阶段性分法一直以终端的移动性来区分是有误区的，互联网的发展差异区分应该在于人机交互方式上。1981 年，第一台 PC 问世，驱动人机交互的方式是 DOS 磁盘操作系统，这种人机交互方式下是根本不可能普及到大众用户的，1983 年乔布斯推出 Lisa，是第一台采用图形用户界面（GUI）的个人电脑，但是可惜的是要价过高，GUI 的重大成就才使得计算机的普及，从而使得分布式互联网连接的可能，2007 年，iPhone 推出，iPhone 的划时代完全不是因为它的智能，比如 Symbian 操作系统与 MeeGo 操作系统的智能手机都要更早，而在于 iPhone 用电容屏改变了一切，在 GUI 通过 PC 时代日趋完善的基础上，苹果再次在人机交互方式上进行了重大革命性突破，触摸屏让人机交互更自然，使得所谓智能手机的“智能”才有所体现，然后以此为切入口，iPhone 彻底利用了手机的便携性而大大加强其他交互特性，如拍照，语音这些在 PC 机上天然受束缚的人机交互方式，最终大大释放了人类纠缠态的输入输出。</p>
+<p>我们可以这么说，是<strong>人机交互的成败决定了互联网连接的成败</strong>。人类的纠缠态在表现形式上当前无非文字、声音、图像、脑电波，于是从纯键盘，到 GUI 的键盘 + 鼠标，到 GUI 的触摸屏 + 麦克风 + 摄像头，再到去掉一切，通过语音语义识别、图像识别、手势识别、脑电波识别，人机交互越来越简单，越来越接近于人类自然的交互方式，这种变革进化是真正成就一切纠缠态被连接的核心基础。</p>
+<h3 id="3_1"><a name="user-content-3_1" href="#3_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3、纠缠越深，交互越多，价值越大。</h3>
+<p>所以，<strong>纠缠态背后是人性与欲望，交互是所有纠缠态的输入输出方式，连接是纠缠态的放大器</strong>。当一个互联网应用或服务其解决人类越深的纠缠态，越贴近人类本能或自然的交互方式，连接所覆盖的世界（包含三世界）越广大，那么自然它的价值也就越大。</p>
+<p>但是，不得不说的是，随着科技的不断发展，人类的纠缠态难道真的会一成不变吗？如上文所述，我是坚信人类必定会朝意识独立性方向发展，而且这是不可逆的。对科技不可逆的定义是什么？就是当一群人率先使用一项革命性科技，而非使用人群完全不在一个量级竞争时，那么这项科技最后覆盖所有人群只是时间问题，而且不可逆（某一时期的相对倒退在绝对时间长河中微不足道）。当一群人率先摆脱人类肉体束缚，纯粹在人机结合后的意识层面展开竞争而进入更高阶人类时，人类的纠缠态也会发生分化乃至发生极端的伦理冲突，但终究都是徒劳的。当然，这个变化来得没那么快罢了。</p>
+<h2 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>三、让美发生</h2>
+<h3 id="1_2"><a name="user-content-1_2" href="#1_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1、美是一切人类价值的终极追求</h3>
+<p><strong>深度的纠缠态，自然的交互体验，无所不在的连接，是人类这张唯一的网我所能预见的</strong>。然而，还有一个东西不能缺失，那就是“美”。纠缠态所“纠缠”的背后都与“美”相关。</p>
+<p>从三世界理论看，实体世界是美的，人之相貌气度，乐之节奏旋律，食之色香入味，这是现实背后的数字之美，精神世界是美的，所有种植在人类基因的欲望是美的，家庭的喜怒哀乐，爱情的悲喜相交，财富的杀伐涨落，这是生物逻辑的熵增之美，客观世界是美的，信息的不断结构化与精细化越来越展现它的负熵之美。</p>
+<p>映射到 IT 世界，从巨大的终端到 PC 机，笔记本，不断薄而精致的手机，终端在越来越美，GUI 的人机交互不仅仅视觉上越来越美，交互的方式也让人越来越自然而优雅，现实的一切之美在与虚拟世界的不断交叉融合中只会“变本加厉”的更美，甚至是创造出现实世界无法感受之美。</p>
+<p><strong>美，绝不仅仅是颜值，互联网的创业者们，咱让这个“世界”更美了吗？</strong></p>
+<hr />
+<p>关于【VC 说】：是36氪的一档品牌内容栏目，由关注、投资某一领域的天使和 VC 给出他们的行业观察、模式分析和趋势判断。作为投资人的你也可以分享你对创业者的各类建议和自己的投资心得。欢迎给我们投稿：tips at 36kr.com</p>
+<p>[本文来自读者的投稿，不代表36氪立场]</p></article></body></html>
