@@ -27,3 +27,19 @@
 否则，在别处打开的时候提示所打开的文件不存在。
 ![](http://mint-blog.qiniudn.com/si-file-not-exit-warning.png)
 所以，不要拷贝工程修改之前需要将打开的文件在Window List中关闭，否则，你可能修改的是拷贝之前的源文件，如果你只是在本地移动整个工程目录Window List。
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'mintisan';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
