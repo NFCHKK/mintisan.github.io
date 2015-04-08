@@ -28,12 +28,28 @@
 ![](http://mint-blog.qiniudn.com/si-file-not-exit-warning.png)
 所以，不要拷贝工程修改之前需要将打开的文件在Window List中关闭，否则，你可能修改的是拷贝之前的源文件，如果你只是在本地移动整个工程目录Window List。
 
+## 括号对歪问题
+
+默认设置情况下，SI的`{}`对其会自动多缩进一块，如下图所示。
+
+![](http://mint-blog.qiniudn.com/si-problem1.gif)
+
+这是SI自作聪明造成，可以在菜单栏中的`Options -> Document Options -> Auto Indent...`中设置如下
+
+![](http://mint-blog.qiniudn.com/si-problem2.png)
+
+完成修改之后，括号不会对歪了
+
+![](http://mint-blog.qiniudn.com/si-problem3.gif)
+
+
+
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = 'mintisan';
-    
+
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
