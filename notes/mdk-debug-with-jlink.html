@@ -1022,20 +1022,44 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>mdk-jlink-itm</title></head><body><article class="markdown-body"><h1 id="jlink-itm-printf"><a name="user-content-jlink-itm-printf" href="#jlink-itm-printf" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>复用 Jlink ITM 来使用 printf</h1>
+</style><title>mdk-debug-with-jlink</title></head><body><article class="markdown-body"><h1 id="j-link"><a name="user-content-j-link" href="#j-link" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>J-link 使用笔记</h1>
 <div class="toc">
 <ul>
-<li><a href="#jlink-itm-printf">复用 Jlink ITM 来使用 printf</a><ul>
-<li><a href="#_1">设置过程</a></li>
+<li><a href="#j-link">J-link 使用笔记</a><ul>
+<li><a href="#1itmonline">1.ITM(Online)</a></li>
+<li><a href="#2rttonlineoffline">2.RTT(Online/Offline)</a></li>
+<li><a href="#3j-scopeoffline">3.J-Scope(Offline)</a></li>
+<li><a href="#_1">结语</a></li>
 <li><a href="#_2">参考资料</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<p><code>printf</code>是嵌入式工程师性价比最高的调试工具。但是一般的串口会占用TX和RX两个引脚，如果有Jlink或者u-link等在线调试工具，那么我们就可以复用它们的引脚来复用<code>printf</code>，可以使我们在Debug的时候输出更多的信息。（当然，也只能在Debug的时候使用。）我们只需要在Debug Viewer的窗口静静地看着调试信息的输出。</p>
-<h2 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>设置过程</h2>
+<blockquote>
+<p>自动51时代以来，串口始终在嵌入式工程师的调试兵器谱是始终占有重要的一席之地。<br />
+但是随着以Cortex-M系列32位 MCU 的慢慢崛起，可以用的RAM和ROM也增加了1~2个数据量级，较大的空间也给软件的复杂性和不同的调试工具提供了发展的动力。<br />
+本文以 MDK+J-link+STM32F4 为例，介绍J-link可以使用的Online/Offline调试工具。</p>
+</blockquote>
+<p>注：此处的Online即为打开Debug，实时仿真条件下；Offline即为插着J-link，但是没有仿真的条件下，是个&rdquo;伪Offline&rdquo;。</p>
+<p>实验环境：</p>
+<ul>
+<li>MDK 4.72</li>
+<li>J-link V9</li>
+<li>STM32F407ZET6</li>
+</ul>
+<h2 id="1itmonline"><a name="user-content-1itmonline" href="#1itmonline" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.ITM(Online)</h2>
+<p>ITM的全称是<code>Instrumentation Trace Macrocel</code>，可以翻译成<code>指令跟踪宏单元</code>，它是ARM公司提供的一个可以用来输出MCU上一些信息的硬件模块，其通过输出到主控的那条线叫做<code>SWO</code>，所以也可以像J-link把这种方式叫做SWO调试方式，其实是一个东东。这里引用Corte-M3权威指南来对其进行简要的说明。</p>
+<blockquote>
+<p>ITM的一个主要用途，就是支持调试消息的输出（例如，printf格式的输出）ITM包含了32个刺激(stimulus)端口，允许不同的软件把数据输出到不同的端口，从而让调试主机可以把它们的消息分离开。通过编程“跟踪使能寄存器”，每个端口都可以独立地使能/除能，还可以允许或禁止用户进程对它执行写操作。 <br />
+ 与基于UART的文字输出不同，使用ITM 输出不会对应用程序造成很大的延迟。在ITM内部有一个FIFO，它使写入的输出消息得到缓冲。不过，为了安全起见，最好还是在写入前检查该FIFO被填满的程度。 <br />
+输出的消息被送往TPIU，然后可以通过“跟踪端口接口”或者“串行线接口”来收集<br />
+它们。在最终的代码中也无需移除产生调试消息的代码，而是可以把TRCENA位清零，这样ITM 就被除能，调试消息也不会输出，你也可以在一个“live”系统中开启消息输出。另外，通过设置跟踪使能寄存器，可以限定允许使用的端口。 <br />
+——《Chapter 16：基于 ITM 的软件跟踪》</p>
+</blockquote>
+<p>其MDK使用RTT的设置步骤如下：</p>
 <p>0.硬件端口设置<br />
-<img alt="" src="http://mint-blog.qiniudn.com/mdk-itm-port.jpg" /></p>
+<img alt="" src="http://mint-blog.qiniudn.com/mdk-itm-port.jpg" /><br />
+是的，仿真需要<code>SWDIO</code>和<code>SWCLK</code>两条线就好了，但是如果使用ITM，则需要<code>SWO</code>这第三条线，如果你发现添加如下代码之后，能单步运行通过，但是在输出窗口没有看到显示的输出信息，那么横游可能是这根线没有接上。</p>
 <p>1.添加 ITM 端口定义的寄存器代码</p>
 <pre><code class="c">#define ITM_Port8(n)    (*((volatile unsigned char *)(0xE0000000+4*n)))
 #define ITM_Port16(n)   (*((volatile unsigned short*)(0xE0000000+4*n)))
@@ -1071,7 +1095,7 @@ int fputc(int ch, FILE *f) {
 </code></pre><br />
 <img alt="" src="http://mint-blog.qiniudn.com/mdk-itm-hello.png" /></p>
 <p>7.为printf添加一点额外的信息</p>
-<p><pre><code class="c">#define __DEBUG__
+<pre><code class="c">#define __DEBUG__
 
 /* Debugger */
 
@@ -1080,12 +1104,56 @@ int fputc(int ch, FILE *f) {
 #else
 #define DEBUG_PRINT(format,...)
 #endif
-</code></pre><br />
-输出信息如下：<br />
-<img alt="" src="http://mint-blog.qiniudn.com/mdk-itm-DEBUG_PRINT.png" /></p>
+</code></pre>
+
+<p>输出信息如下：</p>
+<p><img alt="" src="http://mint-blog.qiniudn.com/mdk-itm-DEBUG_PRINT.png" /></p>
+<h2 id="2rttonlineoffline"><a name="user-content-2rttonlineoffline" href="#2rttonlineoffline" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2.RTT(Online/Offline)</h2>
+<p>关于什么是RTT，引用<a href="https://www.segger.com/jlink-real-time-terminal.html">官网</a>的说明如下：</p>
+<blockquote>
+<p>With RTT it is possible to output information from the target microcontroller as well as sending input to the application at a very high speed without affecting the target&rsquo;s real time behavior.</p>
+</blockquote>
+<p>其MDK使用RTT的设置步骤如下：</p>
+<p>1.下载<a href="http://download.segger.com/J-Link/RTT/RTT_Implementation_141217.zip">Download RTT Implementation and Sample Code</a></p>
+<p>2.将其源代码添加到你的工程</p>
+<p><img alt="RTT Source Files" src="http://upload-images.jianshu.io/upload_images/26219-95b06d11d210811f.png" /></p>
+<p>3.在你需要使用的应用中添加<code>#include "SEGGER_RTT.h"</code>头文件</p>
+<p>4.调用<code>SEGGER_RTT_printf</code>来输出调试信息。<strong>通道需要设置成为0。</strong></p>
+<pre><code class="c"> SEGGER_RTT_printf(0,&quot;PT_Task_Init is done via RTT.\n&quot;);
+</code></pre>
+
+<p>5.如果是Online启动调试器来进行调试，需要启动<code>JLinkRTTClient.exe</code>来显示信息。<br />
+（嗯，是的，在J-link的安装目录下能找到这些工具。）<br />
+<img alt="Online 调试信息输出" src="http://upload-images.jianshu.io/upload_images/26219-b88f4c08ac701570.png" /></p>
+<p>6.如果是Offline，则需要启动<code>JLinkRTTViewer.exe</code>来显示信息，当然，J-link还是需要插着的。</p>
+<p><img alt="RTT Viewer 设置" src="http://upload-images.jianshu.io/upload_images/26219-a40bfb99d020217a.png" /></p>
+<p><img alt="RTT Viewer 调试信息显示" src="http://upload-images.jianshu.io/upload_images/26219-481e757cf8f20421.png" /></p>
+<h2 id="3j-scopeoffline"><a name="user-content-3j-scopeoffline" href="#3j-scopeoffline" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3.J-Scope(Offline)</h2>
+<p>关于J-Scope是什么，引用<a href="https://www.segger.com/j-link-j-scope.html">官方</a>的说明如下：</p>
+<blockquote>
+<p>J-Scope is a software to analyze and visualize data on a microcontroller in real-time, while the target is running. It does not require features like SWO or any extra pin on the target, but uses the available standard debug port.</p>
+</blockquote>
+<p>其MDK使用J-Scope的设置步骤如下：</p>
+<p>1.进行常规设置</p>
+<p><img alt="J-Scope Configuration" src="http://upload-images.jianshu.io/upload_images/26219-589b93eab655ab01.png" /></p>
+<p>2.选择需要跟踪的变量</p>
+<p><img alt="J-Scope Symbol Selection" src="http://upload-images.jianshu.io/upload_images/26219-a320a515ba4d870f.png" /></p>
+<p>3.启动采样</p>
+<p><img alt="Paste_Image.png" src="http://upload-images.jianshu.io/upload_images/26219-a43868016d7faa8c.png" /></p>
+<p>4.图形化形式实时显示</p>
+<p><img alt="变量被事实显示" src="http://upload-images.jianshu.io/upload_images/26219-877663e73e4cb104.gif" /></p>
+<p>5.数值亦同步更新</p>
+<p><img alt="数值也在同步更新" src="http://upload-images.jianshu.io/upload_images/26219-e215d2938ae46eef.gif" /></p>
+<h2 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>结语</h2>
+<p>对于工具的态度：在不影响业务的情况下，试试新工具总是没有坏处的。</p>
 <h2 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>参考资料</h2>
 <ul>
-<li><a href="http://www.keil.com/support/man/docs/jlink/jlink_trace_itm_viewer.htm">http://www.keil.com/support/man/docs/jlink/jlink_trace_itm_viewer.htm</a></li>
-<li><a href="http://www.cnblogs.com/Bean-SkyWalker/archive/2013/01/17/2865037.html">http://www.cnblogs.com/Bean-SkyWalker/archive/2013/01/17/2865037.html</a></li>
-<li><a href="http://blog.csdn.net/hinyunsin/article/details/6546670">http://blog.csdn.net/hinyunsin/article/details/6546670</a></li>
+<li><a href="http://www.douban.com/note/248637026/">semihost/ITM机制浅析以及使用JLINK通过ITM调试stm32单片机</a></li>
+<li><a href="http://www.cnblogs.com/Bean-SkyWalker/archive/2013/01/17/2865037.html">摆脱UART,仅用JLink也能实现printf功能!!</a></li>
+<li><a href="http://www.keil.com/support/man/docs/jlink/jlink_trace_itm_viewer.htm">J-Link/J-Trace User&rsquo;s Guide: ITM Stimulus Ports - Keil</a></li>
+<li><a href="https://www.segger.com/j-link-swo-viewer.html">J-Link SWO Viewer</a></li>
+<li><a href="https://www.segger.com/jlink-real-time-terminal.html">Jlink Real Time Terminal</a></li>
+<li><a href="http://www.amobbs.com/thread-5595476-1-1.html">开贴研究：JLINK RTT，完爆各种printf形式，从此swo是路人</a></li>
+<li><a href="https://www.segger.com/j-link-j-scope.html">J-Scope - Real-Time Data Visualization</a></li>
+<li><a href="http://www.amobbs.com/thread-5596670-1-1.html">Jlink RTT弱爆了，Jlink Scope来啦！</a></li>
 </ul></article></body></html>

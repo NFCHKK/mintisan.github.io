@@ -1,4 +1,4 @@
-# 复用 Jlink ITM 来使用 printf
+# J-link 使用笔记
 
 
 [TOC]
@@ -7,7 +7,13 @@
 但是随着以Cortex-M系列32位 MCU 的慢慢崛起，可以用的RAM和ROM也增加了1~2个数据量级，较大的空间也给软件的复杂性和不同的调试工具提供了发展的动力。
 本文以 MDK+J-link+STM32F4 为例，介绍J-link可以使用的Online/Offline调试工具。
 
+注：此处的Online即为打开Debug，实时仿真条件下；Offline即为插着J-link，但是没有仿真的条件下，是个"伪Offline"。
 
+实验环境：
+
+- MDK 4.72
+- J-link V9
+- STM32F407ZET6
 
 ## 1.ITM(Online)
 
@@ -18,13 +24,14 @@ ITM的全称是`Instrumentation Trace Macrocel`，可以翻译成`指令跟踪�
  与基于UART的文字输出不同，使用ITM 输出不会对应用程序造成很大的延迟。在ITM内部有一个FIFO，它使写入的输出消息得到缓冲。不过，为了安全起见，最好还是在写入前检查该FIFO被填满的程度。 
 输出的消息被送往TPIU，然后可以通过“跟踪端口接口”或者“串行线接口”来收集
 它们。在最终的代码中也无需移除产生调试消息的代码，而是可以把TRCENA位清零，这样ITM 就被除能，调试消息也不会输出，你也可以在一个“live”系统中开启消息输出。另外，通过设置跟踪使能寄存器，可以限定允许使用的端口。 
-——《Chapter 16 基于 ITM 的软件跟踪》
+——《Chapter 16：基于 ITM 的软件跟踪》
 
 其MDK使用RTT的设置步骤如下：
 
 
 0.硬件端口设置
 ![](http://mint-blog.qiniudn.com/mdk-itm-port.jpg)
+是的，仿真需要`SWDIO`和`SWCLK`两条线就好了，但是如果使用ITM，则需要`SWO`这第三条线，如果你发现添加如下代码之后，能单步运行通过，但是在输出窗口没有看到显示的输出信息，那么横游可能是这根线没有接上。
 
 1.添加 ITM 端口定义的寄存器代码
 
@@ -117,7 +124,7 @@ printf("Hello\n");
 ```
 
 5.如果是Online启动调试器来进行调试，需要启动`JLinkRTTClient.exe`来显示信息。
-
+（嗯，是的，在J-link的安装目录下能找到这些工具。）
 ![Online 调试信息输出](http://upload-images.jianshu.io/upload_images/26219-b88f4c08ac701570.png)
 
 6.如果是Offline，则需要启动`JLinkRTTViewer.exe`来显示信息，当然，J-link还是需要插着的。
@@ -127,7 +134,7 @@ printf("Hello\n");
 ![RTT Viewer 调试信息显示](http://upload-images.jianshu.io/upload_images/26219-481e757cf8f20421.png)
 
 
-## 3.J-Scope(Online/Offline)
+## 3.J-Scope(Offline)
 
 
 关于J-Scope是什么，引用[官方](https://www.segger.com/j-link-j-scope.html)的说明如下：
