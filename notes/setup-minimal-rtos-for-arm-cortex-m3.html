@@ -1,0 +1,1514 @@
+<!DOCTYPE html><html><head>
+
+    <!-- responsive -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+
+
+<meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>setup-minimal-rtos-for-arm-cortex-m3</title></head><body><article class="markdown-body"><h1 id="rtos"><a name="user-content-rtos" href="#rtos" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>记一个最小RTOS的诞生</h1>
+<p>芯片平台：STM32F103系列<br />
+开发环境：MDK4.x+<br />
+使用工具：Sublime Text2，CoolFormat<br />
+固件版本：FWLIB 3.5<br />
+开发语言：C，ARM汇编+内敛汇编<br />
+代码地址：<a href="https://github.com/mintisan/Mint">https://github.com/mintisan/Mint</a></p>
+<p>摘要：其实吧，这个轮子已经被n多人造过了，但是对于菜鸟的我来说，通过再造一遍把思路理清楚的性价比还是蛮高的。但是要做到尽可能的小，那就是一个减法的过程，尽可能减少OS的作用，OS的作用是对硬件的抽象，就是一个夹在应用程序员和硬件之间的glue，它的效果是使每个程序员写的应用程序本身感觉起来像是独占着系统资源，如CPU，内存，I/O和硬盘等等，这里的“系统资源”在任务（程序）看来就是“上下文环境”，如果写成C代码来来看就是一个结构体，这个结构体里面有很多指针，这些个指针指向一些我们分配给它的内存，变量之类的东西，他们记录着任务的运行状态，我们可以通过这些上下文环境，也就是任务的运行状态来操作这些任务，如让他使用或者让出CPU的资源，因此对OS来说最核心的WHAT任务是任务的切换，然后在此基础之上再来谈HOW，即任务切换的策略。</p>
+<p>PS：其实，这是我事后写完之后的记录，我个人比较喜欢看别人写的过程思路，这样子的话，我就知道他在遇到某某问题的时候的解决思路的如何的，由于这个代码写完之后放了去敢毕业论文了，放了太久了，只能退而求其次来把结果再回忆一遍，其中的过程思路细节可能会丢失蛮多。</p>
+<div class="toc">
+<ul>
+<li><a href="#rtos">记一个最小RTOS的诞生</a><ul>
+<li><a href="#_1">新建一个工程</a></li>
+<li><a href="#app">编写裸机app</a><ul>
+<li><a href="#gpio">GPIO</a></li>
+<li><a href="#usart">USART</a></li>
+</ul>
+</li>
+<li><a href="#ucos">移植ucos的移植代码</a></li>
+<li><a href="#top-downsource">top-down思路写内核source</a><ul>
+<li><a href="#m_os_cfgh">m_os_cfg.h</a></li>
+<li><a href="#m_osh">m_os.h</a><ul>
+<li><a href="#1">说明1</a></li>
+<li><a href="#2">说明2</a></li>
+<li><a href="#_2">任务控制块</a></li>
+<li><a href="#_3">常用配置宏</a></li>
+<li><a href="#_4">系统全局变量</a></li>
+<li><a href="#_5">系统对内服务</a></li>
+<li><a href="#_6">系统对外服务</a></li>
+</ul>
+</li>
+<li><a href="#m_corec">m_core.c</a></li>
+<li><a href="#m_taskc">m_task.c</a></li>
+<li><a href="#m_timec">m_time.c</a></li>
+</ul>
+</li>
+<li><a href="#task">编写task</a><ul>
+<li><a href="#m_apph">m_app.h</a></li>
+<li><a href="#m_app_cfgh">m_app_cfg.h</a></li>
+<li><a href="#m_appc">m_app.c</a></li>
+</ul>
+</li>
+<li><a href="#main">main</a></li>
+<li><a href="#_7">结果</a></li>
+<li><a href="#_8">结语</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>新建一个工程</h2>
+<p>大致按照<a href="http://www.amobbs.com/thread-5416220-1-1.html">野火</a>的思路来搭建一个project的目录结构，其实在构建目录结构的同时，心里大致已经想好了在哪个目录放哪些文件，哪些文件里放哪些模块的代码。想起某人说过的一句话，“人类的所有事情都可以看成是分类的过程”。也就是说人类的大脑在对任何事情都在进行模式分类，正如最近很火的深度学习类似。扯远了，看MDK project的结构：</p>
+<p><img alt="" src="http://mint-blog.qiniudn.com/setup-rtos-mdk-project.png" /></p>
+<p>代码和目录结构和项目结构基本对应：</p>
+<p><img alt="" src="http://mint-blog.qiniudn.com/setup-rtos-mdk-dir.png" /></p>
+<p>由于我买了<a href="http://shop62103354.taobao.com/">原子</a>的Mini板子，其采用的MCU是STM32F103RB，所以MDK的环境主要配置如下：</p>
+<p><img alt="" src="http://mint-blog.qiniudn.com/setup-rtos-mdk-option.png" /></p>
+<p>主要是<code>Include Paths</code>的设置，把一些常用的头文件都包含进去，让MDK的环境自己去找头文件的所在，这时候在新建项目时就可以不把头文件包含进来了，不过一开始需要看它们，所以还是先包含进来，这样子可以少点一次鼠标。</p>
+<p>还有<code>Define</code>里面的<code>STM32F10X_MD</code>是指明采用芯片的类型是中等容量大小的（MD），这个在此处设置的宏定义会在<code>system_stm32f10x.c</code>中的如下代码106~116行中用到：<br />
+<pre><code class="c">#if defined (STM32F10X_LD_VL) || (defined STM32F10X_MD_VL) || (defined STM32F10X_HD_VL)
+/* #define SYSCLK_FREQ_HSE    HSE_VALUE */
+ #define SYSCLK_FREQ_24MHz  24000000
+#else
+/* #define SYSCLK_FREQ_HSE    HSE_VALUE */
+/* #define SYSCLK_FREQ_24MHz  24000000 */
+/* #define SYSCLK_FREQ_36MHz  36000000 */
+/* #define SYSCLK_FREQ_48MHz  48000000 */
+/* #define SYSCLK_FREQ_56MHz  56000000 */
+#define SYSCLK_FREQ_72MHz  72000000
+#endif
+</code></pre><br />
+这里我们看到如果按本文所示设置，则会进入<code>#else</code>分支，设置系统时钟为72MHz，正是芯片的系统频率。</p>
+<p>同理<code>USE_STDPERIPH_DRIVER</code>这个宏定义在<code>stm32f10x.h</code>中的8296~8298行起作用：<br />
+<pre><code class="c">#ifdef USE_STDPERIPH_DRIVER
+  #include &quot;stm32f10x_conf.h&quot;
+#endif
+</code></pre><br />
+这里说如果定义了宏<code>USE_STDPERIPH_DRIVER</code>，就将<code>stm32f10x_conf.h</code>这个文件包含进来，这个文件是用来选择我们将所用到哪些模块的库。在本文中用到的固件库出来基本都要用的misc和rcc，还有就是gpio和usart，gpio用来多任务测试，usart用来输出调试信息。<code>stm32f10x_conf.h</code>文件中的模块选择通过注释<code>//</code>来打开关闭，如代码26~50行所示：<br />
+<pre><code class="c">/* Includes ------------------------------------------------------------------*/
+/* Uncomment/Comment the line below to enable/disable peripheral header file inclusion */
+//#include &quot;stm32f10x_adc.h&quot;
+//#include &quot;stm32f10x_bkp.h&quot;
+//#include &quot;stm32f10x_can.h&quot;
+//#include &quot;stm32f10x_cec.h&quot;
+//#include &quot;stm32f10x_crc.h&quot;
+//#include &quot;stm32f10x_dac.h&quot;
+//#include &quot;stm32f10x_dbgmcu.h&quot;
+//#include &quot;stm32f10x_dma.h&quot;
+//#include &quot;stm32f10x_exti.h&quot;
+//#include &quot;stm32f10x_flash.h&quot;
+//#include &quot;stm32f10x_fsmc.h&quot;
+#include &quot;stm32f10x_gpio.h&quot;
+//#include &quot;stm32f10x_i2c.h&quot;
+//#include &quot;stm32f10x_iwdg.h&quot;
+//#include &quot;stm32f10x_pwr.h&quot;
+#include &quot;stm32f10x_rcc.h&quot;
+//#include &quot;stm32f10x_rtc.h&quot;
+//#include &quot;stm32f10x_sdio.h&quot;
+//#include &quot;stm32f10x_spi.h&quot;
+//#include &quot;stm32f10x_tim.h&quot;
+#include &quot;stm32f10x_usart.h&quot;
+//#include &quot;stm32f10x_wwdg.h&quot;
+#include &quot;misc.h&quot; /* High level functions for NVIC and SysTick (add-on to CMSIS functions) */
+</code></pre></p>
+<h2 id="app"><a name="user-content-app" href="#app" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>编写裸机app</h2>
+<p><img alt="" src="http://mint-blog.qiniudn.com/setup-rtos-app.png" /></p>
+<h3 id="gpio"><a name="user-content-gpio" href="#gpio" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>GPIO</h3>
+<p>用GPIO来写的LED跑马灯程序就是嵌入式中的“Hello World”，因为是使用库文件，所以这个程序过程相对比较简单，可以参考<a href="http://www.amobbs.com/thread-5490719-1-1.html">野火</a>或者<a href="http://openedv.com/forums/show/2.htm;jsessionid=18A71B1D2A90AD9D072B5AD6D36FE0FA">原子</a>的教程都是不错的选择。本文中设置两个LED轮流亮灭：PA8和PD2两个端口。</p>
+<h3 id="usart"><a name="user-content-usart" href="#usart" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>USART</h3>
+<p><em>串口是嵌入式开发人员性价比最高的调试工具，木有之一。</em>其实话说非嵌入式程序员也会经常使用<code>print</code>来通过查看程序的一些状态变量来确实的程序的运行状况，但是在对嵌入式工程师来说串口调试的地位显著提高，因为通过调试器来设置断点的代(jia)价(ge)稍(zhen)微(xin)有(hen)点(gui)大(a)。</p>
+<p>在STM32的串口上，可以通过一篇博文（好吧，待续吧）来讨论，因为还是有点东西的，如是否通过ARM公司自带的MicroLib库来，是否通过中断来实现，如何减少printf的时间，如通过缓存+DMA来实现，具体可以查看<a href="http://www.amobbs.com/search.php?mod=forum&amp;searchid=855&amp;orderby=lastpost&amp;ascdesc=desc&amp;searchsubmit=yes&amp;kw=USART">AMOBBS</a>来查询，代码的话野火和原子的都可以，建议采用库文件跑起来看看，然后可以再学习如何通过不同的方式实现printf，最后可以看一下原子的寄存器版本。</p>
+<h2 id="ucos"><a name="user-content-ucos" href="#ucos" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>移植ucos的移植代码</h2>
+<p>在ucos移植上，也是可以通过一篇博文（好吧，待续吧）来讨论，虽然也有居多的人造过相同的轮子，但是我觉得还是有的玩的地方地方，比如讲一些汇编代码改写成C代码和内敛汇编，这样在文件后缀名层面上至少全是.c和.h结尾的了XD。<a href="http://www.amobbs.com/thread-5490719-1-1.html">野火</a>的那个版本是很详细的，也可以看我的一次<a href="http://pan.baidu.com/s/1jGmNuUa">ucos-iii的作业</a>。</p>
+<p><img alt="" src="http://mint-blog.qiniudn.com/setup-rtos-os-port.png" /></p>
+<h2 id="top-downsource"><a name="user-content-top-downsource" href="#top-downsource" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>top-down思路写内核source</h2>
+<p><img alt="" src="http://mint-blog.qiniudn.com/setup-rtos-os-source.png" /></p>
+<h3 id="m_os_cfgh"><a name="user-content-m_os_cfgh" href="#m_os_cfgh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>m_os_cfg.h</h3>
+<p>因为力求简单，所示任务调度算法采用最简单的方法（详见后面），也没有过多的配置，因此<code>m_os_cfg.h</code>为空文件，简单的任务数配置均放在<code>m_os.h</code>中。</p>
+<h3 id="m_osh"><a name="user-content-m_osh" href="#m_osh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>m_os.h</h3>
+<h4 id="1"><a name="user-content-1" href="#1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>说明1</h4>
+<p>首先说下一个在<a href="http://book.douban.com/subject/21317828/">《征服C指针》</a>中看到的一个防重定义的小技巧，它可以标识一个变量是否为全局变量。<br />
+首先，在头文件m_os.h中定义如下选择宏，外加一些全局变量。<br />
+<pre><code class="c">#ifdef GLOBAL_VAR
+#define GLOBAL
+#else
+#define GLOBAL extern
+#endif
+
+/* 系统全局变量 */
+GLOBAL uint32_t m_prio_tbl[N_TASKS/32+1];
+
+GLOBAL m_tcb*   m_cur_tcb;
+GLOBAL m_tcb*   m_high_tcb;
+
+</code></pre><br />
+然后，在C文件m_core.c中的开始之处加上：<br />
+<pre><code class="c">#define GLOBAL_VAR
+
+#include &quot;m_os.h&quot;
+
+</code></pre></p>
+<p>最后，就ok了，这样就实现了<strong>变量写在头文件，声明在头文件，定义在某个源文件,到处可以被使用</strong>。</p>
+<h4 id="2"><a name="user-content-2" href="#2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>说明2</h4>
+<p>在<code>typedef</code>类型上面，采用<code>stdint.h</code>中的统一规定，示例如下：<br />
+<pre><code class="c">    /* exact-width signed integer types */
+typedef   signed          char int8_t;
+typedef   signed short     int int16_t;
+typedef   signed           int int32_t;
+typedef   signed       __int64 int64_t;
+
+    /* exact-width unsigned integer types */
+typedef unsigned          char uint8_t;
+typedef unsigned short     int uint16_t;
+typedef unsigned           int uint32_t;
+typedef unsigned       __int64 uint64_t;
+</code></pre></p>
+<h4 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>任务控制块</h4>
+<p>其实就是保存任务上下文的结构体，貌似不能再小了，如下：<br />
+<pre><code class="c">typedef struct m_tcb{
+    uint32_t*   sp;        //堆栈指针
+    uint32_t    ticks;            //系统“滴答”时钟
+}m_tcb;
+</code></pre><br />
+<code>sp</code>的每一个任务的私有堆栈，用来保存任务的一些上下文，如pc，通用寄存器r0~r12，状态寄存器xPSR等，用于恢复现场的；<code>ticks</code>是记录任务的运行时钟的，和STM32的系统时钟Systick挂钩，用来记录任务运行了好久（时间片），现阶段主要用来编写延迟函数。</p>
+<h4 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>常用配置宏</h4>
+<p>任务数目，这里分为系统任务和用户任务，目前系统任务就一个空闲任务，当然可以像ucos中再设置个统计任务之类的。<br />
+<pre><code class="c">#define USER_TASKS  300
+#define SYS_TASKS   2
+#define N_TASKS     (USER_TASKS+SYS_TASKS)
+</code></pre></p>
+<h4 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>系统全局变量</h4>
+<pre><code class="c">
+GLOBAL m_tcb tcb[N_TASKS];            //任务数个TCB
+
+/* 记录任务优先级的查询表 */
+GLOBAL uint32_t m_prio_tbl[N_TASKS/32+1];
+
+GLOBAL m_tcb*   m_cur_tcb;        //当前运行任务tcb指针
+GLOBAL m_tcb*   m_high_tcb;    //最高就绪任务tcb指针
+
+GLOBAL uint32_t m_cur_prio;    //当前运行任务优先级
+GLOBAL uint32_t m_high_prio;    //最高就绪任务tcb优先级
+
+GLOBAL uint32_t m_int_nest;        //中断嵌套层数，可不要
+
+GLOBAL uint32_t m_time;               //系统开始运行时间
+
+/* 关于空闲任务的一些配置和变量 */
+#define IDLE_PRIO (N_TASKS-1)               //空闲任务优先级，最低
+#define IDLE_STK_SIZE   100                 //空闲任务优先级的私有栈大小
+GLOBAL uint32_t m_idle_stk[IDLE_STK_SIZE];  //栈空间
+void m_idle_task(void* pdata);              //空闲任务
+</code></pre>
+
+<h4 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>系统对内服务</h4>
+<pre><code class="c">void m_sched(void);                         //任务调度函数，在此函数内会发生任务切换
+uint32_t* m_init_sp(m_task task, uint32_t* sp);     //在任务创建函数m_create_task中被调用，初始化任务的堆栈空间，就像刚被中断过一样
+
+void m_set_prio(uint32_t prio);                 //当任务就绪时，在任务就绪表中占个坑
+void m_reset_prio(uint32_t prio);                   //当任务无法获取资源时，清楚此任务在就绪表中坑
+void m_get_high_prio(void);                     //获取优先级最高的就绪任务优先级
+
+void m_enter_int(void);                         //进入临界区，因为此后需要操作全局变量
+void m_tick_time(void);                         //系统时钟，放在系统滴答中断SysTick_Handler中
+void m_exit_int(void);                          //退出临界区，操作完毕
+
+</code></pre>
+
+<h4 id="_6"><a name="user-content-_6" href="#_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>系统对外服务</h4>
+<pre><code class="c">
+void m_init(void);                                      //系统初始化，此处仅仅用来初始化系统空闲任务
+void m_start(void);                                     //开始运行最高就绪任务，在此之前需要m_create_task一些任务
+
+void m_create_task(m_task task, uint32_t*  sp, uint32_t prio);  //创建任务，在m_start之前创建一些任务供MOS调度
+void m_delete_task(uint32_t prio);                      //删除任务，从MOS中消失,但由于内存空间是静态分配，所以还是占着内存
+
+void m_delay_time(uint32_t prio, uint32_t ticks);               //延时函数，用于让出MCU的资源
+</code></pre>
+
+<p><strong>总结：<code>m_os.h</code>和<code>ucosii.h</code>类似，记录着整个系统的变量声明和函数声明，变量的定义可以按照《征服C指针》的技巧如自己所愿来定义到任何一个C文件，函数的话，或者称为服务可能更好一点，分为内部和外部，对外的函数只有简单的5个，能实现简单的延时来让出MCU，其实就是拿来写个<code>高效利用MCU的流水灯</code>，XD</strong></p>
+<h3 id="m_corec"><a name="user-content-m_corec" href="#m_corec" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>m_core.c</h3>
+<p>与内核相关的函数均定义在此函数内，不过在操作全局变量的时候没有加入临界区保护的进出代码。<br />
+<pre><code class="c">void m_init(void)
+{
+    m_create_task(m_idle_task,&amp;m_idle_stk[IDLE_STK_SIZE-1],IDLE_PRIO);
+}
+
+/*
+    1. 获取创建的最高任务的优先级
+    2. 设置一些全局变量
+    3. 最高优先级任务，走你
+*/
+void m_start(void)
+{
+    m_get_high_prio();
+
+    m_cur_prio = m_high_prio;
+    m_cur_tcb = &amp;tcb[m_cur_prio];
+    m_high_tcb = &amp;tcb[m_high_prio];
+
+    m_start_high();
+}
+/*
+    1. 有人被延时（阻塞）了，所以看看有没有更高的就绪任务在
+    2. 如果是则
+        2.1 设置最该优先级以及当前优先级栈地址
+        2.2 切换任务
+*/
+void m_sched(void)
+{
+    m_get_high_prio();
+    m_enter_critical();
+    if(m_high_prio != m_cur_prio)
+    {
+        /* 此处的顺序是有讲究的，上下文切换需要的是旧的栈地址m_cur_tcb，新的栈地址m_high_tcb，以及新的优先级m_cur_prio */
+        m_cur_tcb = &amp;tcb[m_cur_prio];
+        m_high_tcb = &amp;tcb[m_high_prio];
+        m_cur_prio = m_high_prio;
+        m_exit_critical();
+        m_switch_task();
+    }
+    else
+    {
+        m_exit_critical();
+    }
+}
+/*
+    告诉OS一声：我进入中断了
+*/
+void m_enter_int(void)
+{
+    m_int_nest++;
+}
+/*
+    1. 记录系统运行时间+1
+    2. 遍历TCB对delay参数减一
+    3. 再看看有没有任务延时到期
+    4. 如果有，则
+        4.1 设置任务状态
+*/
+void m_tick_time(void)
+{
+    uint32_t i;
+    m_time++;
+    for(i = 0;i &lt; N_TASKS;i++)      //数组循环（省空间） or 链表遍历（省时间）
+    {
+        if(tcb[i].ticks != 0)
+        {
+            tcb[i].ticks--;
+            if(tcb[i].ticks == 0)
+            {
+                m_set_prio(i);
+            }
+        }
+    }
+}
+/*
+    1. 嵌套层数减一
+    2. 启动任务调度函数看看有没有高优先级任务被就绪
+*/
+void m_exit_int(void)
+{
+    m_int_nest--;
+    m_sched();
+}
+</code></pre></p>
+<h3 id="m_taskc"><a name="user-content-m_taskc" href="#m_taskc" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>m_task.c</h3>
+<p>任务的创建和删除函数在此处定义，任务优先级的设置也在此文件中定义<br />
+<pre><code class="c">
+/*
+    在任务就绪的时候，在任务就绪表中占个坑，此函数
+    仅在m_tick_time中北检测延时到否，到了设置为就绪
+*/
+void m_set_prio(uint32_t prio)
+{
+    m_prio_tbl[prio &gt;&gt; 5] |= (0x01 &lt;&lt; (prio % 32 ));
+}
+
+/*
+    与m_set_prio执行相反的操作，在延时m_delay_time的时候被调用
+*/
+void m_reset_prio(uint32_t prio)
+{
+    m_prio_tbl[prio &gt;&gt; 5] &amp;= ~(0x01 &lt;&lt; (prio % 32 ));
+}
+
+/*
+    在m_start和m_sched中北调用，因为MOS总是运行优先级最高的就绪任务
+*/
+void m_get_high_prio(void)
+{
+    uint32_t prio = 0;
+    uint32_t grp = 0;
+    while(m_prio_tbl[grp] == 0)
+        grp++;
+
+    while((m_prio_tbl[grp] &amp; (0x01 &lt;&lt; prio)) == 0)
+        prio++;
+    m_high_prio = (grp &lt;&lt; 5) + prio;
+}
+
+/*
+    创建一个新的任务，参数参考ucos
+*/
+void m_create_task(m_task task, uint32_t* sp, uint32_t prio)
+{
+    tcb[prio].sp = m_init_sp(task,sp);
+    tcb[prio].ticks = 0;
+    m_set_prio(prio);
+}
+
+/*
+    任务删除函数可以删除任意状态的任务，
+    只有当其删除自身（即RUNNING状态），会引起调度。
+*/
+void m_delete_task(uint32_t prio)
+{
+    m_reset_prio(prio);
+    m_get_high_prio();
+    if( prio == m_cur_prio)
+        m_sched();
+}
+
+/*
+    被m_init调用，当MCU空闲时运行此任务
+    可以再此处加入hook函数啥的来检测系统的状态
+*/
+void m_idle_task(void* pdata)
+{
+    static uint32_t counter;
+    while(1)
+    {
+        counter++;
+    }
+}
+
+</code></pre></p>
+<h3 id="m_timec"><a name="user-content-m_timec" href="#m_timec" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>m_time.c</h3>
+<p>只有一个延时函数用于让出MCU的资源<br />
+<pre><code class="c">/*
+    延时函数，用于让出MCU资源
+*/
+void m_delay_time(uint32_t prio, uint32_t ticks)
+{
+    m_enter_critical();
+    tcb[prio].ticks = ticks;
+    m_reset_prio(prio);
+    m_exit_critical();
+
+    m_sched();
+}
+</code></pre></p>
+<h2 id="task"><a name="user-content-task" href="#task" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>编写task</h2>
+<p><img alt="" src="http://mint-blog.qiniudn.com/setup-rtos-os-task.png" /></p>
+<h3 id="m_apph"><a name="user-content-m_apph" href="#m_apph" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>m_app.h</h3>
+<p>此处本来用来放任务相关的变量声明，但是现在比较简单，故为空文件。</p>
+<h3 id="m_app_cfgh"><a name="user-content-m_app_cfgh" href="#m_app_cfgh" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>m_app_cfg.h</h3>
+<p>任务参数配置头文件。与ucos类似。<br />
+<pre><code class="c">//任务堆栈大小定义
+#define TASK_START_SIZE 50
+#define TASK0_TCB_SIZE  50
+#define TASK1_TCB_SIZE  50
+
+//任务堆栈定义
+APP uint32_t START_STK[TASK_START_SIZE];
+APP uint32_t TASK0_STK[TASK0_TCB_SIZE];
+APP uint32_t TASK1_STK[TASK1_TCB_SIZE];
+//任务优先级定义
+#define Start_Prio 0
+#define Task0_Prio 128
+#define Task1_Prio 64
+//任务定义
+void StartTask(void *pdata);
+void Task0(void *pdata);
+void Task1(void *pdata);
+
+</code></pre></p>
+<h3 id="m_appc"><a name="user-content-m_appc" href="#m_appc" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>m_app.c</h3>
+<p>任务函数定义之处。<br />
+<pre><code class="c">//启动任务，在创建其他两个任务之后自我毁灭
+void StartTask(void *pdata)
+{
+    SysTick_Configuration();
+
+    m_create_task(Task0,&amp;TASK0_STK[TASK0_TCB_SIZE-1],Task0_Prio);
+    m_create_task(Task1,&amp;TASK1_STK[TASK1_TCB_SIZE-1],Task1_Prio);
+
+    /* 建立其他任务之后删除自己，但是其实空间还是被占据的 */
+    m_delete_task(Start_Prio);
+}
+
+//控制LED0
+void Task0(void *pdata)
+{
+    pdata = pdata;
+    while(1)
+    {
+        //__current_sp()为MDK自带的特殊函数，可直接获得SP的地址
+        uint32_t Task0SP = __current_sp();
+        printf(&quot;Task0's SP is %X \r\n&quot;,Task0SP);
+
+        m_delay_time(Task0_Prio,500);
+        GPIO_ResetBits(GPIOA, GPIO_Pin_8);
+        m_delay_time(Task0_Prio,500);
+        GPIO_SetBits(GPIOA, GPIO_Pin_8);
+    }
+}
+
+//控制LED1
+void Task1(void *pdata)
+{
+    pdata = pdata;
+    while(1)
+    {
+        uint32_t Task1SP = __current_sp();
+        printf(&quot;Task1's SP is %X \r\n&quot;,Task1SP);
+
+        m_delay_time(Task1_Prio,500);
+        GPIO_SetBits(GPIOD, GPIO_Pin_2);
+        m_delay_time(Task1_Prio,500);
+        GPIO_ResetBits(GPIOD, GPIO_Pin_2);
+
+    }
+}
+</code></pre></p>
+<h2 id="main"><a name="user-content-main" href="#main" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>main</h2>
+<p>好吧，一般都是从main函数入手开始写，此处把它放在最后，但是确实最简单的形式了。<br />
+<pre><code class="c">int main(void)
+{
+    BSP_Init();     //板级资源初始化
+
+    m_init();           //MOS系统初始化
+
+    //创建启动任务
+    m_create_task(StartTask,&amp;START_STK[TASK_START_SIZE-1],Start_Prio);
+
+    //启动MOS系统
+    m_start();
+
+    //永远不会返回
+    return 0;
+}
+
+</code></pre></p>
+<h2 id="_7"><a name="user-content-_7" href="#_7" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>结果</h2>
+<p>设置debug为<code>use simulator</code>即可，然后开始调试并且运行。<br />
+打开<code>view</code>中的<code>usart1</code>和<code>Peripherals</code>中的<code>GPIOA</code>和<code>GPIOD</code>，可观察PA8和PD2交替亮灭和串口输出如下信息：</p>
+<p><img alt="" src="http://mint-blog.qiniudn.com/setup-rtos-mdk-simulation-result.png" /></p>
+<h2 id="_8"><a name="user-content-_8" href="#_8" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>结语</h2>
+<p>其实，这篇博文的思维过程相对薄弱，在模块中可能重新组织，有点效果，但是在模块之间的编写过程中是交叉进行的，哪有可能一次就搞定的，只是按照事后总结的过程进行<strong>罗列</strong>和分类。</p></article></body></html>
