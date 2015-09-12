@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="HandheldFriendly" content="true">
 
-
 <meta charset="utf-8"><style>body {
   width: 45em;
   border: 1px solid #ddd;
@@ -1030,6 +1029,12 @@ body .markdown-body
 <li><a href="#_1">编译内核</a></li>
 <li><a href="#_2">编译驱动</a></li>
 <li><a href="#adb">ADB 使用</a></li>
+<li><a href="#log">log 信息过滤</a><ul>
+<li><a href="#colout">colout</a></li>
+<li><a href="#grep">grep</a></li>
+<li><a href="#awk">awk</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1316,6 +1321,36 @@ fastboot reboot
 ➜  adb devices
 </code></pre>
 
+<h2 id="log"><a name="user-content-log" href="#log" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>log 信息过滤</h2>
+<p>由于 adb 输出的 log 信息 非常多，需要将其过滤，只输出或者高亮我们需要的关键字。</p>
+<p>其实，字符处理向来是 Linux 工具的强项，只不过都是 CLI 的，需要有一定的学习成本<br />
+。如 <a href="https://en.wikipedia.org/wiki/Grep">grep</a>， <a href="https://en.wikipedia.org/wiki/AWK">awk</a> 或者<a href="http://nojhan.github.io/colout/">colout</a>。</p>
+<h3 id="colout"><a name="user-content-colout" href="#colout" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>colout</h3>
+<blockquote>
+<p>colout is a simple command to add colors to a text stream in your terminal.</p>
+</blockquote>
+<p>在 Windows 下用过 <a href="http://www.powercmd.com/">PowerCMD</a> 的都知道它有一个很简单粗暴的功能：<strong>高亮关键字</strong>。当然，多标签，分栏，可选复制文字，保存log文件和显示行号等等都是蛮不错的<a href="http://www.powercmd.com/features.php">功能</a>，比自带的CMD强多了。</p>
+<p><img alt="" src="http://mint-blog.qiniudn.com/ld-env-FeatureHighlight.jpg" /></p>
+<p>a.其实使用 colout 单个关键字非常简单，比如将驱动信息中包含 <code>foo</code> 关键字高亮为红色。</p>
+<pre><code>➜  adb shell cat /proc/kmsg | colout &quot;foo&quot; red
+</code></pre>
+
+<p>b. 比如高亮包含并加粗关键字 <code>foo</code> 的所在行为红色。<br />
+<pre><code>➜  adb shell cat /proc/kmsg | colout &quot;^.*foo.*$&quot; red bold
+</code></pre></p>
+<p>c.再比如高亮多个关键字为不同的颜色</p>
+<p>多关键字高亮可以参考本人在其 <a href="https://github.com/nojhan/colout/issues/77">Issue 77</a> 上的提问答案：</p>
+<p>可以使用 <code>|</code> 来连接</p>
+<pre><code>➜  adb shell cat /proc/kmsg | colout &quot;foo&quot; red | colout &quot;bar&quot; yellow
+</code></pre>
+
+<p>也可以使用更高效率的正则表达式方式</p>
+<pre><code>➜  adb shell cat /proc/kmsg  | colout &quot;(foo).*(bar)&quot; red,yellow
+</code></pre>
+
+<p>以上简单的使用可以应付绝大多数场合，如果想让 log 显示的更加酷炫，查询 <code>colout -h</code>来查看其他命令，也可以参考<a href="http://nojhan.github.io/colout/">官方的使用指南</a>。</p>
+<h3 id="grep"><a name="user-content-grep" href="#grep" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>grep</h3>
+<h3 id="awk"><a name="user-content-awk" href="#awk" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>awk</h3>
 <p>好了，整个驱动开发的环境搭建完成，可以开启驱动学习之路了。</p>
 <div class="footnote">
 <hr />

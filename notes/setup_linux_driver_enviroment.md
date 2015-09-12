@@ -351,6 +351,65 @@ c.保存并重启 adb 服务
 ➜  adb devices
 ```
 
+
+## log 信息过滤
+
+由于 adb 输出的 log 信息 非常多，需要将其过滤，只输出或者高亮我们需要的关键字。
+
+其实，字符处理向来是 Linux 工具的强项，只不过都是 CLI 的，需要有一定的学习成本
+。如 [grep](https://en.wikipedia.org/wiki/Grep)， [awk](https://en.wikipedia.org/wiki/AWK) 或者[colout](http://nojhan.github.io/colout/)。
+
+### colout
+
+> colout is a simple command to add colors to a text stream in your terminal.
+
+
+在 Windows 下用过 [PowerCMD](http://www.powercmd.com/) 的都知道它有一个很简单粗暴的功能：**高亮关键字**。当然，多标签，分栏，可选复制文字，保存log文件和显示行号等等都是蛮不错的[功能](http://www.powercmd.com/features.php)，比自带的CMD强多了。
+
+![](http://mint-blog.qiniudn.com/ld-env-FeatureHighlight.jpg)
+
+
+a.其实使用 colout 单个关键字非常简单，比如将驱动信息中包含 `foo` 关键字高亮为红色。
+
+```
+➜  adb shell cat /proc/kmsg | colout "foo" red
+```
+
+
+b. 比如高亮包含并加粗关键字 `foo` 的所在行为红色。
+```
+➜  adb shell cat /proc/kmsg | colout "^.*foo.*$" red bold
+```
+
+c.再比如高亮多个关键字为不同的颜色
+
+多关键字高亮可以参考本人在其 [Issue 77](https://github.com/nojhan/colout/issues/77) 上的提问答案：
+
+可以使用 `|` 来连接
+
+```
+➜  adb shell cat /proc/kmsg | colout "foo" red | colout "bar" yellow
+```
+
+
+也可以使用更高效率的正则表达式方式
+
+```
+➜  adb shell cat /proc/kmsg  | colout "(foo).*(bar)" red,yellow
+```
+
+
+以上简单的使用可以应付绝大多数场合，如果想让 log 显示的更加酷炫，查询 `colout -h`来查看其他命令，也可以参考[官方的使用指南](http://nojhan.github.io/colout/)。
+
+### grep
+
+
+
+### awk
+
+
+
+
 好了，整个驱动开发的环境搭建完成，可以开启驱动学习之路了。
 
 [^1]: [Writing device drivers in Linux: A brief tutorial](http://www.freesoftwaremagazine.com/articles/drivers_linux)
