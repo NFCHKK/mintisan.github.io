@@ -328,6 +328,29 @@ fastboot reboot
 ➜  adb shell
 ```
 
+如果遇到 adb `error: insufficient permissions for device`错误如下，则需要将当前手机的vendor id手动过添加到规则表中，步骤如下：
+
+a.连接手机，并 `lsusb` 来查看 待添加手机的vendor id。
+
+![](http://mint-blog.qiniudn.com/ld-env-lsusb.png)
+
+b.将手机添加到规则表
+
+```shell
+➜  sudo vi /etc/udev/rules.d/51-android.rules  
+```
+
+![](http://mint-blog.qiniudn.com/ld-env-idvendor-idproduct.jpg)
+
+c.保存并重启 adb 服务
+
+```shell
+➜  chmod 777 /etc/udev/rules.d/51-android.rules
+➜  adb kill-server
+➜  adb start-server
+➜  adb devices
+```
+
 好了，整个驱动开发的环境搭建完成，可以开启驱动学习之路了。
 
 [^1]: [Writing device drivers in Linux: A brief tutorial](http://www.freesoftwaremagazine.com/articles/drivers_linux)
