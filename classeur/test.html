@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My first file</title>
+<link rel="stylesheet" href="http://app.classeur.io/base-min.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="export-container"><h1 id="linux-驱动开发环境搭建（tiny--4412）">Linux 驱动开发环境搭建（Tiny  4412）</h1>
+<div class="toc"><ul><li><a href="#linux-驱动开发环境搭建（tiny--4412）">Linux 驱动开发环境搭建（Tiny  4412）</a><ul><li><a href="#编译内核">编译内核</a></li><li><a href="#编译驱动">编译驱动</a></li><li><a href="#adb-使用">ADB 使用</a></li><li><a href="#log-信息过滤">log 信息过滤</a><ul><li><a href="#colout">colout</a></li><li><a href="#grep">grep</a></li><li><a href="#awk">awk</a></li></ul></li></ul></li></ul></div><h2 id="编译内核">编译内核</h2>
+<p>先去<a href="http://www.arm9home.net/">友善之臂</a>下载开发板对应的光盘资源，如<a href="http://www.arm9home.net/read.php?tid-80883.html">FriendlyARM-4412-DVD-20150716</a>。</p>
+<p>解压之后的目录如下：</p>
+<pre><code>.
+├── Disk-A
+│   ├── Android
+│   ├── Datasheet
+│   ├── Linux                                   # Linux内核源代码所在目录
+│   ├── SamsungAP
+│   ├── Schematic-PCB
+│   ├── Tiny4412 Android硬件开发指南.pdf
+│   ├── Tiny4412 Linux&amp;Android内核驱动位置.pdf
+│   ├── Tiny4412用户手册.pdf                     # 常用操作指南
+│   ├── tools
+│   ├── uboot
+│   ├── UbuntuCore
+│   ├── UbuntuDesktop
+│   └── 友善之臂Ubuntu使用手册.pdf
+└── Disk-B
+    └── images                                  # 刷机文件夹
+        ├── Android
+        ├── Android4.1.2
+        ├── Android4.2.2                        # 本文所用的版本
+        ├── Firmware
+        ├── FriendlyARM.ini                     # 配置文件
+        ├── Linux
+        ├── Superboot4412.bin
+        └── UbuntuCore
+</code></pre>
+<p>根据 Android 版本来选择对应的 Linux 内核，如 Android 4.2.2 需要用 Linux 3.5 版本的内核。</p>
+<p>进入 <code>linux-3.5-20150121.tgz</code> 所在的目录 <code>/Disk-A/Linux/</code></p>
+<p>1.解压并进入如内核文件夹,waiting for a while…</p>
+<pre><code>➜  Linux  tar zxvf linux-3.5-20150121.tgz
+➜  Linux  cd linux-3.5
+</code></pre>
+<p>2.复制一份配置文件并自定义配置</p>
+<pre><code># 因为要用 Android 开发环境
+➜  linux-3.5  cp tiny4412_android_defconfig .config
+# 启动自定义配置界面，当然也可以直接修改.config
+➜  linux-3.5  make menuconfig
+</code></pre>
+<p>启动如下的配置界面，以选择启动一个SPI为例<br>
+<img src="http://mint-blog.qiniudn.com/ld-env-menuconfig.png" alt=""></p>
+<p>“Device Dirver”<br>
+<img src="http://mint-blog.qiniudn.com/ld-env-devicedrivers.png" alt=""></p>
+<p>“SPI support”<br>
+<img src="http://mint-blog.qiniudn.com/ld-env-spisupport.png" alt=""></p>
+<p>按<code>Y</code>选择SPI 0，“Samsung S3C66XX Channel 0 Support”<br>
+<img src="http://mint-blog.qiniudn.com/ld-env-samsungs3c64xxchannel0support.png" alt=""></p>
+<p>不停的安<code>ESC</code>直到退出，“exit &amp; save”<br>
+<img src="http://mint-blog.qiniudn.com/ld-env-save.png" alt=""></p>
+<p>其它IIC的也是如此。</p>
+<p>注：确保内核文件在 Linux 自己的盘上，不要在 Windows 下面挂在的盘符，否则会出现如下错误：（不小心暴露了双系统，不然也不会碰到这个问题，，，）</p>
+<pre><code>  HOSTCC  scripts/basic/fixdep
+/bin/sh: 1: scripts/basic/fixdep: Permission denied
+make[1]: *** [scripts/basic/fixdep] Error 126
+make: *** [scripts_basic] Error 2
+</code></pre>
+<p>3.配置编译器<code>arm-linux-gcc</code>路径，否则会提示<code>/bin/sh: 1: arm-linux-gcc: not found</code><br>
+修改配置文件<code>.config</code>第36行：</p>
+<pre><code>CONFIG_CROSS_COMPILE="arm-linux-"
+</code></pre>
+<p>为自已工具链所在的文件路径，如将其放到<code>opt</code>路径下</p>
+<pre><code>CONFIG_CROSS_COMPILE="/opt/FriendlyARM/toolschain/4.5.1/bin/arm-linux-"
+</code></pre>
+<p>4.编译内核，waiting for a while…</p>
+<pre><code># 如果是多核的话，4核
+make -j4
+</code></pre>
+<p>显示如下日志表示成功</p>
+<pre><code>......
+ OBJCOPY arch/arm/boot/zImage
+  Kernel: arch/arm/boot/zImage is ready
+➜  linux-3.5  
+</code></pre>
+<p>5.到<code>linux-3.5/arch/arm/boot</code>路径下复制出内核文件<code>zImage</code>，放到<code>image</code>的<code>Disk-B/images/Android4.2.2</code>路径下，然后将<code>image</code>下<code>FriendlyARM.ini</code>配置文件中的 Android 4.2.2 选项全部打开，其他全部注释掉即可，如下所示。然后就可以愉快的去刷机了。</p>
+<pre><code>################### Android 4.2.2 ####################
+#This line cannot be removed. by FriendlyARM(www.arm9.net)
+
+CheckOneButton=No
+Action = Install
+OS = Android
+
+LowFormat = Yes
+VerifyNandWrite = No
+
+LCD-Mode = No
+CheckCRC32=No
+
+StatusType = Beeper | LED
+
+################### Android 5 ####################
+# Android-BootLoader = Superboot4412.bin
+# Android-Kernel = Android/zImage
+# Android-CommandLine = console=ttySAC0,115200n8 androidboot.console=ttySAC0 ctp=2 skipcali=y vmalloc=384m ethmac=1C:6F:65:34:51:7E androidboot.selinux=permissive
+# Android-RamDisk =Android/ramdisk-u.img
+# Android-RootFs-InstallImage = Android/system.img
+# Android-UserData-4G = Android/userdata-4g.img
+# Android-UserData-8G = Android/userdata-8g.img
+# Android-UserData-16G = Android/userdata-16g.img
+# Android-UserData = Android/userdata.img
+
+################### UbuntuCore ####################
+# Ubuntu-BootLoader = Superboot4412.bin
+# Ubuntu-Kernel = UbuntuCore/zImage
+# Ubuntu-CommandLine = root=/dev/mmcblk0p1 rootfstype=ext4 console=ttySAC0,115200n8 bootdev=EMMC ethmac=FC:09:D1:00:00:04
+# Ubuntu-RamDisk = UbuntuCore/ramdisk-u.img
+# Ubuntu-RootFs-InstallImage = UbuntuCore/rootfs_ubuntucore.img
+
+################### Android 4.1.2 ####################
+# Android-BootLoader = Superboot4412.bin
+# Android-Kernel = Android4.1.2/zImage
+# Android-CommandLine = console=ttySAC0,115200n8 androidboot.console=ttySAC0 ctp=2 skipcali=y vmalloc=384m ethmac=1C:6F:65:34:51:7E
+# Android-RamDisk =Android4.1.2/ramdisk-u.img
+# Android-RootFs-InstallImage = Android4.1.2/system.img
+# Android-UserData-4G = Android4.1.2/userdata-4g.img
+# Android-UserData-8G = Android4.1.2/userdata-8g.img
+# Android-UserData-16G = Android4.1.2/userdata-16g.img
+# Android-UserData = Android4.1.2/userdata.img
+
+################### Android 4.2.2 ####################
+Android-BootLoader = Superboot4412.bin
+Android-Kernel = Android4.2.2/zImage
+Android-CommandLine = console=ttySAC0,115200n8 androidboot.console=ttySAC0 ctp=2 skipcali=y vmalloc=384m ethmac=1C:6F:65:34:51:7E
+Android-RamDisk =Android4.2.2/ramdisk-u.img
+Android-RootFs-InstallImage = Android4.2.2/system.img
+Android-UserData-4G = Android4.2.2/userdata-4g.img
+Android-UserData-8G = Android4.2.2/userdata-8g.img
+Android-UserData-16G = Android4.2.2/userdata-16g.img
+Android-UserData = Android4.2.2/userdata.img
+
+################### Linux ####################
+# Linux-BootLoader = Superboot4412.bin
+# Linux-Kernel = Linux/zImage
+# Linux-CommandLine = root=/dev/mmcblk0p1 rootfstype=ext4 console=ttySAC0,115200 init=/linuxrc ctp=2 skipcali=y ethmac=1C:6F:65:34:51:7E
+# Linux-RamDisk = Linux/ramdisk-u.img
+# Linux-RootFs-InstallImage = Linux/rootfs_qtopia_qt4.img
+</code></pre>
+<h2 id="编译驱动">编译驱动</h2>
+<p>刷完了机就可以写hello world驱动了。</p>
+<p>1.新建Makefile文件</p>
+<pre><code># 编译完的内核路径
+KERNELDIR = ~/workplace/work/linux-3.5
+
+# 交叉工具链路径
+PWD := $(shell pwd)
+CROSS_COMPILE = /opt/FriendlyARM/toolschain/4.5.1/bin/arm-linux-
+CC    = $(CROSS_COMPILE)gcc
+
+# 目标文件
+gf-objs := hello.o
+obj-m := hello.o
+
+modules:
+    $(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+clean:
+    rm -rf *.o *~ core .depend .*.cmd *.ko *.mod.c .tmp_versions
+.PHONY: modules clean
+
+</code></pre>
+<p>2.新建<code>hello.c</code><sup class="footnote-ref"><a href="#fn1" id="fnref1">1</a></sup>，并<code>make</code></p>
+<pre class=" language-c"><code class="prism  language-c"><span class="token property">#include <span class="token string">&lt;linux/init.h&gt;</span></span>
+<span class="token property">#include <span class="token string">&lt;linux/module.h&gt;</span></span>
+<span class="token property">#include <span class="token string">&lt;linux/kernel.h&gt;</span></span>
+
+<span class="token function">MODULE_LICENSE<span class="token punctuation">(</span></span><span class="token string">"Dual BSD/GPL"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">hello_init<span class="token punctuation">(</span></span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">printk<span class="token punctuation">(</span></span><span class="token string">"&lt;1&gt; Hello world!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">hello_exit<span class="token punctuation">(</span></span><span class="token keyword">void</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">printk<span class="token punctuation">(</span></span><span class="token string">"&lt;1&gt; Bye, cruel world\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">module_init<span class="token punctuation">(</span></span>hello_init<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">module_exit<span class="token punctuation">(</span></span>hello_exit<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>3.将驱动下发到开发板</p>
+<pre><code># 让开发板可以写入数据，否则，，，
+➜  dirver  adb remount
+remount succeeded
+➜  dirver  
+➜  dirver  
+# 将驱动下发到开发板的任何目录
+➜  dirver  adb push hello.ko /system
+</code></pre>
+<p>否则会遇到如下无法写入的情况：</p>
+<pre><code>➜  dirver  adb push hello.ko /system
+failed to copy 'hello.ko' to '/system/hello.ko': Read-only file system
+</code></pre>
+<p>进入adb shell，并insmod hello.ko</p>
+<pre><code># 进入adb shell环境
+➜  adb shell
+root@android:/
+# 进入驱动所在目录
+root@android:/ # cd system/      
+# 加载hello驱动                                              
+root@android:/system # insmod hello.ko 
+# 显示内核打印信息                                        
+root@android:/system # dmesg
+&lt;1&gt;[ 4785.065000]  Hello world!
+# 列出当前加载的驱动
+root@android:/system # lsmod 
+hello 801 0 - Live 0x00000000 (O)
+# 卸载hello驱动
+root@android:/system # rmmod hello
+# 打印卸载驱动时的log
+root@android:/system # dmesg
+&lt;1&gt;[ 4785.065000]  Hello world!
+&lt;1&gt;[ 4967.540000]  Bye, cruel world
+
+</code></pre>
+<p>注：需要安装 adb工具，如下所述。</p>
+<h2 id="adb-使用">ADB 使用</h2>
+<p>在从主机将驱动下发到开发板的时候，用了adb工具，其安装和主要使用如下。</p>
+<p>1.安装</p>
+<pre><code>➜  sudo add-apt-repository ppa:nilarimogard/webupd8
+➜  sudo apt-get update
+➜  sudo apt-get install android-tools-adb android-tools-fastboot
+</code></pre>
+<p>确认下 <code>adb</code> 版本</p>
+<pre><code>➜  adb version
+Android Debug Bridge version 1.0.31
+</code></pre>
+<p>2.使用</p>
+<pre><code># adb 设备
+adb devices
+# 关闭adb服务
+adb kill-server
+# 开启adb服务
+adb start-server
+# 重启开发板
+adb reboot
+# 开发板可写入
+adb remount
+# 进入shell幻镜
+adb shell
+# 下发到开发
+adb push
+# 上载到主机端
+adb pull
+# 查看驱动信息
+adb shell cat /proc/kmsg
+# 查看上层信息
+adb logcat -v time 
+
+</code></pre>
+<p>如果需要刷新内核，则需要fastboot</p>
+<pre><code># 进入fastboot模式
+adb reboot bootloader
+# 下发内核
+fastboot flash boot &lt;boot name&gt;
+# 重启内核
+fastboot reboot
+</code></pre>
+<p>当然，如果支持Wifi，可以在开发板上下载一个<code>ADB Konnect</code>的APK，通过无线来adb是比较安逸的。<br>
+<img src="http://mint-blog.qiniudn.com/ld-env-adb-konnect.jpg" alt=""></p>
+<p>注：需要对手机进行Root。</p>
+<pre><code>➜  adb connect &lt;ip&gt;
+➜  adb shell
+</code></pre>
+<p>如果遇到 adb <code>error: insufficient permissions for device</code>错误如下，则需要将当前手机的vendor id手动过添加到规则表中，步骤如下：</p>
+<p>a.连接手机，并 <code>lsusb</code> 来查看 待添加手机的vendor id。</p>
+<p><img src="http://mint-blog.qiniudn.com/ld-env-lsusb.png" alt=""></p>
+<p>b.将手机添加到规则表</p>
+<pre><code class="prism language-shell">➜  sudo vi /etc/udev/rules.d/51-android.rules  
+</code></pre>
+<p><img src="http://mint-blog.qiniudn.com/ld-env-idvendor-idproduct.jpg" alt=""></p>
+<p>c.保存并重启 adb 服务</p>
+<pre><code class="prism language-shell">➜  chmod 777 /etc/udev/rules.d/51-android.rules
+➜  adb kill-server
+➜  adb start-server
+➜  adb devices
+</code></pre>
+<h2 id="log-信息过滤">log 信息过滤</h2>
+<p>由于 adb 输出的 log 信息 非常多，需要将其过滤，只输出或者高亮我们需要的关键字。</p>
+<p>其实，字符处理向来是 Linux 工具的强项，只不过都是 CLI 的，需要有一定的学习成本<br>
+。如 <a href="https://en.wikipedia.org/wiki/Grep">grep</a>， <a href="https://en.wikipedia.org/wiki/AWK">awk</a> 或者<a href="http://nojhan.github.io/colout/">colout</a>。</p>
+<h3 id="colout">colout</h3>
+<blockquote>
+<p>colout is a simple command to add colors to a text stream in your terminal.</p>
+</blockquote>
+<p>在 Windows 下用过 <a href="http://www.powercmd.com/">PowerCMD</a> 的都知道它有一个很简单粗暴的功能：<strong>高亮关键字</strong>。当然，多标签，分栏，可选复制文字，保存log文件和显示行号等等都是蛮不错的<a href="http://www.powercmd.com/features.php">功能</a>，比自带的CMD强多了。</p>
+<p><img src="http://mint-blog.qiniudn.com/ld-env-FeatureHighlight.jpg" alt=""></p>
+<p>a.其实使用 colout 单个关键字非常简单，比如将驱动信息中包含 <code>foo</code> 关键字高亮为红色。</p>
+<pre><code>➜  adb shell cat /proc/kmsg | colout "foo" red
+</code></pre>
+<p>b. 比如高亮包含并加粗关键字 <code>foo</code> 的所在行为红色。</p>
+<pre><code>➜  adb shell cat /proc/kmsg | colout "^.*foo.*$" red bold
+</code></pre>
+<p>c.再比如高亮多个关键字为不同的颜色</p>
+<p>多关键字高亮可以参考本人在其 <a href="https://github.com/nojhan/colout/issues/77">Issue 77</a> 上的提问答案：</p>
+<p>可以使用 <code>|</code> 来连接</p>
+<pre><code>➜  adb shell cat /proc/kmsg | colout "foo" red | colout "bar" yellow
+</code></pre>
+<p>也可以使用更高效率的正则表达式方式</p>
+<pre><code>➜  adb shell cat /proc/kmsg  | colout "(foo).*(bar)" red,yellow
+</code></pre>
+<p>以上简单的使用可以应付绝大多数场合，如果想让 log 显示的更加酷炫，查询 <code>colout -h</code>来查看其他命令，也可以参考<a href="http://nojhan.github.io/colout/">官方的使用指南</a>。</p>
+<h3 id="grep">grep</h3>
+<h3 id="awk">awk</h3>
+<p>好了，整个驱动开发的环境搭建完成，可以开启驱动学习之路了。</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="http://www.freesoftwaremagazine.com/articles/drivers_linux">Writing device drivers in Linux: A brief tutorial</a> <a href="#fnref1" class="footnote-backref">↩</a></p>
+</li>
+</ol>
+</section></div></body>
+</html>
