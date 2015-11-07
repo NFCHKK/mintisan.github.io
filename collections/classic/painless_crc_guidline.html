@@ -1,0 +1,1860 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>painless_crc_guidline</title></head><body><article class="markdown-body"><h1 id="a-painless-guide-to-crc-error-detection-algorithms"><a href="http://www.repairfaq.org/filipg/LINK/F_crc_v31.html">A PAINLESS GUIDE TO CRC ERROR DETECTION ALGORITHMS</a></h1>
+<div class="toc">
+<ul>
+<li><a href="#a-painless-guide-to-crc-error-detection-algorithms">A PAINLESS GUIDE TO CRC ERROR DETECTION ALGORITHMS</a><ul>
+<li><a href="#chapter-1-preface">Chapter 1) Preface</a><ul>
+<li><a href="#11-about-the-author-copyright">1.1) About the Author &amp; Copyright</a></li>
+<li><a href="#12-abstract">1.2) Abstract</a></li>
+</ul>
+</li>
+<li><a href="#chapter-2-introduction-error-detection">Chapter 2) Introduction: Error Detection</a></li>
+<li><a href="#chapter-3-the-need-for-complexity">Chapter 3) The Need For Complexity</a></li>
+<li><a href="#chapter-4-the-basic-idea-behind-crc-algorithms">Chapter 4) The Basic Idea Behind CRC Algorithms</a></li>
+<li><a href="#chapter-5-polynomical-arithmetic">Chapter 5) Polynomical Arithmetic</a></li>
+<li><a href="#chapter-6-binary-arithmetic-with-no-carries">Chapter 6) Binary Arithmetic with No Carries</a></li>
+<li><a href="#chapter-7-a-fully-worked-example">Chapter 7) A Fully Worked Example</a></li>
+<li><a href="#chapter-8-choosing-a-poly">Chapter 8) Choosing A Poly</a></li>
+<li><a href="#chapter-9-a-straightforward-crc-implementation">Chapter 9) A Straightforward CRC Implementation</a></li>
+<li><a href="#chapter-10-a-table-driven-implementation">Chapter 10) A Table-Driven Implementation</a></li>
+<li><a href="#chapter-11-a-slightly-mangled-table-driven-implementation">Chapter 11) A Slightly Mangled Table-Driven Implementation</a></li>
+<li><a href="#chapter-12-reflected-table-driven-implementations">Chapter 12) &ldquo;Reflected&rdquo; Table-Driven Implementations</a></li>
+<li><a href="#chapter-13-reversed-polys">Chapter 13) &ldquo;Reversed&rdquo; Polys</a></li>
+<li><a href="#chapter-14-initial-and-final-values">Chapter 14) Initial and Final Values</a></li>
+<li><a href="#chapter-15-defining-algorithms-absolutely">Chapter 15) Defining Algorithms Absolutely</a></li>
+<li><a href="#chapter-16-a-parameterized-model-for-crc-algorithms">Chapter 16) A Parameterized Model For CRC Algorithms</a></li>
+<li><a href="#chapter-17-a-catalog-of-parameter-sets-for-standards">Chapter 17) A Catalog of Parameter Sets for Standards</a></li>
+<li><a href="#chapter-18-an-implementation-of-the-model-algorithm">Chapter 18) An Implementation of the Model Algorithm</a></li>
+<li><a href="#chapter-19-roll-your-own-table-driven-implementation">Chapter 19) Roll Your Own Table-Driven Implementation</a></li>
+<li><a href="#chapter-20-generating-a-lookup-table">Chapter 20) Generating A Lookup Table</a></li>
+<li><a href="#chapter-21-summary">Chapter 21) Summary</a></li>
+<li><a href="#chapter-22-corrections">Chapter 22) Corrections</a></li>
+<li><a href="#chapter-23-glossary">Chapter 23) Glossary</a></li>
+<li><a href="#chapter-24-references">Chapter 24) References</a></li>
+<li><a href="#chapter-25-references-i-have-detected-but-havent-yet-sighted">Chapter 25) References I Have Detected But Haven&rsquo;t Yet Sighted</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>[Document Version: 3.00] [Last Updated: 9/24/96] </p>
+<h2 id="chapter-1-preface"><a name="user-content-chapter-1-preface" href="#chapter-1-preface" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 1) Preface</h2>
+<h3 id="11-about-the-author-copyright"><a name="user-content-11-about-the-author-copyright" href="#11-about-the-author-copyright" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.1) About the Author &amp; Copyright</h3>
+<p>&ldquo;Everything you wanted to know about CRC algorithms, but were afraid to ask for fear that errors in your understanding might be detected.&rdquo;</p>
+<ul>
+<li>Author : Ross N. Williams</li>
+<li>E-Mail : <a href="mailto:ross@guest.adelaide.edu.au">ross@guest.adelaide.edu.au</a></li>
+<li>Date : 19 August 1993</li>
+<li>Version : 3.00</li>
+<li>FTP: ftp.adelaide.edu.au/pub/rocksoft/crc_v3.txt</li>
+<li>WWW: <a href="http://www.on.net/clients/rocksoft/rocksoft/">http://www.on.net/clients/rocksoft/rocksoft/</a></li>
+<li>Company : Rocksoft(tm) Pty Ltd</li>
+<li>Snail : 16 Lerwick Avenue, Hazelwood Park 5066, Australia</li>
+<li>Fax : +61 8 373-4911 (c/- Internode Systems Pty Ltd)</li>
+<li>Phone : +61 8 379-9217 (10am to 10pm Adelaide Australia time)</li>
+<li>Note : &ldquo;Rocksoft&rdquo; is a trademark of Rocksoft Pty Ltd, Australia</li>
+<li>Status: Copyright (C) Ross Williams, 1993,1994,1995,1996. However, permission is granted to make and distribute verbatim copies of this document provided that this information block and copyright notice is included. Also, the C code modules included in this document are fully PUBLIC DOMAIN (PD).</li>
+<li>Thanks: Thanks to Jean-loup Gailly (<a href="mailto:jloup@chorus.fr">jloup@chorus.fr</a>) and Mark Adler (<a href="mailto:me@quest.jpl.nasa.gov">me@quest.jpl.nasa.gov</a>) who both proof read this document and picked out lots of nits as well as some big fat bugs.</li>
+</ul>
+<p>C sources to are referenced in this document:</p>
+<ul>
+<li><a href="http://www.repairfaq.org/filipg/LINK/crcmodel.h">crcmodel.h</a></li>
+<li><a href="http://www.repairfaq.org/filipg/LINK/crcmodel.c">crcmodel.c</a></li>
+<li><a href="http://www.repairfaq.org/filipg/LINK/crctable.c">crctable.c</a></li>
+</ul>
+<h3 id="12-abstract"><a name="user-content-12-abstract" href="#12-abstract" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.2) Abstract</h3>
+<p>This document explains CRCs (Cyclic Redundancy Codes) and their table-driven implementations in full, precise detail. Much of the literature on CRCs, and in particular on their table-driven implementations, is a little obscure (or at least seems so to me). This document is an attempt to provide a clear and simple no-nonsense explanation of CRCs and to absolutely nail down every detail of the operation of their high-speed implementations. In addition to this, this document presents a parameterized model CRC algorithm called the &ldquo;Rocksoft^tm Model CRC Algorithm&rdquo;. The model algorithm can be parameterized to behave like most of the CRC implementations around, and so acts as a good reference for describing particular algorithms. A low-speed implementation of the model CRC algorithm is provided in the C programming language. Lastly there is a section giving two forms of high-speed table driven implementations, and providing a program that generates CRC lookup tables.</p>
+<h2 id="chapter-2-introduction-error-detection"><a name="user-content-chapter-2-introduction-error-detection" href="#chapter-2-introduction-error-detection" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 2) Introduction: Error Detection</h2>
+<p>The aim of an error detection technique is to enable the receiver of a message transmitted through a noisy (error-introducing) channel to determine whether the message has been corrupted. To do this, the transmitter constructs a value (called a checksum) that is a function of the message, and appends it to the message. The receiver can then use the same function to calculate the checksum of the received message and compare it with the appended checksum to see if the message was correctly received. For example, if we chose a checksum function which was simply the sum of the bytes in the message mod 256 (i.e. modulo 256), then it might go something as follows. All numbers are in decimal.</p>
+<pre><code>   Message                    :  6 23  4
+   Message with checksum      :  6 23  4 33
+   Message after transmission :  6 27  4 33
+</code></pre>
+
+<p>In the above, the second byte of the message was corrupted from 23 to 27 by the communications channel. However, the receiver can detect this by comparing the transmitted checksum (33) with the computer checksum of 37 (6 + 27 + 4). If the checksum itself is corrupted, a correctly transmitted message might be incorrectly identified as a corrupted one. However, this is a safe-side failure. A dangerous-side failure occurs where the message and/or checksum is corrupted in a manner that results in a transmission that is internally consistent. Unfortunately, this possibility is completely unavoidable and the best that can be done is to minimize its probability by increasing the amount of information in the checksum (e.g. widening the checksum from one byte to two bytes).</p>
+<p>Other error detection techniques exist that involve performing complex transformations on the message to inject it with redundant information. However, this document addresses only CRC algorithms, which fall into the class of error detection algorithms that leave the data intact and append a checksum on the end. i.e.:</p>
+<pre><code>   &lt;original intact message&gt; &lt;checksum&gt;
+</code></pre>
+
+<h2 id="chapter-3-the-need-for-complexity"><a name="user-content-chapter-3-the-need-for-complexity" href="#chapter-3-the-need-for-complexity" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 3) The Need For Complexity</h2>
+<p>In the checksum example in the previous section, we saw how a corrupted message was detected using a checksum algorithm that simply sums the bytes in the message mod 256:</p>
+<pre><code>   Message                    :  6 23  4
+   Message with checksum      :  6 23  4 33
+   Message after transmission :  6 27  4 33
+</code></pre>
+
+<p>A problem with this algorithm is that it is too simple. If a number of random corruptions occur, there is a 1 in 256 chance that they will not be detected. For example:</p>
+<pre><code>   Message                    :  6 23  4
+   Message with checksum      :  6 23  4 33
+   Message after transmission :  8 20  5 33
+</code></pre>
+
+<p>To strengthen the checksum, we could change from an 8-bit register to a 16-bit register (i.e. sum the bytes mod 65536 instead of mod 256) so as to apparently reduce the probability of failure from 1/256 to 1/65536. While basically a good idea, it fails in this case because the formula used is not sufficiently &ldquo;random&rdquo;; with a simple summing formula, each incoming byte affects roughly only one byte of the summing register no matter how wide it is. For example, in the second example above, the summing register could be a Megabyte wide, and the error would still go undetected. This problem can only be solved by replacing the simple summing formula with a more sophisticated formula that causes each incoming byte to have an effect on the entire checksum register.</p>
+<p>Thus, we see that at least two aspects are required to form a strong checksum function:</p>
+<ul>
+<li><strong>WIDTH</strong>: A register width wide enough to provide a low a-priori probability of failure (e.g. 32-bits gives a 1/2^32 chance of failure).</li>
+<li><strong>CHAOS</strong>: A formula that gives each input byte the potential to change any number of bits in the register.</li>
+</ul>
+<p><strong>Note</strong>: The term &ldquo;checksum&rdquo; was presumably used to describe early summing formulas, but has now taken on a more general meaning encompassing more sophisticated algorithms such as the CRC ones. The CRC algorithms to be described satisfy the second condition very well, and can be configured to operate with a variety of checksum widths.</p>
+<h2 id="chapter-4-the-basic-idea-behind-crc-algorithms"><a name="user-content-chapter-4-the-basic-idea-behind-crc-algorithms" href="#chapter-4-the-basic-idea-behind-crc-algorithms" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 4) The Basic Idea Behind CRC Algorithms</h2>
+<p>Where might we go in our search for a more complex function than summing? All sorts of schemes spring to mind. We could construct tables using the digits of pi, or hash each incoming byte with all the bytes in the register. We could even keep a large telephone book on-line, and use each incoming byte combined with the register bytes to index a new phone number which would be the next register value. The possibilities are limitless.</p>
+<p>However, we do not need to go so far; the next arithmetic step suffices. While addition is clearly not strong enough to form an effective checksum, it turns out that division is, so long as the divisor is about as wide as the checksum register.</p>
+<p>The basic idea of CRC algorithms is simply to treat the message as an enormous binary number, to divide it by another fixed binary number, and to make the remainder from this division the checksum. Upon receipt of the message, the receiver can perform the same division and compare the remainder with the &ldquo;checksum&rdquo; (transmitted remainder).</p>
+<p>Example: Suppose the the message consisted of the two bytes (6,23) as in the previous example. These can be considered to be the hexadecimal number 0617 which can be considered to be the binary number 0000-0110-0001-0111. Suppose that we use a checksum register one-byte wide and use a constant divisor of 1001, then the checksum is the remainder after 0000-0110-0001-0111 is divided by 1001. While in this case, this calculation could obviously be performed using common garden variety 32-bit registers, in the general case this is messy. So instead, we&rsquo;ll do the division using good-&lsquo;ol long division which you learned in school (remember?). Except this time, it&rsquo;s in binary:</p>
+<pre><code>          ...0000010101101 = 00AD =  173 = QUOTIENT
+         ____-___-___-___-
+9= 1001 ) 0000011000010111 = 0617 = 1559 = DIVIDEND
+DIVISOR   0000.,,....,.,,,
+          ----.,,....,.,,,
+           0000,,....,.,,,
+           0000,,....,.,,,
+           ----,,....,.,,,
+            0001,....,.,,,
+            0000,....,.,,,
+            ----,....,.,,,
+             0011....,.,,,
+             0000....,.,,,
+             ----....,.,,,
+              0110...,.,,,
+              0000...,.,,,
+              ----...,.,,,
+               1100..,.,,,
+               1001..,.,,,
+               ====..,.,,,
+                0110.,.,,,
+                0000.,.,,,
+                ----.,.,,,
+                 1100,.,,,
+                 1001,.,,,
+                 ====,.,,,
+                  0111.,,,
+                  0000.,,,
+                  ----.,,,
+                   1110,,,
+                   1001,,,
+                   ====,,,
+                    1011,,
+                    1001,,
+                    ====,,
+                     0101,
+                     0000,
+                     ----
+                      1011
+                      1001
+                      ====
+                      0010 = 02 = 2 = REMAINDER
+</code></pre>
+
+<p>In decimal this is &ldquo;1559 divided by 9 is 173 with a remainder of 2&rdquo;.</p>
+<p>Although the effect of each bit of the input message on the quotient is not all that significant, the 4-bit remainder gets kicked about quite a lot during the calculation, and if more bytes were added to the message (dividend) it&rsquo;s value could change radically again very quickly. This is why division works where addition doesn&rsquo;t.</p>
+<p>In case you&rsquo;re wondering, using this 4-bit checksum the transmitted message would look like this (in hexadecimal): 06172 (where the 0617 is the message and the 2 is the checksum). The receiver would divide 0617 by 9 and see whether the remainder was 2.</p>
+<h2 id="chapter-5-polynomical-arithmetic"><a name="user-content-chapter-5-polynomical-arithmetic" href="#chapter-5-polynomical-arithmetic" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 5) Polynomical Arithmetic</h2>
+<p>While the division scheme described in the previous section is very very similar to the checksumming schemes called CRC schemes, the CRC schemes are in fact a bit weirder, and we need to delve into some strange number systems to understand them.</p>
+<p>The word you will hear all the time when dealing with CRC algorithms is the word &ldquo;polynomial&rdquo;. A given CRC algorithm will be said to be using a particular polynomial, and CRC algorithms in general are said to be operating using polynomial arithmetic. What does this mean?</p>
+<p>Instead of the divisor, dividend (message), quotient, and remainder (as described in the previous section) being viewed as positive integers, they are viewed as polynomials with binary coefficients. This is done by treating each number as a bit-string whose bits are the coefficients of a polynomial. For example, the ordinary number 23 (decimal) is 17 (hex) and 10111 binary and so it corresponds to the polynomial:</p>
+<pre><code>   1*x^4 + 0*x^3 + 1*x^2 + 1*x^1 + 1*x^0
+</code></pre>
+
+<p>or, more simply:</p>
+<pre><code>   x^4 + x^2 + x^1 + x^0
+</code></pre>
+
+<p>Using this technique, the message, and the divisor can be represented as polynomials and we can do all our arithmetic just as before, except that now it&rsquo;s all cluttered up with Xs. For example, suppose we wanted to multiply 1101 by 1011. We can do this simply by multiplying the polynomials:</p>
+<pre><code>(x^3 + x^2 + x^0)(x^3 + x^1 + x^0)
+= (x^6 + x^4 + x^3
+ + x^5 + x^3 + x^2
+ + x^3 + x^1 + x^0) = x^6 + x^5 + x^4 + 3*x^3 + x^2 + x^1 + x^0
+</code></pre>
+
+<p>At this point, to get the right answer, we have to pretend that x is 2 and propagate binary carries from the 3*x^3 yielding:</p>
+<pre><code>   x^7 + x^3 + x^2 + x^1 + x^0
+</code></pre>
+
+<p>It&rsquo;s just like ordinary arithmetic except that the base is abstracted and brought into all the calculations explicitly instead of being there implicitly. So what&rsquo;s the point?</p>
+<p>The point is that IF we pretend that we DON&rsquo;T know what x is, we CAN&rsquo;T perform the carries. We don&rsquo;t know that 3*x^3 is the same as x^4 + x^3 because we don&rsquo;t know that x is 2. In this true polynomial arithmetic the relationship between all the coefficients is unknown and so the coefficients of each power effectively become strongly typed; coefficients of x^2 are effectively of a different type to coefficients of x^3.</p>
+<p>With the coefficients of each power nicely isolated, mathematicians came up with all sorts of different kinds of polynomial arithmetics simply by changing the rules about how coefficients work. Of these schemes, one in particular is relevant here, and that is a polynomial arithmetic where the coefficients are calculated MOD 2 and there is no carry; all coefficients must be either 0 or 1 and no carries are calculated. This is called &ldquo;polynomial arithmetic mod 2&rdquo;. Thus, returning to the earlier example:</p>
+<pre><code>(x^3 + x^2 + x^0)(x^3 + x^1 + x^0)
+= (x^6 + x^4 + x^3
+ + x^5 + x^3 + x^2
+ + x^3 + x^1 + x^0)
+= x^6 + x^5 + x^4 + 3*x^3 + x^2 + x^1 + x^0
+</code></pre>
+
+<p>Under the other arithmetic, the 3*x^3 term was propagated using the carry mechanism using the knowledge that x=2. Under &ldquo;polynomial arithmetic mod 2&rdquo;, we don&rsquo;t know what x is, there are no carries, and all coefficients have to be calculated mod 2. Thus, the result becomes:</p>
+<pre><code>= x^6 + x^5 + x^4 + x^3 + x^2 + x^1 + x^0
+</code></pre>
+
+<p>As Knuth [Knuth81] says (p.400):</p>
+<p>&ldquo;The reader should note the similarity between polynomial arithmetic and multiple-precision arithmetic (Section 4.3.1), where the radix b is substituted for x. The chief difference is that the coefficient u_k of x^k in polynomial arithmetic bears little or no relation to its neighboring coefficients x^{k-1} [and x^{k+1}], so the idea of &ldquo;carrying&rdquo; from one place to another is absent. In fact polynomial arithmetic modulo b is essentially identical to multiple precision arithmetic with radix b, except that all carries are suppressed.&rdquo;</p>
+<p>Thus polynomical arithmetic mod 2 is just binary arithmetic mod 2 with no carries. While polynomials provide useful mathematical machinery in more analytical approaches to CRC and error-correction algorithms, for the purposes of exposition they provide no extra insight and some encumbrance and have been discarded in the remainder of this document in favour of direct manipulation of the arithmetical system with which they are isomorphic: binary arithmetic with no carry.</p>
+<hr />
+<h2 id="chapter-6-binary-arithmetic-with-no-carries"><a name="user-content-chapter-6-binary-arithmetic-with-no-carries" href="#chapter-6-binary-arithmetic-with-no-carries" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 6) Binary Arithmetic with No Carries</h2>
+<p>Having dispensed with polynomials, we can focus on the real arithmetic issue, which is that all the arithmetic performed during CRC calculations is performed in binary with no carries. Often this is called polynomial arithmetic, but as I have declared the rest of this document a polynomial free zone, we&rsquo;ll have to call it CRC arithmetic instead. As this arithmetic is a key part of CRC calculations, we&rsquo;d better get used to it. Here we go:</p>
+<p>Adding two numbers in CRC arithmetic is the same as adding numbers in ordinary binary arithmetic except there is no carry. This means that each pair of corresponding bits determine the corresponding output bit without reference to any other bit positions. For example:</p>
+<pre><code>        10011011
+       +11001010
+        --------
+        01010001
+        --------
+</code></pre>
+
+<p>There are only four cases for each bit position:</p>
+<pre><code>   0+0=0
+   0+1=1
+   1+0=1
+   1+1=0  (no carry)
+</code></pre>
+
+<p>Subtraction is identical:</p>
+<pre><code>        10011011
+       -11001010
+        --------
+        01010001
+        --------
+   0-0=0
+   0-1=1  (wraparound)
+   1-0=1
+   1-1=0
+</code></pre>
+
+<p>In fact, both addition and subtraction in CRC arithmetic is equivalent to the XOR operation, and the XOR operation is its own inverse. This effectively reduces the operations of the first level of power (addition, subtraction) to a single operation that is its own inverse. This is a very convenient property of the arithmetic.</p>
+<p>By collapsing of addition and subtraction, the arithmetic discards any notion of magnitude beyond the power of its highest one bit. While it seems clear that 1010 is greater than 10, it is no longer the case that 1010 can be considered to be greater than 1001. To see this, note that you can get from 1010 to 1001 by both adding and subtracting the same quantity:</p>
+<pre><code>   1001 = 1010 + 0011
+   1001 = 1010 - 0011
+</code></pre>
+
+<p>This makes nonsense of any notion of order.</p>
+<p>Having defined addition, we can move to multiplication and division. Multiplication is absolutely straightforward, being the sum of the first number, shifted in accordance with the second number.</p>
+<pre><code>        1101
+      x 1011
+        ----
+        1101
+       1101.
+      0000..
+     1101...
+     -------
+     1111111  Note: The sum uses CRC addition
+     -------
+</code></pre>
+
+<p>Division is a little messier as we need to know when &ldquo;a number goes into another number&rdquo;. To do this, we invoke the weak definition of magnitude defined earlier: that X is greater than or equal to Y iff the position of the highest 1 bit of X is the same or greater than the position of the highest 1 bit of Y. Here&rsquo;s a fully worked division (nicked from [Tanenbaum81]).</p>
+<pre><code>            1100001010
+       _______________
+10011 ) 11010110110000
+        10011,,.,,....
+        -----,,.,,....
+         10011,.,,....
+         10011,.,,....
+         -----,.,,....
+          00001.,,....
+          00000.,,....
+          -----.,,....
+           00010,,....
+           00000,,....
+           -----,,....
+            00101,....
+            00000,....
+            -----,....
+             01011....
+             00000....
+             -----....
+              10110...
+              10011...
+              -----...
+               01010..
+               00000..
+               -----..
+                10100.
+                10011.
+                -----.
+                 01110
+                 00000
+                 -----
+                  1110 = Remainder
+</code></pre>
+
+<p>That&rsquo;s really it. Before proceeding further, however, it&rsquo;s worth our while playing with this arithmetic a bit to get used to it.</p>
+<p>We&rsquo;ve already played with addition and subtraction, noticing that they are the same thing. Here, though, we should note that in this arithmetic A+0=A and A-0=A. This obvious property is very useful later.</p>
+<p>In dealing with CRC multiplication and division, it&rsquo;s worth getting a feel for the concepts of MULTIPLE and DIVISIBLE.</p>
+<p>If a number A is a multiple of B then what this means in CRC arithmetic is that it is possible to construct A from zero by XORing in various shifts of B. For example, if A was 0111010110 and B was 11, we could construct A from B as follows:</p>
+<pre><code>                  0111010110
+                = .......11.
+                + ....11....
+                + ...11.....
+                  .11.......
+</code></pre>
+
+<p>However, if A is 0111010111, it is not possible to construct it out of various shifts of B (can you see why? - see later) so it is said to be not divisible by B in CRC arithmetic.</p>
+<p>Thus we see that CRC arithmetic is primarily about XORing particular values at various shifting offsets.</p>
+<h2 id="chapter-7-a-fully-worked-example"><a name="user-content-chapter-7-a-fully-worked-example" href="#chapter-7-a-fully-worked-example" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 7) A Fully Worked Example</h2>
+<p>Having defined CRC arithmetic, we can now frame a CRC calculation as simply a division, because that&rsquo;s all it is! This section fills in the details and gives an example.</p>
+<p>To perform a CRC calculation, we need to choose a divisor. In maths marketing speak the divisor is called the &ldquo;generator polynomial&rdquo; or simply the &ldquo;polynomial&rdquo;, and is a key parameter of any CRC algorithm. It would probably be more friendly to call the divisor something else, but the poly talk is so deeply ingrained in the field that it would now be confusing to avoid it. As a compromise, we will refer to the CRC polynomial as the &ldquo;poly&rdquo;. Just think of this number as a sort of parrot. &ldquo;Hello poly!&rdquo;</p>
+<p>You can choose any poly and come up with a CRC algorithm. However, some polys are better than others, and so it is wise to stick with the tried an tested ones. A later section addresses this issue.</p>
+<p>The width (position of the highest 1 bit) of the poly is very important as it dominates the whole calculation. Typically, widths of 16 or 32 are chosen so as to simplify implementation on modern computers. The width of a poly is the actual bit position of the highest bit. For example, the width of 10011 is 4, not 5. For the purposes of example, we will chose a poly of 10011 (of width W of 4).</p>
+<p>Having chosen a poly, we can proceed with the calculation. This is simply a division (in CRC arithmetic) of the message by the poly. The only trick is that W zero bits are appended to the message before the CRC is calculated. Thus we have:</p>
+<pre><code>   Original message                : 1101011011
+   Poly                            :      10011
+   Message after appending W zeros : 11010110110000
+</code></pre>
+
+<p>Now we simply divide the augmented message by the poly using CRC arithmetic. This is the same division as before:</p>
+<pre><code>            1100001010 = Quotient (nobody cares about the quotient)
+       _______________
+10011 ) 11010110110000 = Augmented message (1101011011 + 0000)
+=Poly  10011,,.,,....
+        -----,,.,,....
+         10011,.,,....
+         10011,.,,....
+         -----,.,,....
+          00001.,,....
+          00000.,,....
+          -----.,,....
+           00010,,....
+           00000,,....
+           -----,,....
+            00101,....
+            00000,....
+            -----,....
+             01011....
+             00000....
+             -----....
+              10110...
+              10011...
+              -----...
+               01010..
+               00000..
+               -----..
+                10100.
+                10011.
+                -----.
+                 01110
+                 00000
+                 -----
+                  1110 = Remainder = THE CHECKSUM!!!!
+</code></pre>
+
+<p>The division yields a quotient, which we throw away, and a remainder, which is the calculated checksum. This ends the calculation.</p>
+<p>Usually, the checksum is then appended to the message and the result transmitted. In this case the transmission would be: 11010110111110.</p>
+<p>At the other end, the receiver can do one of two things:</p>
+<ol>
+<li>Separate the message and checksum. Calculate the checksum for the message (after appending W zeros) and compare the two checksums.<br />
+Checksum the whole lot (without appending zeros) and see if it comes out as zero!</li>
+<li>These two options are equivalent. However, in the next section, we will be assuming option b because it is marginally mathematically cleaner.</li>
+</ol>
+<p>A summary of the operation of the class of CRC algorithms:</p>
+<ol>
+<li>Choose a width W, and a poly G (of width W).</li>
+<li>Append W zero bits to the message. Call this M&rsquo;.</li>
+<li>Divide M&rsquo; by G using CRC arithmetic. The remainder is the checksum.</li>
+</ol>
+<p>That&rsquo;s all there is to it.</p>
+<h2 id="chapter-8-choosing-a-poly"><a name="user-content-chapter-8-choosing-a-poly" href="#chapter-8-choosing-a-poly" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 8) Choosing A Poly</h2>
+<p>Choosing a poly is somewhat of a black art and the reader is referred to <a href="p.130-132">Tanenbaum81</a> which has a very clear discussion of this issue. This section merely aims to put the fear of death into anyone who so much as toys with the idea of making up their own poly. If you don&rsquo;t care about why one poly might be better than another and just want to find out about high-speed implementations, choose one of the arithmetically sound polys listed at the end of this section and skip to the next section.</p>
+<p>First note that the transmitted message T is a multiple of the poly. To see this, note that 1) the last W bits of T is the remainder after dividing the augmented (by zeros remember) message by the poly, and 2) addition is the same as subtraction so adding the remainder pushes the value up to the next multiple. Now note that if the transmitted message is corrupted in transmission that we will receive T+E where E is an error vector (and + is CRC addition (i.e. XOR)). Upon receipt of this message, the receiver divides T+E by G. As T mod G is 0, (T+E) mod G = E mod G. Thus, the capacity of the poly we choose to catch particular kinds of errors will be determined by the set of multiples of G, for any corruption E that is a multiple of G will be undetected. Our task then is to find classes of G whose multiples look as little like the kind of line noise (that will be creating the corruptions) as possible. So let&rsquo;s examine the kinds of line noise we can expect.</p>
+<ul>
+<li><strong>SINGLE BIT ERRORS</strong>: A single bit error means E=1000&hellip;0000. We can ensure that this class of error is always detected by making sure that G has at least two bits set to 1. Any multiple of G will be constructed using shifting and adding and it is impossible to construct a value with a single bit by shifting an adding a single value with more than one bit set, as the two end bits will always persist.</li>
+<li><strong>TWO-BIT ERRORS</strong>: To detect all errors of the form 100&hellip;000100&hellip;000 (i.e. E contains two 1 bits) choose a G that does not have multiples that are 11, 101, 1001, 10001, 100001, etc. It is not clear to me how one goes about doing this (I don&rsquo;t have the pure maths background), but Tanenbaum assures us that such G do exist, and cites G with 1 bits (15,14,1) turned on as an example of one G that won&rsquo;t divide anything less than 1&hellip;1 where &hellip; is 32767 zeros.</li>
+<li><strong>ERRORS WITH AN ODD NUMBER OF BITS</strong>: We can catch all corruptions where E has an odd number of bits by choosing a G that has an even number of bits. To see this, note that 1) CRC multiplication is simply XORing a constant value into a register at various offsets, 2) XORing is simply a bit-flip operation, and 3) if you XOR a value with an even number of bits into a register, the oddness of the number of 1 bits in the register remains invariant. Example: Starting with E=111, attempt to flip all three bits to zero by the repeated application of XORing in 11 at one of the two offsets (i.e. &ldquo;E=E XOR 011&rdquo; and &ldquo;E=E XOR 110&rdquo;) This is nearly isomorphic to the &ldquo;glass tumblers&rdquo; party puzzle where you challenge someone to flip three tumblers by the repeated application of the operation of flipping any two. Most of the popular CRC polys contain an even number of 1 bits. (Note: Tanenbaum states more specifically that all errors with an odd number of bits can be caught by making G a multiple of 11).</li>
+<li><strong>BURST ERRORS</strong>: A burst error looks like E=000&hellip;000111&hellip;11110000&hellip;00. That is, E consists of all zeros except for a run of 1s somewhere inside. This can be recast as E=(10000&hellip;00)(1111111&hellip;111) where there are z zeros in the LEFT part and n ones in the RIGHT part. To catch errors of this kind, we simply set the lowest bit of G to 1. Doing this ensures that LEFT cannot be a factor of G. Then, so long as G is wider than RIGHT, the error will be detected. See Tanenbaum for a clearer explanation of this; I&rsquo;m a little fuzzy on this one. Note: Tanenbaum asserts that the probability of a burst of length greater than W getting through is (0.5)^W.<br />
+That concludes the section on the fine art of selecting polys.</li>
+</ul>
+<p>Some popular polys are:</p>
+<pre><code>16 bits: (16,12,5,0)                              [X25 standard]
+         (16,15,2,0)                              [&quot;CRC-16&quot;]
+32 bits: (32,26,23,22,16,12,11,10,8,7,5,4,2,1,0)  [Ethernet]
+</code></pre>
+
+<hr />
+<h2 id="chapter-9-a-straightforward-crc-implementation"><a name="user-content-chapter-9-a-straightforward-crc-implementation" href="#chapter-9-a-straightforward-crc-implementation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 9) A Straightforward CRC Implementation</h2>
+<p>That&rsquo;s the end of the theory; now we turn to implementations. To start with, we examine an absolutely straight-down-the-middle boring straightforward low-speed implementation that doesn&rsquo;t use any speed tricks at all. We&rsquo;ll then transform that program progessively until we end up with the compact table-driven code we all know and love and which some of us would like to understand.</p>
+<p>To implement a CRC algorithm all we have to do is implement CRC division. There are two reasons why we cannot simply use the divide instruction of whatever machine we are on. The first is that we have to do the divide in CRC arithmetic. The second is that the dividend might be ten megabytes long, and todays processors do not have registers that big.</p>
+<p>So to implement CRC division, we have to feed the message through a division register. At this point, we have to be absolutely precise about the message data. In all the following examples the message will be considered to be a stream of bytes (each of 8 bits) with bit 7 of each byte being considered to be the most significant bit (MSB). The bit stream formed from these bytes will be the bit stream with the MSB (bit 7) of the first byte first, going down to bit 0 of the first byte, and then the MSB of the second byte and so on.</p>
+<p>With this in mind, we can sketch an implementation of the CRC division. For the purposes of example, consider a poly with W=4 and the poly=10111. Then, the perform the division, we need to use a 4-bit register:</p>
+<p><pre><code>            3   2   1   0   Bits
+          +---+---+---+---+
+ Pop! &lt;-- |   |   |   |   | &lt;----- Augmented message
+          +---+---+---+---+
+
+       1    0   1   1   1   = The Poly
+</code></pre><br />
+(Reminder: The augmented message is the message followed by W zero bits.)</p>
+<p>To perform the division perform the following:</p>
+<p><pre><code>   Load the register with zero bits.
+   Augment the message by appending W zero bits to the end of it.
+   While (more message bits)
+      Begin
+      Shift the register left by one bit, reading the next bit of the
+         augmented message into register bit position 0.
+      If (a 1 bit popped out of the register during step 3)
+         Register = Register XOR Poly.
+      End
+   The register now contains the remainder.
+</code></pre><br />
+(Note: In practice, the IF condition can be tested by testing the top bit of R before performing the shift.)</p>
+<p>We will call this algorithm &ldquo;SIMPLE&rdquo;.</p>
+<p>This might look a bit messy, but all we are really doing is &ldquo;subtracting&rdquo; various powers (i.e. shiftings) of the poly from the message until there is nothing left but the remainder. Study the manual examples of long division if you don&rsquo;t understand this.</p>
+<p>It should be clear that the above algorithm will work for any width W.</p>
+<h2 id="chapter-10-a-table-driven-implementation"><a name="user-content-chapter-10-a-table-driven-implementation" href="#chapter-10-a-table-driven-implementation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 10) A Table-Driven Implementation</h2>
+<p>The SIMPLE algorithm above is a good starting point because it corresponds directly to the theory presented so far, and because it is so SIMPLE. However, because it operates at the bit level, it is rather awkward to code (even in C), and inefficient to execute (it has to loop once for each bit). To speed it up, we need to find a way to enable the algorithm to process the message in units larger than one bit. Candidate quantities are nibbles (4 bits), bytes (8 bits), words (16 bits) and longwords (32 bits) and higher if we can achieve it. Of these, 4 bits is best avoided because it does not correspond to a byte boundary. At the very least, any speedup should allow us to operate at byte boundaries, and in fact most of the table driven algorithms operate a byte at a time.</p>
+<p>For the purposes of discussion, let us switch from a 4-bit poly to a 32-bit one. Our register looks much the same, except the boxes represent bytes instead of bits, and the Poly is 33 bits (one implicit 1 bit at the top and 32 &ldquo;active&rdquo; bits) (W=32).</p>
+<pre><code>             3    2    1    0   Bytes
+          +----+----+----+----+
+ Pop! &lt;-- |    |    |    |    | &lt;----- Augmented message
+          +----+----+----+----+
+
+         1&lt;------32 bits------&gt;
+</code></pre>
+
+<p>The SIMPLE algorithm is still applicable. Let us examine what it does. Imagine that the SIMPLE algorithm is in full swing and consider the top 8 bits of the 32-bit register (byte 3) to have the values:</p>
+<pre><code>   t7 t6 t5 t4 t3 t2 t1 t0
+</code></pre>
+
+<p>In the next iteration of SIMPLE, t7 will determine whether the Poly will be XORed into the entire register. If t7=1, this will happen, otherwise it will not. Suppose that the top 8 bits of the poly are g7 g6.. g0, then after the next iteration, the top byte will be:</p>
+<pre><code>        t6 t5 t4 t3 t2 t1 t0 ??
++ t7 * (g7 g6 g5 g4 g3 g2 g1 g0)    [Reminder: + is XOR]
+</code></pre>
+
+<p>The NEW top bit (that will control what happens in the next iteration) now has the value t6 + t7*g7. The important thing to notice here is that from an informational point of view, all the information required to calculate the NEW top bit was present in the top TWO bits of the original top byte. Similarly, the NEXT top bit can be calculated in advance SOLELY from the top THREE bits t7, t6, and t5. In fact, in general, the value of the top bit in the register in k iterations can be calculated from the top k bits of the register. Let us take this for granted for a moment.</p>
+<p>Consider for a moment that we use the top 8 bits of the register to calculate the value of the top bit of the register during the next 8 iterations. Suppose that we drive the next 8 iterations using the calculated values (which we could perhaps store in a single byte register and shift out to pick off each bit). Then we note three things:</p>
+<ul>
+<li>The top byte of the register now doesn&rsquo;t matter. No matter how many times and at what offset the poly is XORed to the top 8 bits, they will all be shifted out the right hand side during the next 8 iterations anyway.</li>
+<li>The remaining bits will be shifted left one position and the rightmost byte of the register will be shifted in the next byte</li>
+<li>While all this is going on, the register will be subjected to a series of XOR&rsquo;s in accordance with the bits of the pre-calculated control byte.<br />
+Now consider the effect of XORing in a constant value at various offsets to a register. </li>
+</ul>
+<p>For example:</p>
+<pre><code>       0100010  Register
+       ...0110  XOR this
+       ..0110.  XOR this
+       0110...  XOR this
+       -------
+       0011000
+       -------
+</code></pre>
+
+<p>The point of this is that you can XOR constant values into a register to your heart&rsquo;s delight, and in the end, there will exist a value which when XORed in with the original register will have the same effect as all the other XORs.</p>
+<p>Perhaps you can see the solution now. Putting all the pieces together we have an algorithm that goes like this:</p>
+<pre><code>   While (augmented message is not exhausted)
+      Begin
+      Examine the top byte of the register
+      Calculate the control byte from the top byte of the register
+      Sum all the Polys at various offsets that are to be XORed into
+         the register in accordance with the control byte
+      Shift the register left by one byte, reading a new message byte
+         into the rightmost byte of the register
+      XOR the summed polys to the register
+      End
+</code></pre>
+
+<p>As it stands this is not much better than the SIMPLE algorithm. However, it turns out that most of the calculation can be precomputed and assembled into a table. As a result, the above algorithm can be reduced to:</p>
+<pre><code>   While (augmented message is not exhaused)
+      Begin
+      Top = top_byte(Register);
+      Register = (Register &lt;&lt; 24) | next_augmessage_byte;
+      Register = Register XOR precomputed_table[Top];
+      End
+</code></pre>
+
+<p>There! If you understand this, you&rsquo;ve grasped the main idea of table-driven CRC algorithms. The above is a very efficient algorithm requiring just a shift, and OR, an XOR, and a table lookup per byte. Graphically, it looks like this:</p>
+<pre><code>              3    2    1    0   Bytes
+           +----+----+----+----+
+    +-----&lt;|    |    |    |    | &lt;----- Augmented message
+    |      +----+----+----+----+
+    |                ^
+    |                |
+    |               XOR
+    |                |
+    |     0+----+----+----+----+
+    v      +----+----+----+----+
+    |      +----+----+----+----+
+    |      +----+----+----+----+
+    |      +----+----+----+----+
+    |      +----+----+----+----+
+    |      +----+----+----+----+
+    +-----&gt;+----+----+----+----+
+           +----+----+----+----+
+           +----+----+----+----+
+           +----+----+----+----+
+           +----+----+----+----+
+        255+----+----+----+----+
+</code></pre>
+
+<p>Algorithm</p>
+<ol>
+<li>Shift the register left by one byte, reading in a new message byte.</li>
+<li>Use the top byte just rotated out of the register to index the table of 256 32-bit values.</li>
+<li>XOR the table value into the register.</li>
+<li>Goto 1 iff more augmented message bytes.</li>
+</ol>
+<p>In C, the algorithm main loop looks like this:</p>
+<pre><code class="c">   r=0;
+   while (len--)
+     {
+      byte t = (r &gt;&gt; 24) &amp; 0xFF;
+      r = (r &lt;&lt; 8) | *++;
+      r^=table[t];
+     }
+</code></pre>
+
+<p>where len is the length of the augmented message in bytes, p points to the augmented message, r is the register, t is a temporary, and table is the computed table. This code can be made even more unreadable as follows:</p>
+<pre><code class="c">   r=0;
+   while (len--)
+          r = ((r &lt;&lt; 8) | *++) ^ t[(r &gt;&gt; 24) &amp; 0xFF];
+</code></pre>
+
+<p>This is a very clean, efficient loop, although not a very obvious one to the casual observer not versed in CRC theory. We will call this the TABLE algorithm.</p>
+<h2 id="chapter-11-a-slightly-mangled-table-driven-implementation"><a name="user-content-chapter-11-a-slightly-mangled-table-driven-implementation" href="#chapter-11-a-slightly-mangled-table-driven-implementation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 11) A Slightly Mangled Table-Driven Implementation</h2>
+<p>Despite the terse beauty of the line</p>
+<pre><code class="c">   r=0;
+   while (len--)
+          r = ((r &lt;&lt; 8) | *++) ^ t[(r &gt;&gt; 24) &amp; 0xFF];
+</code></pre>
+
+<p>those optimizing hackers couldn&rsquo;t leave it alone. The trouble, you see, is that this loop operates upon the AUGMENTED message and in order to use this code, you have to append W/8 zero bytes to the end of the message before pointing p at it. Depending on the run-time environment, this may or may not be a problem; if the block of data was handed to us by some other code, it could be a BIG problem. One alternative is simply to append the following line after the above loop, once for each zero byte:</p>
+<pre><code class="c">      for (i=0; i&lt;W/4; i++)
+           r = (r &lt;&lt; 8) ^ t[(r &gt;&gt; 24) &amp; 0xFF];
+</code></pre>
+
+<p>This looks like a sane enough solution to me. However, at the further expense of clarity (which, you must admit, is already a pretty scare commodity in this code) we can reorganize this small loop further so as to avoid the need to either augment the message with zero bytes, or to explicitly process zero bytes at the end as above. To explain the optimization, we return to the processing diagram given earlier.</p>
+<pre><code>              3    2    1    0   Bytes
+           +----+----+----+----+
+    +-----&lt;|    |    |    |    | &lt;----- Augmented message
+    |      +----+----+----+----+
+    |                ^
+    |                |
+    |               XOR
+    |                |
+    |     0+----+----+----+----+
+    v      +----+----+----+----+
+    |      +----+----+----+----+
+    |      +----+----+----+----+
+    |      +----+----+----+----+
+    |      +----+----+----+----+
+    |      +----+----+----+----+
+    +-----&gt;+----+----+----+----+
+           +----+----+----+----+
+           +----+----+----+----+
+           +----+----+----+----+
+           +----+----+----+----+
+        255+----+----+----+----+
+</code></pre>
+
+<p>Algorithm</p>
+<ol>
+<li>Shift the register left by one byte, reading in a new message byte.</li>
+<li>Use the top byte just rotated out of the register to index the table of 256 32-bit values.</li>
+<li>XOR the table value into the register.</li>
+<li>Goto 1 iff more augmented message bytes.</li>
+</ol>
+<p>Now, note the following facts:</p>
+<ul>
+<li><strong>TAIL</strong>: The W/4 augmented zero bytes that appear at the end of the message will be pushed into the register from the right as all the other bytes are, but their values (0) will have no effect whatsoever on the register because 1) XORing with zero does not change the target byte, and 2) the four bytes are never propagated out the left side of the register where their zeroness might have some sort of influence. Thus, the sole function of the W/4 augmented zero bytes is to drive the calculation for another W/4 byte cycles so that the end of the REAL data passes all the way through the register.</li>
+<li><strong>HEAD</strong>: If the initial value of the register is zero, the first four iterations of the loop will have the sole effect of shifting in the first four bytes of the message from the right. This is because the first 32 control bits are all zero and so nothing is XORed into the register. Even if the initial value is not zero, the first 4 byte iterations of the algorithm will have the sole effect of shifting the first 4 bytes of the message into the register and then XORing them with some constant value (that is a function of the initial value of the register).</li>
+</ul>
+<p>These facts, combined with the XOR property</p>
+<pre><code>   (A xor B) xor C = A xor (B xor C)
+</code></pre>
+
+<p>mean that message bytes need not actually travel through the W/4 bytes of the register. Instead, they can be XORed into the top byte just before it is used to index the lookup table. This leads to the following modified version of the algorithm.</p>
+<pre><code>    +-----&lt;Message (non augmented)
+    |
+    v         3    2    1    0   Bytes
+    |      +----+----+----+----+
+   XOR----&lt;|    |    |    |    |
+    |      +----+----+----+----+
+    |                ^
+    |                |
+    |               XOR
+    |                |
+    |     0+----+----+----+----+
+    v      +----+----+----+----+
+    |      +----+----+----+----+
+    |      +----+----+----+----+
+    |      +----+----+----+----+
+    |      +----+----+----+----+
+    |      +----+----+----+----+
+    +-----&gt;+----+----+----+----+
+           +----+----+----+----+
+           +----+----+----+----+
+           +----+----+----+----+
+           +----+----+----+----+
+        255+----+----+----+----+
+</code></pre>
+
+<p>Algorithm</p>
+<ol>
+<li>Shift the register left by one byte, reading in a new message byte.</li>
+<li>XOR the top byte just rotated out of the register with the next message byte to yield an index into the table ([0,255]).</li>
+<li>XOR the table value into the register.</li>
+<li>Goto 1 iff more augmented message bytes.</li>
+</ol>
+<p>Note: The initial register value for this algorithm must be the initial value of the register for the previous algorithm fed through the table four times. Note: The table is such that if the previous algorithm used 0, the new algorithm will too.</p>
+<p>This is an IDENTICAL algorithm and will yield IDENTICAL results. The C code looks something like this:</p>
+<pre><code class="c">   r=0;
+   while (len--)
+          r = (r&lt;&lt;8) ^ t[(r &gt;&gt; 24) ^ *++];
+</code></pre>
+
+<p>and THIS is the code that you are likely to find inside current table-driven CRC implementations. Some FF masks might have to be ANDed in here and there for portability&rsquo;s sake, but basically, the above loop is IT. We will call this the DIRECT TABLE ALGORITHM.</p>
+<p>During the process of trying to understand all this stuff, I managed to derive the SIMPLE algorithm and the table-driven version derived from that. However, when I compared my code with the code found in real-implementations, I was totally bamboozled as to why the bytes were being XORed in at the wrong end of the register! It took quite a while before I figured out that theirs and my algorithms were actually the same. Part of why I am writing this document is that, while the link between division and my earlier table-driven code is vaguely apparent, any such link is fairly well erased when you start pumping bytes in at the &ldquo;wrong end&rdquo; of the register. It looks all wrong!</p>
+<p>If you&rsquo;ve got this far, you not only understand the theory, the practice, the optimized practice, but you also understand the real code you are likely to run into. Could get any more complicated? Yes it can.</p>
+<hr />
+<h2 id="chapter-12-reflected-table-driven-implementations"><a name="user-content-chapter-12-reflected-table-driven-implementations" href="#chapter-12-reflected-table-driven-implementations" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 12) &ldquo;Reflected&rdquo; Table-Driven Implementations</h2>
+<p>Despite the fact that the above code is probably optimized about as much as it could be, this did not stop some enterprising individuals from making things even more complicated. To understand how this happened, we have to enter the world of hardware.</p>
+<p>DEFINITION: A value/register is reflected if it&rsquo;s bits are swapped around its centre. For example: 0101 is the 4-bit reflection of 1010.</p>
+<pre><code>0011 is the reflection of 1100.
+0111-0101-1010-1111-0010-0101-1011-1100 is the reflection of
+0011-1101-1010-0100-1111-0101-1010-1110.
+</code></pre>
+
+<p>Turns out that UARTs (those handy little chips that perform serial IO) are in the habit of transmitting each byte with the least significant bit (bit 0) first and the most significant bit (bit 7) last (i.e. reflected). An effect of this convention is that hardware engineers constructing hardware CRC calculators that operate at the bit level took to calculating CRCs of bytes streams with each of the bytes reflected within itself. The bytes are processed in the same order, but the bits in each byte are swapped; bit 0 is now bit 7, bit 1 is now bit 6, and so on. Now this wouldn&rsquo;t matter much if this convention was restricted to hardware land. However it seems that at some stage some of these CRC values were presented at the software level and someone had to write some code that would interoperate with the hardware CRC calculation.</p>
+<p>In this situation, a normal sane software engineer would simply reflect each byte before processing it. However, it would seem that normal sane software engineers were thin on the ground when this early ground was being broken, because instead of reflecting the bytes, whoever was responsible held down the byte and reflected the world, leading to the following &ldquo;reflected&rdquo; algorithm which is identical to the previous one except that everything is reflected except the input bytes.</p>
+<pre><code>        Message (non augmented) &gt;-----+
+                                      |
+      Bytes   0    1    2    3        v
+           +----+----+----+----+      |
+           |    |    |    |    |&gt;----XOR
+           +----+----+----+----+      |
+                     ^                |
+                     |                |
+                    XOR               |
+                     |                |
+           +----+----+----+----+0     |
+           +----+----+----+----+      v
+           +----+----+----+----+      |
+           +----+----+----+----+      |
+           +----+----+----+----+      |
+           +----+----+----+----+      |
+           +----+----+----+----+      |
+           +----+----+----+----+&lt;-----+
+           +----+----+----+----+
+           +----+----+----+----+
+           +----+----+----+----+
+           +----+----+----+----+
+           +----+----+----+----+255
+</code></pre>
+
+<p>Notes:</p>
+<ul>
+<li>The table is identical to the one in the previous algorithm except that each entry has been reflected.</li>
+<li>The initial value of the register is the same as in the previous algorithm except that it has been reflected.</li>
+<li>The bytes of the message are processed in the same order as before (i.e. the message itself is not reflected).</li>
+<li>The message bytes themselves don&rsquo;t need to be explicitly reflected, because everything else has been!</li>
+</ul>
+<p>At the end of execution, the register contains the reflection of the final CRC value (remainder). Actually, I&rsquo;m being rather hard on whoever cooked this up because it seems that hardware implementations of the CRC algorithm used the reflected checksum value and so producing a reflected CRC was just right. In fact reflecting the world was probably a good engineering solution - if a confusing one.</p>
+<p>We will call this the <strong>REFLECTED</strong> algorithm.</p>
+<p>Whether or not it made sense at the time, the effect of having reflected algorithms kicking around the world&rsquo;s FTP sites is that about half the CRC implementations one runs into are reflected and the other half not. It&rsquo;s really terribly confusing. In particular, it would seem to me that the casual reader who runs into a reflected, table-driven implementation with the bytes &ldquo;fed in the wrong end&rdquo; would have Buckley&rsquo;s chance of ever connecting the code to the concept of binary mod 2 division.</p>
+<p>It couldn&rsquo;t get any more confusing could it? Yes it could.</p>
+<h2 id="chapter-13-reversed-polys"><a name="user-content-chapter-13-reversed-polys" href="#chapter-13-reversed-polys" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 13) &ldquo;Reversed&rdquo; Polys</h2>
+<p>As if reflected implementations weren&rsquo;t enough, there is another concept kicking around which makes the situation bizaarly confusing. The concept is reversed Polys.</p>
+<p>It turns out that the reflection of good polys tend to be good polys too! That is, if G=11101 is a good poly value, then 10111 will be as well. As a consequence, it seems that every time an organization (such as CCITT) standardizes on a particularly good poly (&ldquo;polynomial&rdquo;), those in the real world can&rsquo;t leave the poly&rsquo;s reflection alone either. They just HAVE to use it. As a result, the set of &ldquo;standard&rdquo; poly&rsquo;s has a corresponding set of reflections, which are also in use. To avoid confusion, we will call these the &ldquo;reversed&rdquo; polys.</p>
+<pre><code>   X25   standard: 1-0001-0000-0010-0001
+   X25   reversed: 1-0000-1000-0001-0001
+
+   CRC16 standard: 1-1000-0000-0000-0101
+   CRC16 reversed: 1-0100-0000-0000-0011
+</code></pre>
+
+<p>Note that here it is the entire poly that is being reflected/reversed, not just the bottom W bits. This is an important distinction. In the reflected algorithm described in the previous section, the poly used in the reflected algorithm was actually identical to that used in the non-reflected algorithm; all that had happened is that the bytes had effectively been reflected. As such, all the 16-bit/32-bit numbers in the algorithm had to be reflected. In contrast, the ENTIRE poly includes the implicit one bit at the top, and so reversing a poly is not the same as reflecting its bottom 16 or 32 bits.</p>
+<p>The upshot of all this is that a reflected algorithm is not equivalent to the original algorithm with the poly reflected. Actually, this is probably less confusing than if they were duals.</p>
+<p>If all this seems a bit unclear, don&rsquo;t worry, because we&rsquo;re going to sort it all out &ldquo;real soon now&rdquo;. Just one more section to go before that.</p>
+<h2 id="chapter-14-initial-and-final-values"><a name="user-content-chapter-14-initial-and-final-values" href="#chapter-14-initial-and-final-values" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 14) Initial and Final Values</h2>
+<p>In addition to the complexity already seen, CRC algorithms differ from each other in two other regards:</p>
+<ul>
+<li>The initial value of the register.</li>
+<li>The value to be XORed with the final register value.</li>
+</ul>
+<p>For example, the &ldquo;CRC32&rdquo; algorithm initializes its register to <code>FFFFFFFF</code> and XORs the final register value with <code>FFFFFFFF</code>.</p>
+<p>Most CRC algorithms initialize their register to zero. However, some initialize it to a non-zero value. In theory (i.e. with no assumptions about the message), the initial value has no affect on the strength of the CRC algorithm, the initial value merely providing a fixed starting point from which the register value can progress. However, in practice, some messages are more likely than others, and it is wise to initialize the CRC algorithm register to a value that does not have &ldquo;blind spots&rdquo; that are likely to occur in practice. By &ldquo;blind spot&rdquo; is meant a sequence of message bytes that do not result in the register changing its value. In particular, any CRC algorithm that initializes its register to zero will have a blind spot of zero when it starts up and will be unable to &ldquo;count&rdquo; a leading run of zero bytes. As a leading run of zero bytes is quite common in real messages, it is wise to initialize the algorithm register to a non-zero value.</p>
+<h2 id="chapter-15-defining-algorithms-absolutely"><a name="user-content-chapter-15-defining-algorithms-absolutely" href="#chapter-15-defining-algorithms-absolutely" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 15) Defining Algorithms Absolutely</h2>
+<p>At this point we have covered all the different aspects of table-driven CRC algorithms. As there are so many variations on these algorithms, it is worth trying to establish a nomenclature for them. This section attempts to do that.</p>
+<p>We have seen that CRC algorithms vary in:</p>
+<ul>
+<li>Width of the poly (polynomial).</li>
+<li>Value of the poly.</li>
+<li>Initial value for the register.</li>
+<li>Whether the bits of each byte are reflected before being processed.</li>
+<li>Whether the algorithm feeds input bytes through the register or xors them with a byte from one end and then straight into the table.</li>
+<li>Whether the final register value should be reversed (as in reflected versions).</li>
+<li>Value to XOR with the final register value.</li>
+</ul>
+<p>In order to be able to talk about particular CRC algorithms, we need to able to define them more precisely than this. For this reason, the next section attempts to provide a well-defined parameterized model for CRC algorithms. To refer to a particular algorithm, we need then simply specify the algorithm in terms of parameters to the model.</p>
+<h2 id="chapter-16-a-parameterized-model-for-crc-algorithms"><a name="user-content-chapter-16-a-parameterized-model-for-crc-algorithms" href="#chapter-16-a-parameterized-model-for-crc-algorithms" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 16) A Parameterized Model For CRC Algorithms</h2>
+<p>In this section we define a precise parameterized model CRC algorithm which, for want of a better name, we will call the &ldquo;Rocksoft^tm Model CRC Algorithm&rdquo; (and why not? Rocksoft^tm could do with some free advertising :-).</p>
+<p>The most important aspect of the model algorithm is that it focusses exclusively on functionality, ignoring all implementation details. The aim of the exercise is to construct a way of referring precisely to particular CRC algorithms, regardless of how confusingly they are implemented. To this end, the model must be as simple and precise as possible, with as little confusion as possible.</p>
+<p>The Rocksoft^tm Model CRC Algorithm is based essentially on the DIRECT TABLE ALGORITHM specified earlier. However, the algorithm has to be further parameterized to enable it to behave in the same way as some of the messier algorithms out in the real world.</p>
+<p>To enable the algorithm to behave like reflected algorithms, we provide a boolean option to reflect the input bytes, and a boolean option to specify whether to reflect the output checksum value. By framing reflection as an input/output transformation, we avoid the confusion of having to mentally map the parameters of reflected and non-reflected algorithms.</p>
+<p>An extra parameter allows the algorithm&rsquo;s register to be initialized to a particular value. A further parameter is XORed with the final value before it is returned.</p>
+<p>By putting all these pieces together we end up with the parameters of the algorithm:</p>
+<ul>
+<li><strong>NAME</strong>: This is a name given to the algorithm. A string value.</li>
+<li><strong>WIDTH</strong>: This is the width of the algorithm expressed in bits. This is one less than the width of the Poly.</li>
+<li><strong>POLY</strong>: This parameter is the poly. This is a binary value that should be specified as a hexadecimal number. The top bit of the poly should be omitted. For example, if the poly is 10110, you should specify 06. An important aspect of this parameter is that it represents the unreflected poly; the bottom bit of this parameter is always the LSB of the divisor during the division regardless of whether the algorithm being modelled is reflected.</li>
+<li><strong>INIT</strong>: This parameter specifies the initial value of the register when the algorithm starts. This is the value that is to be assigned to the register in the direct table algorithm. In the table algorithm, we may think of the register always commencing with the value zero, and this value being XORed into the register after the N&rsquo;th bit iteration. This parameter should be specified as a hexadecimal number.</li>
+<li><strong>REFIN</strong>: This is a boolean parameter. If it is FALSE, input bytes are processed with bit 7 being treated as the most significant bit (MSB) and bit 0 being treated as the least significant bit. If this parameter is FALSE, each byte is reflected before being processed.</li>
+<li><strong>REFOUT</strong>: This is a boolean parameter. If it is set to FALSE, the final value in the register is fed into the XOROUT stage directly, otherwise, if this parameter is TRUE, the final register value is reflected first.</li>
+<li><strong>XOROUT</strong>: This is an W-bit value that should be specified as a hexadecimal number. It is XORed to the final register value (after the REFOUT) stage before the value is returned as the official checksum.</li>
+<li><strong>CHECK</strong>: This field is not strictly part of the definition, and, in the event of an inconsistency between this field and the other field, the other fields take precedence. This field is a check value that can be used as a weak validator of implementations of the algorithm. The field contains the checksum obtained when the ASCII string &ldquo;123456789&rdquo; is fed through the specified algorithm (i.e. 313233&hellip; (hexadecimal)).</li>
+</ul>
+<p>With these parameters defined, the model can now be used to specify a particular CRC algorithm exactly. Here is an example specification for a popular form of the CRC-16 algorithm.</p>
+<pre><code>   Name   : &quot;CRC-16&quot;
+   Width  : 16
+   Poly   : 8005
+   Init   : 0000
+   RefIn  : True
+   RefOut : True
+   XorOut : 0000
+   Check  : BB3D
+</code></pre>
+
+<hr />
+<h2 id="chapter-17-a-catalog-of-parameter-sets-for-standards"><a name="user-content-chapter-17-a-catalog-of-parameter-sets-for-standards" href="#chapter-17-a-catalog-of-parameter-sets-for-standards" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 17) A Catalog of Parameter Sets for Standards</h2>
+<p>At this point, I would like to give a list of the specifications for commonly used CRC algorithms. However, most of the algorithms that I have come into contact with so far are specified in such a vague way that this has not been possible. What I can provide is a list of polys for various CRC standards I have heard of:</p>
+<pre><code> X25   standard : 1021       [CRC-CCITT, ADCCP, SDLC/HDLC]
+ X25   reversed : 0811
+
+ CRC16 standard : 8005
+ CRC16 reversed : 4003       [LHA]
+
+ CRC32          : 04C11DB7   [PKZIP, AUTODIN II, Ethernet, FDDI]
+</code></pre>
+
+<p>I would be interested in hearing from anyone out there who can tie down the complete set of model parameters for any of these standards.</p>
+<p>However, a program that was kicking around seemed to imply the following specifications. Can anyone confirm or deny them (or provide the check values (which I couldn&rsquo;t be bothered coding up and calculating)).</p>
+<pre><code>   Name   : &quot;CRC-16/CITT&quot;
+   Width  : 16
+   Poly   : 1021
+   Init   : FFFF
+   RefIn  : False
+   RefOut : False
+   XorOut : 0000
+   Check  : ?
+
+   Name   : &quot;XMODEM&quot;
+   Width  : 16
+   Poly   : 8408
+   Init   : 0000
+   RefIn  : True
+   RefOut : True
+   XorOut : 0000
+   Check  : ?
+
+   Name   : &quot;ARC&quot;
+   Width  : 16
+   Poly   : 8005
+   Init   : 0000
+   RefIn  : True
+   RefOut : True
+   XorOut : 0000
+   Check  : ?
+</code></pre>
+
+<p>Here is the specification for the CRC-32 algorithm which is reportedly used in PKZip, AUTODIN II, Ethernet, and FDDI.</p>
+<pre><code>   Name   : &quot;CRC-32&quot;
+   Width  : 32
+   Poly   : 04C11DB7
+   Init   : FFFFFFFF
+   RefIn  : True
+   RefOut : True
+   XorOut : FFFFFFFF
+   Check  : CBF43926
+</code></pre>
+
+<h2 id="chapter-18-an-implementation-of-the-model-algorithm"><a name="user-content-chapter-18-an-implementation-of-the-model-algorithm" href="#chapter-18-an-implementation-of-the-model-algorithm" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 18) An Implementation of the Model Algorithm</h2>
+<p>Here is an implementation of the model algorithm in the C programming language. The implementation consists of a header file (.h) and an implementation file (.c). If you&rsquo;re reading this document in a sequential scroller, you can skip this code by searching for the string &ldquo;Roll Your Own&rdquo;.</p>
+<p>To ensure that the following code is working, configure it for the CRC-16 and CRC-32 algorithms given above and ensure that they produce the specified &ldquo;check&rdquo; checksum when fed the test string &ldquo;123456789&rdquo; (see earlier).</p>
+<p>Link to C program:</p>
+<ul>
+<li><a href="http://www.repairfaq.org/filipg/LINK/crcmodel.h">crcmodel.h</a> (Header File)</li>
+<li><a href="http://www.repairfaq.org/filipg/LINK/crcmodel.c">crcmodel.c</a> (C src)</li>
+</ul>
+<h2 id="chapter-19-roll-your-own-table-driven-implementation"><a name="user-content-chapter-19-roll-your-own-table-driven-implementation" href="#chapter-19-roll-your-own-table-driven-implementation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 19) Roll Your Own Table-Driven Implementation</h2>
+<p>Despite all the fuss I&rsquo;ve made about understanding and defining CRC algorithms, the mechanics of their high-speed implementation remains trivial. There are really only two forms: normal and reflected. Normal shifts to the left and covers the case of algorithms with Refin=FALSE and Refot=FALSE. Reflected shifts to the right and covers algorithms with both those parameters true. (If you want one parameter true and the other false, you&rsquo;ll have to figure it out for yourself!) The polynomial is embedded in the lookup table (to be discussed). The other parameters, Init and XorOt can be coded as macros. Here is the 32-bit normal form (the 16-bit form is similar).</p>
+<pre><code class="c"> unsigned long crc_normal ();
+ unsigned long crc_normal (blk_adr,blk_len)
+ unsigned char *blk_adr;
+ unsigned long  blk_len;
+ {
+  unsigned long crc = INIT;
+  while (blk_len--)
+     crc = crctable[((crc&gt;&gt;24) ^ *blk_adr++) &amp; 0xFFL] ^ (crc &lt;&lt; 8);
+  return crc ^ XOROT;
+ }
+</code></pre>
+
+<p>Here is the reflected form:</p>
+<pre><code class="c"> unsigned long crc_reflected ();
+ unsigned long crc_reflected (blk_adr,blk_len)
+ unsigned char *blk_adr;
+ unsigned long  blk_len;
+ {
+  unsigned long crc = INIT_REFLECTED;
+  while (blk_len--)
+     crc = crctable[(crc ^ *blk_adr++) &amp; 0xFFL] ^ (crc &gt;&gt; 8));
+  return crc ^ XOROT;
+ }
+</code></pre>
+
+<p>Note: I have carefully checked the above two code fragments, but I haven&rsquo;t actually compiled or tested them. This shouldn&rsquo;t matter to you, as, no matter WHAT you code, you will always be able to tell if you have got it right by running whatever you have created against the reference model given earlier. The code fragments above are really just a rough guide. The reference model is the definitive guide.</p>
+<p>Note: If you don&rsquo;t care much about speed, just use the reference model code!</p>
+<h2 id="chapter-20-generating-a-lookup-table"><a name="user-content-chapter-20-generating-a-lookup-table" href="#chapter-20-generating-a-lookup-table" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 20) Generating A Lookup Table</h2>
+<p>The only component missing from the normal and reversed code fragments in the previous section is the lookup table. The lookup table can be computed at run time using the cm_tab function of the model package given earlier, or can be pre-computed and inserted into the C program. In either case, it should be noted that the lookup table depends only on the POLY and RefIn (and RefOt) parameters. Basically, the polynomial determines the table, but you can generate a reflected table too if you want to use the reflected form above.</p>
+<p>The following program generates any desired 16-bit or 32-bit lookup table. Skip to the word &ldquo;Summary&rdquo; if you want to skip over this code.</p>
+<p>Link to C program:</p>
+<ul>
+<li><a href="http://www.repairfaq.org/filipg/LINK/crctable.c">crctable.c</a></li>
+</ul>
+<h2 id="chapter-21-summary"><a name="user-content-chapter-21-summary" href="#chapter-21-summary" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 21) Summary</h2>
+<p>This document has provided a detailed explanation of CRC algorithms explaining their theory and stepping through increasingly sophisticated implementations ranging from simple bit shifting through to byte-at-a-time table-driven implementations. The various implementations of different CRC algorithms that make them confusing to deal with have been explained. A parameterized model algorithm has been described that can be used to precisely define a particular CRC algorithm, and a reference implementation provided. Finally, a program to generate CRC tables has been provided.</p>
+<h2 id="chapter-22-corrections"><a name="user-content-chapter-22-corrections" href="#chapter-22-corrections" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 22) Corrections</h2>
+<p>If you think that any part of this document is unclear or incorrect, or have any other information, or suggestions on how this document could be improved, please context the author. In particular, I would like to hear from anyone who can provide Rocksoft(tm) Model CRC Algorithm parameters for standard algorithms out there.</p>
+<p>E-Mail me, Ross N. Williams, at <a href="mailto:ross@guest.adelaide.edu.au">ross@guest.adelaide.edu.au</a></p>
+<h2 id="chapter-23-glossary"><a name="user-content-chapter-23-glossary" href="#chapter-23-glossary" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 23) Glossary</h2>
+<ul>
+<li><strong>CHECKSUM</strong>: A number that has been calculated as a function of some message. The literal interpretation of this word &ldquo;Check-Sum&rdquo; indicates that the function should involve simply adding up the bytes in the message. Perhaps this was what early checksums were. Today, however, although more sophisticated formulae are used, the term &ldquo;checksum&rdquo; is still used.</li>
+<li><strong>CRC</strong>: This stands for &ldquo;Cyclic Redundancy Code&rdquo;. Whereas the term &ldquo;checksum&rdquo; seems to be used to refer to any non-cryptographic checking information unit, the term &ldquo;CRC&rdquo; seems to be reserved only for algorithms that are based on the &ldquo;polynomial&rdquo; division idea.</li>
+<li><strong>G</strong>:This symbol is used in this document to represent the Poly.</li>
+<li><strong>MESSAGE</strong>: The input data being checksummed. This is usually structured as a sequence of bytes. Whether the top bit or the bottom bit of each byte is treated as the most significant or least significant is a parameter of CRC algorithms.</li>
+<li><strong>POLY</strong>: This is my friendly term for the polynomial of a CRC.</li>
+<li><strong>POLYNOMIAL</strong>: The &ldquo;polynomial&rdquo; of a CRC algorithm is simply the divisor in the division implementing the CRC algorithm.</li>
+<li><strong>REFLECT</strong>: A binary number is reflected by swapping all of its bits around the central point. For example, 1101 is the reflection of 1011.</li>
+<li><strong>ROCKSOFT(tm) MODEL CRC ALGORITHM</strong>: A parameterized algorithm whose purpose is to act as a solid reference for describing CRC algorithms. Typically CRC algorithms are specified by quoting a polynomial. However, in order to construct a precise implementation, one also needs to know initialization values and so on.</li>
+<li><strong>WIDTH</strong>: The width of a CRC algorithm is the width of its polynomical minus one. For example, if the polynomial is 11010, the width would be 4 bits. The width is usually set to be a multiple of 8 bits.</li>
+</ul>
+<h2 id="chapter-24-references"><a name="user-content-chapter-24-references" href="#chapter-24-references" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 24) References</h2>
+<ul>
+<li>[Griffiths87] Griffiths, G., Carlyle Stones, G., &ldquo;The Tea-Leaf Reader Algorithm: An Efficient Implementation of CRC-16 and CRC-32&rdquo;, Communications of the ACM, 30(7), pp.617-620. Comment: This paper describes a high-speed table-driven implementation of CRC algorithms. The technique seems to be a touch messy, and is superceded by the Sarwete algorithm.</li>
+<li>[Knuth81] Knuth, D.E., &ldquo;The Art of Computer Programming&rdquo;, Volume 2: Seminumerical Algorithms, Section 4.6.</li>
+<li>[Nelson 91] Nelson, M., &ldquo;The Data Compression Book&rdquo;, M&amp;T Books, (501 Galveston Drive, Redwood City, CA 94063), 1991, ISBN: 1-55851-214-4. Comment: If you want to see a real implementation of a real 32-bit checksum algorithm, look on pages 440, and 446-448.</li>
+<li>[Sarwate88] Sarwate, D.V., &ldquo;Computation of Cyclic Redundancy Checks via Table Look-Up&rdquo;, Communications of the ACM, 31(8), pp.1008-1013. Comment: This paper describes a high-speed table-driven implementation for CRC algorithms that is superior to the tea-leaf algorithm. Although this paper describes the technique used by most modern CRC implementations, I found the appendix of this paper (where all the good stuff is) difficult to understand.</li>
+<li>[Tanenbaum81] Tanenbaum, A.S., &ldquo;Computer Networks&rdquo;, Prentice Hall, 1981, ISBN: 0-13-164699-0. Comment: Section 3.5.3 on pages 128 to 132 provides a very clear description of CRC codes. However, it does not describe table-driven implementation techniques.</li>
+</ul>
+<h2 id="chapter-25-references-i-have-detected-but-havent-yet-sighted"><a name="user-content-chapter-25-references-i-have-detected-but-havent-yet-sighted" href="#chapter-25-references-i-have-detected-but-havent-yet-sighted" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Chapter 25) References I Have Detected But Haven&rsquo;t Yet Sighted</h2>
+<ul>
+<li>Boudreau, Steen, &ldquo;Cyclic Redundancy Checking by Program,&rdquo; AFIPS Proceedings, Vol. 39, 1971.</li>
+<li>Davies, Barber, &ldquo;Computer Networks and Their Protocols,&rdquo; J. Wiley &amp; Sons, 1979.</li>
+<li>Higginson, Kirstein, &ldquo;On the Computation of Cyclic Redundancy Checks by Program,&rdquo; The Computer Journal (British), Vol. 16, No. 1, Feb 1973.</li>
+<li>McNamara, J. E., &ldquo;Technical Aspects of Data Communication,&rdquo; 2nd Edition, Digital Press, Bedford, Massachusetts, 1982.</li>
+<li>Marton and Frambs, &ldquo;A Cyclic Redundancy Checking (CRC) Algorithm,&rdquo; Honeywell Computer Journal, Vol. 5, No. 3, 1971.</li>
+<li>Nelson M., &ldquo;File verification using CRC&rdquo;, Dr Dobbs Journal, May 1992, pp.64-67.</li>
+<li>Ramabadran T.V., Gaitonde S.S., &ldquo;A tutorial on CRC computations&rdquo;, IEEE Micro, Aug 1988.</li>
+<li>Schwaderer W.D., &ldquo;CRC Calculation&rdquo;, April 85 PC Tech Journal, pp.118-133.</li>
+<li>Ward R.K, Tabandeh M., &ldquo;Error Correction and Detection, A Geometric Approach&rdquo; The Computer Journal, Vol. 27, No. 3, 1984, pp.246-253.</li>
+<li>Wecker, S., &ldquo;A Table-Lookup Algorithm for Software Computation of Cyclic Redundancy Check (CRC),&rdquo; Digital Equipment Corporation memorandum, 1974.</li>
+</ul>
+<p>Please check attribution section for Author of this document! This article was written by <a href="mailto:filipg@repairfaq.org">filipg@repairfaq.org</a> [mailto]. The most recent version is available on the WWW server <a href="http://www.repairfaq.org/filipg/">http://www.repairfaq.org/filipg/</a> [Copyright] [Disclaimer]<br />
+MeasureMeasure</p></article></body></html>
