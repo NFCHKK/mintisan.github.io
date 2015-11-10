@@ -1,0 +1,2395 @@
+<!DOCTYPE html><html><head>
+
+    <!-- responsive -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+
+
+<meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>stm32-tcp-ip</title></head><body><article class="markdown-body"><h1 id="stm32-tcpip"><a name="user-content-stm32-tcpip" href="#stm32-tcpip" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>在 STM32 平台上过一遍一个简单的 TCP/IP 协议栈代码</h1>
+<div class="toc">
+<ul>
+<li><a href="#stm32-tcpip">在 STM32 平台上过一遍一个简单的 TCP/IP 协议栈代码</a><ul>
+<li><a href="#arp">ARP</a><ul>
+<li><a href="#arp_1">ARP的简介</a></li>
+<li><a href="#arp_2">ARP的应答流程</a></li>
+<li><a href="#arp_3">ARP的分组格式</a></li>
+<li><a href="#arp_4">ARP的宏定义实现</a></li>
+<li><a href="#arp_5">ARP的实现函数</a></li>
+<li><a href="#arp_6">ARP实验调式</a></li>
+</ul>
+</li>
+<li><a href="#ip-icmp">IP &amp; ICMP</a><ul>
+<li><a href="#ip">IP介绍</a></li>
+<li><a href="#ip_1">IP首部</a></li>
+<li><a href="#ip_2">IP宏定义实现</a></li>
+<li><a href="#ip_3">IP函数实现</a></li>
+<li><a href="#ip_4">IP校验和实现</a></li>
+<li><a href="#icmp">ICMP简介</a></li>
+<li><a href="#icmp_1">ICMP宏定义及函数实现</a></li>
+<li><a href="#icmp_2">ICMP实验调试</a></li>
+</ul>
+</li>
+<li><a href="#udp">UDP</a><ul>
+<li><a href="#udp_1">UDP介绍</a></li>
+<li><a href="#udp_2">UDP首部</a></li>
+<li><a href="#udp_3">UDP宏定义实现</a></li>
+<li><a href="#udp_4">UDP函数实现</a></li>
+<li><a href="#udp_5">UDP实验</a></li>
+</ul>
+</li>
+<li><a href="#tcp">TCP</a><ul>
+<li><a href="#tcp_1">TCP介绍</a></li>
+<li><a href="#tcp_2">TCP首部</a></li>
+<li><a href="#tcp_3">TCP连接的建立与终止</a><ul>
+<li><a href="#_1">建立连接协议</a></li>
+<li><a href="#_2">连接终止协议</a></li>
+</ul>
+</li>
+<li><a href="#tcp_4">TCP的状态变迁图</a></li>
+<li><a href="#tcp_5">TCP宏定义实现</a></li>
+<li><a href="#tcp_6">TCP函数实现</a></li>
+<li><a href="#tcp_7">TCP实验</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>本文主要是结合《TCP/IP协议栈.第一卷》来分析 <code>AVRNET</code>（貌似不叫这个名字，姑且这样称呼吧，因为代码里面木有给名字）的几百行的TCP/IP协议栈。TCP/IP有自己的数据包格式，那就是“帧”，而帧的构成比较复杂，不同的层之间一层一层的封装。所以我在看书的时候在想如何实现，而在看代码实现的时候却又忘了我需要帧的哪些flag来让后识别是ARP？还是TCP？还是UDP，主要是有点多啊，记不住。</p>
+<p>所以，本文就把两者结合一下，个人比较喜欢这种学习方式。</p>
+<p>本文把这几个都放一块了，所以像老太太的裹脚布，如果木有耐心，可以看我的<a href="http://blog.csdn.net/fovwin/article/category/1398794">原 CSDN 博客</a>，那里是分开的。学习TCP/IP没多久，并非科班出身，那么长的帖子肯定有错误，并且因为本文是菜鸟，所以站在菜鸟的视角学习（好吧，就是菜鸟的网络学习笔记），老鸟可能觉得有点啰嗦，请老鸟鞭笞。再次申明：本贴是科普贴。</p>
+<p>源代码是野火的基础上改的，参考<a href="http://www.amobbs.com/thread-5538167-1-1.html">xukai871105</a>的帖子写的。</p>
+<p>强烈建议自己下代码看，我在代码里面都加了注释，然后可以参考着看，因为实在太臭太长了，我自己都受不鸟了。</p>
+<p>理论上只要STM32都ok的，看看具体要改啥：<br />
+1.<code>web_server.c</code><br />
+看下SPI的接口：</p>
+<pre><code class="c"> * 硬件连接： ------------------------------------
+ *           |PB13         ：ENC28J60-INT (没用到)|
+ *           |PA6-SPI1-MISO：ENC28J60-SO          |
+ *           |PA7-SPI1-MOSI：ENC28J60-SI          |
+ *           |PA5-SPI1-SCK ：ENC28J60-SCK         |
+ *           |PA4-SPI1-NSS ：ENC28J60-CS          |
+ *           |PE1          ：ENC28J60-RST (没用)  |
+ *            ------------------------------------
+</code></pre>
+
+<p>IP，PORT，MAC</p>
+<pre><code class="c">/* mac地址和ip地址在局域网内必须唯一，否则将与其他主机冲突，导致连接不成功 */
+static unsigned char mymac[6] = {0x54,0x55,0x58,0x10,0x00,0x24};
+static unsigned char myip[4] = {172,16,22,120};
+
+/* ip地址(或者是DNS的名字，如果有DNS服务器的话)，ip地址必须以&quot;/&quot;结尾 */
+static char baseurl[]=&quot;http://172.16.22.120/&quot;;
+
+/* tcp/www服务器监听端口号，范围为:1-254 */
+static unsigned int mywwwport =80;
+
+/* udp服务器 监听端口号，即本地(开发板)端口号 */
+static unsigned int myudpport =1200;
+static unsigned int pcudpport =4001;
+/* 发送数据缓冲区 */
+#define BUFFER_SIZE 1500
+static unsigned char buf[BUFFER_SIZE+1];
+
+/* 密码,不能大于9个字符(只有密码的前5位会被检测)，(字符限定为：a-z,0-9) */
+static char password[]=&quot;123456&quot;;
+</code></pre>
+
+<p>2.enc28j60.h<br />
+ENC28J60片选信号线：</p>
+<pre><code class="c">#define         ENC28J60_CS                    GPIO_Pin_11                                                /* ENC28J60片选线 */
+#define         ENC28J60_CSL()                GPIOA-&gt;BRR = ENC28J60_CS;                                /* 拉低片选 */
+#define         ENC28J60_CSH()                GPIOA-&gt;BSRR = ENC28J60_CS;                                /* 拉高片选 */
+</code></pre>
+
+<p>看看到右边的滚动条那么短~⊙﹏⊙b汗</p>
+<h2 id="arp"><a name="user-content-arp" href="#arp" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ARP</h2>
+<h3 id="arp_1"><a name="user-content-arp_1" href="#arp_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ARP的简介</h3>
+<p>Address Resolution Protocol-地址解析协议<br />
+ARP为IP地址到对应的硬件地址之间提供动态映射。从逻辑Internet地址到对应的物理硬件地址需要进行翻译。这就是ARP的功能。ARP的功能是在32 bit的IP地址和采用不同网络技术的硬件地址之间提供动态映射。<br />
+<img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/19/1366379765_5467.jpg" /></p>
+<h3 id="arp_2"><a name="user-content-arp_2" href="#arp_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ARP的应答流程</h3>
+<p><img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/19/1366379768_9645.jpg" /></p>
+<p>任何时候我们敲入下面这个形式的命令：</p>
+<pre><code>% ftp bsdi  //示例而已
+</code></pre>
+
+<p>都会进行以下这些步骤。这些步骤的序号如图 4 - 2所示。<br />
+1. 应用程序FTP客户端调用函数gethostbyname(3)把主机名（bsdi）转换成32 bit的IP地址。这个函数在DNS（域名系统）中称作解析器，我们将在第1 4章对它进行介绍。这个转换过程或者使用DNS，或者在较小网络中使用一个静态的主机文件（/etc/hosts） 。<br />
+2. FTP客户端请求TCP用得到的IP地址建立连接。<br />
+3. TCP发送一个连接请求分段到远端的主机，即用上述 IP地址发送一份IP数据报（在第1 8章我们将讨论完成这个过程的细节） 。<br />
+4. 如果目的主机在本地网络上（如以太网、令牌环网或点对点链接的另一端） ，那么IP数据报可以直接送到目的主机上。如果目的主机在一个远程网络上，那么就通过 IP选路函数来确定位于本地网络上的下一站路由器地址，并让它转发 IP数据报。在这两种情况下，IP数据报都是被送到位于本地网络上的一台主机或路由器。<br />
+5. 假定是一个以太网，那么发送端主机必须把 32 bit的IP地址变换成48 bit的以太网地址。从逻辑Internet地址到对应的物理硬件地址需要进行翻译。这就是 ARP的功能。ARP本来是用于广播网络的，有许多主机或路由器连在同一个网络上。<br />
+6. ARP发送一份称作ARP请求的以太网数据帧给以太网上的每个主机。这个过程称作广播，如图 4 - 2中的虚线所示。 ARP请求数据帧中包含目的主机的IP地址（主机名为bsdi） ，其意思是“如果你是这个IP地址的拥有者，请回答你的硬件地址。 ”<br />
+7. 目的主机的ARP层收到这份广播报文后，识别出这是发送端在寻问它的 IP地址，于是发送一个ARP应答。这个ARP应答包含IP地址及对应的硬件地址。<br />
+8. 收到ARP应答后，使ARP进行请求—应答交换的IP数据报现在就可以传送了。<br />
+9. 发送IP数据报到目的主机。</p>
+<h3 id="arp_3"><a name="user-content-arp_3" href="#arp_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ARP的分组格式</h3>
+<p><img alt="此处输入图片的描述" src="http://cache.amobbs.com/new2012/forum/201306/13/191923cnezuiunmun6686h.jpg.thumb.jpg" /></p>
+<ul>
+<li>以太网报头中的前两个字段是以太网的源地址和目的地址。目的地址为全 1 的特殊地址是广播地址。电缆上的所有以太网接口都要接收广播的数据帧。</li>
+<li>两个字节长的以太网帧类型表示后面数据的类型。对于 ARP 请求或应答来说，该字段的值为0x0806。</li>
+<li>硬件类型字段表示硬件地址的类型。它的值为 1即表示以太网地址。</li>
+<li>协议类型字段表示要映射的协议地址类型。它的值为 0x0800 即表示 IP 地址。它的值与包含 I P数据报的以太网数据帧中的类型字段的值相同，这是有意设计的（参见图 2-1）。</li>
+</ul>
+<p><img alt="此处输入图片的描述" src="http://cache.amobbs.com/new2012/forum/201306/13/192950sglsbsks3wkspg3g.jpg.thumb.jpg" /></p>
+<ul>
+<li>接下来的两个1字节的字段，硬件地址长度和协议地址长度分别指出硬件地址和协议地址的长度，以字节为单位。对于以太网上I P地址的ARP请求或应答来说，它们的值分别为6和4。</li>
+<li>操作字段(op)指出四种操作类型，它们是 ARP请求（值为1）、ARP应答（值为2） 、RARP请求（值为3）和R ARP应答（值为4） （我们在第5章讨论RARP） 。这个字段必需的，因为ARP请求和ARP应答的帧类型字段值是相同的。</li>
+<li>接下来的四个字段是发送端的硬件地址（在本例中是以太网地址）、发送端的协议地址（IP地址） 、目的端的硬件地址和目的端的协议地址。注意，这里有一些重复信息：在以太网的数据帧报头中和ARP请求数据帧中都有发送端的硬件地址。</li>
+</ul>
+<p>对于一个ARP请求来说，除目的端硬件地址外的所有其他的字段都有填充值。当系统收到一份目的端为本机的 ARP请求报文后，它就把硬件地址填进去，然后用两个目的端地址分别替换两个发送端地址，并把操作字段置为 2，最后把它发送回去。</p>
+<p>-----------------------------以上内容整理于《TCP/IP协议详解：卷1》-------------------------<br />
+理是那个那个理，但是过于抽象了，不过是基础，看完上面再看实现，那感觉很爽的~~~<br />
+-----------------------------------以下内容产生于代码及分析-------------------------------------</p>
+<h3 id="arp_4"><a name="user-content-arp_4" href="#arp_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ARP的宏定义实现</h3>
+<p>以太网协议而非802.3协议，看ETH命名的头名字就晓得了，地址位置可以结合两个header算算就出来了</p>
+<pre><code class="C">// ******* ARP *******
+//ARP包长度
+#define ETH_ARP_PACKET_LEN          28
+
+//硬件地址长度值
+#define ETHTYPE_ARP_L_V             0x06
+//协议地址长度值
+#define ETHTYPE_ARP_PROTOCOL_SIZE_V 0x04
+//操作码位置 2字节
+#define ETH_ARP_OPCODE_H_P 0x14
+#define ETH_ARP_OPCODE_L_P 0x15
+//ARP请求操作码值
+#define ETH_ARP_OPCODE_REQUEST_V    0x0001
+#define ETH_ARP_OPCODE_REQUEST_H_V  0x00
+#define ETH_ARP_OPCODE_REQUEST_L_V  0x01
+//ARP响应操作码值
+#define ETH_ARP_OPCODE_REPLY_V      0x0002
+#define ETH_ARP_OPCODE_REPLY_H_V    0x00
+#define ETH_ARP_OPCODE_REPLY_L_V    0x02
+// 发送者源硬件地址位置 6字节
+#define ETH_ARP_SRC_MAC_P           0x16
+//发送者源IP地址位置 4字节
+#define ETH_ARP_SRC_IP_P            0x1c
+//目标硬件地址位置 6字节
+#define ETH_ARP_DST_MAC_P           0x20
+//目标IP地址位置 4字节
+#define ETH_ARP_DST_IP_P            0x26
+</code></pre>
+
+<h3 id="arp_5"><a name="user-content-arp_5" href="#arp_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ARP的实现函数</h3>
+<p>以太网的header在ARP的header之前，很简单的，介绍先。</p>
+<p>配置以太网的头，为14字节：6字节目的mac地址+6字节源mac地址+2字节协议类型，如图4-3。</p>
+<pre><code class="C">// make a return eth header from a received eth packet
+void make_eth(unsigned char *buf)
+{
+    unsigned char  i = 0;
+
+    //copy the destination mac from the source and fill my mac into src
+    while(i &lt; sizeof(mac_addr))
+    {
+        buf[ETH_DST_MAC + i] = buf[ETH_SRC_MAC + i];
+        buf[ETH_SRC_MAC + i] = macaddr[i];
+        i++;
+    }
+}
+</code></pre>
+
+<p><img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/19/1366379942_6720.jpg" /></p>
+<p>展开就是这样的，看看宏定义是否与此一一对应呢。</p>
+<p><img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/19/1366379785_4229.jpg" /></p>
+<p>在判断为arp请求之后，填充以太网的头之后响应arp请求</p>
+<pre><code class="C">void make_arp_answer_from_request(unsigned char *buf)
+{
+    unsigned char  i = 0;
+    //配置以太网的头，为14字节：6字节目的mac地址+6字节源mac地址+2字节协议类型
+    make_eth(buf);
+    buf[ETH_ARP_OPCODE_H_P] = ETH_ARP_OPCODE_REPLY_H_V; //arp 响应
+    buf[ETH_ARP_OPCODE_L_P] = ETH_ARP_OPCODE_REPLY_L_V;
+
+     // 后面的ARP_DEBUG插入此处即可。
+    // fill the mac addresses:
+    while(i &lt; sizeof(mac_addr))
+    {
+        buf[ETH_ARP_DST_MAC_P + i] = buf[ETH_ARP_SRC_MAC_P + i];
+        buf[ETH_ARP_SRC_MAC_P + i] = macaddr[i];
+        i++;
+    }
+
+    i = 0;
+    //fill the ipv4 addresses
+    while(i &lt; sizeof(ipv4_addr))
+    {
+        buf[ETH_ARP_DST_IP_P + i] = buf[ETH_ARP_SRC_IP_P + i];
+        buf[ETH_ARP_SRC_IP_P + i] = ipaddr[i];
+        i++;
+    }
+
+    // eth+arp is 42 bytes:
+    enc28j60PacketSend(ETH_HEADER_LEN + ETH_ARP_PACKET_LEN, buf);
+}
+</code></pre>
+
+<p>当然，响应ARP请求的前提是你得确定有人向你发出ARP请求（下面那个函数就是了），并且这个人是谁，你是要知道的（通过发送者的IP和MAC地址），这个很容易，本协议是将地址放在几个全局变量里面的，大家就都知道了，虽然全局变量用起来很爽，但是对模块化以及后期维护带来的不便也是很大的。</p>
+<p>检查是否为合法的eth，并且只接受发给本机的arp数据，此函数在上面那个函数之前被调用，再下面的代码就是演示的例程。</p>
+<pre><code class="C">//检查是否为合法的eth，并且只接受发给本机的arp数据
+unsigned char  eth_type_is_arp_and_my_ip(unsigned char *buf, unsigned  int len)
+{
+    unsigned char  i = 0;
+
+    // 帧长度不得小于以太网的最小帧长度值，即46-除以太网头和CRC检测
+    if(len &lt; MIN_FRAMELEN)
+    {
+        return(0);
+    }
+
+    if(buf[ETH_TYPE_H_P] != ETHTYPE_ARP_H_V || buf[ETH_TYPE_L_P] != ETHTYPE_ARP_L_V)
+    {
+        return(0);
+    }
+
+    //不是发给本机IP地址的不接收，那么如此说来，我在这里可以设定监听其他IP的信息!
+    while(i &lt; sizeof(ipv4_addr))
+    {
+        if(buf[ETH_ARP_DST_IP_P + i] != ipaddr[i])
+        {
+            return(0);
+        }
+
+        i++;
+    }
+
+    return(1);
+}
+</code></pre>
+
+<p>以上函数在别人向你发送任何请求之前都将被调用一次（原因是本协议只是实现了对IP和ARP的响应），所以需要在一个while死循环或者RTOS的一个thread/task/process里面。如下所示：<br />
+上层调用示例代码</p>
+<pre><code class="C">/*
+    此部分为一部分代码
+*/
+
+/*do something initial */
+
+while(1)
+{
+    // get the next new packet:
+    plen = enc28j60PacketReceive(BUFFER_SIZE, buf);
+
+    // plen will be unequal to zero if there is a valid packet (without crc error)
+    if(plen==0)
+    {
+        continue;
+    }
+    // check if ip packets are for us:
+    if(eth_type_is_ip_and_my_ip(buf,plen)==0)
+    {
+        //丢弃本次获取的数据，再接下一个
+        continue;
+    }
+    // arp is broadcast if unknown but a host may also
+    // verify the mac address by sending it to
+    // a unicast address.
+    //这里就是ARP的响应了，如果我们在这里加入串口调试，
+    //就可以将谁在向我发送arp请求的数据打印到串口
+    //当然加一个选择宏，放在函数里面更方便一点
+    if(eth_type_is_arp_and_my_ip(buf,plen))
+    {
+        make_arp_answer_from_request(buf);
+        continue;
+    }
+    /*do other things */
+
+}
+</code></pre>
+
+<h3 id="arp_6"><a name="user-content-arp_6" href="#arp_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ARP实验调式</h3>
+<p>嗯，接者来看看在 <code>make_arp_answer_from_request</code> 函数里面加入串口调试信息来输出arp请求者的ip和mac地址。<br />
+加入到 <code>make_arp_answer_from_request</code> 中的调试代码，用于输出 ARP 请求者的信息</p>
+<pre><code class="C">#ifdef ARP_DEBUG
+printf(&quot;ARP请求者IP地址 ： \r\n&quot;);
+
+while(i &lt; sizeof(ipv4_addr))
+{
+    printf(&quot;%d&quot;, buf[ETH_ARP_SRC_IP_P + i]);
+
+    if(i != sizeof(ipv4_addr) - 1) // 加入判断只是为了输出的形式好看点
+    {
+        printf(&quot;.&quot;);
+    }
+
+    else
+    {
+        printf(&quot;\r\n&quot;);
+    }
+
+    i++;
+}
+
+i = 0;
+printf(&quot;ARP请求者MAC地址 ：\r\n&quot;);
+
+while(i &lt; sizeof(mac_addr))
+{
+    printf(&quot;%x&quot;, buf[ETH_ARP_SRC_MAC_P + i]);
+
+    if(i != sizeof(mac_addr) - 1)
+    {
+        printf(&quot;:&quot;);
+    }
+
+    else
+    {
+        printf(&quot;\r\n&quot;);
+    }
+
+    i++;
+}
+
+i = 0;
+#endif
+</code></pre>
+
+<p>PC端：测试arp请求需要先执行“arp -d”清楚本地的arp-ip对应列表，这样PC机才会发送ARP请求<br />
+ps:enj28j60的MAC地址是软件设定的，所以就不打码了。</p>
+<p><img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/19/1366379789_2331.jpg" /></p>
+<p>串口端：显示调试信息而已</p>
+<p><img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/19/1366379792_2557.jpg" /></p>
+<p>下面是我放着没动它，局域网内就有其他主机来找我的嵌入式Web Server了，O(∩_∩)O~</p>
+<p><img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/19/1366379795_3477.jpg" /></p>
+<p>-------------------------以下是我看代码看的不仔细的纠结，可跳过--------------------------</p>
+<p>但是在实验过程中发现如下情况是不会调用make_arp_answer_from_request函数的：PC机本地有arp-ip列表，就是ping过一次以后ping第二次的就不会去响应了，这个本来就是要如此的，希望结果就是这样的，你要问我是谁（MAC地址是多少），然后我告诉你一次，你记住就ok了么。但是问题出在我们的协议栈实现代码里面，本协议栈在通过eth_type_is_arp_and_my_ip判断了是发给本机的数据包之后，就会调用arp响应的，没有一个对以太网header的类型的判断啊。怎么会自己变的智能了呢?</p>
+<pre><code class="C">if(eth_type_is_arp_and_my_ip(buf, plen))
+{
+    make_arp_answer_from_request(buf);
+    continue;
+}
+</code></pre>
+
+<p>那么问题出在哪里呢？<br />
+1. 难道是进入 <code>make_arp_answer_from_request</code> 函数，但是没有发送出去么？当然也不会在 <code>enc28j60PacketSend(ETH_HEADER_LEN + ETH_ARP_PACKET_LEN, buf);</code> 里面，因为没有判别信息传递进去。（当然发不发，只要如函数之后就会有打印信息输出到串口）<br />
+2. 那么就是 <code>eth_type_is_arp_and_my_ip</code> 函数返回为0了；<br />
+但是ping命令还是可以得到响应的，哦，对了，还有ICMP（我本来就用的ping，都忘了，放在IP层），那么就好解释了，第一次是由ARP+ICMP响应，第二次及之后的只有ICMP响应。所以现象还是符合原理解释的。</p>
+<p>但是，我用网页去刷新和点亮LED等，走的肯定是IP包，ARP还是不响应。</p>
+<p>回去看代码，当时对自己就无语了</p>
+<pre><code class="c">if(buf[ETH_TYPE_H_P] != ETHTYPE_ARP_H_V || buf[ETH_TYPE_L_P] != ETHTYPE_ARP_L_V)
+</code></pre>
+
+<p>是ARP啊，我以为是对IP和ARP都会响应，而且人家的函数名是 <code>eth_type_is_arp_and_my_ip</code> ，我自己把它想成 <code>eth_type_is_arp_and_ip</code> ，╮(╯▽╰)╭<br />
+代码就在那里，自己SB了~~~</p>
+<p>-----------------------------------以上是我边想边实验边写的过程-----------------------------------</p>
+<p>硬件环境：STM32+ENC28J60<br />
+软件环境：MDK4.70a<br />
+TCP/IP协议栈：开发者的网站已经关闭了，也没有命名~~~<br />
+给出作者信息：</p>
+<pre><code>/*********************************************
+* modified: 2007-08-08
+* Author  : awake
+* Copyright: GPL V2
+* http://www.icdev.com.cn/?2213/
+* Host chip: ADUC7026
+**********************************************/
+</code></pre>
+
+<p><img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/19/1366380905_9926.jpg" /></p>
+<h2 id="ip-icmp"><a name="user-content-ip-icmp" href="#ip-icmp" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>IP &amp; ICMP</h2>
+<h3 id="ip"><a name="user-content-ip" href="#ip" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>IP介绍</h3>
+<p>IP是TCP/IP协议族中最为核心的协议。大家，如TCP、UDP、ICMP及IGMP数据，都是在IP数据报格式基础上再封装一层再来传输的（见图1 - 4）。</p>
+<p><img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/22/1366639018_2307.jpg" /></p>
+<p>不可靠（unreliable）的意思是它不能保证 IP数据报能成功地到达目的地。IP仅提供最好的传输服务。如果发生某种错误时，如某个路由器暂时用完了缓冲区，IP有一个简单的错误处理算法：丢弃该数据报，然后发送 ICMP消息报给信源端。任何要求的可靠性必须由上层来提供（如TCP） 。</p>
+<p>无连接（connectionless）这个术语的意思是IP并不维护任何关于后续数据报的状态信息。每个数据报的处理是相互独立的。这也说明，IP数据报可以不按发送顺序接收。如果一信源向相同的信宿发送两个连续的数据报（先是 A，然后是B），每个数据报都是独立地进行路由选择，可能选择不同的路线，因此B可能在A到达之前先到达。</p>
+<h3 id="ip_1"><a name="user-content-ip_1" href="#ip_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>IP首部</h3>
+<p>IP 数据报的格式如图3 - 1所示。普通的IP首部长为20个字节，除非含有选项字段。</p>
+<p><img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/22/1366639022_5516.jpg" /></p>
+<p>分析图3-1中的首部。最高位在左边，记为0bit；最低位在右边，记为31bit。4个字节的32bit值以下面的次序传输：首先是0～7bit，其次8～15bit，然后16～23bit，最后是24~31bit。这种传输次序称作big endian字节序。由于TCP／IP首部中所有的二进制整数在网络中传输时都要求以这种次序，因此它又称作网络字节序。</p>
+<p>目前的协议版本号是4，因此IP有时也称作IPv4。</p>
+<p>服务类型（TOS）字段包括一个3bit的优先权子字段（现在已被忽略），4 bit的TO S子字段和1 bit未用位但必须置0。4bit的TOS分别代表：最小时延、最大吞吐量、最高可靠性和最小费用。总长度字段是指整个I P数据报的长度，以字节为单位。</p>
+<p>标识字段唯一地标识主机发送的每一份数据报。通常每发送一份报文它的值就会加1。在大多数从伯克利派生出来的系统中，每发送一个I P数据报，I P层都要把一个内核变量的值加1，不管交给IP的数据来自哪一层。内核变量的初始值根据系统引导时的时间来设置。</p>
+<p>TTL（time－to－live）生存时间字段设置了数据报可以经过的最多路由器数。TTL的初始值由源主机设置（通常为32或64），一旦经过一个处理它的路由器，它的值就减去1。当该字段的值为0时，数据报就被丢弃，并发送 ICMP报文通知源主机。</p>
+<p>协议字段可以识别是哪个协议向IP传送数据。</p>
+<p>首部检验和字段是根据IP首部计算的检验和码。它不对首部后面的数据进行计算。 ICMP、IGMP、UDP和TCP在它们各自的首部中均含有同时覆盖首部和数据检验和码。</p>
+<p>目前，这些任选项定义如下：</p>
+<ul>
+<li>安全和处理限制（用于军事领域，详细内容参见RFC 1108[Kent 1991]）</li>
+<li>记录路径（让每个路由器都记下它的IP地址，见7.3节）</li>
+<li>时间戳（让每个路由器都记下它的IP地址和时间，见7.4节）</li>
+<li>宽松的源站选路（为数据报指定一系列必须经过的 IP地址，见8.5节）</li>
+<li>严格的源站选路（与宽松的源站选路类似，但是要求只能经过指定的这些地址，不能经过其他的地址）。</li>
+</ul>
+<p>--------------------------以上内容整理于《TCP/IP协议详解：卷1》-----------------------------<br />
+--------------------------------以下内容产生于代码及分析-----------------------------</p>
+<h3 id="ip_2"><a name="user-content-ip_2" href="#ip_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>IP宏定义实现</h3>
+<pre><code class="C">// ******* IP *******
+//IP首部长度
+#define IP_HEADER_LEN   20
+
+//IP版本号位置 以太网首部2+6+6，与下面那个在用的时候上区别下
+#define IP_HEADER_LEN_VER_P 0xe
+
+//IP版本号位置 以太网首部2+6+6
+#define IP_P 0xe
+//IP 16位标志位置
+#define IP_FLAGS_P 0x14
+//IP 生存时间位置
+#define IP_TTL_P 0x16
+//IP协议类型位置，如ICMP,TCP,UDP 1个字节
+#define IP_PROTO_P 0x17
+//首部校验和
+#define IP_CHECKSUM_P 0x18
+// IP源地址位置 14+12
+#define IP_SRC_P 0x1a
+// IP目标地址位置 14+12+4
+#define IP_DST_P 0x1e
+
+//IP总长度
+#define IP_TOTLEN_H_P 0x10
+#define IP_TOTLEN_L_P 0x11
+
+//协议类型
+#define IP_PROTO_ICMP_V 0x01
+#define IP_PROTO_TCP_V 0x06
+#define IP_PROTO_UDP_V 0x11
+</code></pre>
+
+<h3 id="ip_3"><a name="user-content-ip_3" href="#ip_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>IP函数实现</h3>
+<p>以太网的header在IP的header之前，很简单的，介绍先。配置以太网的头，为14字节：6字节目的mac地址+6字节源mac地址+2字节协议类型。</p>
+<pre><code class="C">// make a return eth header from a received eth packet
+void make_eth(unsigned char *buf)
+{
+    unsigned char  i = 0;
+
+    //copy the destination mac from the source and fill my mac into src
+    while(i &lt; sizeof(mac_addr))
+    {
+        buf[ETH_DST_MAC + i] = buf[ETH_SRC_MAC + i];
+        buf[ETH_SRC_MAC + i] = macaddr[i];
+        i++;
+    }
+}
+</code></pre>
+
+<p><img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/22/1366639025_8579.jpg" /></p>
+<p>展开之后如下所示，其在以太网帧中的位置与之前的宏定义是一一对应的。</p>
+<p><img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/22/1366639029_7514.jpg" /></p>
+<p>IP与ARP一样，需要判定是不是发给本机的(<code>eth_type_is_ip_and_my_ip</code>函数),还有与填充make_eth  函数一样需要填充函数(make_ip函数)，此外还有填充其他杂七杂八和16位首部校验和函数(<code>fill_ip_hdr_checksum</code>函数)。</p>
+<pre><code class="C">//判定过程与eth_type_is_arp_and_my_ip类似
+unsigned char  eth_type_is_ip_and_my_ip(unsigned char *buf, unsigned  int len)
+{
+    unsigned char  i = 0;
+
+    //eth+ip+udp header is 42
+    if(len &lt; MIN_FRAMELEN)
+    {
+        return(0);
+    }
+
+    if(buf[ETH_TYPE_H_P] != ETHTYPE_IP_H_V || buf[ETH_TYPE_L_P] != ETHTYPE_IP_L_V)
+    {
+        return(0);
+    }
+
+    if(buf[IP_HEADER_LEN_VER_P] != 0x45)
+    {
+        // must be IP V4 and 20 byte header
+        return(0);
+    }
+
+    while(i &lt; sizeof(ipv4_addr))
+    {
+        if(buf[IP_DST_P + i] != ipaddr[i])
+        {
+            return(0);
+        }
+
+        i++;
+    }
+
+    return(1);
+}
+//下面那个ip填充函数调用它，主要是补充填充和校验和
+void fill_ip_hdr_checksum(unsigned char *buf)
+{
+    unsigned  int ck;
+    // clear the 2 byte checksum
+    buf[IP_CHECKSUM_P] = 0;
+    buf[IP_CHECKSUM_P + 1] = 0;
+    buf[IP_FLAGS_P] = 0x40; // don't fragment
+    buf[IP_FLAGS_P + 1] = 0; // fragement offset
+    buf[IP_TTL_P] = 64; // ttl
+    // calculate the checksum:
+    //校验和计算，在下下面那个函数里面，输入参数的含义下面看就晓得了
+    ck = checksum(&amp;buf[IP_P], IP_HEADER_LEN, 0);
+    buf[IP_CHECKSUM_P] = ck &gt;&gt; 8;
+    buf[IP_CHECKSUM_P + 1] = ck &amp; 0xff;
+}
+
+// make a return ip header from a received ip packet
+//与以太网填充函数类似，填充ip地址
+void make_ip(unsigned char *buf)
+{
+    unsigned char  i = 0;
+
+    while(i &lt; sizeof(ipv4_addr))
+    {
+        buf[IP_DST_P + i] = buf[IP_SRC_P + i];
+        buf[IP_SRC_P + i] = ipaddr[i];
+        i++;
+    }
+
+    fill_ip_hdr_checksum(buf);
+}
+
+</code></pre>
+
+<h3 id="ip_4"><a name="user-content-ip_4" href="#ip_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>IP校验和实现</h3>
+<p>校验和函数式如何得出校验和值的呢？看《TCP/IP协议详解：卷1》里面咋说的吧。</p>
+<blockquote>
+<p>”为了计算一份数据报的 IP检验和，首先把检验和字段置为 0。然后，对首部中每个 16 bit进行二进制反码求和（整个首部看成是由一串 16 bit的字组成） ，结果存在检验和字段中。当收到一份I P数据报后，同样对首部中每个16 bit进行二进制反码的求和。由于接收方在计算过程中包含了发送方存在首部中的检验和，因此，如果首部在传输过程中没有发生任何差错，那么接收方计算的结果应该为全 1。如果结果不是全1（即检验和错误） ，那么I P就丢弃收到的数据报。但是不生成差错报文，由上层去发现丢失的数据报并进行重传。<br />
+ICMP、IGMP、UDP和TCP都采用相同的检验和算法，尽管TCP和UDP除了本身的首部和数据外，在IP首部中还包含不同的字段。在RFC 1071[Braden, Borman and Patridge 1988]中有关于如何计算Internet检验和的实现技术。由于路由器经常只修改 TTL段（减1） ，因此当路由器转发一份报文时可以增加它的检验和，而不需要对 IP整个首部进行重新计算。 RFC1141[Mallory and Kullberg 1990]为此给出了一个很有效的方法。“</p>
+</blockquote>
+<p>但是本协议栈的实现顺序上与以上说的略有不同，《TCP/IP协议详解：卷1》是先反码再求和，本协议栈里面是先求和再反码，当然都是按照16bit单位的单元来的。那结果一样么？</p>
+<p>比如：</p>
+<pre><code>11101010 01010100
+10000000 11111110
+</code></pre>
+
+<p>先反码再求和：<br />
+取反</p>
+<pre><code>00010101 10101011
+01111111 00000001
+</code></pre>
+
+<p>求和</p>
+<pre><code>10010100 10101100
+</code></pre>
+
+<p>先求和再反码：<br />
+求和</p>
+<pre><code>1 01101011 01010010
+</code></pre>
+
+<p>将进位加置最后来保持16位（下面的代码如是说）</p>
+<pre><code>01101011 01010011
+</code></pre>
+
+<p>取反</p>
+<pre><code>10010100 10101100
+</code></pre>
+
+<p>没错，不完全验证两种方法的结果是一致的，不是科班出身，感觉上有啥子理论来说明某种顺序的调换在对二进制运算结果方面的影响是无关的。</p>
+<pre><code class="C">`unsigned  int checksum(unsigned char * buf, unsigned  int len,unsigned char  type)
+{
+    // type 0=ip
+    //      1=udp
+    //      2=tcp
+    unsigned long sum = 0;
+
+    //if(type==0){
+    //        // do not add anything
+    //}
+    if(type==1)
+    {
+        sum+=IP_PROTO_UDP_V; // protocol udp
+        // the length here is the length of udp (data+header len)
+        // =length given to this function - (IP.scr+IP.dst length)
+        sum+=len-8; // = real tcp len
+    }
+    if(type==2)
+    {
+        sum+=IP_PROTO_TCP_V;
+        // the length here is the length of tcp (data+header len)
+        // =length given to this function - (IP.scr+IP.dst length)
+        sum+=len-8; // = real tcp len
+    }
+    // build the sum of 16bit words
+    while(len &gt;1)
+    {
+        sum += 0xFFFF &amp; (*buf&lt;&lt;8|*(buf+1));
+        buf+=2;
+        len-=2;
+    }
+    // if there is a byte left then add it (padded with zero)
+    if (len)
+    {
+        sum += (0xFF &amp; *buf)&lt;&lt;8;
+    }
+    // now calculate the sum over the bytes in the sum
+    // until the result is only 16bit long
+    while (sum&gt;&gt;16)
+    {
+        sum = (sum &amp; 0xFFFF)+(sum &gt;&gt; 16);
+    }
+    // build 1's complement:
+    return( (unsigned  int) sum ^ 0xFFFF);
+}
+</code></pre>
+
+<h3 id="icmp"><a name="user-content-icmp" href="#icmp" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ICMP简介</h3>
+<p>注意：ICMP在TCP/IP分层上与IP属于同一层，因此放在与IP一块，但是ICMP是封装在IP数据报里面的。<br />
+<img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/22/1366639344_7239.png" /><br />
+ICMP：Internet Control Messages Protocol, 网间控制报文协议<br />
+<img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/22/1366639032_7378.jpg" /><br />
+ICMP报文的格式如图6 - 2所示。所有报文的前4个字节都是一样的，但是剩下的其他字节则互不相同。下面我们将逐个介绍各种报文格式。类型字段可以有1 5个不同的值，以描述特定类型的 ICMP报文。某些ICMP报文还使用代码字段的值来进一步描述不同的条件。<br />
+检验和字段覆盖整个ICMP报文。使用的算法与I P首部检验和算法相同。ICMP的检验和是必需的。<br />
+<img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/22/1366639036_9425.jpg" /></p>
+<h3 id="icmp_1"><a name="user-content-icmp_1" href="#icmp_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ICMP宏定义及函数实现</h3>
+<p>虽然ICMP具有很多的子协议，但是其中最著名的要数ping程序，即ICMP回显请求和应答报文。通过使用ping命令来判断报文是否可以到达目标地址。ICMP的实现是一个逐步遵守规则的过程，即向固定的字节填充数据，其实本协议栈也就实现了这个ping。</p>
+<p>“ping”这个名字源于声纳定位操作。 Ping程序由Mike Muuss编写，目的是为了测试另一台主机是否可达。该程序发送一份ICMP回显请求报文给主机，并等待返回ICMP回显应答。</p>
+<p><img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/22/1366639040_7179.jpg" /></p>
+<p>当返回ICMP回显应答时，要打印出序列号和TTL，并计算往返时间（TTL位于 IP首部中的生存时间字段）。<br />
+ICMP回显应答需要做好两步，第一步检查IP首部中的协议类型是否为ICMP报文；第二，检查ICMP首部中的ICMP类型是否为ICMP请求，如果是则生成ICMP回显应答并通过以太网驱动芯片发送。为了便于调试，在接收到ICMP回显请求时通过串口输出发起方的IP地址，ping命令发起方的IP地址存在于IP首部中的源IP地址部分。</p>
+<pre><code class="C">// ******* ICMP *******
+//回显应答
+#define ICMP_TYPE_ECHOREPLY_V 0
+//回显请求
+#define ICMP_TYPE_ECHOREQUEST_V 8
+//ICMP类型
+#define ICMP_TYPE_P 0x22
+//ICMP首部校验和
+#define ICMP_CHECKSUM_P 0x24
+
+void make_echo_reply_from_request(unsigned char * buf,unsigned  int len)
+{
+    make_eth(buf);
+    make_ip(buf);
+     //ICMP_DEBUG插入此处
+    buf[ICMP_TYPE_P]=ICMP_TYPE_ECHOREPLY_V;   //回显应答
+    // we changed only the icmp.type field from request(=8) to reply(=0).
+    // we can therefore easily correct the checksum:
+    if (buf[ICMP_CHECKSUM_P] &gt; (0xff-0x08))
+    {
+        buf[ICMP_CHECKSUM_P+1]++;
+    }
+    buf[ICMP_CHECKSUM_P]+=0x08;
+    //
+    enc28j60PacketSend(len,buf);
+}
+</code></pre>
+
+<h3 id="icmp_2"><a name="user-content-icmp_2" href="#icmp_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ICMP实验调试</h3>
+<pre><code class="C">void make_echo_reply_from_request(unsigned char * buf,unsigned  int len)
+{
+        int i=0;
+    make_eth(buf);
+    make_ip(buf);
+        #ifdef ICMP_DEBUG
+        printf(&quot;ping命令发起者的IP地址 ： \r\n&quot;);
+      while(i&lt;sizeof(ipv4_addr))
+    {
+            //注意这里是IP_SRC_P,不是ARP包了，因为包的类型变了
+            printf(&quot;%d&quot;,buf[IP_SRC_P+i]);/*这里错了，应该是IP_DST_P，why？看函数名，好了，看了串口的输出才看出来的*/
+            if(i!=sizeof(ipv4_addr)-1)
+                printf(&quot;.&quot;);
+            else
+                printf(&quot;\r\n&quot;);
+            i++;
+        }
+        i=0;
+        #endif
+    buf[ICMP_TYPE_P]=ICMP_TYPE_ECHOREPLY_V;   //回送应答
+    // we changed only the icmp.type field from request(=8) to reply(=0).
+    // we can therefore easily correct the checksum:
+    if (buf[ICMP_CHECKSUM_P] &gt; (0xff-0x08))
+    {
+        buf[ICMP_CHECKSUM_P+1]++;
+    }
+    buf[ICMP_CHECKSUM_P]+=0x08;
+    //
+    enc28j60PacketSend(len,buf);
+}
+</code></pre>
+
+<p>在程序的无线循环中，需要层层进行查询。其实就是各种if语句来判定以太网帧的那些个标记为是不是所要找的类型。</p>
+<ol>
+<li>查询以太网中是否有数据，若无数据则返回。</li>
+<li>保存源MAC地址，待返回时使用。</li>
+<li>查询是否为ARP报文并返回ARP报文</li>
+<li>保存源IP地址，待返回时使用。</li>
+<li>查询是否为IP报文，若非IP报文返回。</li>
+<li>查询是否为ICMP报文并返回ICMP回显应答。</li>
+</ol>
+<p><img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/22/1366639043_7985.jpg" /></p>
+<p>这里可以修改<code>fill_ip_hdr_checksum</code>函数里面的ttl（time to live）值，来确定IP包的生存周期，就是经过几个路由之后被丢弃掉。修改为以下的125。<br />
+<img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/22/1366639050_1757.jpg" /><br />
+<img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/22/1366639053_9558.jpg" /><br />
+如果按照注释里面改正之后~~~<br />
+<img alt="此处输入图片的描述" src="http://img.my.csdn.net/uploads/201304/22/1366642209_5763.jpg" /></p>
+<p><img alt="" src="http://img.my.csdn.net/uploads/201304/22/1366639344_7239.png" /></p>
+<h2 id="udp"><a name="user-content-udp" href="#udp" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>UDP</h2>
+<h3 id="udp_1"><a name="user-content-udp_1" href="#udp_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>UDP介绍</h3>
+<p>UDP是一个简单的面向数据报的运输层协议：进程的每个输出操作都正好产生一个 UDP数据报，并组装成一份待发送的IP数据报。这与面向流字符的协议不同，如TCP，应用程序产生的全体数据与真正发送的单个IP数据报可能没有什么联系。</p>
+<p>UDP数据报封装成一份 IP数据报的格式如图11 - 1所示。</p>
+<p><img alt="" src="http://img.my.csdn.net/uploads/201304/22/1366640052_7295.jpg" /></p>
+<p>RFC 768 [Postel 1980] 是UDP的正式规范。<br />
+UDP不提供可靠性：它把应用程序传给IP层的数据发送出去，但是并不保证它们能到达目的地。由于缺乏可靠性，我们似乎觉得要避免使用UDP而使用一种可靠协议如TCP。在讨论完TCP后将再回到这个话题，看看什么样的应用程序可以使用UDP。</p>
+<h3 id="udp_2"><a name="user-content-udp_2" href="#udp_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>UDP首部</h3>
+<p>UDP首部的各字段如图11 - 2所示。</p>
+<p><img alt="" src="http://img.my.csdn.net/uploads/201304/22/1366640056_8004.jpg" /></p>
+<p>端口号表示发送进程和接收进程。在图 1-8 中，我们画出了TCP和UDP用目的端口号来分用来自IP层的数据的过程。</p>
+<p><img alt="" src="http://img.my.csdn.net/uploads/201304/22/1366640060_5102.jpg" /></p>
+<p>由于IP层已经把IP数据报分配给TCP或UDP（根据I P首部中协议字段值） ，因此TCP端口号由TCP来查看，而UDP端口号由UDP来查看。TCP端口号与UDP端口号是相互独立的。</p>
+<p>尽管相互独立，如果TCP和UDP同时提供某种知名服务，两个协议通常选择相同的端口号。这纯粹是为了使用方便，而不是协议本身的要求。</p>
+<p>UDP长度字段指的是UDP首部和UDP数据的字节长度。该字段的最小值为 8字节（发送一份0字节的UDP数据报是OK） 。这个UDP长度是有冗余的。 IP数据报长度指的是数据报全长（图3-1） ，因此UDP数据报长度是全长减去IP首部的长度（该值在首部长度字段中指定，如图3 - 1所示）<br />
+<img alt="" src="http://img.my.csdn.net/uploads/201304/22/1366640063_6791.jpg" /></p>
+<p>UDP检验和覆盖UDP首部和UDP数据。回想IP首部的检验和，它只覆盖IP的首部—并不覆盖IP数据报中的任何数据。</p>
+<p>UDP和TCP在首部中都有覆盖它们首部和数据的检验和。UDP的检验和是可选的，而TCP的检验和是必需的。</p>
+<p>尽管UDP检验和的基本计算方法与我们在描述的IP首部检验和计算方法相类似（16 bit字的二进制反码和，但是稍微有所不同，在根据字段类型判定为UDP或者TCP时加入了一些处理，看代码就晓得了） ，但是它们之间存在不同的地方。首先， UDP数据报的长度可以为奇数字节，但是检验和算法是把若干个 16 bit字相加。解决方法是必要时在最后增加填充字节0，这只是为了检验和的计算（也就是说，可能增加的填充字节不被传送） 。</p>
+<p>其次，UDP数据报和TCP段都包含一个1 2字节长的伪首部（本TCP/IP协议栈有所不同，只加入了4字节源IP地址和4字节目的IP地址，即利用IP首部的尾巴，实现了空间上的复用，看代码就晓得了），它是为了计算检验和而设置的。伪首部包含IP首部一些字段。其目的是让 UDP两次检查数据是否已经正确到达目的地（例如，IP没有接受地址不是本主机的数据报，以及IP没有把应传给另一高层的数据报传给UDP） 。UDP数据报中的伪首部格式如图11 - 3所示。</p>
+<p><img alt="" src="http://img.my.csdn.net/uploads/201304/22/1366640068_4523.jpg" /></p>
+<p>在该图中，我们特地举了一个奇数长度的数据报例子，因而在计算检验和时需要加上填充字节(0)。注意，UDP数据报的长度在检验和计算过程中出现两次。</p>
+<p>如果检验和的计算结果为 0，则存入的值为全1（65535） ，这在二进制反码计算中是等效的。如果传送的检验和为0，说明发送端没有计算检验和。(因为协议要求如此，故代码需要实现之。)如果发送端没有计算检验和而接收端检测到检验和有差错，那么 UDP数据报就要被悄悄地丢弃。不产生任何差错报文（当IP层检测到IP首部检验和有差错时也这样做） 。</p>
+<p>UDP检验和是一个端到端的检验和。它由发送端计算，然后由接收端验证。其目的是为了发现UDP首部和数据在发送端到接收端之间发生的任何改动。</p>
+<p>/<em>下面阐述UDP校验和的一些历史和必要性</em>/</p>
+<p>尽管UDP检验和是可选的，但是它们应该总是在用。在 80年代，一些计算机产商在默认条件下关闭UDP检验和的功能，以提高使用UDP协议的NFS（Network File System）的速度。</p>
+<p>在单个局域网中这可能是可以接受的，但是在数据报通过路由器时，通过对链路层数据帧进行循环冗余检验（如以太网或令牌环数据帧）可以检测到大多数的差错，导致传输失败。不管相信与否，路由器中也存在软件和硬件差错，以致于修改数据报中的数据。如果关闭端到端的UDP检验和功能，那么这些差错在UDP数据报中就不能被检测出来。另外，一些数据链路层协议（如SLIP）没有任何形式的数据链路检验和。</p>
+<p>Host Requirements RFC声明，UDP检验和选项在默认条件下是打开的。它还声明，如果发送端已经计算了检验和，那么接收端必须检验接收到的检验和（如接收到检验和不为0） 。但是，许多系统没有遵守这一点，只是在出口检验和选项被打开时才验证接收到的检验和。</p>
+<p>另外需要解释几个术语： IP数据报是指IP层端到端的传输单元（在分片之前和重新组装之后） ，分组是指在IP层和链路层之间传送的数据单元。一个分组可以是一个完整的 IP数据报，也可以是IP数据报的一个分片。（这里有如何分片的说明，书里介绍的详细，简而言之，超过MTU就需要分，但是第一片和接下来的片是有区别的：第一个有UDP首部，其他没有，但是可以通过IP的flags来组合起来。下面的图很形象的说明了。）</p>
+<p><img alt="" src="http://img.my.csdn.net/uploads/201304/22/1366640073_6068.jpg" /></p>
+<h3 id="udp_3"><a name="user-content-udp_3" href="#udp_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>UDP宏定义实现</h3>
+<pre><code class="C">// ******* UDP *******
+#define UDP_HEADER_LEN  8
+//源端口位置
+#define UDP_SRC_PORT_H_P 0x22
+#define UDP_SRC_PORT_L_P 0x23
+//目标端口位置
+#define UDP_DST_PORT_H_P 0x24
+#define UDP_DST_PORT_L_P 0x25
+//UDP数据长度位置
+#define UDP_LEN_H_P          0x26
+#define UDP_LEN_L_P          0x27
+//UDP校验和位置
+#define UDP_CHECKSUM_H_P 0x28
+#define UDP_CHECKSUM_L_P 0x29
+//UDP数据起始地址
+#define UDP_DATA_P 0x2a
+</code></pre>
+
+<h3 id="udp_4"><a name="user-content-udp_4" href="#udp_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>UDP函数实现</h3>
+<p>本TCP/IP协议栈中的UDP实现只一个make_udp_reply_from_request函数——udp服务器，可以响应其他udp的请求。在连接的顺序看来，在stm32板子上面的为服务器，等待pc机客户端的请求，当请求到来的时候，返回由程序员自行设定的响应，如本文中将做出3个响应的例子（当然udp一旦建立之后，就部分客户端和服务器端，地位是对等的，但是认为发起者为clien比较符合认知而已）。</p>
+<p>这里说以下输入吧：buf为缓冲区，data为要传输的数据，datalen即为sizeof(data)，port即为pc端的udp端口号</p>
+<pre><code class="C">void make_udp_reply_from_request(unsigned char *buf, char *data, unsigned int datalen, unsigned  int port)
+{
+    unsigned int i = 0, tol_len;
+    unsigned  int ck;
+    //如前面的ARP和ICMP一样的
+    make_eth(buf);
+    // total length field in the IP header must be set:
+    //如IP Header
+    tol_len = IP_HEADER_LEN + UDP_HEADER_LEN + datalen;
+    buf[IP_TOTLEN_H_P] = tol_len &gt;&gt; 8;
+    buf[IP_TOTLEN_L_P] = tol_len;
+    //如ICMP
+    make_ip(buf);
+    //本地UDP的端口号
+    buf[UDP_DST_PORT_H_P] = port &gt;&gt; 8;
+    buf[UDP_DST_PORT_L_P] = port &amp; 0xff;
+    // source port does not matter and is what the sender used.
+    // calculte the udp length:最大16bit长度，即65535-14-20-8，但一般会设置的较小，原因么，上文里面讲过。
+    buf[UDP_LEN_H_P] = datalen &gt;&gt; 8;
+    buf[UDP_LEN_L_P] = UDP_HEADER_LEN + datalen;
+    // zero the checksum
+    buf[UDP_CHECKSUM_H_P] = 0;
+    buf[UDP_CHECKSUM_L_P] = 0;
+
+    // copy the data:
+    while(i &lt; datalen)
+    {
+        buf[UDP_DATA_P + i] = data[i];
+        i++;
+    }
+
+    //UDP_DEBUG插入此处
+    //这里的16字节是UDP的伪首部，即IP的源地址-0x1a+目标地址-0x1e（和标准的有差异），
+    //+UDP首部=4+4+8=16
+    ck = checksum(&amp;buf[IP_SRC_P], 16 + datalen, 1);
+    buf[UDP_CHECKSUM_H_P] = ck &gt;&gt; 8;
+    buf[UDP_CHECKSUM_L_P] = ck &amp; 0xff;
+    enc28j60PacketSend(UDP_HEADER_LEN + IP_HEADER_LEN + ETH_HEADER_LEN + datalen, buf);
+}
+</code></pre>
+
+<h3 id="udp_5"><a name="user-content-udp_5" href="#udp_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>UDP实验</h3>
+<p>在有了以上的UDP实现之后，你还需要有UDP的请求进来，如下代码所示：<br />
+下面的代码放在一个while(1)或者RTOS进程里面，作为服务器来等待客户端的响应</p>
+<pre><code class="C">/*--------------------- udp server start, we listen on udp port 1200=0x4B0 -----------------------------*/
+      if (buf[IP_PROTO_P]==IP_PROTO_UDP_V&amp;&amp;buf[UDP_DST_PORT_H_P]==4&amp;&amp;buf[UDP_DST_PORT_L_P]==0xb0)
+      {
+        //UDP数据长度
+          udpdatalen=buf[UDP_LEN_H_P];
+          udpdatalen=udpdatalen&lt;&lt;8;
+          udpdatalen=(udpdatalen+buf[UDP_LEN_L_P])-UDP_HEADER_LEN;
+          //udpdatalen=buf[UDP_LEN_L_P]-UDP_HEADER_LEN;
+           //获取pc端的udp port
+          pcudpport=buf[UDP_SRC_PORT_H_P]&lt;&lt;8 | buf[UDP_SRC_PORT_L_P];
+        //将udp客户端得到的数据buf写入buf1，因为下面的实验需要输入的信息来做出相应的动作
+          for(i1=0; i1&lt;udpdatalen; i1++)
+                        buf1[i1]=buf[UDP_DATA_P+i1];
+
+          make_udp_reply_from_request(buf,buf1,udpdatalen,pcudpport);
+      }
+/*----------------------------------------udp end -----------------------------------------------*/
+</code></pre>
+
+<p>ps：本实验中板子udp的port为1200，pc机的port为4001</p>
+<p>实验部分实现了三个简单的实验：<br />
+1. 通过串口输出UDP客户端的IP地址及端口号<br />
+2. 通过串口和UDP输出UDP的输入数据，即USART ECHO和UDP ECHO<br />
+3. 实现UDP命令控制STM32板子上面的LED</p>
+<pre><code class="C">void make_udp_reply_from_request(unsigned char *buf, char *data, unsigned int datalen, unsigned  int port)
+{
+    unsigned int i = 0, tol_len;
+    unsigned  int ck;
+    //如前面的ARP和ICMP一样的
+    make_eth(buf);
+    // total length field in the IP header must be set:
+    //如IP Header
+    tol_len = IP_HEADER_LEN + UDP_HEADER_LEN + datalen;
+    buf[IP_TOTLEN_H_P] = tol_len &gt;&gt; 8;
+    buf[IP_TOTLEN_L_P] = tol_len;
+    //如ICMP
+    make_ip(buf);
+    //本地UDP的端口号
+    buf[UDP_DST_PORT_H_P] = port &gt;&gt; 8;
+    buf[UDP_DST_PORT_L_P] = port &amp; 0xff;
+    // source port does not matter and is what the sender used.
+    // calculte the udp length:最大16bit长度，即65535-14-20-8，但一般会设置的较小，原因么，上文里面讲过。
+    buf[UDP_LEN_H_P] = datalen &gt;&gt; 8;
+    buf[UDP_LEN_L_P] = UDP_HEADER_LEN + datalen;
+    // zero the checksum
+    buf[UDP_CHECKSUM_H_P] = 0;
+    buf[UDP_CHECKSUM_L_P] = 0;
+
+    // copy the data:
+    while(i &lt; datalen)
+    {
+        buf[UDP_DATA_P + i] = data[i];
+        i++;
+    }
+
+#ifdef UDP_DEBUG
+    i = 0;
+    printf(&quot;UDP Server Test. \r\n&quot;);
+    printf(&quot;udp客户端的IP地址及端口号 ： \r\n&quot;);
+
+    while(i &lt; sizeof(ipv4_addr))
+    {
+        //注意这里我们建立的是UDP Server，输出UDP Client的IP地址
+        printf(&quot;%d&quot;, buf[IP_DST_P + i]);
+
+        if(i != sizeof(ipv4_addr) - 1)
+        {
+            printf(&quot;.&quot;);
+        }
+
+        i++;
+    }
+
+    i = 0;
+    //输出pc端的udp port
+    printf(&quot;:%d \r\n&quot;, port);
+
+    //串口打印UDP Client发过来的数据
+    printf(&quot;udp客户端发送的数据 ： \r\n&quot;);
+    printf(&quot;%s \r\n&quot;, data);
+
+    //实现UDP Server来响应UDP Client的控制LED命令
+    //如：led1=on,led1=off
+    if(strcmp(data, &quot;led1=on&quot;) == 0)
+    {
+        GPIO_ResetBits(GPIOA, GPIO_Pin_8);
+    }
+
+    if(strcmp(data, &quot;led1=off&quot;) == 0)
+    {
+        GPIO_SetBits(GPIOA, GPIO_Pin_8);
+    }
+
+    //如：led2=on,led2=off
+    if(strcmp(data, &quot;led2=on&quot;) == 0)
+    {
+        GPIO_ResetBits(GPIOD, GPIO_Pin_2);
+    }
+
+    if(strcmp(data, &quot;led2=off&quot;) == 0)
+    {
+        GPIO_SetBits(GPIOD, GPIO_Pin_2);
+    }
+
+#endif
+    //这里的16字节是UDP的伪首部，即IP的源地址-0x1a+目标地址-0x1e（和标准的有差异），
+    //+UDP首部=4+4+8=16
+    ck = checksum(&amp;buf[IP_SRC_P], 16 + datalen, 1);
+    buf[UDP_CHECKSUM_H_P] = ck &gt;&gt; 8;
+    buf[UDP_CHECKSUM_L_P] = ck &amp; 0xff;
+    enc28j60PacketSend(UDP_HEADER_LEN + IP_HEADER_LEN + ETH_HEADER_LEN + datalen, buf);
+}
+</code></pre>
+
+<p>TCP&amp;UDP测试工具现象：echo实现</p>
+<p><img alt="" src="http://img.my.csdn.net/uploads/201304/22/1366640079_9631.jpg" /></p>
+<p>串口现象：符合预期<br />
+注：关闭打开UDP重连才可以看到随机分配的不同udp port。</p>
+<p><img alt="" src="http://img.my.csdn.net/uploads/201304/22/1366640084_4280.jpg" /></p>
+<p>WireShark现象：顺利抓到包~~~</p>
+<p><img alt="" src="http://img.my.csdn.net/uploads/201304/22/1366640538_3654.jpg" /></p>
+<p>开发板现象：<br />
+LED2亮了，初步打通了原子世界和数字世界了，但是体验很糟糕，O(∩_∩)O~</p>
+<h2 id="tcp"><a name="user-content-tcp" href="#tcp" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TCP</h2>
+<h3 id="tcp_1"><a name="user-content-tcp_1" href="#tcp_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TCP介绍</h3>
+<p>TCP与UDP都属于传输层，但是与UDP不同的是，TCP是面向连接的，可靠的传输协议。<br />
+ps：需要找几篇文章来看看两者的不同和各自的用武之地了，虽然对下面的代码分析之后对何为“面向连接”，何为“可靠”有一个具象的了解，但是不够全面和系统，比如何时采用TCP，何时采用UDP，效果如何，当然还得解释清楚其中的原因所在。</p>
+<h3 id="tcp_2"><a name="user-content-tcp_2" href="#tcp_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TCP首部</h3>
+<p>TCP数据被封装在一个IP数据报中，如图17 - 1所示。<br />
+<img alt="" src="http://img.blog.csdn.net/20130505190011982" /><br />
+图17 - 2显示TCP首部的数据格式。如果不计任选字段，它通常是20个字节。<br />
+<img alt="" src="http://img.blog.csdn.net/20130505190015754" /><br />
+每个TCP段都包含源端和目的端的端口号，用于寻找发端和收端应用进程。这两个值加上IP首部中的源端IP地址和目的端IP地址唯一确定一个TCP连接。有时，一个IP地址和一个端口号也称为一个插口或套接字（socket） 。这个术语出现在最早的TCP规范（RFC793）中，后来它也作为表示伯克利版的编程接口 。插口对或套接字对（socket pair）(包含客户IP地址、客户端口号、服务器 IP地址和服务器端口号的四元组 )可唯一确定互联网络中每个TCP连接的双方。</p>
+<p>序号用来标识从TCP发端向TCP收端发送的数据字节流，它表示在这个报文段中的的第一个数据字节。如果将字节流看作在两个应用程序间的单向流动，则 TCP用序号对每个字节进行计数。序号是32 bit的无符号数，序号到达2^32－1后又从0开始。</p>
+<p>在TCP首部中有6个标志比特（此处结合下面的状态变迁图是实现的关键之所在）。它们中的多个可同时被设置为 1。我们在这儿简单介绍它们的用法，在随后的章节中有更详细的介绍。</p>
+<ul>
+<li>URG 紧急指针（urgent pointer）有效（见20.8节） 。</li>
+<li>ACK 确认序号有效。</li>
+<li>PSH 接收方应该尽快将这个报文段交给应用层。</li>
+<li>RST 重建连接。</li>
+<li>SYN 同步序号用来发起一个连接。这个标志和下一个标志将在第 18章介绍。</li>
+<li>FIN 发端完成发送任务。</li>
+</ul>
+<p>TCP的流量控制由连接的每一端通过声明的窗口大小来提供。窗口大小为字节数，起始于确认序号字段指明的值，这个值是接收端正期望接收的字节。窗口大小是一个 16bit字段，因而窗口大小最大为65535字节。在24.4节我们将看到新的窗口刻度选项，它允许这个值按比例变化以提供更大的窗口。</p>
+<p>检验和覆盖了整个的TCP报文段：TCP首部和TCP数据。这是一个强制性的字段，一定是由发端计算和存储，并由收端进行验证。 TCP检验和的计算和UDP检验和的计算相似，使用如11 . 3节所述的一个伪首部。<br />
+只有当URG标志置1时紧急指针才有效。紧急指针是一个正的偏移量，和序号字段中的值相加表示紧急数据最后一个字节的序号。 TCP的紧急方式是发送端向另一端发送紧急数据的一种方式。我们将在20.8节介绍它。</p>
+<p>最常见的可选字段是最长报文大小，又称为 MSS (Maximum Segment Size)。每个连接方通常都在通信的第一个报文段（为建立连接而设置 SYN标志的那个段）中指明这个选项。它指明本端所能接收的最大长度的报文段。我们将在18.4节更详细地介绍MSS选项，TCP的其他选项中的一些将在第24章中介绍。从图17 - 2中我们注意到TCP报文段中的数据部分是可选的。我们将在18章中看到在一个连接建立和一个连接终止时，双方交换的报文段仅有 TCP首部。如果一方没有数据要发送，也使用没有任何数据的首部来确认收到的数据。在处理超时的许多情况中，也会发送不带任何数据的报文段。</p>
+<p>小结：<br />
+TCP提供了一种可靠的面向连接的字节流运输层服务。我们简单地介绍了TCP首部中的各个字段，并在随后的几章里详细讨论它们。<br />
+TCP将用户数据打包构成报文段；它发送数据后启动一个定时器；另一端对收到的数据进行确认，对失序的数据重新排序，丢弃重复数据； TCP提供端到端的流量控制，并计算和验证一个强制性的端到端检验和。<br />
+许多流行的应用程序如Telnet、Rlogin、FTP和SMTP都使用TCP。</p>
+<h3 id="tcp_3"><a name="user-content-tcp_3" href="#tcp_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TCP连接的建立与终止</h3>
+<h4 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>建立连接协议</h4>
+<p>请求端（通常称为客户）发送一个 SYN段指明客户打算连接的服务器的端口，以及初  始序号（ISN，在这个例子中为1415531521） 。这个SYN段为报文段1。<br />
+服务器发回包含服务器的初始序号的SYN报文段（报文段2）作为应答。同时，将确认  序号设置为客户的ISN加1以对客户的SYN报文段进行确认。一个SYN将占用一个序号。<br />
+客户必须将确认序号设置为服务器的 ISN加1以对服务器的SYN报文段进行确认（报文段3） 。</p>
+<p>这三个报文段完成连接的建立。这个过程也称为三次握手（ three-way handshake） 。</p>
+<p>以下为WireShark的建立连接数据的抓包，其中HTTP为服务器端：</p>
+<p>注意：这里PC端的默认MSS是1460(因为是以太网)，而STM32端的MSS是1408，这个可以在程序里面修改。<br />
+<img alt="" src="http://img.blog.csdn.net/20130505190019263" /></p>
+<h4 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>连接终止协议</h4>
+<p>建立一个连接需要三次握手，而终止一个连接要经过 4次握手。如下图所示，过程与建立连接的三次握手过程类似。<br />
+<img alt="" src="http://img.blog.csdn.net/20130505190023341" /></p>
+<h3 id="tcp_4"><a name="user-content-tcp_4" href="#tcp_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TCP的状态变迁图</h3>
+<p>ps：跟着箭头走就ok了，当然不会所有的状态变迁都实现，看具体协议栈的实现，下面的代码就只实现了其中的一部分。<br />
+<img alt="" src="http://img.blog.csdn.net/20130505190027404" /><br />
+ESTABLISHED状态是连接双方能够进行双向数据传递的状态。<br />
+注意：并不是所有的状态变迁都需要实现的，这取决于协议栈的具体实现，但是必须要有至少一条状态回路来保证数据的传输。</p>
+<h3 id="tcp_5"><a name="user-content-tcp_5" href="#tcp_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TCP宏定义实现</h3>
+<p>与上文中的首部对着看，位置是一一对应的。</p>
+<pre><code class="c">// ******* TCP *******
+//TCP首部长度
+#define TCP_HEADER_LEN_PLAIN 20
+//源端口位置
+#define TCP_SRC_PORT_H_P 0x22
+#define TCP_SRC_PORT_L_P 0x23
+//目标端口位置
+#define TCP_DST_PORT_H_P 0x24
+#define TCP_DST_PORT_L_P 0x25
+// the tcp seq number is 4 bytes 0x26-0x29
+//32位序列号
+#define TCP_SEQ_H_P          0x26
+//32位确认序列号                    ox2a-0x2d
+#define TCP_SEQACK_H_P       0x2a
+
+//flags位置，最高两位保留
+#define TCP_FLAGS_P             0x2f
+// flags: SYN=2 6个标志位
+#define TCP_FLAGS_FIN_V         0x01
+#define TCP_FLAGS_SYN_V         0x02
+#define TCP_FLAGS_PUSH_V        0x08
+#define TCP_FLAGS_SYNACK_V      0x12
+#define TCP_FLAGS_ACK_V         0x10
+#define TCP_FLAGS_PSHACK_V  0x18
+//  plain len without the options:
+//4位首部长度
+#define TCP_HEADER_LEN_P 0x2e
+//校验和位置
+#define TCP_CHECKSUM_H_P 0x32
+#define TCP_CHECKSUM_L_P 0x33
+//选项起始位置
+#define TCP_OPTIONS_P    0x36
+//
+</code></pre>
+
+<h3 id="tcp_6"><a name="user-content-tcp_6" href="#tcp_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TCP函数实现</h3>
+<p>make_tcphead : TCP首部的填充，与IP和UDP等类似，但是TCP加入了握手和MSS可选项的设置</p>
+<pre><code class="c">// make a return tcp header from a received tcp packet
+// rel_ack_num is how much we must step the seq number received from the
+// other side. We do not send more than 255 bytes of text (=data) in the tcp packet.
+// If mss=1 then mss is included in the options list
+//
+// After calling this function you can fill in the first data byte at TCP_OPTIONS_P+4
+// If cp_seq=0 then an initial sequence number is used (should be use in synack)
+// otherwise it is copied from the packet we received
+void make_tcphead(unsigned char * buf,unsigned  int rel_ack_num,unsigned char  mss,unsigned char  cp_seq)
+{
+    unsigned char  i=0;
+    unsigned char  tseq;
+    while(i&lt;2)
+    {
+        buf[TCP_DST_PORT_H_P+i]=buf[TCP_SRC_PORT_H_P+i];
+        buf[TCP_SRC_PORT_H_P+i]=0; // clear source port
+        i++;
+    }
+    // set source port  (http):
+    buf[TCP_SRC_PORT_L_P]=wwwport;
+        //序列号和确认序列号的长度为32位
+    i=4;
+    // sequence numbers: add the rel_ack_num to SEQACK
+        //将序列号的值+rel_ack_num之后返回，来完成握手过程
+    while(i&gt;0)
+    {
+        rel_ack_num=buf[TCP_SEQ_H_P+i-1]+rel_ack_num;
+        tseq=buf[TCP_SEQACK_H_P+i-1];
+        buf[TCP_SEQACK_H_P+i-1]=0xff&amp;rel_ack_num;
+        if (cp_seq)
+        {
+            // copy the acknum sent to us into the sequence number
+            buf[TCP_SEQ_H_P+i-1]=tseq;
+        }
+        else
+        {
+            buf[TCP_SEQ_H_P+i-1]= 0; // some preset vallue
+        }
+        rel_ack_num=rel_ack_num&gt;&gt;8;
+        i--;
+    }
+    if (cp_seq==0)
+    {
+        // put inital seq number
+        buf[TCP_SEQ_H_P+0]= 0;
+        buf[TCP_SEQ_H_P+1]= 0;
+        // we step only the second byte, this allows us to send packts
+        // with 255 bytes or 512 (if we step the initial seqnum by 2)
+        buf[TCP_SEQ_H_P+2]= seqnum;
+        buf[TCP_SEQ_H_P+3]= 0;
+        // step the inititial seq num by something we will not use
+        // during this tcp session:
+        seqnum+=2;
+    }
+    // zero the checksum
+    buf[TCP_CHECKSUM_H_P]=0;
+    buf[TCP_CHECKSUM_L_P]=0;
+
+    // The tcp header length is only a 4 bit field (the upper 4 bits).
+    // It is calculated in units of 4 bytes.
+    // E.g 24 bytes: 24/4=6 =&gt; 0x60=header len field
+    //buf[TCP_HEADER_LEN_P]=(((TCP_HEADER_LEN_PLAIN+4)/4)) &lt;&lt;4; // 0x60
+        //TCP可选项里面的MSS (Maximum Segment Size)
+    if (mss)
+    {
+        // the only option we set is MSS to 1460:
+        // 1460 in hex is 0x5B4
+        buf[TCP_OPTIONS_P]=2;
+        buf[TCP_OPTIONS_P+1]=4;
+        buf[TCP_OPTIONS_P+2]=0x05;
+        buf[TCP_OPTIONS_P+3]=0xb4;
+        // 24 bytes:
+        buf[TCP_HEADER_LEN_P]=0x60;
+    }
+    else
+    {
+        // no options:
+        // 20 bytes:
+        buf[TCP_HEADER_LEN_P]=0x50;
+    }
+}
+</code></pre>
+
+<p><code>make_tcp_synack_from_syn</code> : 与<code>make_udp_reply_from_request</code>过程类似</p>
+<pre><code class="c">void make_tcp_synack_from_syn(unsigned char *buf)
+{
+    unsigned  int ck, i = 0;
+    make_eth(buf);
+    // total length field in the IP header must be set:
+    // 20 bytes IP + 24 bytes (20tcp+4tcp options)
+    buf[IP_TOTLEN_H_P] = 0;
+    buf[IP_TOTLEN_L_P] = IP_HEADER_LEN + TCP_HEADER_LEN_PLAIN + 4;
+    make_ip(buf);
+    buf[TCP_FLAGS_P] = TCP_FLAGS_SYNACK_V;
+    make_tcphead(buf, 1, 1, 0);
+#ifdef TCP_DEBUG
+    i = 0;
+    printf(&quot;TCP Server Test. \r\n&quot;);
+    printf(&quot;tcp客户端的IP地址及端口号 ： \r\n&quot;);
+
+    while(i &lt; sizeof(ipv4_addr))
+    {
+        //注意这里我们建立的是UDP Server，输出UDP Client的IP地址
+        printf(&quot;%d&quot;, buf[IP_DST_P + i]);
+
+        if(i != sizeof(ipv4_addr) - 1)
+        {
+            printf(&quot;.&quot;);
+        }
+
+        i++;
+    }
+
+    i = 0;
+    //输出pc端的tcp port
+    printf(&quot;：%d \r\n&quot;, wwwport);
+#endif
+    // calculate the checksum, len=8 (start from ip.src) + TCP_HEADER_LEN_PLAIN + 4 (one option: mss)
+    ck = checksum(&amp;buf[IP_SRC_P], 8 + TCP_HEADER_LEN_PLAIN + 4, 2);
+    buf[TCP_CHECKSUM_H_P] = ck &gt;&gt; 8;
+    buf[TCP_CHECKSUM_L_P] = ck &amp; 0xff;
+    // add 4 for option mss:
+    enc28j60PacketSend(IP_HEADER_LEN + TCP_HEADER_LEN_PLAIN + 4 + ETH_HEADER_LEN, buf);
+}
+</code></pre>
+
+<p>Web_Server函数中的while(1)死循环中的TCP部分，这是个主过程，里面有很多子函数将在下面说明。</p>
+<pre><code class="c">/*-----------------tcp port www start, compare only the lower byte-----------------------------------*/
+if(buf[IP_PROTO_P] == IP_PROTO_TCP_V &amp;&amp; buf[TCP_DST_PORT_H_P] == 0 &amp;&amp; buf[TCP_DST_PORT_L_P] == mywwwport)
+{
+    /*
+        以下为 TCP的状态变迁图 的部分实现。
+    */
+    //若为客户端的SYN请求，则返回SYN+ACK
+    if(buf[TCP_FLAGS_P] &amp; TCP_FLAGS_SYN_V)                              //第一次握手
+    {
+        make_tcp_synack_from_syn(buf);                                      //第二次握手
+        // make_tcp_synack_from_syn does already send the syn,ack
+        continue;
+    }
+
+    //若为客户端的ACK请求，即完成三次握手，可以传输数据了
+    if(buf[TCP_FLAGS_P] &amp; TCP_FLAGS_ACK_V)                              //第三次握手
+    {
+        init_len_info(buf); // init some data structures
+        // we can possibly have no data, just ack:
+        dat_p = get_tcp_data_pointer();
+
+        //无数据，返回ack
+        if(dat_p == 0)
+        {
+            if(buf[TCP_FLAGS_P] &amp; TCP_FLAGS_FIN_V)
+            {
+                // finack, answer with ack
+                make_tcp_ack_from_any(buf);
+            }
+
+            // just an ack with no data, wait for next packet
+            continue;
+        }
+
+        //有数据，好了，下面就是HTTP协议规定的数据了
+        if(strncmp(&quot;GET &quot;, (char *) &amp; (buf[dat_p]), 4) != 0)
+        {
+            // head, post and other methods:
+            //
+            // for possible status codes see:
+            // http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+            plen = fill_tcp_data_p(buf, 0, PSTR(&quot;HTTP/1.0 200 OK\r\nContent-Type: text/html\r\n\r\n&lt;h1&gt;200 OK&lt;/h1&gt;&quot;));
+            goto SENDTCP;
+        }
+
+        //密码部分
+        if(strncmp(&quot;/ &quot;, (char *) &amp; (buf[dat_p + 4]), 2) == 0)
+        {
+            plen = fill_tcp_data_p(buf, 0, PSTR(&quot;HTTP/1.0 200 OK\r\nContent-Type: text/html\r\n\r\n&quot;));
+            plen = fill_tcp_data_p(buf, plen, PSTR(&quot;&lt;p&gt;Usage: &quot;));
+            plen = fill_tcp_data(buf, plen, baseurl);
+            plen = fill_tcp_data_p(buf, plen, PSTR(&quot;password&lt;/p&gt;&quot;));
+            goto SENDTCP;
+        }
+
+        cmd = analyse_get_url((char *) &amp; (buf[dat_p + 5]));
+
+        // for possible status codes see:
+        // http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+        if(cmd == -1)
+        {
+            plen = fill_tcp_data_p(buf, 0, PSTR(&quot;HTTP/1.0 401 Unauthorized\r\nContent-Type: text/html\r\n\r\n&lt;h1&gt;401 Unauthorized&lt;/h1&gt;&quot;));
+            goto SENDTCP;
+        }
+
+        if(cmd == 0)              // 用户程序
+        {
+            GPIO_SetBits(GPIOA, GPIO_Pin_8);
+            i = 0;                           // 命令 = 1
+        }
+
+        if(cmd == 1)                         // 用户程序
+        {
+            GPIO_ResetBits(GPIOA, GPIO_Pin_8);
+            i = 1;                           // 命令 = 0
+        }
+
+        // if (cmd==-2) or any other value
+        // just display the status:
+        plen = print_webpage(buf, (i));
+    SENDTCP:
+        make_tcp_ack_from_any(buf);       // send ack for http get
+        make_tcp_ack_with_data(buf, plen); // send data
+        continue;
+    }
+}
+
+/*-------------------------------------- tcp port www end ---------------------------------------*/
+</code></pre>
+
+<p>主过程中的各TCP相关的子函数</p>
+<pre><code class="c">// do some basic length calculations and store the result in static varibales
+void init_len_info(unsigned char *buf)
+{
+    //IP Packet长度
+    info_data_len = (buf[IP_TOTLEN_H_P] &lt;&lt; 8) | (buf[IP_TOTLEN_L_P] &amp; 0xff);
+    //减去IP首部长度
+    info_data_len -= IP_HEADER_LEN;
+    //TCP首部长度，因为TCP协议规定了只有四位来表明长度，所需要如下处理，4*6=24
+    info_hdr_len = (buf[TCP_HEADER_LEN_P] &gt;&gt; 4) * 4; // generate len in bytes;
+    //减去TCP首部长度
+    info_data_len -= info_hdr_len;
+
+    if(info_data_len &lt;= 0)
+    {
+        info_data_len = 0;
+    }
+}
+
+// get a pointer to the start of tcp data in buf
+// Returns 0 if there is no data
+// You must call init_len_info once before calling this function
+unsigned  int get_tcp_data_pointer(void)
+{
+    if(info_data_len)
+    {
+        //在buf中数据开始的位置
+        return((unsigned  int)TCP_SRC_PORT_H_P + info_hdr_len);
+    }
+
+    else
+    {
+        return(0);
+    }
+}
+
+// fill in tcp data at position pos. pos=0 means start of
+// tcp data. Returns the position at which the string after
+// this string could be filled.
+unsigned  int fill_tcp_data_p(unsigned char *buf, unsigned  int pos, const unsigned char *progmem_s)
+{
+    char c;
+
+    // fill in tcp data at position pos
+    //
+    // with no options the data starts after the checksum + 2 more bytes (urgent ptr)
+    while((c = pgm_read_byte(progmem_s++)))
+    {
+        buf[TCP_CHECKSUM_L_P + 3 + pos] = c;
+        pos++;
+    }
+
+    return(pos);
+}
+
+// fill in tcp data at position pos. pos=0 means start of
+// tcp data. Returns the position at which the string after
+// this string could be filled.
+unsigned  int fill_tcp_data(unsigned char *buf, unsigned  int pos, const char *s)
+{
+    // fill in tcp data at position pos
+    //
+    // with no options the data starts after the checksum + 2 more bytes (urgent ptr)
+    while(*s)
+    {
+        buf[TCP_CHECKSUM_L_P + 3 + pos] = *s;
+        pos++;
+        s++;
+    }
+
+    return(pos);
+}
+
+// Make just an ack packet with no tcp data inside
+// This will modify the eth/ip/tcp header
+void make_tcp_ack_from_any(unsigned char *buf)
+{
+    unsigned  int j;
+    make_eth(buf);
+    // fill the header:
+    buf[TCP_FLAGS_P] = TCP_FLAGS_ACK_V;
+
+    if(info_data_len == 0)
+    {
+        // if there is no data then we must still acknoledge one packet
+        make_tcphead(buf, 1, 0, 1); // no options
+    }
+
+    else
+    {
+        make_tcphead(buf, info_data_len, 0, 1); // no options
+    }
+
+    // total length field in the IP header must be set:
+    // 20 bytes IP + 20 bytes tcp (when no options)
+    j = IP_HEADER_LEN + TCP_HEADER_LEN_PLAIN;
+    buf[IP_TOTLEN_H_P] = j &gt;&gt; 8;
+    buf[IP_TOTLEN_L_P] = j &amp; 0xff;
+    make_ip(buf);
+    // calculate the checksum, len=8 (start from ip.src) + TCP_HEADER_LEN_PLAIN + data len
+    j = checksum(&amp;buf[IP_SRC_P], 8 + TCP_HEADER_LEN_PLAIN, 2);
+    buf[TCP_CHECKSUM_H_P] = j &gt;&gt; 8;
+    buf[TCP_CHECKSUM_L_P] = j &amp; 0xff;
+    enc28j60PacketSend(IP_HEADER_LEN + TCP_HEADER_LEN_PLAIN + ETH_HEADER_LEN, buf);
+}
+
+// you must have called init_len_info at some time before calling this function
+// dlen is the amount of tcp data (http data) we send in this packet
+// You can use this function only immediately after make_tcp_ack_from_any
+// This is because this function will NOT modify the eth/ip/tcp header except for
+// length and checksum
+void make_tcp_ack_with_data(unsigned char *buf, unsigned  int dlen)
+{
+    unsigned  int j;
+    // fill the header:
+    // This code requires that we send only one data packet
+    // because we keep no state information. We must therefore set
+    // the fin here:
+    buf[TCP_FLAGS_P] = TCP_FLAGS_ACK_V | TCP_FLAGS_PUSH_V | TCP_FLAGS_FIN_V;
+    // total length field in the IP header must be set:
+    // 20 bytes IP + 20 bytes tcp (when no options) + len of data
+    j = IP_HEADER_LEN + TCP_HEADER_LEN_PLAIN + dlen;
+    buf[IP_TOTLEN_H_P] = j &gt;&gt; 8;
+    buf[IP_TOTLEN_L_P] = j &amp; 0xff;
+    fill_ip_hdr_checksum(buf);
+
+    // zero the checksum
+    buf[TCP_CHECKSUM_H_P] = 0;
+    buf[TCP_CHECKSUM_L_P] = 0;
+    // calculate the checksum, len=8 (start from ip.src) + TCP_HEADER_LEN_PLAIN + data len
+    j = checksum(&amp;buf[IP_SRC_P], 8 + TCP_HEADER_LEN_PLAIN + dlen, 2);
+    buf[TCP_CHECKSUM_H_P] = j &gt;&gt; 8;
+    buf[TCP_CHECKSUM_L_P] = j &amp; 0xff;
+    enc28j60PacketSend(IP_HEADER_LEN + TCP_HEADER_LEN_PLAIN + dlen + ETH_HEADER_LEN, buf);
+}
+</code></pre>
+
+<p>TCP比UDP要复杂的很多，这是由两者的特性所决定的，需要再找点文章来消化下两者的不同；还有一些HTTP相关的子函数，属于应用层的东东，加油，加油看了~~~</p>
+<h3 id="tcp_7"><a name="user-content-tcp_7" href="#tcp_7" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TCP实验</h3>
+<p>串口现象：<br />
+<img alt="" src="http://img.blog.csdn.net/20130505190030529" /><br />
+浏览器现象：<br />
+<img alt="" src="http://img.blog.csdn.net/20130505190033785" /><br />
+<img alt="" src="http://img.blog.csdn.net/20130505190037050" /></p></article></body></html>
