@@ -1093,6 +1093,7 @@ Update: What we've said above was true for kernels up to and including 2.6.10. Y
 
 ### 5.1. The /proc File System
 
+> Recommend reading [Access the Linux kernel using the /proc filesystem](http://www.ibm.com/developerworks/linux/library/l-proc/index.html) firstly.
 
 In Linux, there is an additional mechanism for the kernel and kernel modules to send information to processes --- the `/proc` file system. Originally designed to allow easy access to information about processes (hence the name), it is now used by every bit of the kernel which has something interesting to report, such as `/proc/modules` which provides the list of modules and `/proc/meminfo` which stats memory usage statistics.
 

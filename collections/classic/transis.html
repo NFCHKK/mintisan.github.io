@@ -1,0 +1,1392 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>transis</title></head><body><article class="markdown-body"><div class="toc">
+<ul>
+<li><a href="#how-do-bipolar-transistors-work">How Do Bipolar Transistors Work?</a><ul>
+<li><a href="#excessively-short-version">EXCESSIVELY SHORT VERSION</a></li>
+<li><a href="#longer-more-detailed-short-version">LONGER, MORE DETAILED SHORT VERSION&hellip;</a></li>
+<li><a href="#how-do-transistors-work">How Do Transistors Work?</a></li>
+<li><a href="#how-transistor-works-an-alternate-viewpoint">how transistor works, an alternate viewpoint</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="how-do-bipolar-transistors-work"><a href="http://amasci.com/amateur/trshort.html">How Do Bipolar Transistors Work?</a></h1>
+<p>©2003 <a href="http://amasci.com/me.html">William J. Beaty</a></p>
+<h2 id="excessively-short-version"><a name="user-content-excessively-short-version" href="#excessively-short-version" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>EXCESSIVELY SHORT VERSION</h2>
+<p>A transistor is essentially a diode. In diodes, the rate of charge flow is determined by the height of the potential barrier at the junction. It&rsquo;s voltage controlled: place the right polarity of voltage across the diode terminals to turn it on. But a transistor a very weird diode: if you turn it on with 0.7V placed across two terminals here, then the main diode current goes through a totally different terminal over there! Vbe determines Ic (as well as Ib.) When Bell Labs had an informal contest to name their new invention, one engineer pointed out that it acts like a resistor, but a resistor where the input voltage is transferred across the device to control the resulting current. A &ldquo;Transfer Resistor&rdquo; or &ldquo;Trans-sistor.&rdquo;</p>
+<h2 id="longer-more-detailed-short-version"><a name="user-content-longer-more-detailed-short-version" href="#longer-more-detailed-short-version" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>LONGER, MORE DETAILED SHORT VERSION&hellip;</h2>
+<p>Seen from outside, Bipolar Transistors look like current amplifiers. Engineers and technicians can treat transistors as if they are current amplifiers. That&rsquo;s fine as long as we&rsquo;re view the transistor like a sealed 3-wire component: a small black box. But inside, transistors are actually voltage amplifiers. (Most non-physics books get this wrong.) In fact, transistors are like diodes: they&rsquo;re voltage-controlled insulators. [Those who disagree can start by investigating the physics behind the Ebers-Moll and Gummel-Poon models, or by referring to Horowitz &amp; Hill&rsquo;s book THE ART OF ELECTRONICS, or even see what author <a href="http://en.wikipedia.org/wiki/Talk:Bipolar_junction_transistor/Archive_1#Winfield_Hills_Response">W. Win Hill himself says when people insist that BJTs are &ldquo;current controlled.&rdquo;</a> Here&rsquo;s some <a href="http://cr4.globalspec.com/comment/720033/Re-Voltage-vs-Current">more Win Hill on CR4 forum</a>, and even <a href="http://cr4.globalspec.com/comment/720374/Re-Voltage-vs-Current">more</a>. And his <a href="http://books.google.com/books?id=bkOMDgwFA28C&amp;printsec=frontcover#v=onepage&amp;q&amp;f=false">textbook AOE</a>, partial preview on google books.</p>
+<p>Overall, bipolar transistors act like a thin layer of insulator. The thickness of the insulating layer can be electrically altered in order to control electric current. It&rsquo;s like closing a switch: if we make the insulator between the switch contacts thin enough, the transistor turns &ldquo;on.&rdquo; Make it slightly thicker, and the transistor turns partially on.</p>
+<p>A bipolar transistor is like three hunks of silicon in a row. Usually it&rsquo;s NPN; two hunks of n-type separated by a hunk of p-type. Doped silicon is a good conductor. At the places where the n-type silicon is touching the p-type, a very thin layer of insulator spontaneously appears. Because the three hunks of silicon are normally separated by these insulating layers, an unpowered transistor starts out in the &ldquo;turned off&rdquo; state.</p>
+<p>In the three hunks of silicon, the center region is called the &ldquo;Base.&rdquo; One of the side regions is called the &ldquo;Emitter.&rdquo; By applying a small voltage between Base and Emitter, we can make the thin layer of insulator become even thinner. If it&rsquo;s thin enough, it stops insulating, and some charges flow across it. (Imagine bringing two wires closer and closer until the electrons start jumping across the microscopic gap.)</p>
+<p>The transistor&rsquo;s Base/Emitter voltage controls the insulator thickness. This insulator then controls the whole transistor. A large Base/Emitter voltage will shrink the insulating region and turn the transistor on. A smaller voltage can turn the transistor half-way on, and this gives us linear amplifying action rather than just purely on-off switching.</p>
+<p>But a transistor is not a simple diode! Exactly. There&rsquo;s a the third hunk of silicon (the hunk called the &ldquo;Collector.&rdquo;) And another insulating layer appears between Base and Collector. Since it doesn&rsquo;t block the charges coming from the Base, is it even an insulator? It acts just like an insulating vacuum; it doesn&rsquo;t block charges, but it&rsquo;s insulating because it contains no charges of its own. However, the Base-Collector insulator layer does keep the other sections from seeing any effects of the large power supply voltage placed between Collector and Base. Whether the Collector voltage is low or high, we get the same amperage through that insulating layer. Therefore the Base acts as if it is being shielded from the Collector. Yet charges flow right through the insulating region, going from Emitter through Base and into Collector. Therefore the Collector acts as if it&rsquo;s NOT insulated from the Base. Which is it? Both!</p>
+<p>Why do transistors act as amplifiers? That&rsquo;s simple to explain: all valves are amplifiers. Water valves, air valves, and vacuum tubes are amplifiers. Carbon microphones are amplifiers (paired with a loudspeaker, the carbon microphone was the first audio amp, and was placed in long distance telephone lines. Thomas Edison made big bucks!) It takes very little energy to open or close a valve, yet this tiny energy controls huge pressures and huge flows. A transistor is like a valve, a valve where a tiny change in voltage can open or close the large valve by different amounts. A small amount of &ldquo;signal&rdquo; energy causes the transistor to control the large current which is pumped by a battery. The shape of the output waveform is the same as the shape of the input waveform. We usually say that the signal has been &ldquo;amplified,&rdquo; when really it has been created from the battery&rsquo;s energy. And if battery voltage stays the same, then any changes in charge flow are changes in the output energy flow. Wattage. Small watts in, big watts out. That&rsquo;s what amplifiers are all about. But any valve can do this.</p>
+<p>Most transistors are Silicon, and Silicon junctions &ldquo;turn on&rdquo; at around 0.4V to 0.8V. Place half a volt on the Base of a transistor and the transistor barely starts turning on.</p>
+<p>But why do so many books say &ldquo;Transistors Amplify Current?&rdquo; Because it&rsquo;s an incredibly useful rule of thumb. It&rsquo;s part of a mental model which treats transistors as black boxes. The base current can be used to determine the BE voltage, and the BE voltage then sets the collector current&rsquo;s value. As long as we don&rsquo;t look inside the black box, we can pretend that the charges injected into the base are directly affecting the collector current. But some misguided authors go farther, they try to use current-amplification to explain the stuff inside the box. Those authors are ignoring the role played by the Emitter depletion layer, and ignoring the role played by Vbe. They are confused by the leakage current going through the Base wire. Yes, the Base/Emitter voltage controls the thickness of the insulating region and thus controls the main transistor current. But also a tiny bit of charge leaks through the Base connection. It SEEMS like this leakage can directly collide against the collector&rsquo;s flowing charges.</p>
+<p>It just so happens that the tiny leakage current in the Base connection is proportional to the transistor&rsquo;s main Emitter/Collector current. (This makes perfect sense, since both the Base leakage current and the main Emitter/Collector current are controlled by the insulator thickness, which is set by the Base/Emitter voltage.) &hellip;so it SEEMS as though the Collector current is directly controlled by the Base current. You can even simplify things by pretending that this is true. But in reality, Base current communicates with Collector current via changes in Base-Emitter voltage. It&rsquo;s the Base/Emitter voltage which runs things. You&rsquo;ll never understand &ldquo;transistor action&rdquo; and the simple physics inside the box if you think that Base current directly controls the Collector current. It doesn&rsquo;t. The control is there, of course, but it&rsquo;s one stage separated.</p>
+<p>A bipolar transistor has a voltage-controlled input, while it&rsquo;s output is a variable control system which creates a constant current. It&rsquo;s vaguely like a resistor, but where the voltage in one place creates a current in a second place &hellip;yet the voltage in that second place does not affect the output current. Change the collector voltage, and the collector current remains relatively constant. It&rsquo;s not like a transformer where volts and current are swapped, and where wattage stays the same. In transistors, the effects of voltage are TRANSFERRED to another separate path in the circuitry. &ldquo;Transfer Resistor.&rdquo; Transistor.</p>
+<p>ALSO:<br />
+- <a href="http://amasci.com/amateur/cap1.html">How capacitors REALLY work</a><br />
+- <a href="http://amasci.com/ele-edu.html">How electricity really works</a> articles index</p>
+<h2 id="how-do-transistors-work"><a href="http://amasci.com/amateur/transis.html">How Do Transistors Work?</a></h2>
+<p><strong>NO, HOW DO THEY REALLY WORK?</strong></p>
+<p>©1995 <a href="(http://amasci.com/me.html)">William Beaty, BSEE</a></p>
+<p>Most technician textbooks do a very poor job of explaining the details of transistors&rsquo; internal workings. First they assume that the Base current is somehow controlling the Collector current, then they try to explain how one current can affect another. These explanations invariably fail because Bipolar transistors, like FETs, are voltage-controlled devices. One current doesn&rsquo;t affect another. Instead, the Base-Emitter voltage controls the thickness of an insulating &ldquo;depletion layer&rdquo; which lies in the path of both the Base current and the larger Collector current.</p>
+<p><strong>NOTE</strong>: This article delves into bipolar transistor internal operation: it&rsquo;s the physicist&rsquo;s viewpoint; not the engineer&rsquo;s or technician&rsquo;s. While solving design problems, engineers must model the transistor as a current amplifier, or as a transconductance device, or as a charge-controlled current source. If you want to understand a transistor circuit, then the black-box model is what we use. But be warned, because if our goal instead is to &ldquo;open the hood&rdquo; and see what&rsquo;s really going on inside, those useful black-box models can derail our understanding.</p>
+<hr />
+<blockquote>
+<p>&ldquo;The difference between a conviction and a prejudice is that you can explain a conviction without getting angry.&rdquo; - anon</p>
+</blockquote>
+<p>When I first became interested in electronics as a kid, I sat down and figured out how bipolar transistors work.<br />
+Well, sort of.</p>
+<p>I read many articles which explained the &ldquo;Common Base&rdquo; amplifier. Common-base is the setup which was used by the inventors of the transistor. In those explanations, the Base is a grounded piece of Germanium and the input signal is applied to the Emitter. Since common-base amplifiers are rarely used in transistor circuitry, I ended up having to dream up my own explanation. I based it upon the little bits I already knew about the Common Emitter configuration. Common Emitter is the one where the Emitter is grounded, the Base is the input, and where the output is taken across a resistor connected to the Collector. My home-made explanation sort of worked, but I wasn&rsquo;t satisfied. I was full of niggling doubts. And why the hell were the textbooks using Common Base to introduce transistors to the newbies? It just didn&rsquo;t make any sense.</p>
+<p>When I went into engineering school, I found it extremely odd that there were still no good explanations of bipolar transistors. Sure, there were detailed mathematical treatments. Just multiply the Base current by &ldquo;hfe&rdquo; to obtain the Collector current. Or, treat the transistor as a two-port network with a system of equations inside. <a href="http://hyperphysics.phy-astr.gsu.edu/hbase/solids/trans2.html#c2">Ebers-Moll</a> and all that. But these were similar to black-box circuits, and none of them said HOW a transistor works, how can a small current have any effect on a larger one???? And nobody else seemed curious. Everyone else in the class seemed to think that to memorize the equations was the same as learning concepts and gaining understanding of the device. (<a href="http://amasci.com/feynman.html">R. Feynman</a> calls this the Euclidean or &ldquo;Greek viewpoint;&rdquo; the love of mathematics, as opposed to the physicists&rsquo; &ldquo;<a href="https://www.google.com/search?q=babylonian+feynman">Babylonian viewpoint</a>&rdquo; where concepts are far more important than equations.) I&rsquo;m a total Babylonian. For me, math is useless at the start, equations are like those black box Spice programs which might work great, but they don&rsquo;t tell you any details of what&rsquo;s happening inside a device in the real world. I can learn the math, but that just means I can run a &ldquo;mental spice program&rdquo; without needing any computer, and I still don&rsquo;t know how transistors work. First tell me what &ldquo;Transistor Action&rdquo; is all about. Show me animated pictures, use analogies. Only after I&rsquo;ve attained a visual and gut-level understanding of something, only then is the math useful to me for refining it and adding all the details. However, for me the math alone is not a genuine explanation. Math is just a tool or a recipe, a crutch for those who want nothing except the final numerical result, and it certainly does not confer expert knowledge.</p>
+<p>Now many years have passed and I think I see the problem&hellip;</p>
+<p>Traditional transistor explanations basically <strong>suck</strong>.</p>
+<p>The ones I see in high school textbooks and hobby magazines are terrible. They&rsquo;re full of errors and contradictions. They misuse the word &ldquo;current&rdquo; as if it were a substance that flows. They don&rsquo;t explain insulators properly. And they try to prove that the base current can have a direct effect on the collector current. Textbooks for engineers spend their time deriving equations which will end up in software simulations, but still they don&rsquo;t sit down and describe what&rsquo;s happening in a direct clear fashion. And then there&rsquo;s all those authors who use Common-base amplifiers to introduce transistors to newbies. Are they just fools who follow a tradition only because it&rsquo;s traditional? Why don&rsquo;t they ever make efforts to improve the explanations? Were they written in stone by god? Well, if nobody but me thinks the explanation is open to improvements, then I&rsquo;d better put my money where my mouth is. (And if I&rsquo;m right, then it should be very easy to write a vastly improved explanation.)</p>
+<p>Below are my ideas on how transistors <em>really work</em>. They&rsquo;re <strong>not</strong> based on the traditional explanations found widely in technician&rsquo;s texts and hobbyist magazines. Instead they&rsquo;re based on engineering textbooks: semiconductor physics and the details behind the Ebers-Moll model. I&rsquo;m translating the usual math models into a verbal/intuitive version. As you&rsquo;ll soon see, several new concepts are required. It might be easier for you to just memorize the equations rather than to imagine what really goes on inside. But if you DO manage to decode my explanations and crude ASCII artwork, I think you&rsquo;ll be in the elite minority who really understands transistors. I&rsquo;ve found that even most working engineers have no good mental picture of bipolar transistor operation. So, if you attain a clear understanding of transistors, you&rsquo;ll surpass many of the experts.</p>
+<hr />
+<p>Voltage-driven charge-flows</p>
+<p>First of all, you must abandon the idea that current travels in transistors or flows inside of wires. Yes, you heard me right. <a href="http://amasci.com/miscon/whyhard1.html#cur">Current does not flow</a>. Electric current never flows, since an electric current is not a stuff. Electric current is a flow of something else. (Ask yourself this: what&rsquo;s the stuff that flows in a river, is it called &ldquo;current?&rdquo; Or is it called &ldquo;water?&rdquo;)</p>
+<blockquote>
+<p>Since a current is a flow of charge, the common expression &ldquo;flow of current&rdquo; should be avoided, since literally it means &ldquo;flow of flow of charge.&rdquo; - MODERN COLLEGE PHYSICS, Richards, Sears, Wehr, Zemanski</p>
+</blockquote>
+<p>So what flows inside of wires?</p>
+<p>The stuff that moves within wires is not named Electric Current. Intead it is called Electric Charge. It&rsquo;s the <a href="http://amasci.com/elect/charge1.html">charge</a> that flows, never the current. The motion of charges can vanish, and the motion can appear. But the motion itself doesn&rsquo;t flow along, it&rsquo;s the charges which flow. And in rivers (or in plumbing,) it&rsquo;s the water that flows, not the &ldquo;current.&rdquo; Analogy: we cannot understand plumbing until we stop assuming that the pipes are empty, while also believing in a magical stuff called &ldquo;current.&rdquo; We must learn that pipes are already full; that &ldquo;water&rdquo; flows inside them. The same is true with circuits. Wires are not filled with &ldquo;flow of Current,&rdquo; they are pre-filled with charge. Charge which can move. Electric charge is real stuff; it&rsquo;s carried by physical particles, and it can move around with a real velocity and a real direction. Charge behaves much like a &ldquo;stuff,&rdquo; like a gas or liquid. But electric current is different from charge: charge is like a stuff, but current is not a stuff. If we experiment with concepts; if we try deciding to ignore &ldquo;current,&rdquo; and instead go and carefully examine the behavior of the moving charges in great detail, we can burn off the clouds of fog that block our understanding of electronics.</p>
+<p>Second: the charges found within conductors do not push themselves along, but instead they&rsquo;re pushed by &ldquo;potential difference;&rdquo; they&rsquo;re pushed by the voltage-fields within the conductive material. Charges are not squirted out of the power supply as if the power supply was some sort of water tank. If you imagine that the charges leave through the negative terminal of the power supply; and if you think that the charges then spread throughout the hollow pipes of the circuit, then you&rsquo;ve made a fundamental mistake. If you think that the charges are provided by the power supply, then you&rsquo;ve made a fundamental mistake. Wires do not act like &ldquo;empty electron-pipes.&rdquo; A power supply does not provide any electrons. Power supplies certainly create currents, or they cause currents, but remember, we&rsquo;re removing that word &ldquo;current.&rdquo; To create a flow of charges, a power supply does not inject any charges into the wires. The power supply is only a pump. A pump can supply a pumping pressure. Pumps never supply the water being pumped.</p>
+<p>Third: have you discovered the big &lsquo;secret&rsquo; of visualizing electric circuits?</p>
+<p><strong>ALL CONDUCTORS ARE ALREADY FULL OF CHARGE</strong></p>
+<p>Wires and silicon &hellip;both behave like pre-filled water pipes or water tanks. The &ldquo;water&rdquo; is the vast population of movable charged particles of the conductor. Electric circuits are based on the &ldquo;full pipes analogy.&rdquo; This simple idea is usually obscured by the phrases &ldquo;flow of current,&rdquo; or &ldquo;power supplies send out current.&rdquo; We end up thinking that wires are like hollow pipes. We end up visualizing a mysterious substance called Current which flows through them. Nope. (Once we get rid of that word &ldquo;current,&rdquo; we can discover fairly stunning insights into simple circuits, eh?) </p>
+<p>If circuits are like plumbing, then none of the &ldquo;pipes&rdquo; of a circuit are ever empty. This idea is extremely important, and without it we cannot understand semiconductors &hellip;or even conductors! Metals contain a vast quantity of movable electrons which forms a sort of &ldquo;electric fluid&rdquo; within the metal. A simple hunk of copper is like a water tank! Physicists call this fluid by the name &ldquo;electron sea of metals,&rdquo; or &ldquo;the ocean of charge.&rdquo; Semiconductors are always full of this movable &ldquo;charge-stuff.&rdquo; The movable charge is in there even when a transistor is sitting on the shelf and disconnected from everything. When a voltage is applied across a piece of silicon, those charges already within the material are driven into motion. Also note that the charge within wires is &hellip;uncharged. Every movable electron has a positive proton nearby, so even though the metal contains a vast sea of charge, there is no net charge on average. Wires contain &ldquo;uncharged&rdquo; charge. Better call it &ldquo;cancelled charge.&rdquo; Yet even though the electrons are cancelled by the nearby protons, the electrons can still flow among the protons. Cancelled charge can still move around, so it&rsquo;s possible to have flows of charge in an uncharged metal.</p>
+<p>OK, since the &ldquo;pipes&rdquo; are already full of &ldquo;liquid,&rdquo; then in order to understand circuitry, we should NOT trace out the path starting at the terminals of the power supply. Instead, we can start with any component on the schematic. If a voltage is applied across that component, then the charges within that component will start to flow. Let&rsquo;s modify the old &ldquo;flashlight explanation&rdquo; which we all were taught in grade school. Here&rsquo;s the corrected version:</p>
+<p><strong>AN ACCURATE FLASHLIGHT EXPLANATION</strong>:</p>
+<p>Wires are full of vast amounts of movable electric charge (all conductors are!) If you connect some wires into a solid ring, you form an &ldquo;electric circuit&rdquo; which contains a movable conveyor-belt made of charges within the metal circle. Next we cut this ring in a couple of places and we insert a battery and a light bulb into the cuts. The battery acts as a charge pump, while the light bulb offers friction. The battery pushes the wires&rsquo; long row of charges forward, then all the charges flow, then the bulb lights up. Let&rsquo;s follow them.</p>
+<p>The charges start out inside the light bulb filament. (No, not inside the battery. We start at the bulb.) The charges are forced to flow along through the filament. Then they flow out into the first wire and move along to the battery&rsquo;s first terminal. (At the same time more charges enter the filament through its other end.) The battery pumps the charges through itself and back out again. The charges leave the second battery terminal, then they flow through the second wire to the bulb. They wind up back inside the light bulb filament. At the same time, the charges in other parts of the circuit are doing the same thing. It&rsquo;s like a solid belt made out of charges. The battery acts as a drive- wheel which is moving the belt. The wires behave as if they hide a conveyor belt inside. The light bulb acts like &ldquo;friction;&rdquo; it gets hot when its own natural charges are forced to flow along. The battery speeds up the entire belt, while the friction of the light bulb slows it down again. And so the belt runs constantly, and the light bulb gets hot.</p>
+<blockquote>
+<p>The truth will set you free &hellip;but first it will piss you off!      -anon</p>
+</blockquote>
+<p>Brief review:</p>
+<p>1.THE STUFF THAT FLOWS THROUGH CONDUCTORS IS CALLED CHARGE. (&ldquo;CURRENT&rdquo; DOESN&rsquo;T FLOW.)<br />
+2.THE CHARGE INSIDE CONDUCTORS IS SWEPT ALONG BY VOLTAGE FIELDS.<br />
+3.ALL WIRES ARE &ldquo;PRE-FILLED&rdquo; WITH A VAST AMOUNT OF MOVABLE CHARGE<br />
+4.BATTERIES AND POWER SUPPLIES ARE CHARGE-PUMPS.<br />
+5.LIGHT BULBS AND RESISTORS BOTH ACT &ldquo;FRICTIONALLY.&rdquo;</p>
+<p>One last thing: The difference between a conductor and an insulator is simple: conductors are like pre-filled water pipes, while insulators are like pipes choked with ice. Both contain the &ldquo;electric stuff;&rdquo; conductors and insulators both are full of electrically charged particles. But the &ldquo;stuff&rdquo; inside an insulator can&rsquo;t move. When we apply a pressure-difference along a water pipe, the water flows. But with an empty pipe, there&rsquo;s nothing there, so the flow does not occur. And with an ice-choked pipe, the stuff is trapped and doesn&rsquo;t budge. (In other words, voltage causes charge-flow in conductors, but it can&rsquo;t cause charge-flow in insulators because the charges are either missing, or immobilized.) Many intro textbooks get their definitions wrong. They define a conductor as something through which charges can flow, and insulators supposedly block charges. Nope. Air and vacuum don&rsquo;t block charges, yet air and vacuum are good insulators! In fact, a conductor is something that contains movable charges, while an insulator is something that lacks them. (If a book gets this foundational idea wrong, then most of its later explanations are like buildings built on a pile of garbage, and they tend to collapse.) </p>
+<hr />
+<p>One more last thing before diving into transistors. Silicon is very different than metal. Metals are full of movable charges&hellip; but so is doped silicon. How are they different? Sure, there&rsquo;s that matter of the &ldquo;band gap,&rdquo; and the difference between electrons versus holes, but that&rsquo;s not the important thing. The important difference is quite simple: metals have vast quantities of movable charge, but silicon has far less. For example in copper, every single copper atom donates one movable electron to the &ldquo;sea of charge.&rdquo; Copper&rsquo;s &ldquo;electric fluid&rdquo; is very dense; it&rsquo;s just as dense as the copper metal. But in doped silicon, only one in every billion atoms donates a movable charge. Silicon is like a big empty space with an occasional wandering charge. In silicon, you can sweep all the charges out of the material by using a few volts of potential, while in a metal it would take billions of volts to accomplish the same thing. Or in other words:</p>
+<p>6.THE CHARGE INSIDE OF SEMICONDUCTORS IS LIKE A COMPRESSIBLE GAS, WHILE THE CHARGE INSIDE OF METALS IS LIKE A DENSE AND INCOMPRESSIBLE LIQUID.</p>
+<hr />
+<p>Sweeping away the charges in a material is the same as converting that material from a conductor to an insulator. If silicon is like a rubber hose, then it&rsquo;s a hose which contains compressible gas. We can easily squeeze it shut and stop the flow. But if copper is also like a rubber hose, then instead, it&rsquo;s like a hose full of iron slugs. You can squeeze and squeeze, but you can&rsquo;t smash them out of the way. But with air hoses and with silicon conductors, even a small sideways pressure can pinch the pathway shut and stop the flow. </p>
+<hr />
+<p>OK, let&rsquo;s look at the way that transistors are usually explained.<br />
+To turn on an NPN transistor, a voltage is applied across the base and emitter terminals. This causes electrons in the Base wire to move away from the transistor itself and flow out towards the power supply. This in turn yanks electrons out of the P-type base region, leaving &lsquo;holes&rsquo; behind, and the &lsquo;holes&rsquo; act like positive charges which are pushed in the opposite direction from the direction of electron current. What SEEMS to happen is that the base wire injects positive charges into the base region. It spews holes. It injects charge.</p>
+<p>(Note that I&rsquo;m describing charge flow here, not positive-charge &ldquo;conventional current.&rdquo;)</p>
+<pre><code>           |
+     ______|______
+    |             |
+    | COLLECTOR N |
+    |_____________|                       ELECTRONS ARE PULLED FROM THE
+    |             |  -----&gt;               BASE REGION AND INTO THE WIRE,
+    | BASE      P |______________         WHICH CREATES POSITIVE "HOLES"
+    |_____________|              |  +     WHICH SPEW OUT INTO THE BASE
+    |             |          ____|____    REGION.
+    | EMITTER  N  |            _____
+    |_____________|          _________
+           |                   _____
+           |_____________________|  -
+</code></pre>
+<p>That&rsquo;s part of the conventional explanation. Why is all of this important to transistor operation? <strong>It&rsquo;s not!</strong> The base current is not important to transistor operation. It&rsquo;s just a byproduct of the REAL operation, which involves an insulating layer called the Depletion Region. By focusing attention on the current in the Base lead, most authors go up a dead end in their explanations. To avoid this fate, we must start out by ignoring the base current. Instead we look elsewhere for understanding. See the diagram below.</p>
+<pre><code>           |
+     ______|______
+    |             |          \
+    | COLLECTOR   |          |
+    |             |           &gt; full of wandering electrons
+    |  n-doped    |          |
+    |_____________|          /
+    |             |              \
+    | BASE        |              |
+    |             |--             &gt; full of wandering "holes"
+    |  p-doped    |              |
+    |_____________|              /
+    |             |      \
+    | EMITTER     |      |
+    |             |       &gt; full of wandering electrons
+    |  n-doped    |      |
+    |_____________|      /
+           |
+           |
+</code></pre>
+<p>The Depletion Region is an insulating layer existing between the base region and the emitter region. Why is it there? It exists because the Base region is p-doped silicon; the insulating layer appears because p-type silicon is full of naturally-occurring movable &ldquo;holes,&rdquo; and because the p-type silicon is touching n-type silicon.</p>
+<pre><code>           |
+     ______|______
+    |             |
+    | COLLECTOR N |
+    |_____________|
+    |             |
+    | BASE      P |--
+    |_____________|
+     _____________    &lt;-- insulating "depletion layer"
+    |             |
+    | EMITTER  N  |
+    |_____________|
+           |
+           |
+</code></pre>
+<p>The Depletion layer appears when electrons fall into holes. The p-type silicon has electrons too, but they act like the closely-packed beads of an abacus, and the &ldquo;holes&rdquo; are like gaps in the rows of beads. Move one bead, and a hole has moved the other way. Touch the p-type silicon against the n-type, and lone wandering electrons from the n-type silicon will fall into the holes. Also, holes in the p-type&rsquo;s Base region can flow out among the movable electrons from the N-type Emitter region and many swallow electrons and are cancelled. Holes eat electrons, and this leaves a thin region between N and P sections which lacks movable charges.</p>
+<p><strong>Remember</strong>: a conductor is not a substance which allows charges to pass. (Don&rsquo;t forget #3 above!) Actually a conductor is any substance which contains charges which are movable. Anything that lacks movable charges is an insulator. Inside the depletion layer, all the opposite charges have fallen together and vanished. The gaps in the abacus beads are gone, so no beads can move anymore. It&rsquo;s packed solid with immobile charges, so the silicon has turned into an insulator. When there&rsquo;s no voltage applied across the base/emitter terminals, this insulating layer grows fairly thick, and the transistor acts like a switch which has been turned off.</p>
+<p>I like to visualize that a transistor&rsquo;s silicon as normally like a shiny silver conductor (sort of like metal) &hellip;except for that insulating layer between the P and N regions which acts more like a layer of insulating glass. Silicon is like a metal which can become glass!</p>
+<pre><code>           |
+     ______|______
+    |             |              \
+    | COLLECTOR N |              |
+    |_____________|               &gt;  Shiny silver conductive
+    |             |              |
+    | BASE      P |--            /
+    |_____________|
+     _____________    &lt;-- Glasslike insulating "depletion layer"
+    |             |          \
+    | EMITTER  N  |           &gt;  Shiny silver conductive
+    |_____________|          /
+           |
+           |
+</code></pre>
+<p>Whenever voltage is applied between base and emitter, this insulating layer changes thickness. If (+)voltage is applied to the p-type (to the base wire,) while a (-) voltage polarity is applied to the n-type, (to the emitter wire,) then electrons in the n-type are pushed towards the holes in the p-type. The insulating layer becomes so thin that the clouds of electrons and holes start meeting and combining. A current therefore exists in the base/emitter circuit. But this current is not important to transistor action. What&rsquo;s important to notice is that the <em>VOLTAGE</em> across the base/emitter has caused the insulating Depletion Layer to become so thin that the charges can now flow across it. It&rsquo;s as if the transistor contains a layer of glass whose thickness can be varied when we alter a Base-Emitter voltage. The layer becomes thinner when BE voltage is increased. This happens because the voltage pushes the holes and the electrons towards each other, reducing the size of the empty insulating region between the clouds of holes and electrons, and allowing the stragglers to jump across the insulator. The depletion layer is a voltage-controlled switch which &ldquo;closes&rdquo; when the right polarity of voltage is applied. It is also a proportional switch, since a small voltage can close it only partially. For silicon material, charges first start jumping across whenever the voltage is around 0.3V. Raise the voltage to 0.7V and the current gets very high. (That&rsquo;s for silicon. Other materials have different turn-on voltages.) The larger the voltage, the thinner the insulating layer, so the higher the current in the entire transistor. By applying the right voltage, we can thicken or thin the depletion layer as desired, creating an open, closed, or partially open switch.</p>
+<p>See what&rsquo;s happening here? The transistor is not controlled by current. Instead it is controlled by the base/emitter voltage.</p>
+<p>7.THE P-TYPE AND N-TYPE ARE CONDUCTORS BECAUSE THEY CONTAIN MOVABLE CHARGES.<br />
+8.A LAYER OF INSULATING MATERIAL APPEARS WHEREVER P-TYPE AND N-TYPE TOUCH.<br />
+9.THE INSULATING LAYER CAN BE MADE THIN BY APPLYING A VOLTAGE.</p>
+<pre><code>               |
+         ______|______
+        |             |
+        | COLLECTOR N |
+        |_____________|
+        |             |  ----&gt;
+        | BASE      P |______________
+        |=============|              |  +     With a small voltage applied,
+        |             |          ____|____    the depletion layer gets thin,
+        | EMITTER  N  |            _____      charges start crossing it,
+        |_____________|          _________    and a small current appears.
+               |                   _____      The &quot;switch&quot; is only partly
+               |_____________________|  -     closed!
+                          &lt;----- 
+</code></pre>
+
+<p>OK, on to <a href="http://amasci.com/amateur/transis2.html">PART TWO </a><br />
+Also see: <a href="http://amasci.com/amateur/trshort.html">short version of article</a><br />
+and the <a href="http://otro-geek-mas.blogspot.com/2008/08/como-funcionan-realmente-los.html">version Espanol</a>.</p>
+<hr />
+<p>PS<br />
+The transistor was invented around 1923, by physicist Dr. J. Edgar Lilienfeld, the father of the modern electrolytic capacitor. WHAT?!!! But everyone knows that it was invented at Bell Labs in 1947. Nope. The original transistor was a 1920s thin-film device deposited on glass. The base region was a clever idea: crack a piece of glass, put it back together with metal foil clamped in the crack, then slice off the extra foil to make a flat surface that goes: glass, metal, glass. Deposit a thin layer of semiconductor and heat the device, and the thin metal line will &ldquo;dope&rdquo; that part of the semiconductor layer. Simple! Dr. Lilienfeld also built MOSFETs using the natural oxide layer found on aluminum plates. He also built a working transistor radio and showed it around to various companies. It was ignored, possibly because he didn&rsquo;t have a solid theory to explain how his invention worked, but more probably because it was &ldquo;impossible;&rdquo; weird and new. Some hobbyist should try making a home-built transistor. [New 2006 info: R. G. Arns says that Bret Crawford built sucessful Lilienfeld transistors in 1991 as his MS Physics Thesis. Joel Ross did it again in 1995 with more stable versions. And more amazing: William Shockley and G. L. Pearson did so in 1948, publishing in Physical Review for July 15 1948, but they concealed the fact that it was Lilienfeld&rsquo;s device they were demonstrating!]</p>
+<p>Lilienfeld&rsquo;s patent numbers are:</p>
+<ul>
+<li><a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PALL&amp;p=1&amp;u=/netahtml/srchnum.htm&amp;r=1&amp;f=G&amp;l=50&amp;s1=1,745,175.WKU.&amp;OS=PN/1,745,175&amp;RS=PN/1,745,175">1,745,175</a> Method and Apparatus for Controlling Electric Currents</li>
+<li><a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PALL&amp;p=1&amp;u=/netahtml/srchnum.htm&amp;r=1&amp;f=G&amp;l=50&amp;s1=1,877,140.WKU.&amp;OS=PN/1,877,140&amp;RS=PN/1,877,140">1,877,140</a> Amplifier for Electric Current</li>
+<li><a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PALL&amp;p=1&amp;u=/netahtml/srchnum.htm&amp;r=1&amp;f=G&amp;l=50&amp;s1=1,900,018.WKU.&amp;OS=PN/1,900,018&amp;RS=PN/1,900,018">1,900,018</a> Device for Controlling Electric Current</li>
+</ul>
+<p>[Click on IMAGES button to view them.]</p>
+<p>These patents caused Bardeen, Brattain, and Shockley some grief, and caused the US Patent Office to disallow the Bell Labs FET patents in later years.<br />
+Also:</p>
+<ul>
+<li>R. G. Arns <a href="http://ieeexplore.ieee.org/search/srchabstract.jsp?arnumber=730824&amp;isnumber=15787&amp;punumber=2222&amp;k2dockey=730824@ieejrns&amp;query=%28%28arns%29%3Cin%3Eau+%29&amp;pos=3&amp;access=no">&ldquo;The other transistor: early history of the MOSFET.&rdquo; (.pdf) </a>Engineering Science and Education Journal 7 (5): 233-240 (1988)</li>
+<li>IEEE Spectrum: <a href="http://www.spectrum.ieee.org/semiconductors/devices/how-europe-missed-the-transistor">How Europe Missed the Transistor</a> (independantly invented &ldquo;transistron&rdquo;)</li>
+<li>T. L. Thomas, Twenty Lost Years of Solid State Physics, Analog (magazine) March 1965</li>
+</ul>
+<p>PPS</p>
+<p>It is possible to make a transistor using Galena (lead sulfide, PbS). Silvery hunks of Galena are often available from rock shops and science museum stores. You can even make your own by melting sulfur and lead powder over a flame. Look up keywords such as &ldquo;cat&rsquo;s whisker diode&rdquo; and &ldquo;crystal radio&rdquo; to find out more.</p>
+<p>The trick to making a transistor is to use a hyper-clean, freshly-cleaved crystal face, to sharpen your cat&rsquo;s-whisker contacts by dissolving the tips using electrolysis, and then to put the tips within 0.05mm of each other (or preferably within 0.01mm). Obviously the latter is the hardest part. Better use a microscope! The authors of the following article found that the base/emitter junction was critical: it HAD to act as a good rectifier. The base/collector junction wasn&rsquo;t as important. They got some power gain, but their beta was in the single digits. <a href="http://ourworld.compuserve.com/homepages/Andrew_Wylie/homemade.HTM">Others</a> have mentioned that if you break open a 1N34 glass diode to expose the Germanium chip, you can make a crude transistor with a similar procedure. Old Germanium audio power transistors probably do the same, while giving much larger semiconductor area on which to play.</p>
+<p>Crystal Triode Action in Lead Sulphide, P. C. Banbury, H.A. Gebbie, C. A. Hogarth, pp78-86. SEMI-CONDUCTING MATERIALS, Conference proceedings, H.K. Henisch (ed), 1951 Butterworth&rsquo;s scientific publications LTD 1951.</p>
+<h2 id="how-transistor-works-an-alternate-viewpoint"><a name="user-content-how-transistor-works-an-alternate-viewpoint" href="#how-transistor-works-an-alternate-viewpoint" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>how transistor works, an alternate viewpoint</h2>
+<p>©1995 <a href="http://amasci.com/me.html">William J. Beaty, BSEE</a></p>
+<blockquote>
+<p>Physics? That&rsquo;s where you find new insights on things people have been thinking about for a long time. If you don&rsquo;t have two or three separate approaches to explaining something, then you don&rsquo;t really understand it.<br />
+OK, everything we know is wrong, and transistors aren&rsquo;t really &ldquo;current amplifiers.&rdquo; <grin> Instead the base voltage is the important thing, not the base current.</p>
+</blockquote>
+<pre><code>         |
+   ______|______
+  |             |
+  | COLLECTOR N |
+  |_____________|
+  |             |  ----&gt;            With a small voltage applied,
+  | BASE      P |____________       the depletion layer gets thin,
+  |=============|            |  +   charges start crossing it, and
+  |             |        ____|____  a small flow of charge appears
+  | EMITTER  N  |          _____    in the battery circuit.  The
+  |_____________|        _________  "switch" is only partly closed!
+         |                 _____   
+         |___________________|  -     
+                    &lt;-----
+</code></pre>
+<p>The changing thickness of the insulating depletion layer switches the transistor on and off. And since base voltage is what changes the thickness, we can ignore the current in the base wire. But wait a minute, which flow of charge is being switched on and off? Ah, we have another entire circuit to add to our diagram. We connect another battery across the entire transistor, between emitter and collector. Let&rsquo;s use a common 9-volt battery.</p>
+<pre><code>                    &lt;------
+             _______________________
+            |                       |
+            |                       |
+            |                 ______|______
+            |                |             |
+  Collector |                | COLLECTOR N |
+  Battery   |   +            |_____________|
+        ____|____            |             |______________
+          _____              | BASE      P |              |  
+        _________            |=============|              |  +    
+          _____   9V         |             |          ____|____ 
+        _________            | EMITTER  N  |            _____    Base
+          _____              |_____________|          _________  Battery
+        _________                   |                   _____     .5V
+          _____                     |                     |  -
+            |   -                   |_____________________|
+            |_______________________|
+
+                    -------&gt;
+</code></pre>
+
+<p>So the Base Battery turns on the transistor&rsquo;s &ldquo;switch&rdquo;, and this lets the 9-volt Collector-Battery drive a large flow of charge vertically through the entire thing.</p>
+<p>What use then is the &ldquo;collector&rsquo;s&rdquo; silicon? Won&rsquo;t the voltage from the collector battery override control from the base? And why have three silicon segments at all? Won&rsquo;t the second Depletion Layer turn everything off? And why not just connect the top wire to the Base section directly?</p>
+<p>The answers are in the last of these questions. If we got rid of the collector, we&rsquo;d accidentally connect the two batteries together, since silicon is a good conductor. We&rsquo;d end up with a diode instead (see below.) The batteries would fight each other, and the diode would just act like a short circuit between the two batteries.</p>
+<pre><code>                                      IT'S ALL SHORTED OUT, IT
+                                      GETS HOT AND SMOKES
+             _____________________      __________________            
+            |                     |    |                  |
+  Collector |                     |    |                  |
+  Battery   |   +             ____|____|___               |
+        ____|____            |             |              |
+          _____              | BASE      P |              |  
+        _________            |=============|              |  +    
+          _____   9V         |             |          ____|____ 
+        _________            | EMITTER  N  |            _____    Base
+          _____              |_____________|          _________  Battery
+        _________                   |                   _____     .5V
+          _____                     | IT'S A PN DIODE     |  -
+            |   -                   |                     |
+            |_______________________|_____________________|
+
+</code></pre>
+
+<p>Obviously the collector is required. Obviously the collector segment does something really strange!</p>
+<p>Notice that the collector battery is applying a (+) polarity to the collector, but the collector is n-type silicon. Isn&rsquo;t this backwards? Won&rsquo;t there be a whole second Depletion Layer forming between collector and base? YES! And since we&rsquo;re using a 9-volt battery to pull the movable holes in the p-type away from the electrons in the n-type, this depletion layer will be a thick one. It should act like a turned-off switch, eh? It does&hellip; and yet it doesn&rsquo;t. I personally think this is the strangest part of transistor action, and it took me a good while before my brain stopped rejecting the weirdness so I could &ldquo;see&rdquo; it all happening at once.</p>
+<pre><code>            &lt;------
+             _______________________
+            |                       |
+            |                       |
+            |                 ______|______
+            |                |             |
+  Collector |                | COLLECTOR N |
+  Battery   |   +            |_____________| thick depletion layer
+            |                 _____________
+        ____|____            |             |______________
+          _____              | BASE      P |              |  
+        _________            |=============|              |  +    
+          _____   9V         |             |          ____|____ 
+        _________            | EMITTER  N  |            _____    Base
+          _____              |_____________|          _________  Battery
+        _________                   |                   _____     .5V
+          _____                     |                     |  -
+            |   -                   |_____________________|
+            |_______________________|
+
+                    -------&gt;
+</code></pre>
+
+<p>OK, this new depletion layer keeps the Collector Battery from affecting the rest of the transistor. If we increase the voltage of that 9V battery, the insulating layer between Base and Collector segments just gets thicker, and the Base/Emitter segments below the Collector never feel the voltage-force from that battery. Yes, the &ldquo;upper surface&rdquo; of the Base segment in the upper depletion zone does feel the force from the 9V battery, but the rest of the circuit does not. (It&rsquo;s like waving a highly-charged balloon near a flashlight&rsquo;s circuit. Nothing happens to the charge flow in the flashlight.)</p>
+<p><strong>HOWEVER!</strong></p>
+<p>Because the Base battery has already thinned out the insulating emitter depletion layer, this means that swarms of movable electrons can pour from the Emitter and upwards into the Base segment. Only a few will actually flow upwards into the Base, since it would cause a traffic jam if the Base wire wasn&rsquo;t able to immediately suck those electrons out again. (Or more accurately, if the electrons in the Base don&rsquo;t leave again, and aren&rsquo;t cancelled by holes, then any extra electrons would cause the Base segment to become negatively charged, which would repel any more electrons coming upwards from the Emitter. See, a traffic jam.</p>
+<p>So now we have a sparse cloud of a few electrons entering the p-type silicon of the Base section from below, and some of those electrons wander upwards into the &ldquo;upper surface&rdquo; of the Base segment. What happens? They&rsquo;re suddenly exposed to the attraction of the 9V battery positive voltage.</p>
+<p>The upper depletion region doesn&rsquo;t act so much like a hunk of insulating glass, instead it acts like an insulating air gap. It&rsquo;s only insulating if there are no movable charges present. It doesn&rsquo;t block the flow of charges, but if no charges exist there, the voltage cannot create a charge flow.</p>
+<p>PS, Don&rsquo;t forget, there were always plenty of holes already in the Base segment, but any holes which dare to wander upwards out of the Base segment will be pushed back down by the positive polarity of the 9V battery. (That&rsquo;s what makes the depletion zone act like an insulator in the first place: it repels holes back down into the P, and repels electrons back up into the N Collector segment.) Imagine that the Collector segment is conductive metal. The Base segment is also like a metal, and the depletion region between them is like an empty space. Next, &ldquo;static electricity&rdquo; happens!</p>
+<p>We&rsquo;ve electrically charged the Collector segment to positive 9 volts. Stick some rice-crispies in the empty gap, and if they&rsquo;re negatively charged they&rsquo;ll be sucked upwards. Well, the few wandering electrons in the Base segment act just like negatively charged objects, and if they should wander up to the surface of the base layer &hellip;up they&rsquo;ll go. They&rsquo;ll be sucked across the gap into the Collector and then forced to go around the rest of the collector circuit. This can only happen if they get to the &ldquo;upper surface&rdquo; of the Base segment. When they were down within the Base segment, the Base acted like a conductive metal shield, and the wandering electrons didn&rsquo;t &ldquo;see&rdquo; the strong attractive field coming from the Collector segment.</p>
+<p>Some electrons are yanked upwards and go missing from the Base. But this relieves the &ldquo;traffic jam!&rdquo; The Base region loses some electrons upwards. As soon as the positively charged Collector has yanked some electrons out of the Base segment, more electrons can finally pour in from below&hellip; which gives us more wandering electrons to be yanked upwards, and so on. A fairly huge vertical charge flow appears.</p>
+<p>The &ldquo;traffic jam effect,&rdquo; as well as the valve-action of the thin depletion zone between base and emitter, these team up to control the main vertical current through the whole transistor. Any electron which wanders across the very thin Emitter depletion zone can also wander across the thin Base segment and end up becoming part of the big flow of charge in the Collector Battery circuit. The Base Battery voltage controls the width of the thin depletion zone, and this controls the amount of electrons pouring up into the collector. The Collector&rsquo;s 9V battery provides the &ldquo;suction&rdquo; that drives the main vertical current. But if we change the collector&rsquo;s battery voltage, the vertical flow of charge does not change. Doesn&rsquo;t change? It&rsquo;s because the collector battery only attracts what electrons it&rsquo;s given by the Base segment. It can&rsquo;t alter the collector current. This is an interesting situation known as a &ldquo;constant current power supply.&rdquo;</p>
+<p>Note that it&rsquo;s important to make the Base segment be fairly thin so we maximize the &ldquo;traffic jam&rdquo; effect (and minimize the number of charges that unnecessarily leak out of the Base wire.) We&rsquo;re relying on the natural ability of electrons to wander across the Base section all by themselves. No voltage is pushing them in that direction. The Base Battery is pulling them slowly sideways towards the Base wire. The Collector battery can&rsquo;t start yanking on them at all, not until they reach the &ldquo;upper surface&rdquo; of the Base segment.</p>
+<blockquote>
+<p>If you make people think they&rsquo;re thinking, they&rsquo;ll love you. But if you really make them think, they&rsquo;ll hate you     - Don Marquis</p>
+</blockquote>
+<p>Whew. All the stuff above is a very large chunk to swallow. Don&rsquo;t be suprised if it takes your brain awhile to connect all the puzzle-pieces together. It took me ages to see all of this (and it only happened years after I took the two semesters of engineering school exclusively focused on the Ebers-Moll mathematical model describing this entire subject.) The voltage-control viewpoint shown by the <a href="http://www.google.com/search?q=transistor+ebers-moll">Ebers-Moll</a> explanation does appear widely in textbooks, but it certainly isn&rsquo;t widely learned. If it had been learned, then people wouldn&rsquo;t get angry when they hear that transistors are voltage-controlled; that the collector current is proportional to the voltage across the base-emitter junction.</p>
+<p>We&rsquo;d better recap:</p>
+<p>10.THE TRANSISTOR CAN ACT LIKE A SWITCH (OR LIKE A PARTIALLY-ON SWITCH.)<br />
+11.CONNECT A POWER SUPPLY OR BATTERY FROM COLLECTOR TO EMITTER IN ORDER TO CREATE A BIG FLOW OF CHARGE (BUT WHY?)<br />
+12.THERE&rsquo;S ANOTHER DEPLETION ZONE BETWEEN COLLECTOR AND BASE.<br />
+13.THIS NEW DEPLETION ZONE ACTS LIKE AN INSULATING AIR GAP.<br />
+14.ANY ELECTRONS WHICH RANDOMLY WANDER ALL THE WAY ACROSS THE BASE ARE GRABBED BY THE COLLECTOR; THEY&rsquo;RE FORCEDACROSS THE UPPER DEPLETION ZONE.<br />
+15.THE BASE DEPLETION ZONE CONTROLS THE COLLECTOR BATTERY CURRENT. BUT CHANGES IN THE COLLECTOR VOLTAGE HAVE LITTLE EFFECT.</p>
+<p>If we crank up the Base Battery voltage, the emitter&rsquo;s depletion layer thins, the &ldquo;switch&rdquo; is fully on, and a very large flow of charge might appear in the collector circuit. Uh oh. The transistor (as a switch) is trying to short out the collector battery. So lets have it switch something. Give it a light bulb in series.  </p>
+<pre><code>                    ________    Light
+                   /        \   Bulb
+        |    ________/\/\/\________
+        |   |                      |
+        |   |      \________/      |
+        v   |                      |
+            |                      |
+            |                ______|______
+            |               |             |
+  Collector |               | COLLECTOR N |     Thick depletion
+  Battery   |   +           |_____________|     layer with electrons
+            |                _____________  &lt;-- passing through
+        ____|____           |             |______________
+          _____             | BASE      P |              |  
+        _________           |=============|              |  +    
+          _____   9V        |             |          ____|____ 
+        _________           | EMITTER  N  |            _____    Base
+          _____             |_____________|          _________  Battery
+        _________                  |                   _____     .7V
+          _____                    |                     |  -
+            |   -                  |_____________________|
+            |______________________|
+
+                    ------&gt;
+</code></pre>
+
+<p>And finally we take one last look at the flow of charge in the base wire. Even though it&rsquo;s really the <em>voltage</em> between base and emitter which controls the transistor, we don&rsquo;t ignore the base-wire&rsquo;s current entirely. It has an important use. Just by coincidence, the tiny base/emitter current is proportional to the large collector/emitter current. So if we know the value of flowing charge in the base wire, we can multiply its value by this &ldquo;Current Gain&rdquo; factor, and then figure out just what the charge-flow in the Collector wire should be. The transistor ACTS as if it is amplifying current. But it&rsquo;s really using a small change in <em>voltage</em> to create a large change in current. (It&rsquo;s more than just coincidence that the charge flowing in the Base and Collector are proportional. In fact, both flows are controlled by the Base/Emitter voltage, which controls the thickness of the Emitter&rsquo;s depletion layer.) The Collector current is large because the Emitter&rsquo;s thin depletion layer lets huge amounts of electrons escape up into the Collector region. The current in the Base wire is small because only a few electrons are needed in order to change the BE voltage and the thickness of the Emitter&rsquo;s depletion zone.</p>
+<p>A voltage in one place controls a flow of charge in another. This fact even determines the name of the entire device. Changing a voltage causes a change in current, so the device behaves somewhat like a resistor. But the voltage that controls the current is on an entirely different wire. It&rsquo;s as if the effects of the voltage are transferred from the Base side of the circuit to the Collector side. Transfer resistor. Transistor.</p>
+<p>16.BASE VOLTAGE CONTROLS COLLECTOR CURRENT.<br />
+17.PURE LUCK?: THE BASE LEAKAGE IS PROPORTIONAL TO COLLECTOR CURRENT.<br />
+18.TRANSISTORS ARE <strong>NOT</strong> CURRENT AMPLIFIERS. BUT IT CERTAINLY SIMPLIFIES THINGS IF WE PRETEND THAT THEY ARE.</p>
+<p>So, was this explanation too big and nasty? It certainly would be easier if all the textbook authors themselves had a better idea of how transistors work. It would be easier if they stopped telling people that transistors &ldquo;amplify current.&rdquo; And it certainly would be easier if I get off my butt and create some animations to illustrate the above text!</p>
+<hr />
+<p>PS<br />
+The transistor was invented around 1923, by physicist Dr. J. Edgar Lilienfeld, the father of the modern electrolytic capacitor. WHAT?!!! But everyone knows that it was invented at Bell Labs in 1945. Nope. The original transistor was a 1920s thin-film device deposited on glass. The base region was a clever idea: crack a piece of glass, put it back together with metal foil clamped in the crack, then slice off the extra foil to make a flat surface that goes: glass, metal, glass. Deposit a thin layer of semiconductor and heat the device, and the thin metal line will &ldquo;dope&rdquo; that part of the semiconductor layer. Simple! Dr. Lillienfeld apparently had a multi-transistor radio which he was showing around to investors. But Dr. Lillienfeld unfortunately didn&rsquo;t have a solid theory to explain how his invention worked, so it was ignored. Some hobbyist should try making a home-built Lilienfeld transistor.</p>
+<p>Lilienfeld&rsquo;s patent numbers are:</p>
+<ul>
+<li><a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PALL&amp;p=1&amp;u=/netahtml/srchnum.htm&amp;r=1&amp;f=G&amp;l=50&amp;s1=1,745,175.WKU.&amp;OS=PN/1,745,175&amp;RS=PN/1,745,175">1,745,175</a> Method and Apparatus for Controlling Electric Currents</li>
+<li><a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PALL&amp;p=1&amp;u=/netahtml/srchnum.htm&amp;r=1&amp;f=G&amp;l=50&amp;s1=1,877,140.WKU.&amp;OS=PN/1,877,140&amp;RS=PN/1,877,140">1,877,140</a> Amplifier for Electric Current</li>
+<li><a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PALL&amp;p=1&amp;u=/netahtml/srchnum.htm&amp;r=1&amp;f=G&amp;l=50&amp;s1=1,900,018.WKU.&amp;OS=PN/1,900,018&amp;RS=PN/1,900,018">1,900,018</a> Device for Controlling Electric Current</li>
+</ul>
+<p>[Click on IMAGES button to view them.]</p>
+<p>These patents caused Bardeen, Brattain, and Shockley some grief, and caused the US Patent Office to disallow the Bell Labs FET patents in later years.</p>
+<p>PPS<br />
+It&rsquo;s possible to make a transistor using Galena (lead sulfide, PbS). Galena is often available from rock shops and science museum stores. You can even make your own by melting sulfur and lead powder over a flame. Look up keywords such as &ldquo;cat&rsquo;s whisker diode&rdquo; and &ldquo;crystal radio&rdquo; to find out more.</p>
+<p>The trick to making a transistor is to use a freshly-cleaved crystal face, to sharpen your cat&rsquo;s-whisker contacts by dissolving the tips using electrolysis, and then to put the tips within 0.05mm of each other (or preferrably within 0.01mm). Obviously the latter is the hardest part. Better use a microscope! The authors of the following article found that the base/emitter junction was critical: it HAD to behave as a good rectifier. The base/collector junction wasn&rsquo;t as important. They got some power gain, but their beta was in the single digits. <a href="http://web.archive.org/web/20070601000000*/http://ourworld.compuserve.com/homepages/Andrew_Wylie/homemade.HTM">Others</a> have mentioned that if you break open a 1N34 glass diode to expose the Germanium chip, you can make a crude transistor with a similar procedure.</p>
+<blockquote>
+<p>Crystal Triode Action in Lead Sulphide, P. C. Banbury, H.A. Gebbie, C. A. Hogarth, pp78-86. SEMI-CONDUCTING MATERIALS, Conference proceedings, H.K. Henisch (ed), 1951 Butterworth&rsquo;s scientific publications LTD 1951.</p>
+</blockquote>
+<p>PPPS<br />
+WHAT ARE TRANSISTORS USED FOR? Ah, that&rsquo;s a whole &lsquo;nother article. But here&rsquo;s one example. Computers are made out of processors and memory. Processors are made out of &ldquo;state machines&rdquo; and &ldquo;data selectors,&rdquo; while memory is made out of data selectors and the flipflops that store the individual bits. State machines in turn are are made out of data selectors, and data selectors are made out of nand-gates or nor-gates. Memory flipflops are made out of nand-gates or nor-gates. Everything is made out of Nand or Nor gates. And&hellip; nand-gates and nor-gates are made out of transistors.</p>
+<p>So&hellip; computers are entirely made out of transistors. If computers are like animals, then animals are made of tissues, which are made of cells, which are made of organelles, which are made of proteins, which are made of molecules, which are made of atoms. Yet an animal is entirely made of atoms, and everything else is just interesting patterns in those atoms. Digital electronics has similar levels of complexity and organization, and in digital electronics, the transistor is the &ldquo;atom.&rdquo; The transistor looks too simple though. It looks uninteresting. Ah, but when you have clusters of transistors hooked together in various ways, then you&rsquo;ll learn all the fascinating things you can do with them.</p>
+<p>PPPPPPPS<br />
+People often ask: is a transistor an amplifier, or is it some sort of valve? The answer is yes. The answer is yes because all valves are amplifiers. How much energy does it take to open a water faucet? Now think about the large amount of work the flowing water can perform. A nicely made faucet could be opened and closed with the force from just one finger, but connect the output to a water turbine, and it can do work at a rate of many horsepower. The energy of your finger motion is multiplied by tens of thousands of times. Yet it&rsquo;s the distant power supply; the city water pumps, which actually do the work. Transistors behave in much the same way. Connect a transistor to a power supply, and you&rsquo;ve got a crude amplifier.</p>
+<p>PPPPPPPPPPPS<br />
+This article apparently has triggered extensive debates if not flamewars on multiple hobbyist forums, newsgroups, and WP. It&rsquo;s as if many people see Ic=hfe*Ib as holy scripture, while the Shockley equation Ic=Is(e^Vbe/Vt) is Dark Heresy which must be kept from the delicate ears of children. The cause of controversy is fairly obvious: at early stages we&rsquo;re all taught that BJTs are current-controlled devices, and only in later engineering physics courses is this claim held up to the harsh spotlight of critical questioning. Also, the current-control viewpoint works just fine as long as we give it lip service and then turn around and use Spice programs, or as long as we never look too closely at details of the inner workings of the physics. This situation leads most people to firmly decide that Ic really is affected by Ib, and not by Vbe. (Or perhaps they believe that, in diodes, the Vf diode drop is caused by the current?) I note that these debates all seem to feature typical flaws:</p>
+<ol>
+<li>Primary is a sort of backwards reasoning: first we take a stance for (or against) current control. Then we hotly defend that stance against all comers while cherry-picking the supporting evidence and ridiculing all contrary evidence. But that&rsquo;s not reason. That&rsquo;s religion or politics. It&rsquo;s how pseudoscientists operate. Science is the very opposite: in science, first we try like hell to avoid rigid preconceptions and emotional biases. We take no stand for or against. Then we honestly ask which side of any debate is actually right: ask whether transistors really are controlled by voltage or by current. And then we take the answers seriously, without desperately twisting facts to avoid losing face in public, without breaking sweat while having steam shoot out our ears, and without descending into mild insanity triggered by psychological denial that we&rsquo;re not the experts we thought we were, and now everybody has seen that we&rsquo;re on the &lsquo;losing&rsquo; side. :)</li>
+<li>Second problem: is the current-controlled viewpoint really held by all scientists and engineers everywhere, while voltage control is terribly wrong? Nope. Look at the Ebers-Moll section of Sedra/Smith, Horowitz/Hill, or most any engineering text. Don&rsquo;t trust opinions from people on forums, instead go out and actually ask some engineering authors (many are online!) Ask semiconductor physicists. Ask professional engineers. <a href="http://cr4.globalspec.com/comment/720033/Re-Voltage-vs-Current">Their answers may surprise you</a>. And don&rsquo;t ask them about abstract models of black-box transistors, ask about the topic of this article: the internal physics: ask whether Vbe or Ib determines Ic, ask what is the origin of Ebers-Moll and the Shockley equation, and what role does Ib and hfe actually plau?)</li>
+<li>Third problem: transient Ib currents seem to cause confusion. Whenever Vbe changes value, charges obviously must move during the changing profile of the depletion layer, and this requires a momentary charge-flow in the base lead. I&rsquo;ve seen several people proclaiming that this proves that Ib &ldquo;causes&rdquo; Vbe. No, that&rsquo;s a clear attempt to twist facts. The potential barrier in a semiconductor junction isn&rsquo;t &ldquo;caused&rdquo; by current any more than the voltage across a capacitor sitting on a shelf is being &ldquo;caused&rdquo; by any continuing current. In truth it just means that a changing capacitor voltage always requires a momentary current. To explain the high frequency behavior of BJTs, we need Gummel-Poon and not just Ebers-Moll. Gummel-Poon is another voltage control model, just like Ebers-Moll. This issue doesn&rsquo;t apply to the low-freq or DC case where Ic=Is(e^Vbe/Vt) where Vbe isn&rsquo;t changing, and the values of Vbe, Ic, and Ib are all connected together. The Ebers-Moll model shows that Ic is proportional to Vbe, but in order to see this in simple direct fashion, we must ignore the Emitter- Base capacitance and any transient currents which are charging/discharging the Base capacitance during changing conditions.</li>
+<li>Fourth problem: we&rsquo;ve all been taught that BJT transistors are totally different than FET transistors. After all, BJTs are bipolar, require PN junctions, need both electrons and &ldquo;holes.&rdquo; Well, this is wrong. There, I&rsquo;ve said it. (Next flamewar can start now!) Transistors aren&rsquo;t inherently bipolar. Schockley didn&rsquo;t know what he was talking about at the time. Today it&rsquo;s too big of an error to try correcting, or even to face. The theory behind Schottky diodes, where metal and N-type doping cause rectification without holes, came later. Yet point-contact diodes predate everything. It&rsquo;s possible to use N-doped silicon to make metal-semiconductor junctions and construct a BJT transistor which contains no PN junctions and uses no holes. Build a model of the very first point-contact transistor using N-type germanium. No PN, just N&ndash;, N. (A BJT transistor which isn&rsquo;t bipolar? HERESY!)<br />
+All this stuff just highlights the central difference between FETs and BJTs: in FETs the insulating regions invade from the side and make the conductive path narrower. BJTs are very different, since their insulating region is permanently in position, cutting across the Emitter&rsquo;s conductive path, but it can be made so thin that it cannot block even an immense charge flow. If FETs are like &ldquo;electricity shutters,&rdquo; then a BJT is like &ldquo;electricity sunglasses&rdquo; where you can alter the opacity. Make the barrier more and less conductive, rather than making a channel wider and narrower. Aaaaaand&hellip; holes aren&rsquo;t an absolute requirement for forming a depletion layer. We just need to sweep the mobile charges out of the silicon. In other words, BJTs don&rsquo;t need the &ldquo;B,&rdquo; just the &ldquo;JT.&rdquo; (Now just try to imagine a huge community like EEs and Techs all trying to admit the mistake, and attempting to go back and change the name of the Bipolar Junction Transistor to fit the facts! Ain&rsquo;t gonna happen.)</li>
+<li>Fifth problem: the widespread, repeated, and confident claim that, when we shine light on a phototransistor, Ic changes, but Vbe does not. Ic can be anything, while Vbe remains zero. Uh. Hmm. That&rsquo;s not like the phototransistors I&rsquo;ve used in the past. Those acted like photodiodes, with Vbe varying with illumination. Well, no matter how confident or how repeated the pronouncement, it&rsquo;s easier to just buy some PTs and see what actually happens. First control Ic with a Base connection and recorde Vbe versus Ic, then remove the Base wire and control Ic with light, again recording Vbe versus Ic. Or put it this way: do BJT phototransistors completely ignore the Shockley equation which rules all other BJTs?</li>
+<li>Sixth problem: down inside any resistor, the current density is controlled by the value of e-field, but the e-field isn&rsquo;t determined by the current density. Huh? Try again: charges get accelerated by electrostatic fields, but the reverse is not true: an accelerating charge is not the cause of that e-field. At the macroscopic level, this means that voltage causes current. E-fields cause charges to accelerate, so voltage causes current. Voltage always causes current. Current cannot cause voltage.</li>
+</ol>
+<p>Whaaaaat? Before you get in a lather, make note of the following. Yes, if we already know the values of the current and resistance, we can easily work backwards and calculate the voltage which was causing the current. Current can reveal the value of an unknown voltage, if resistance is known. But the resistor itself doesn&rsquo;t operate backwards: the e-field accelerates the mobile charges, and not the reverse. (Similarly, a gravitational potential pulls a dropped rock downwards, but if you manually accelerate a rock towards a surface, this doesn&rsquo;t create a gravity potential.) And so in diodes, Vf determines the diode current, but the current doesn&rsquo;t cause Vf. Yet isn&rsquo;t all of this crazy talk, because Ohm&rsquo;s law works fine when we assume that current causes voltage. Yes, that&rsquo;s right, and it&rsquo;s because Ohm&rsquo;s law ignores the internal physics. Ohm&rsquo;s law is a simplified abstract model; a mental tool, and a very useful one. It treats a resistor as a black box. But Ohm&rsquo;s law is &ldquo;wrong&rdquo; in that it incorrectly implies forward and reverse causation between e-fields and carrier drift. As a mental model, &ldquo;current causes voltage&rdquo; is incredibly useful. But if we start believing that this convenient mental model is actually true, it&rsquo;s a classic error called &ldquo;reification.&rdquo; See where I&rsquo;m going with this? The belief that BJTs are current controlled devices is a good example of the <a href="http://en.wikipedia.org/wiki/Reification_%28fallacy%29">Reification Fallacy</a>: a belief that a simplified abstract concept; a convenient mathematical model, has a real-world concrete existence. It also appears to be an example of Piagetian &ldquo;Concrete Operational&rdquo; thinking mode of childhood, where everything has to be real, and abstract mental models aren&rsquo;t accepted as valuable, or used as tools, since they don&rsquo;t exist in the real world.</p></article></body></html>
