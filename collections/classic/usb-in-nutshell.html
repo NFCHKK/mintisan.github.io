@@ -1,0 +1,2253 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>usb-in-nutshell</title></head><body><article class="markdown-body"><h1 id="usb-in-nutshell"><a name="user-content-usb-in-nutshell" href="#usb-in-nutshell" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>USB in Nutshell</h1>
+<blockquote>
+<p>Making sense of the USB standard</p>
+</blockquote>
+<div class="toc">
+<ul>
+<li><a href="#usb-in-nutshell">USB in Nutshell</a><ul>
+<li><a href="#chapter-1-introduction">Chapter 1: Introduction</a><ul>
+<li><a href="#usb-in-a-nutshell-for-peripheral-designers">USB in a NutShell for Peripheral Designers</a></li>
+<li><a href="#introducing-the-universal-serial-bus">Introducing the Universal Serial Bus</a></li>
+</ul>
+</li>
+<li><a href="#chapter-2-hardware">Chapter 2 : Hardware</a><ul>
+<li><a href="#connectors">Connectors</a></li>
+<li><a href="#electrical">Electrical</a></li>
+<li><a href="#speed-identification">Speed Identification</a></li>
+<li><a href="#power-vbus">Power (VBUS)</a></li>
+<li><a href="#suspend-current">Suspend Current</a></li>
+<li><a href="#entering-suspend-mode">Entering Suspend Mode</a></li>
+<li><a href="#data-signalling-rate">Data Signalling Rate</a></li>
+</ul>
+</li>
+<li><a href="#chapter-3-usb-protocols">Chapter 3 : USB Protocols</a><ul>
+<li><a href="#usb-protocols">USB Protocols</a></li>
+<li><a href="#common-usb-packet-fields">Common USB Packet Fields</a></li>
+<li><a href="#usb-packet-types">USB Packet Types</a></li>
+<li><a href="#usb-functions">USB Functions</a></li>
+<li><a href="#endpoints">Endpoints</a></li>
+<li><a href="#pipes">Pipes</a></li>
+</ul>
+</li>
+<li><a href="#chapter-4-endpoint-types">Chapter 4 : Endpoint Types</a><ul>
+<li><a href="#endpoint-types">Endpoint Types</a></li>
+<li><a href="#control-transfers">Control Transfers</a></li>
+<li><a href="#control-transfers-the-bigger-picture">Control Transfers : The bigger picture</a></li>
+<li><a href="#interrupt-transfers">Interrupt Transfers</a></li>
+<li><a href="#isochronous-transfers">Isochronous Transfers</a></li>
+<li><a href="#bulk-transfers">Bulk Transfers</a></li>
+<li><a href="#bandwidth-management">Bandwidth Management</a></li>
+</ul>
+</li>
+<li><a href="#chapter-5-usb-descriptors">Chapter 5 : USB Descriptors</a><ul>
+<li><a href="#usb-descriptors">USB Descriptors</a></li>
+<li><a href="#composition-of-usb-descriptors">Composition of USB Descriptors</a></li>
+<li><a href="#device-descriptors">Device Descriptors</a></li>
+<li><a href="#configuration-descriptors">Configuration Descriptors</a></li>
+<li><a href="#interface-descriptors">Interface Descriptors</a></li>
+<li><a href="#endpoint-descriptors">Endpoint Descriptors</a></li>
+<li><a href="#string-descriptors">String Descriptors</a></li>
+</ul>
+</li>
+<li><a href="#chapter-6-usb-requests">Chapter 6 : USB Requests</a><ul>
+<li><a href="#the-setup-packet">The Setup Packet</a></li>
+<li><a href="#standard-requests">Standard Requests</a></li>
+<li><a href="#standard-device-requests">Standard Device Requests</a></li>
+<li><a href="#standard-interface-requests">Standard Interface Requests</a></li>
+<li><a href="#standard-endpoint-requests">Standard Endpoint Requests</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="chapter-1-introduction"><a href="http://www.beyondlogic.org/usbnutshell/usb1.shtml">Chapter 1: Introduction</a></h2>
+<p>Starting out new with USB can be quite daunting. With the <a href="http://www.usb.org/developers/docs/usb_20.zip">USB 2.0 specification</a>at 650 pages one could easily be put off just by the sheer size of the standard. This is only the beginning of a long list of associated standards for USB. There are <a href="http://www.usb.org/developers/devclass/">USB Class Standards</a> such as the HID Class Specification which details the common operation of devices (keyboards, mice etc) falling under the HID (Human Interface Devices) Class - only another 97 pages. If you are designing a USB Host, then you have three Host Controller Interface Standards to choose from. None of these are detailed in the USB 2.0 Spec.</p>
+<p>The good news is you don’t even need to bother reading the entire USB standard. Some chapters were churned out by marketing, others aimed at the lower link layer normally taken care off by your USB controller IC and a couple aimed at host and hub developers. Lets take a little journey through the various chapters of the USB 2.0 specification and briefly introduce the key points.</p>
+<table>
+<thead>
+<tr>
+<th>Chapter</th>
+<th>Name</th>
+<th>Description</th>
+<th align="left">Pages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Introduction</td>
+<td>Includes the motivation and scope for USB. The most important piece of information in this chapter is to make reference to the Universal Serial Bus Device Class Specifications. No need reading this chapter.</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Terms and Abbreviations</td>
+<td>This chapter is self-explanatory and a necessary evil to any standard.</td>
+<td align="left">8</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Background</td>
+<td>Specifies the goals of USB which are Plug’n’Play and simplicity to the end user (<em>not developer</em>). Introduces Low, Full and High Speed ranges with a feature list straight from marketing. No need reading this chapter either.</td>
+<td align="left">4</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Architectural Overview</td>
+<td>This is where you can start reading. This chapter provides a basic overview of a USB system including topology, data rates, data flow types, basic electrical specs etc.</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td>5</td>
+<td>USB Data Flow Model</td>
+<td>This chapter starts to talk about how data flows on a Universal Serial Bus. It introduces terms such as endpoints and pipes then spends most of the chapter on each of the data flow types (Control, Interrupt, Isochronous and Bulk). While it’s important to know each transfer type and its properties it is a little heavy on for a first reader.</td>
+<td align="left">60</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Mechanical</td>
+<td>This chapter details the USB’s two standard connectors. The important information here is that a type A connector is oriented facing downstream and a type B connector upstream. Therefore it should be impossible to plug a cable into two upstream ports. All detachable cables must be full/high speed, while any low speed cable must be hardwired to the appliance. Other than a quick look at the connectors, you can skip this chapter unless you intend to manufacture USB connectors and/or cables. PCB designers can find standard footprints in this chapter.</td>
+<td align="left">33</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Electrical</td>
+<td>This chapter looks at low level electrical signalling including line impedance, rise/fall times, driver/receiver specifications and bit level encoding, bit stuffing etc. The more important parts of this chapter are the device speed identification by using a resistor to bias either data line and bus powered devices vs self powered devices. Unless you are designing USB transceivers at a silicon level you can flip through this chapter. Good USB device datasheets will detail what value bus termination resistors you will need for bus impedance matching.</td>
+<td align="left">75</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Protocol Layer</td>
+<td>Now we start to get into the protocol layers. This chapter describes the USB packets at a byte level including the sync, pid, address, endpoint, CRC fields. Once this has been grasped it moves on to the next protocol layer, USB packets. Most developers still don’t see these lower protocol layers as their USB device IC’s take care of this. However a understanding of the status reporting and handshaking is worthwhile.</td>
+<td align="left">45</td>
+</tr>
+<tr>
+<td>9</td>
+<td>USB Device Frame Work</td>
+<td>This is the most frequently used chapter in the entire specification and the only one I ever bothered printing and binding. This details the bus enumeration and request codes (set address, get descriptor etc) which make up the most common protocol layer USB programmers and designers will ever see. This chapter is a must read in detail.</td>
+<td align="left">36</td>
+</tr>
+<tr>
+<td>10</td>
+<td>USB Host Hardware and Software</td>
+<td>This chapter covers issues relating to the host. This includes frame and microframe generation, host controller requirements, software mechanisms and the universal serial bus driver model. Unless you are designing Hosts, you can skip this chapter.</td>
+<td align="left">23</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Hub Specification</td>
+<td>Details the workings of USB hubs including hub configuration, split transactions, standard descriptors for hub class etc. Unless you are designing Hubs, you can skip this chapter.</td>
+<td align="left">143</td>
+</tr>
+</tbody>
+</table>
+<p>So now we can begin to read the parts of the standard relevant to our needs. If you develop drivers (Software) for USB peripherals then you may only need to read chapters,</p>
+<ul>
+<li>4 - Architectural Overview</li>
+<li>5 - USB Data Flow Model</li>
+<li>9 - USB Device Frame Work, and</li>
+<li>10 - USB Host Hardware and Software.</li>
+</ul>
+<p>Peripheral hardware (Electronics) designers on the other hand may only need to read chapters,</p>
+<ul>
+<li>4 - Architectural Overview</li>
+<li>5 - USB Data Flow Model</li>
+<li>6 - Mechanical, and</li>
+<li>7 - Electrical.</li>
+</ul>
+<h3 id="usb-in-a-nutshell-for-peripheral-designers"><a name="user-content-usb-in-a-nutshell-for-peripheral-designers" href="#usb-in-a-nutshell-for-peripheral-designers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>USB in a NutShell for Peripheral Designers</h3>
+<p>Now lets face it, (1) most of us are here to develop USB peripherals and (2) it&rsquo;s common to read a standard and still have no idea how to implement a device. So in the next 7 chapters we focus on the relevant parts needed to develop a USB device. This allows you to grab a grasp of USB and its issues allowing you to further research the issues specific to your application.<br />
+The USB 1.1 standard was complex enough before High Speed was thrown into USB 2.0. In order to help understand the fundamental principals behind USB, we omit many areas specific to High Speed devices.</p>
+<h3 id="introducing-the-universal-serial-bus"><a name="user-content-introducing-the-universal-serial-bus" href="#introducing-the-universal-serial-bus" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Introducing the Universal Serial Bus</h3>
+<p>USB version 1.1 supported two speeds, a full speed mode of 12Mbits/s and a low speed mode of 1.5Mbits/s. The 1.5Mbits/s mode is slower and less susceptible to EMI, thus reducing the cost of ferrite beads and quality components. For example, crystals can be replaced by cheaper resonators. USB 2.0 which is still yet to see day light on mainstream desktop computers has upped the stakes to 480Mbits/s. The 480Mbits/s is known as High Speed mode and was a tack on to compete with the Firewire Serial Bus.</p>
+<p><strong>USB Speeds</strong>High Speed - 480Mbits/s</p>
+<ul>
+<li>Full Speed - 12Mbits/s</li>
+<li>Low Speed - 1.5Mbits/s</li>
+</ul>
+<p>The Universal Serial Bus is host controlled. There can only be one host per bus. The specification in itself, does not support any form of multimaster arrangement. However the <a href="http://www.beyondlogic.org/usb/otghost.htm">On-The-Go specification</a> which is a tack on standard to USB 2.0 has introduced a Host Negotiation Protocol which allows two devices negotiate for the role of host. This is aimed at and limited to single point to point connections such as a mobile phone and personal organiser and not multiple hub, multiple device desktop configurations. The USB host is responsible for undertaking all transactions and scheduling bandwidth. Data can be sent by various transaction methods using a token-based protocol.</p>
+<p>In my view the bus topology of USB is somewhat limiting. One of the original intentions of USB was to reduce the amount of cabling at the back of your PC. Apple people will say the idea came from the Apple Desktop Bus, where both the keyboard, mouse and some other peripherals could be connected together (daisy chained) using the one cable.</p>
+<p>However USB uses a tiered star topology, simular to that of 10BaseT Ethernet. This imposes the use of a hub somewhere, which adds to greater expense, more boxes on your desktop and more cables. However it is not as bad as it may seem. Many devices have USB hubs integrated into them. For example, your keyboard may contain a hub which is connected to your computer. Your mouse and other devices such as your digital camera can be plugged easily into the back of your keyboard. Monitors are just another peripheral on a long list which commonly have in-built hubs.</p>
+<p>This tiered star topology, rather than simply daisy chaining devices together has some benefits. Firstly power to each device can be monitored and even switched off if an overcurrent condition occurs without disrupting other USB devices. Both high, full and low speed devices can be supported, with the hub filtering out high speed and full speed transactions so lower speed devices do not receive them.</p>
+<p>Up to 127 devices can be connected to any one USB bus at any one given time. Need more devices? - simply add another port/host. While most earlier USB hosts had two ports, most manufacturers have seen this as limiting and are starting to introduce 4 and 5 port host cards with an internal port for hard disks etc. The early hosts had one USB controller and thus both ports shared the same available USB bandwidth. As bandwidth requirements grew, we are starting to see multi-port cards with two or more controllers allowing individual channels.</p>
+<p>The USB host controllers have their own specifications. With USB 1.1, there were two Host Controller Interface Specifications, <a href="http://developer.intel.com/design/USB/UHCI11D.htm">UHCI (Universal Host Controller Interface)</a> developed by Intel which puts more of the burden on software (Microsoft) and allowing for cheaper hardware and the <a href="http://www.compaq.com/productinfo/development/openhci.html">OHCI (Open Host Controller Interface)</a> developed by Compaq, Microsoft and National Semiconductor which places more of the burden on hardware(Intel) and makes for simpler software. Typical hardware / software engineer relationship. . .</p>
+<p>With the introduction of USB 2.0 a new Host Controller Interface Specification was needed to describe the register level details specific to USB 2.0. The <a href="http://developer.intel.com/technology/usb/ehcispec.htm">EHCI (Enhanced Host Controller Interface)</a> was born. Significant Contributors include Intel, Compaq, NEC, Lucent and Microsoft so it would hopefully seem they have pooled together to provide us one interface standard and thus only one new driver to implement in our operating systems. Its about time.</p>
+<p>USB as its name would suggest is a serial bus. It uses 4 shielded wires of which two are power (+5v &amp; GND). The remaining two are twisted pair differential data signals. It uses a NRZI (Non Return to Zero Invert) encoding scheme to send data with a sync field to synchronise the host and receiver clocks.</p>
+<p>USB supports plug’n’plug with dynamically loadable and unloadable drivers. The user simply plugs the device into the bus. The host will detect this addition, interrogate the newly inserted device and load the appropriate driver all in the time it takes the hourglass to blink on your screen provided a driver is installed for your device. The end user needs not worry about terminations, terms such as IRQs and port addresses, or rebooting the computer. Once the user is finished, they can simply lug the cable out, the host will detect its absence and automatically unload the driver.</p>
+<p>The loading of the appropriate driver is done using a PID/VID (Product ID/Vendor ID) combination. The VID is supplied by the USB Implementor&rsquo;s forum at a cost and this is seen as another sticking point for USB. The latest info on fees can be found on the <a href="http://www.usb.org/developers/vendor.html">USB Implementor’s Website</a></p>
+<p>Other standards organisations provide a extra VID for non-commercial activities such as teaching, research or fiddling (The Hobbyist). The USB Implementors forum has yet to provide this service. In these cases you may wish to use one assigned to your development system&rsquo;s manufacturer. For example most chip manufacturers will have a VID/PID combination you can use for your chips which is known not to exist as a commercial device. Other chip manufacturers can even sell you a PID to use with their VID for your commercial device.</p>
+<p>Another more notable feature of USB, is its transfer modes. USB supports Control, Interrupt, Bulk and Isochronous transfers. While we will look at the other transfer modes later, Isochronous allows a device to reserve a defined amount of bandwidth with guaranteed latency. This is ideal in Audio or Video applications where congestion may cause loss of data or frames to drop. Each transfer mode provides the designer trade-offs in areas such as error detection and recovery, guaranteed latency and bandwidth.</p>
+<h2 id="chapter-2-hardware"><a href="http://www.beyondlogic.org/usbnutshell/usb2.shtml">Chapter 2 : Hardware</a></h2>
+<h3 id="connectors"><a name="user-content-connectors" href="#connectors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Connectors</h3>
+<p>All devices have an upstream connection to the host and all hosts have a downstream connection to the device. Upstream and downstream connectors are not mechanically interchangeable, thus eliminating illegal loopback connections at hubs such as a downstream port connected to a downstream port. There are commonly two types of connectors, called type A and type B which are shown below.</p>
+<p><img alt="Type A USB Connector" src="http://upload-images.jianshu.io/upload_images/26219-1325b87251d80744.gif?imageMogr2/auto-orient/strip" /><br />
+<img alt="Type B USB Connector" src="http://upload-images.jianshu.io/upload_images/26219-ff96ad1833acb056.gif?imageMogr2/auto-orient/strip" /></p>
+<p>Type A plugs always face upstream. Type A sockets will typically find themselves on hosts and hubs. For example type A sockets are common on computer main boards and hubs. Type B plugs are always connected downstream and consequently type B sockets are found on devices.</p>
+<p>It is interesting to find type A to type A cables wired straight through and an array of USB gender changers in some computer stores. This is in contradiction of the USB specification. The only type A plug to type A plug devices are bridges which are used to connect two computers together. Other prohibited cables are USB extensions which has a plug on one end (either type A or type B) and a socket on the other. These cables violate the cable length requirements of USB.</p>
+<p>USB 2.0 included errata which introduces mini-usb B connectors. The details on these connectors can be found in <a href="http://www.usb.org/developers/data/ecn1.pdf">Mini-B Connector Engineering Change Notice</a>The reasoning behind the mini connectors came from the range of miniature electronic devices such as mobile phones and organisers. The current type B connector is too large to be easily integrated into these devices.</p>
+<p>Just recently released has been the <a href="http://www.beyondlogic.org/usb/otghost.htm">On-The-Go specification</a> which adds peer-to-peer functionality to USB. This introduces USB hosts into mobile phone and electronic organisers, and thus has included a specification for mini-A plugs, mini-A receptacles, and mini-AB receptacles. I guess we should be inundated with mini USB cables soon and a range of mini to standard converter cables.</p>
+<table>
+<thead>
+<tr>
+<th>Pin Number</th>
+<th>Cable Colour</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Red</td>
+<td>VBUS (5 volts)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>White</td>
+<td>D-</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Green</td>
+<td>D+</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Black</td>
+<td>Ground</td>
+</tr>
+</tbody>
+</table>
+<p>Standard internal wire colours are used in USB cables, making it easier to identify wires from manufacturer to manufacturer. The standard specifies various electrical parameters for the cables. It is interesting to read the detail the original USB 1.0 spec included. You would understand it specifying electrical attributes, but paragraph 6.3.1.2 suggested the recommended colour for overmolds on USB cables should be frost white - how boring! USB 1.1 and USB 2.0 was relaxed to recommend Black, Grey or Natural.</p>
+<p>PCB designers will want to reference chapter 6 for standard foot prints and pinouts.</p>
+<h3 id="electrical"><a name="user-content-electrical" href="#electrical" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Electrical</h3>
+<p>Unless you are designing the silicon for a USB device/transceiver or USB host/hub, there is not all that much you need to know about the electrical specifications in chapter 7. We briefly address the essential points here.<br />
+As we have discussed, USB uses a differential transmission pair for data. This is encoded using NRZI and is bit stuffed to ensure adequate transitions in the data stream. On low and full speed devices, a differential ‘1’ is transmitted by pulling D+ over 2.8V with a 15K ohm resistor pulled to ground and D- under 0.3V with a 1.5K ohm resistor pulled to 3.6V. A differential ‘0’ on the other hand is a D- greater than 2.8V and a D+ less than 0.3V with the same appropriate pull down/up resistors.</p>
+<p>The receiver defines a differential ‘1’ as D+ 200mV greater than D- and a differential ‘0’ as D+ 200mV less than D-. The polarity of the signal is inverted depending on the speed of the bus. Therefore the terms ‘J’ and ‘K’ states are used in signifying the logic levels. In low speed a ‘J’ state is a differential 0. In high speed a ‘J’ state is a differential 1.</p>
+<p>USB transceivers will have both differential and single ended outputs. Certain bus states are indicated by single ended signals on D+, D- or both. For example a single ended zero or SE0 can be used to signify a device reset if held for more than 10mS. A SE0 is generated by holding both D- and D+ low (&lt; 0.3V). Single ended and differential outputs are important to note if you are using a transceiver and FPGA as your USB device. You cannot get away with sampling just the differential output.</p>
+<p>The low speed/full speed bus has a characteristic impedance of 90 ohms +/- 15%. It is therefore important to observe the datasheet when selecting impedance matching series resistors for D+ and D-. Any good datasheet should specify these values and tolerances.</p>
+<p>High Speed (480Mbits/s) mode uses a 17.78mA constant current for signalling to reduce noise.</p>
+<h3 id="speed-identification"><a name="user-content-speed-identification" href="#speed-identification" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Speed Identification</h3>
+<p>A USB device must indicate its speed by pulling either the D+ or D- line high to 3.3 volts. A full speed device, pictured below will use a pull up resistor attached to D+ to specify itself as a full speed device. These pull up resistors at the device end will also be used by the host or hub to detect the presence of a device connected to its port. Without a pull up resistor, USB assumes there is nothing connected to the bus. Some devices have this resistor built into its silicon, which can be turned on and off under firmware control, others require an external resistor.</p>
+<p>For example Philips Semiconductor has a SoftConnectTM technology. When first connected to the bus, this allows the microcontroller to initialise the USB function device before it enables the pull up speed identification resistor, indicating a device is attached to the bus. If the pull up resistor was connected to Vbus, then this would indicate a device has been connected to the bus as soon as the plug is inserted. The host may then attempt to reset the device and ask for a descriptor when the microprocessor hasn’t even started to initialise the usb function device.</p>
+<p>Other vendors such as Cypress Semiconductor also use a programmable resistor for Re-NumerationTM purposes in their EzUSB devices where the one device can be enumerated for one function such as In field programming then be disconnected from the bus under firmware control, and enumerate as another different device, all without the user lifting an eyelid. Many of the EzUSB devices do not have any Flash or OTP ROM to store code. They are bootstraped at connection.</p>
+<p><img alt="" src="http://upload-images.jianshu.io/upload_images/26219-54a1837380467e12.gif?imageMogr2/auto-orient/strip" /></p>
+<p>Figure 2 : Full Speed Device with pull up resistor connected to D+</p>
+<p><img alt="" src="http://upload-images.jianshu.io/upload_images/26219-13e64ffd7e5ff50b.gif?imageMogr2/auto-orient/strip" /></p>
+<p>Figure 3 : Low Speed Device with pull up resistor connected to D-</p>
+<p>You will notice we have not included speed identification for High Speed mode. High speed devices will start by connecting as a full speed device (1.5k to 3.3V). Once it has been attached, it will do a high speed chirp during reset and establish a high speed connection if the hub supports it. If the device operates in high speed mode, then the pull up resistor is removed to balance the line.</p>
+<p>A USB 2.0 compliant device is not required to support high-speed mode. This allows cheaper devices to be produced if the speed isn’t critical. This is also the case for a low speed USB 1.1 devices which is not required to support full speed.</p>
+<p>However a high speed device must not support low speed mode. It should only support full speed mode needed to connect first, then high speed mode if successfully negotiated later. A USB 2.0 compliant downstream facing device (Hub or Host) must support all three modes, high speed, full speed and low speed.</p>
+<h3 id="power-vbus"><a name="user-content-power-vbus" href="#power-vbus" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Power (VBUS)</h3>
+<p>One of the benefits of USB is bus-powered devices - devices which obtain its power from the bus and requires no external plug packs or additional cables. However many leap at this option without first considering all the necessary criteria.</p>
+<p>A USB device specifies its power consumption expressed in 2mA units in the configuration descriptor which we will examine in detail later. A device cannot increase its power consumption, greater than what it specifies during enumeration, even if it looses external power. There are three classes of USB functions,</p>
+<ul>
+<li>Low-power bus powered functions</li>
+<li>High-power bus powered functions</li>
+<li>Self-powered functions</li>
+</ul>
+<p>Low power bus powered functions draw all its power from the VBUS<br />
+ and cannot draw any more than one unit load. The USB specification defines a unit load as 100mA. Low power bus powered functions must also be designed to work down to a VBUS voltage of 4.40V and up to a maximum voltage of 5.25V measured at the upsteam plug of the device. For many 3.3V devices, LDO regulators are mandatory.</p>
+<p>High power bus powered functions will draw all its power from the bus and cannot draw more than one unit load until it has been configured, after which it can then drain 5 unit loads (500mA Max) provided it asked for this in its descriptor. High power bus functions must be able to be detected and enumerated at a minimum 4.40V. When operating at a full unit load, a minimum VBUS of 4.75 V is specified with a maximum of 5.25V. Once again, these measurements are taken at the upstream plug.</p>
+<p>Self power functions may draw up to 1 unit load from the bus and derive the rest of it’s power from an external source. Should this external source fail, it must have provisions in place to draw no more than 1 unit load from the bus. Self powered functions are easier to design to specification as there is not so much of an issue with power consumption. The 1 unit bus powered load allows the detection and enumeration of devices without mains/secondary power applied.</p>
+<p>No USB device, whether bus powered or self powered can drive the VBUS<br />
+ on its upstream facing port. If VBUS is lost, the device has a lengthy 10 seconds to remove power from the D+/D- pull-up resistors used for speed identification.</p>
+<p>Other VBUS considerations are the Inrush current which must be limited. This is outlined in the USB specification paragraph 7.2.4.1 and is commonly overlooked. Inrush current is contributed to the amount of capacitance on your device between VBUS and ground. The spec therefore specifies that the maximum decoupling capacitance you can have on your device is 10uF. When you disconnect the device after current is flowing through the inductive USB cable, a large flyback voltage can occur on the open end of the cable. To prevent this, a 1uF minimum VBUS decoupling capacitance is specified.</p>
+<p>For the typical bus powered device, it can not drain any more than 500mA which is not unreasonable. So what is the complication you ask? Perhaps Suspend Mode?</p>
+<h3 id="suspend-current"><a name="user-content-suspend-current" href="#suspend-current" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Suspend Current</h3>
+<p>Suspend mode is mandatory on all devices. During suspend, additional constrains come into force. The maximum suspend current is proportional to the unit load. For a 1 unit load device (default) the maximum suspend current is 500uA. This includes current from the pull up resistors on the bus. At the hub, both D- and D+ have pull down resistors of 15K ohms. For the purposes of power consumption, the pull down resistor at the device is in series with the 1.5K ohms pull up, making a total load of 16.5K ohms on a VTERM of typically 3.3v. Therefore this resistor sinks 200uA before we even start.</p>
+<p>Another consideration for many devices is the 3.3V regulator. Many of the USB devices run on 3.3V. The PDIUSBD11 is one such example. Linear regulators are typically quite inefficient with average quiescent currents in the order of 600uA, therefore more efficient and thus expensive regulators are called for. In the majority of cases, you must also slow down or stop clocks on microcontrollers to fall within the 500uA limit.</p>
+<p>Many developers ask in the USB Implementor&rsquo;s Forum, what are the complications of exceeding this limit? It is understood, that most hosts and hubs don’t have the ability to detect such an overload of this magnitude and thus if you drain maybe 5mA or even 10mA you should still be fine, bearing in mind that at the end of the day, your device violates the USB specification. However in normal operation, if you try to exceed the 100mA or your designated permissible load, then expect the hub or host to detect this and disconnect your device, in the interest of the integrity of the bus.</p>
+<p>Of course these design issues can be avoided if you choose to design a self powered device. Suspend currents may not be a great concern for desktop computers but with the introduction of the On-The-Go Specification we will start seeing USB hosts built into mobile phones and mobile organisers. The power consumption pulled from these devices will adversely effect the operating life of the battery.</p>
+<h3 id="entering-suspend-mode"><a name="user-content-entering-suspend-mode" href="#entering-suspend-mode" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Entering Suspend Mode</h3>
+<p>A USB device will enter suspend when there is no activity on the bus for greater than 3.0ms. It then has a further 7ms to shutdown the device and draw no more than the designated suspend current and thus must be only drawing the rated suspend current from the bus 10mS after bus activity stopped. In order to maintain connected to a suspended hub or host, the device must still provide power to its pull up speed selection resistors during suspend.<br />
+USB has a start of frame packet or keep alive sent periodically on the bus. This prevents an idle bus from entering suspend mode in the absence of data.</p>
+<ul>
+<li>A high speed bus will have micro-frames sent every 125.0 µs ±62.5 ns.</li>
+<li>A full speed bus will have a frame sent down each 1.000 ms ±500 ns.</li>
+<li>A low speed bus will have a keep alive which is a EOP (End of Packet) every 1ms only in the absence of any low speed data.</li>
+</ul>
+<p>The term &ldquo;Global Suspend&rdquo; is used when the entire USB bus enters suspend mode collectively. However selected devices can be suspended by sending a command to the hub that the device is connected too. This is referred to as a &ldquo;Selective Suspend.&rdquo;</p>
+<p>The device will resume operation when it receives any non idle signalling. If a device has remote wakeup enabled then it may signal to the host to resume from suspend.</p>
+<h3 id="data-signalling-rate"><a name="user-content-data-signalling-rate" href="#data-signalling-rate" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Data Signalling Rate</h3>
+<p>Another area which is often overlooked is the tolerance of the USB clocks. This is specified in the USB specification, section 7.1.11.</p>
+<ul>
+<li>High speed data is clocked at 480.00Mb/s with a data signalling tolerance of ± 500ppm.</li>
+<li>Full speed data is clocked at 12.000Mb/s with a data signalling tolerance of ±0.25% or 2,500ppm.</li>
+<li>Low speed data is clocked at 1.50Mb/s with a data signalling tolerance of ±1.5% or 15,000ppm.</li>
+</ul>
+<p>This allows resonators to be used for low cost low speed devices, but rules them out for full or high speed devices.</p>
+<h2 id="chapter-3-usb-protocols"><a href="http://www.beyondlogic.org/usbnutshell/usb3.shtml">Chapter 3 : USB Protocols </a></h2>
+<h3 id="usb-protocols"><a name="user-content-usb-protocols" href="#usb-protocols" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>USB Protocols</h3>
+<p>Unlike RS-232 and similar serial interfaces where the format of data being sent is not defined, USB is made up of several layers of protocols. While this sounds complicated, don’t give up now. Once you understand what is going on, you really only have to worry about the higher level layers. In fact most USB controller I.C.s will take care of the lower layer, thus making it almost invisible to the end designer.</p>
+<p>Each USB transaction consists of a</p>
+<ul>
+<li>Token Packet (Header defining what it expects to follow), an</li>
+<li>Optional Data Packet, (Containing the payload) and a</li>
+<li>Status Packet (Used to acknowledge transactions and to provide a means of error correction)</li>
+</ul>
+<p>As we have already discussed, USB is a host centric bus. The host initiates all transactions. The first packet, also called a token is generated by the host to describe what is to follow and whether the data transaction will be a read or write and what the device’s address and designated endpoint is. The next packet is generally a data packet carrying the payload and is followed by an handshaking packet, reporting if the data or token was received successfully, or if the endpoint is stalled or not available to accept data.</p>
+<h3 id="common-usb-packet-fields"><a name="user-content-common-usb-packet-fields" href="#common-usb-packet-fields" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Common USB Packet Fields</h3>
+<p>Data on the USBus is transmitted LSBit first. USB packets consist of the following fields,</p>
+<ul>
+<li><strong>Sync</strong> : All packets must start with a sync field. The sync field is 8 bits long at low and full speed or 32 bits long for high speed and is used to synchronise the clock of the receiver with that of the transmitter. The last two bits indicate where the PID fields starts.</li>
+<li><strong>PID</strong> : PID stands for Packet ID. This field is used to identify the type of packet that is being sent. The following table shows the possible values.<br />
+<img alt="Paste_Image.png" src="http://upload-images.jianshu.io/upload_images/26219-88433939dfc1c487.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /><br />
+There are 4 bits to the PID, however to insure it is received correctly, the 4 bits are complemented and repeated, making an 8 bit PID in total. The resulting format is shown below.<br />
+<img alt="Paste_Image.png" src="http://upload-images.jianshu.io/upload_images/26219-77408ed4d7fee1e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></li>
+<li><strong>ADDR</strong> : The address field specifies which device the packet is designated for. Being 7 bits in length allows for 127 devices to be supported. Address 0 is not valid, as any device which is not yet assigned an address must respond to packets sent to address zero.</li>
+<li><strong>ENDP</strong> : The endpoint field is made up of 4 bits, allowing 16 possible endpoints. Low speed devices, however can only have 2 additional endpoints on top of the default pipe. (4 endpoints max)</li>
+<li><strong>CRC</strong> : Cyclic Redundancy Checks are performed on the data within the packet payload. All token packets have a 5 bit CRC while data packets have a 16 bit CRC.</li>
+<li><strong>EOP</strong> : End of packet. Signalled by a Single Ended Zero (SE0) for approximately 2 bit times followed by a J for 1 bit time.</li>
+</ul>
+<h3 id="usb-packet-types"><a name="user-content-usb-packet-types" href="#usb-packet-types" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>USB Packet Types</h3>
+<p>USB has four different packet types. Token packets indicate the type of transaction to follow, data packets contain the payload, handshake packets are used for acknowledging data or reporting errors and start of frame packets indicate the start of a new frame.</p>
+<ul>
+<li><strong>Token Packets</strong> : There are three types of token packets,<ul>
+<li><strong>In</strong> - Informs the USB device that the host wishes to read information.</li>
+<li><strong>Out</strong> - Informs the USB device that the host wishes to send information.</li>
+<li><strong>Setup</strong> - Used to begin control transfers.</li>
+</ul>
+</li>
+</ul>
+<p>Token Packets must conform to the following format,<br />
+<img alt="Paste_Image.png" src="http://upload-images.jianshu.io/upload_images/26219-1a54d32b866deb02.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<ul>
+<li><strong>Data Packets</strong> : There are two types of data packets each capable of transmitting up to 1024 bytes of data.<ul>
+<li>Data0</li>
+<li>Data1</li>
+</ul>
+</li>
+</ul>
+<p>High Speed mode defines another two data PIDs, DATA2 and MDATA.</p>
+<p>Data packets have the following format,<br />
+<img alt="Paste_Image.png" src="http://upload-images.jianshu.io/upload_images/26219-59858de3129b5270.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<ul>
+<li>Maximum data payload size for low-speed devices is 8 bytes.</li>
+<li>Maximum data payload size for full-speed devices is 1023 bytes.</li>
+<li>Maximum data payload size for high-speed devices is 1024 bytes.</li>
+<li>
+<p>Data must be sent in multiples of bytes.</p>
+</li>
+<li>
+<p><strong>Handshake Packets</strong> : There are three type of handshake packets which consist simply of the PID</p>
+<ul>
+<li><strong>ACK</strong> - Acknowledgment that the packet has been successfully received.</li>
+<li><strong>NAK</strong> - Reports that the device temporary cannot send or received data. Also used during interrupt transactions to inform the host there is no data to send.</li>
+<li><strong>STALL</strong> - The device finds its in a state that it requires intervention from the host.</li>
+</ul>
+</li>
+</ul>
+<p>Handshake Packets have the following format,<br />
+<img alt="Paste_Image.png" src="http://upload-images.jianshu.io/upload_images/26219-2ce4e47894077c51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<ul>
+<li><strong>Start of Frame Packets</strong> : The SOF packet consisting of an 11-bit frame number is sent by the host every 1ms ± 500ns on a full speed bus or every 125 µs ± 0.0625 µs on a high speed bus.<br />
+<img alt="Paste_Image.png" src="http://upload-images.jianshu.io/upload_images/26219-8f7d59bdaa2a9639.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></li>
+</ul>
+<h3 id="usb-functions"><a name="user-content-usb-functions" href="#usb-functions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>USB Functions</h3>
+<p>When we think of a USB device, we think of a USB peripheral, but a USB device could mean a USB transceiver device used at the host or peripheral, a USB Hub or Host Controller IC device, or a USB peripheral device. The standard therefore makes references to USB functions which can be seen as USB devices which provide a capability or function such as a Printer, Zip Drive, Scanner, Modem or other peripheral.</p>
+<p>So by now we should know the sort of things which make up a USB packet. No? You&rsquo;re forgotten how many bits make up a PID field already? Well don&rsquo;t be too alarmed. Fortunately most USB functions handle the low level USB protocols up to the transaction layer (which we will cover next chapter) in silicon. The reason why we cover this information is most USB function controllers will report errors such as PID Encoding Error. Without briefly covering this, one could ask what is a PID Encoding Error? If you suggested that the last four bits of the PID didn&rsquo;t match the inverse of the first four bits then you would be right.</p>
+<p><img alt="" src="http://www.beyondlogic.org/usbnutshell/endpoint.gif" /></p>
+<p>Most functions will have a series of buffers, typically 8 bytes long. Each buffer will belong to an endpoint - EP0 IN, EP0 OUT etc. Say for example, the host sends a device descriptor request. The function hardware will read the setup packet and determine from the address field whether the packet is for itself, and if so will copy the payload of the following data packet to the appropriate endpoint buffer dictated by the value in the endpoint field of the setup token. It will then send a handshake packet to acknowledge the reception of the byte and generate an internal interrupt within the semiconductor/micro-controller for the appropriate endpoint signifying it has received a packet. This is typically all done in hardware.</p>
+<p>The software now gets an interrupt, and should read the contents of the endpoint buffer and parse the device descriptor request.</p>
+<h3 id="endpoints"><a name="user-content-endpoints" href="#endpoints" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Endpoints</h3>
+<p>Endpoints can be described as sources or sinks of data. As the bus is host centric, endpoints occur at the end of the communications channel at the USB function. At the software layer, your device driver may send a packet to your devices EP1 for example. As the data is flowing out from the host, it will end up in the EP1 OUT buffer. Your firmware will then at its leisure read this data. If it wants to return data, the function cannot simply write to the bus as the bus is controlled by the host. Therefore it writes data to EP1 IN which sits in the buffer until such time when the host sends a IN packet to that endpoint requesting the data. Endpoints can also be seen as the interface between the hardware of the function device and the firmware running on the function device.</p>
+<p>All devices must support endpoint zero. This is the endpoint which receives all of the devices control and status requests during enumeration and throughout the duration while the device is operational on the bus.</p>
+<h3 id="pipes"><a name="user-content-pipes" href="#pipes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pipes</h3>
+<p>While the device sends and receives data on a series of endpoints, the client software transfers data through pipes. A pipe is a logical connection between the host and endpoint(s). Pipes will also have a set of parameters associated with them such as how much bandwidth is allocated to it, what transfer type (Control, Bulk, Iso or Interrupt) it uses, a direction of data flow and maximum packet/buffer sizes. For example the default pipe is a bi-directional pipe made up of endpoint zero in and endpoint zero out with a control transfer type.</p>
+<p>USB defines two types of pipes</p>
+<ul>
+<li><strong>Stream Pipes</strong> have no defined USB format, that is you can send any type of data down a stream pipe and can retrieve the data out the other end. Data flows sequentially and has a pre-defined direction, either in or out. Stream pipes will support bulk, isochronous and interrupt transfer types. Stream pipes can either be controlled by the host or device.</li>
+<li><strong>Message Pipes</strong> have a defined USB format. They are host controlled, which are initiated by a request sent from the host. Data is then transferred in the desired direction, dictated by the request. Therefore message pipes allow data to flow in both directions but will only support control transfers.</li>
+</ul>
+<h2 id="chapter-4-endpoint-types"><a href="http://www.beyondlogic.org/usbnutshell/usb4.shtml">Chapter 4 : Endpoint Types</a></h2>
+<h3 id="endpoint-types"><a name="user-content-endpoint-types" href="#endpoint-types" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Endpoint Types</h3>
+<p>The Universal Serial Bus specification defines four transfer/endpoint types,</p>
+<ul>
+<li>Control Transfers</li>
+<li>Interrupt Transfers</li>
+<li>Isochronous Transfers</li>
+<li>Bulk Transfers</li>
+</ul>
+<h3 id="control-transfers"><a name="user-content-control-transfers" href="#control-transfers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Control Transfers</h3>
+<p>Control transfers are typically used for command and status operations. They are essential to set up a USB device with all enumeration functions being performed using control transfers. They are typically bursty, random packets which are initiated by the host and use best effort delivery. The packet length of control transfers in low speed devices must be 8 bytes, high speed devices allow a packet size of 8, 16, 32 or 64 bytes and full speed devices must have a packet size of 64 bytes.</p>
+<p>A control transfer can have up to three stages.</p>
+<ul>
+<li>The <strong>Setup Stage</strong> is where the request is sent. This consists of three packets. The setup token is sent first which contains the address and endpoint number. The data packet is sent next and always has a PID type of data0 and includes a <a href="http://www.beyondlogic.org/usbnutshell/usb6.htm#SetupPacket">setup packet</a> which details the type of request. We detail the setup packet later. The last packet is a handshake used for acknowledging successful receipt or to indicate an error. If the function successfully receives the setup data (CRC and PID etc OK) it responds with ACK, otherwise it ignores the data and doesn’t send a handshake packet. Functions cannot issue a STALL or NAK packet in response to a setup packet.<br />
+<img alt="" src="http://upload-images.jianshu.io/upload_images/26219-6526fc397c916d18.gif?imageMogr2/auto-orient/strip" /><br />
+<img alt="" src="http://upload-images.jianshu.io/upload_images/26219-9b650510de606992.gif?imageMogr2/auto-orient/strip" /></li>
+<li>The optional <strong>Data Stage</strong> consists of one or multiple IN or OUT transfers. The setup request indicates the amount of data to be transmitted in this stage. If it exceeds the maximum packet size, data will be sent in multiple transfers each being the maximum packet length except for the last packet.<br />
+The data stage has two different scenarios depending upon the direction of data transfer.<ul>
+<li><strong>IN:</strong> When the host is ready to receive control data it issues an IN Token. If the function receives the IN token with an error e.g. the PID doesn&rsquo;t match the inverted PID bits, then it ignores the packet. If the token was received correctly, the device can either reply with a DATA packet containing the control data to be sent, a stall packet indicating the endpoint has had a error or a NAK packet indicating to the host that the endpoint is working, but temporarily has no data to send.<br />
+<img alt="" src="http://upload-images.jianshu.io/upload_images/26219-770dfd55acc28a1d.gif?imageMogr2/auto-orient/strip" /><br />
+<img alt="" src="http://upload-images.jianshu.io/upload_images/26219-9b650510de606992.gif?imageMogr2/auto-orient/strip" /></li>
+<li><strong>OUT:</strong> When the host needs to send the device a control data packet, it issues an OUT token followed by a data packet containing the control data as the payload. If any part of the OUT token or data packet is corrupt then the function ignores the packet. If the function&rsquo;s endpoint buffer was empty and it has clocked the data into the endpoint buffer it issues an ACK informing the host it has successfully received the data. If the endpoint buffer is not empty due to processing of the previous packet, then the function returns a NAK. However if the endpoint has had a error and its halt bit has been set, it returns a STALL.</li>
+</ul>
+</li>
+<li><strong>Status Stage</strong> reports the status of the overall request and this once again varies due to direction of transfer. Status reporting is always performed by the function.<ul>
+<li><strong>IN:</strong> If the host sent IN token(s) during the data stage to receive data, then the host must acknowledge the successful recept of this data. This is done by the host sending an OUT token followed by a zero length data packet. The function can now report its status in the handshaking stage. An ACK indicates the function has completed the command is now ready to accept another command. If an error occurred during the processing of this command, then the function will issue a STALL. However if the function is still processing, it returns a NAK indicating to the host to repeat the status stage later.<br />
+<img alt="" src="http://upload-images.jianshu.io/upload_images/26219-b7af34f7c754f4d1.gif?imageMogr2/auto-orient/strip" /><br />
+<img alt="" src="http://upload-images.jianshu.io/upload_images/26219-9b650510de606992.gif?imageMogr2/auto-orient/strip" /></li>
+<li><strong>OUT:</strong> If the host sent OUT token(s) during the data stage to transmit data, the function will acknowledge the successful recept of data by sending a zero length packet in response to an IN token. However if an error occurred, it should issue a STALL or if it is still busy processing data, it should issue a NAK asking the host to retry the status phase later.<br />
+<img alt="" src="http://upload-images.jianshu.io/upload_images/26219-2b341f11d0cc1f33.gif?imageMogr2/auto-orient/strip" /><br />
+<img alt="" src="http://upload-images.jianshu.io/upload_images/26219-9b650510de606992.gif?imageMogr2/auto-orient/strip" /></li>
+</ul>
+</li>
+</ul>
+<h3 id="control-transfers-the-bigger-picture"><a name="user-content-control-transfers-the-bigger-picture" href="#control-transfers-the-bigger-picture" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Control Transfers : The bigger picture</h3>
+<p>Now how does all this fit together? Let&rsquo;s say for example, the Host wants to request a device descriptor during enumeration. The packets which are sent are as follows.</p>
+<p>The host will send the Setup token telling the function that the following packet is a Setup packet. The Address field will hold the address of the device the host is requesting the descriptor from. The endpoint number should be zero, specifying the default pipe. The host will then send a DATA0 packet. This will have an 8 byte payload which is the <a href="http://www.beyondlogic.org/usbnutshell/usb6.htm#GetDescriptor">Device Descriptor Request</a> as outlined in Chapter 9 of the USB Specification. The USB function then acknowledges the setup packet has been read correctly with no errors. If the packet was received corrupt, the device just ignores this packet. The host will then resend the packet after a short delay.</p>
+<p><img alt="Paste_Image.png" src="http://upload-images.jianshu.io/upload_images/26219-a3b0672d7cc3ee87.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>The above three packets represent the first USB transaction. The USB device will now decode the 8 bytes received, and determine if it was a device descriptor request. The device will then attempt to send the <a href="http://www.beyondlogic.org/usbnutshell/usb5.htm#DeviceDescriptors">Device Descriptor</a>, which will be the next USB transaction.</p>
+<p><img alt="Paste_Image.png" src="http://upload-images.jianshu.io/upload_images/26219-8b8ccdd6a7bb518b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>In this case, we assume that the maximum payload size is 8 bytes. The host sends the IN token, telling the device it can now send data for this endpoint. As the maximum packet size is 8 bytes, we must split up the 12 byte device descriptor into chunks to send. Each chunk must be 8 bytes except for the last transaction. The host acknowledges every data packet we send it.<br />
+Once the device descriptor is sent, a status transaction follows. If the transactions were successful, the host will send a zero length packet indicating the overall transaction was successful. The function then replies to this zero length packet indicating its status.</p>
+<p><img alt="Paste_Image.png" src="http://upload-images.jianshu.io/upload_images/26219-1776bc0b3a1feaab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<h3 id="interrupt-transfers"><a name="user-content-interrupt-transfers" href="#interrupt-transfers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Interrupt Transfers</h3>
+<p>Any one who has had experience of interrupt requests on microcontrollers will know that interrupts are device generated. However under USB if a device requires the attention of the host, it must wait until the host polls it before it can report that it needs urgent attention!</p>
+<p><strong>Interrupt Transfers</strong></p>
+<ul>
+<li>Guaranteed Latency</li>
+<li>Stream Pipe - Unidirectional</li>
+<li>Error detection and next period retry.</li>
+</ul>
+<p>Interrupt transfers are typically non-periodic, small device &ldquo;initiated&rdquo; communication requiring bounded latency. An Interrupt request is queued by the device until the host polls the USB device asking for data.</p>
+<ul>
+<li>The maximum data payload size for low-speed devices is 8 bytes.</li>
+<li>Maximum data payload size for full-speed devices is 64 bytes.</li>
+<li>Maximum data payload size for high-speed devices is 1024 bytes.</li>
+</ul>
+<p><img alt="" src="http://upload-images.jianshu.io/upload_images/26219-1bd452a17c2d0083.gif?imageMogr2/auto-orient/strip" /></p>
+<p><img alt="" src="http://upload-images.jianshu.io/upload_images/26219-9b650510de606992.gif?imageMogr2/auto-orient/strip" /></p>
+<p>The above diagram shows the format of an Interrupt IN and Interrupt OUT transaction.</p>
+<ul>
+<li><strong>IN:</strong> The host will periodically poll the interrupt endpoint. This rate of polling is specified in the <a href="http://www.beyondlogic.org/usbnutshell/usb5.htm#EndpointDescriptors">endpoint descriptor</a> which is covered later. Each poll will involve the host sending an IN Token. If the IN token is corrupt, the function ignores the packet and continues monitoring the bus for new tokens.<br />
+If an interrupt has been queued by the device, the function will send a data packet containing data relevant to the interrupt when it receives the IN Token. Upon successful reciept at the host, the host will return an ACK. However if the data is corrupted, the host will return no status. If on the other hand an interrupt condition was not present when the host polled the interrupt endpoint with an IN token, then the function signals this state by sending a NAK. If an error has occurred on this endpoint, a STALL is sent in reply to the IN token instead.</li>
+<li><strong>OUT:</strong> When the host wants to send the device interrupt data, it issues an OUT token followed by a data packet containing the interrupt data. If any part of the OUT token or data packet is corrupt then the function ignores the packet. If the function&rsquo;s endpoint buffer was empty and it has clocked the data into the endpoint buffer it issues an ACK informing the host it has successfully received the data. If the endpoint buffer is not empty due to processing of a previous packet, then the function returns a NAK. However if an error occurred with the endpoint consequently and its halt bit has been set, it returns a STALL.</li>
+</ul>
+<h3 id="isochronous-transfers"><a name="user-content-isochronous-transfers" href="#isochronous-transfers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Isochronous Transfers</h3>
+<p>Isochronous transfers occur continuously and periodically. They typically contain time sensitive information, such as an audio or video stream. If there were a delay or retry of data in an audio stream, then you would expect some erratic audio containing glitches. The beat may no longer be in sync. However if a packet or frame was dropped every now and again, it is less likely to be noticed by the listener.</p>
+<p><strong>Isochronous Transfers provide</strong></p>
+<ul>
+<li>Guaranteed access to USB bandwidth.</li>
+<li>Bounded latency.</li>
+<li>Stream Pipe - Unidirectional</li>
+<li>Error detection via CRC, but no retry or guarantee of delivery.</li>
+<li>Full &amp; high speed modes only.</li>
+<li>No data toggling.</li>
+</ul>
+<p>The maximum size data payload is specified in the <a href="http://www.beyondlogic.org/usbnutshell/usb5.htm#EndpointDescriptors">endpoint descriptor</a> of an Isochronous Endpoint. This can be up to a maximum of 1023 bytes for a full speed device and 1024 bytes for a high speed device. As the maximum data payload size is going to effect the bandwidth requirements of the bus, it is wise to specify a conservative payload size. If you are using a large payload, it may also be to your advantage to specify a series of <a href="http://www.beyondlogic.org/usbnutshell/usb5.htm#AlternateSetting">alternative interfaces</a>with varying isochronous payload sizes. If during enumeration, the host cannot enable your preferred isochronous endpoint due to bandwidth restrictions, it has something to fall back on rather than just failing completely. Data being sent on an isochronous endpoint can be less than the pre-negotiated size and may vary in length from transaction to transaction.</p>
+<p><img alt="" src="http://upload-images.jianshu.io/upload_images/26219-d8bf9f967a5cb99b.gif?imageMogr2/auto-orient/strip" /><br />
+<img alt="" src="http://upload-images.jianshu.io/upload_images/26219-9b650510de606992.gif?imageMogr2/auto-orient/strip" /></p>
+<p>The above diagram shows the format of an Isochronous IN and OUT transaction. Isochronous transactions do not have a handshaking stage and cannot report errors or STALL/HALT conditions.</p>
+<h3 id="bulk-transfers"><a name="user-content-bulk-transfers" href="#bulk-transfers" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Bulk Transfers</h3>
+<p>Bulk transfers can be used for large bursty data. Such examples could include a print-job sent to a printer or an image generated from a scanner. Bulk transfers provide error correction in the form of a CRC16 field on the data payload and error detection/re-transmission mechanisms ensuring data is transmitted and received without error.<br />
+Bulk transfers will use spare un-allocated bandwidth on the bus after all other transactions have been allocated. If the bus is busy with isochronous and/or interrupt then bulk data may slowly trickle over the bus. As a result Bulk transfers should only be used for time insensitive communication as there is no guarantee of latency.</p>
+<p><strong>Bulk Transfers</strong></p>
+<ul>
+<li>Used to transfer large bursty data.</li>
+<li>Error detection via CRC, with guarantee of delivery.</li>
+<li>No guarantee of bandwidth or minimum latency.</li>
+<li>Stream Pipe - Unidirectional</li>
+<li>Full &amp; high speed modes only.</li>
+</ul>
+<p>Bulk transfers are only supported by full and high speed devices. For full speed endpoints, the maximum bulk packet size is either 8, 16, 32 or 64 bytes long. For high speed endpoints, the maximum packet size can be up to 512 bytes long. If the data payload falls short of the maximum packet size, it doesn&rsquo;t need to be padded with zeros. A bulk transfer is considered complete when it has transferred the exact amount of data requested, transferred a packet less than the maximum endpoint size, or transferred a zero-length packet.</p>
+<p><img alt="" src="http://upload-images.jianshu.io/upload_images/26219-770dfd55acc28a1d.gif?imageMogr2/auto-orient/strip" /></p>
+<p><img alt="" src="http://upload-images.jianshu.io/upload_images/26219-9b650510de606992.gif?imageMogr2/auto-orient/strip" /></p>
+<p>The above diagram shows the format of a bulk IN and OUT transaction.</p>
+<ul>
+<li><strong>IN:</strong> When the host is ready to receive bulk data it issues an IN Token. If the function receives the IN token with an error, it ignores the packet. If the token was received correctly, the function can either reply with a DATA packet containing the bulk data to be sent, or a stall packet indicating the endpoint has had a error or a NAK packet indicating to the host that the endpoint is working, but temporary has no data to send.</li>
+<li><strong>OUT:</strong> When the host wants to send the function a bulk data packet, it issues an OUT token followed by a data packet containing the bulk data. If any part of the OUT token or data packet is corrupt then the function ignores the packet. If the function&rsquo;s endpoint buffer was empty and it has clocked the data into the endpoint buffer it issues an ACK informing the host it has successfully received the data. If the endpoint buffer is not empty due to processing a previous packet, then the function returns an NAK. However if the endpoint has had an error and its halt bit has been set, it returns a STALL.</li>
+</ul>
+<h3 id="bandwidth-management"><a name="user-content-bandwidth-management" href="#bandwidth-management" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Bandwidth Management</h3>
+<p>The host is responsible for managing the bandwidth of the bus. This is done at enumeration when configuring Isochronous and Interrupt Endpoints and throughout the operation of the bus. The specification places limits on the bus, allowing no more than 90% of any frame to be allocated for periodic transfers (Interrupt and Isochronous) on a full speed bus. On high speed buses this limitation gets reduced to no more than 80% of a microframe can be allocated for periodic transfers.<br />
+So you can quite quickly see that if you have a highly saturated bus with periodic transfers, the remaining 10% is left for control transfers and once those have been allocated, bulk transfers will get their slice of what is left.</p>
+<h2 id="chapter-5-usb-descriptors"><a href="http://www.beyondlogic.org/usbnutshell/usb5.shtml">Chapter 5 : USB Descriptors</a></h2>
+<h3 id="usb-descriptors"><a name="user-content-usb-descriptors" href="#usb-descriptors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>USB Descriptors</h3>
+<p>All USB devices have a hierarchy of descriptors which describe to the host information such as what the device is, who makes it, what version of USB it supports, how many ways it can be configured, the number of endpoints and their types etc</p>
+<p>The more common USB descriptors are</p>
+<ul>
+<li>Device Descriptors</li>
+<li>Configuration Descriptors</li>
+<li>Interface Descriptors</li>
+<li>Endpoint Descriptors</li>
+<li>String Descriptors</li>
+</ul>
+<p>USB devices can only have one device descriptor. The device descriptor includes information such as what USB revision the device complies to, the Product and Vendor IDs used to load the appropriate drivers and the number of possible configurations the device can have. The number of configurations indicate how many configuration descriptors branches are to follow.</p>
+<p>The configuration descriptor specifies values such as the amount of power this particular configuration uses, if the device is self or bus powered and the number of interfaces it has. When a device is enumerated, the host reads the device descriptors and can make a decision of which configuration to enable. It can only enable one configuration at a time.</p>
+<p>For example, It is possible to have a high power bus powered configuration and a self powered configuration. If the device is plugged into a host with a mains power supply, the device driver may choose to enable the high power bus powered configuration enabling the device to be powered without a connection to the mains, yet if it is connected to a laptop or personal organiser it could enable the 2nd configuration (self powered) requiring the user to plug your device into the power point.</p>
+<p>The configuration settings are not limited to power differences. Each configuration could be powered in the same way and draw the same current, yet have different interface or endpoint combinations. However it should be noted that changing the configuration requires all activity on each endpoint to stop. While USB offers this flexibility, very few devices have more than 1 configuration.</p>
+<p><img alt="" src="http://upload-images.jianshu.io/upload_images/26219-87ee78f49ff79ebb.gif?imageMogr2/auto-orient/strip" /></p>
+<p>The interface descriptor could be seen as a header or grouping of the endpoints into a functional group performing a single feature of the device. For example you could have a multi-function fax/scanner/printer device. Interface descriptor one could describe the endpoints of the fax function, Interface descriptor two the scanner function and Interface descriptor three the printer function. Unlike the configuration descriptor, there is no limitation as to having only one interface enabled at a time. A device could have 1 or many interface descriptors enabled at once.</p>
+<p>Interface descriptors have a <strong>bInterfaceNumber</strong> field specifying the Interface number and a <strong>bAlternateSetting</strong> which allows an interface to change settings on the fly. For example we could have a device with two interfaces, interface one and interface two. Interface one has <strong>bInterfaceNumber</strong> set to zero indicating it is the first interface descriptor and a <strong>bAlternativeSetting</strong>of zero.</p>
+<p>Interface two would have a <strong>bInterfaceNumber</strong> set to one indicating it is the second interface and a <strong>bAlternativeSetting</strong> of zero (default). We could then throw in another descriptor, also with a <strong>bInterfaceNumber</strong> set to one indicating it is the second interface, but this time setting the<strong>bAlternativeSetting</strong> to one, indicating this interface descriptor can be an alternative setting to that of the other interface descriptor two.</p>
+<p>When this configuration is enabled, the first two interface descriptors with<strong>bAlternativeSettings</strong> equal to zero is used. However during operation the host can send a SetInterface request directed to that of Interface one with a alternative setting of one to enable the other interface descriptor.</p>
+<p><img alt="" src="http://upload-images.jianshu.io/upload_images/26219-418043ca2a70e8eb.gif?imageMogr2/auto-orient/strip" /></p>
+<p>This gives an advantage over having two configurations, in that we can be transmitting data over interface zero while we change the endpoint settings associated with interface one without effecting interface zero.</p>
+<p>Each endpoint descriptor is used to specify the type of transfer, direction, polling interval and maximum packet size for each endpoint. Endpoint zero, the default control endpoint is always assumed to be a control endpoint and as such never has a descriptor.</p>
+<h3 id="composition-of-usb-descriptors"><a name="user-content-composition-of-usb-descriptors" href="#composition-of-usb-descriptors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Composition of USB Descriptors</h3>
+<p>All descriptors are made up of a common format. The first byte specifies the length of the descriptor, while the second byte indicates the descriptor type. If the length of a descriptor is smaller than what the specification defines, then the host shall ignore it. However if the size is greater than expected the host will ignore the extra bytes and start looking for the next descriptor at the end of actual length returned.</p>
+<table>
+<thead>
+<tr>
+<th>Offeset</th>
+<th>Field</th>
+<th>Size</th>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>bLength</td>
+<td>1</td>
+<td align="left">Number</td>
+<td align="left">Size of Descriptor in Bytes</td>
+</tr>
+<tr>
+<td>1</td>
+<td>bDescriptorType</td>
+<td>1</td>
+<td align="left">Constant</td>
+<td align="left">DescriptorType</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&hellip;</td>
+<td>n</td>
+<td align="left"></td>
+<td align="left">Start of parameter of descriptor</td>
+</tr>
+</tbody>
+</table>
+<h3 id="device-descriptors"><a name="user-content-device-descriptors" href="#device-descriptors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Device Descriptors</h3>
+<p>The device descriptor of a USB device represents the entire device. As a result a USB device can only have one device descriptor. It specifies some basic, yet important information about the device such as the supported USB version, maximum packet size, vendor and product IDs and the number of possible configurations the device can have. The format of the device descriptor is shown below.</p>
+<table>
+<thead>
+<tr>
+<th>Offeset</th>
+<th>Field</th>
+<th>Size</th>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>bLength</td>
+<td>1</td>
+<td align="left">Number</td>
+<td align="left">Size of Descriptor in Bytes(18 bytes)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>bDescriptorType</td>
+<td>1</td>
+<td align="left">Constant</td>
+<td align="left">DeviceDescriptor(0x01)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bcdUSB</td>
+<td>2</td>
+<td align="left">BCD</td>
+<td align="left">USB Specification Number which device complies too.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bDeviceClass</td>
+<td>1</td>
+<td align="left">Class</td>
+<td align="left">Class Code (Assigned by USB Org).<br>If equal to Zero, each interface specifies it’s own class code.<br>If equal to 0xFF, the class code is vendor specified.<br>Otherwise field is valid Class Code.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>bDeviceSubClass</td>
+<td>1</td>
+<td align="left">SubClass</td>
+<td align="left">Subclass Code(Assigned by USB Org)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>bDeviceProtocol</td>
+<td>1</td>
+<td align="left">Protocol</td>
+<td align="left">Protocol Code(Assigned by USB Org)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>bMaxPacketSize</td>
+<td>1</td>
+<td align="left">Number</td>
+<td align="left">Maximum Packet Size for Zero Endpoint. Valid Size are 8, 16, 32, 64</td>
+</tr>
+<tr>
+<td>8</td>
+<td>idVendor</td>
+<td>2</td>
+<td align="left">ID</td>
+<td align="left">Vendor ID(Assigned by USB Org)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>idProduct</td>
+<td>2</td>
+<td align="left">ID</td>
+<td align="left">Product ID(Assigned by Manufacturer)</td>
+</tr>
+<tr>
+<td>12</td>
+<td>bcdDevice</td>
+<td>2</td>
+<td align="left">BCD</td>
+<td align="left">Device Release Number</td>
+</tr>
+<tr>
+<td>14</td>
+<td>iManufaturer</td>
+<td>1</td>
+<td align="left">Index</td>
+<td align="left">Index of Manufacturer String Descriptor</td>
+</tr>
+<tr>
+<td>15</td>
+<td>iProduct</td>
+<td>1</td>
+<td align="left">Index</td>
+<td align="left">Index of Product String Descriptor</td>
+</tr>
+<tr>
+<td>16</td>
+<td>iSerialNmber</td>
+<td>1</td>
+<td align="left">Index</td>
+<td align="left">Index of Number String Descriptor</td>
+</tr>
+<tr>
+<td>17</td>
+<td>bNumConfiguration</td>
+<td>1</td>
+<td align="left">Integer</td>
+<td align="left">Number of Possible Configurations</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>The <strong>bcdUSB</strong> field reports the highest version of USB the device supports. The value is in binary coded decimal with a format of 0xJJMN where JJ is the major version number, M is the minor version number and N is the sub minor version number. e.g. USB 2.0 is reported as 0x0200, USB 1.1 as 0x0110 and USB 1.0 as 0x0100.</em></li>
+<li><em>The <strong>bDeviceClass, bDeviceSubClass</strong> and <strong>bDeviceProtocol</strong> are used by the operating system to find a class driver for your device. Typically only the bDeviceClass is set at the device level. Most class specifications choose to identify itself at the interface level and as a result set the bDeviceClass as 0x00. This allows for the one device to support multiple classes.</em></li>
+<li><em>The <strong>bMaxPacketSize</strong> field reports the maximum packet size for endpoint zero. All devices must support endpoint zero.</em></li>
+<li><em>The <strong>idVendor</strong> and <strong>idProduct</strong> are used by the operating system to find a driver for your device. The Vendor ID is assigned by the <a href="http://www.usb.org/">USB-IF</a>.</em></li>
+<li><em>The <strong>bcdDevice</strong> has the same format than the bcdUSB and is used to provide a device version number. This value is assigned by the developer.</em></li>
+<li><em>Three string descriptors exist to provide details of the manufacturer, product and serial number. There is no requirement to have string descriptors. If no string descriptor is present, a index of zero should be used.</em></li>
+<li><em><strong>bNumConfigurations</strong> defines the number of configurations the device supports at its current speed.</em></li>
+</ul>
+<h3 id="configuration-descriptors"><a name="user-content-configuration-descriptors" href="#configuration-descriptors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configuration Descriptors</h3>
+<p>A USB device can have several different configurations although the majority of devices are simple and only have one. The configuration descriptor specifies how the device is powered, what the maximum power consumption is, the number of interfaces it has. Therefore it is possible to have two configurations, one for when the device is bus powered and another when it is mains powered. As this is a &ldquo;header&rdquo; to the Interface descriptors, its also feasible to have one configuration using a different transfer mode to that of another configuration.</p>
+<p>Once all the configurations have been examined by the host, the host will send a SetConfiguration command with a non zero value which matches the bConfigurationValue of one of the configurations. This is used to select the desired configuration.</p>
+<table>
+<thead>
+<tr>
+<th>Offeset</th>
+<th>Field</th>
+<th>Size</th>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>bLength</td>
+<td>1</td>
+<td align="left">Number</td>
+<td align="left">Size of Descriptor in Bytes</td>
+</tr>
+<tr>
+<td>1</td>
+<td>bDescriptorType</td>
+<td>1</td>
+<td align="left">Constant</td>
+<td align="left">Configuration Descriptor(0x02)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>wTotalLength</td>
+<td>2</td>
+<td align="left">Number</td>
+<td align="left">Total length of bytes data returned</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bNumberInterface</td>
+<td>1</td>
+<td align="left">Number</td>
+<td align="left">Number of Interfaces</td>
+</tr>
+<tr>
+<td>5</td>
+<td>bConfigurationValue</td>
+<td>1</td>
+<td align="left">Index</td>
+<td align="left">Value to use as an argument to select this configuration</td>
+</tr>
+<tr>
+<td>6</td>
+<td>iConfiguration</td>
+<td>1</td>
+<td align="left">Index</td>
+<td align="left">Index of String Descriptor describing this configuration</td>
+</tr>
+<tr>
+<td>7</td>
+<td>bmAttributes</td>
+<td>1</td>
+<td align="left">Bitmap</td>
+<td align="left">D7 Reserved, set to 1. (USB 1.0 Bus Powered)<br>D6 Self Powered<br>D5 Remote Wakeup<br>D4..0 Reserved, set to 0.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>bmMaxPower</td>
+<td>1</td>
+<td align="left">mA</td>
+<td align="left">Maximum Power Consumption in 2mA units</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>When the configuration descriptor is read, it returns the entire configuration hierarchy which includes all related interface and endpoint descriptors. The<strong>wTotalLength</strong> field reflects the number of bytes in the hierarchy.</em><br />
+<img alt="" src="http://upload-images.jianshu.io/upload_images/26219-6ef6edd21816d950.gif?imageMogr2/auto-orient/strip" /></li>
+<li><em><strong>bNumInterfaces</strong> specifies the number of interfaces present for this configuration.</em></li>
+<li><em><strong>bConfigurationValue</strong> is used by the SetConfiguration request to select this configuration.</em></li>
+<li><em><strong>iConfiguration</strong> is a index to a string descriptor describing the configuration in human readable form.</em></li>
+<li><em><strong>bmAttributes</strong> specify power parameters for the configuration. If a device is self powered, it sets D6. Bit D7 was used in USB 1.0 to indicate a bus powered device, but this is now done by bMaxPower. If a device uses any power from the bus, whether it be as a bus powered device or as a self powered device, it must report its power consumption in bMaxPower. Devices can also support remote wakeup which allows the device to wake up the host when the host is in suspend.</em></li>
+<li><em><strong>bMaxPower</strong> defines the maximum power the device will drain from the bus. This is in 2mA units, thus a maximum of approximately 500mA can be specified. The specification allows a high powered bus powered device to drain no more than 500mA from Vbus. If a device loses external power, then it must not drain more than indicated in bMaxPower. It should fail any operation it cannot perform without external power.</em></li>
+</ul>
+<h3 id="interface-descriptors"><a name="user-content-interface-descriptors" href="#interface-descriptors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Interface Descriptors</h3>
+<p>The interface descriptor could be seen as a header or grouping of the endpoints into a functional group performing a single feature of the device. The interface descriptor conforms to the following format,</p>
+<table>
+<thead>
+<tr>
+<th>Offeset</th>
+<th>Field</th>
+<th>Size</th>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>bLength</td>
+<td>1</td>
+<td align="left">Number</td>
+<td align="left">Size of Descriptor in Bytes(9 bytes)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>bDescriptorType</td>
+<td>1</td>
+<td align="left">Constant</td>
+<td align="left">Configuration Descriptor(0x04)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bInterfaceNumber</td>
+<td>1</td>
+<td align="left">Number</td>
+<td align="left">Number of Interface</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bAlternateSetting</td>
+<td>1</td>
+<td align="left">Number</td>
+<td align="left">Value used to select alternative setting</td>
+</tr>
+<tr>
+<td>4</td>
+<td>bNumEndpoints</td>
+<td>1</td>
+<td align="left">Number</td>
+<td align="left">Number of Endpoints used for this interface</td>
+</tr>
+<tr>
+<td>5</td>
+<td>bInterfaceClass</td>
+<td>1</td>
+<td align="left">Class</td>
+<td align="left">Class Code (Assigned by USB Org)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>bInterfaceSubClass</td>
+<td>1</td>
+<td align="left">SubClass</td>
+<td align="left">Subclass Code (Assigned by USB Org)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>bInterfaceProtocol</td>
+<td>1</td>
+<td align="left">Protocol</td>
+<td align="left">Protocol Code (Assigned by USB Org)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>iInterface</td>
+<td>1</td>
+<td align="left">Index</td>
+<td align="left">Index of String Descriptor Describing this interface</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em><strong>bInterfaceNumber</strong> indicates the index of the interface descriptor. This should be zero based, and incremented once for each new interface descriptor.</em></li>
+<li><em><strong>bAlternativeSetting</strong> can be used to specify <a href="http://www.beyondlogic.org/usbnutshell/usb5.shtml#AlternateSetting">alternative interfaces</a>. These alternative interfaces can be selected with the <a href="http://www.beyondlogic.org/usbnutshell/usb6.htm#SetInterface">Set Interface</a> request.</em></li>
+<li><em><strong>bNumEndpoints</strong> indicates the number of endpoints used by the interface. This value should exclude endpoint zero and is used to indicate the number of endpoint descriptors to follow.</em></li>
+<li><strong><em>bInterfaceClass, bInterfaceSubClass</em>* and </strong>bInterfaceProtocol*<em> can be used to specify supported classes (e.g. HID, communications, mass storage etc.) This allows many devices to use class drivers preventing the need to write specific drivers for your device.</em></li>
+<li><em><strong>iInterface</strong> allows for a string description of the interface.</em></li>
+</ul>
+<h3 id="endpoint-descriptors"><a name="user-content-endpoint-descriptors" href="#endpoint-descriptors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Endpoint Descriptors</h3>
+<p>Endpoint descriptors are used to describe endpoints other than endpoint zero. Endpoint zero is always assumed to be a control endpoint and is configured before any descriptors are even requested. The host will use the information returned from these descriptors to determine the bandwidth requirements of the bus.</p>
+<table>
+<thead>
+<tr>
+<th>Offeset</th>
+<th>Field</th>
+<th>Size</th>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>bLength</td>
+<td>1</td>
+<td align="left">Number</td>
+<td align="left">Size of Descriptor in Bytes(7 bytes)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>bDescriptorType</td>
+<td>1</td>
+<td align="left">Constant</td>
+<td align="left">Configuration Descriptor(0x05)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bEndpointAddress</td>
+<td>1</td>
+<td align="left">Endpoint</td>
+<td align="left">Endpoint Address<br>Bits 0..3b Endpoint Number.<br>Bits 4..6b Reserved. Set to Zero<br>Bits 7 Direction 0 = Out, 1 = In (Ignored for Control Endpoints)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>bmAttributes</td>
+<td>1</td>
+<td align="left">Bitmap</td>
+<td align="left">Bits 0..1 Transfer Type<br>00 = Control<br>01 = Isochronous<br>10 = Bulk<br>11 = Interrupt<br>Bits 2..7 are reserved. If Isochronous endpoint, <br>Bits 3..2 = Synchronisation Type (Iso Mode)<br>00 = No Synchonisation<br>01 = Asynchronous<br>10 = Adaptive<br>11 = Synchronous<br>Bits 5..4 = Usage Type (Iso Mode)<br>00 = Data Endpoint<br>01 = Feedback Endpoint<br>10 = Explicit Feedback Data Endpoint<br>11 = Reserved</td>
+</tr>
+<tr>
+<td>4</td>
+<td>wMaxPacketSize</td>
+<td>2</td>
+<td align="left">Number</td>
+<td align="left">Maximum Packet Size this endpoint is capable of sending or receiving</td>
+</tr>
+<tr>
+<td>6</td>
+<td>bInterval</td>
+<td>1</td>
+<td align="left">Number</td>
+<td align="left">Interval for polling endpoint data transfers. Value in frame counts. Ignored for Bulk &amp; Control Endpoints. Isochronous must equal 1 and field may range from 1 to 255 for interrupt endpoints.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em><strong>bEndpointAddress</strong> indicates what endpoint this descriptor is describing.</em></li>
+<li><em><strong>bmAttributes</strong> specifies the transfer type. This can either be <a href="http://www.beyondlogic.org/usbnutshell/usb4.htm#Control">Control</a>, <a href="http://www.beyondlogic.org/usbnutshell/usb4.htm#Interrupt">Interrupt</a>,<a href="http://www.beyondlogic.org/usbnutshell/usb4.htm#Isochronous">Isochronous</a> or <a href="http://www.beyondlogic.org/usbnutshell/usb4.htm#Bulk">Bulk Transfers</a>. If an Isochronous endpoint is specified, additional attributes can be selected such as the Synchronisation and usage types.</em></li>
+<li><em><strong>wMaxPacketSize</strong> indicates the maximum payload size for this endpoint.</em></li>
+<li><em><strong>bInterval</strong> is used to specify the polling interval of certain transfers. The units are expressed in frames, thus this equates to either 1ms for low/full speed devices and 125us for high speed devices.</em></li>
+</ul>
+<h3 id="string-descriptors"><a name="user-content-string-descriptors" href="#string-descriptors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>String Descriptors</h3>
+<p>String descriptors provide human readable information and are optional. If they are not used, any string index fields of descriptors must be set to zero indicating there is no string descriptor available.</p>
+<p>The strings are encoded in the <a href="http://www.unicode.org/">Unicode</a> format and products can be made to support multiple languages. String Index 0 should return a list of supported languages. A list of USB Language IDs can be found in <a href="http://www.usb.org/developers/data/USB_LANGIDs.pdf">Universal Serial Bus Language Identifiers (LANGIDs) version 1.0</a></p>
+<table>
+<thead>
+<tr>
+<th>Offeset</th>
+<th>Field</th>
+<th>Size</th>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>bLength</td>
+<td>1</td>
+<td align="left">Number</td>
+<td align="left">Size of Descriptor in Byte</td>
+</tr>
+<tr>
+<td>1</td>
+<td>bDescriptorType</td>
+<td>1</td>
+<td align="left">Constant</td>
+<td align="left">Configuration Descriptor(0x03)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>wLANGID[0]</td>
+<td>2</td>
+<td align="left">number</td>
+<td align="left">Supported Language Code Zero<br>(e.g. 0x0409 English - United States)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>wLANGID[1]</td>
+<td>2</td>
+<td align="left">number</td>
+<td align="left">Supported Language Code One<br>(e.g. 0x0c09 English - Australian)</td>
+</tr>
+<tr>
+<td>n</td>
+<td>wLANGID[x]</td>
+<td>2</td>
+<td align="left">number</td>
+<td align="left">Supported Language Code x<br>(e.g. 0x0407 German - Standard)</td>
+</tr>
+</tbody>
+</table>
+<p>The above String Descriptor shows the format of String Descriptor Zero. The host should read this descriptor to determine what languages are available. If a language is supported, it can then be referenced by sending the language ID in the wIndex field of a <a href="http://www.beyondlogic.org/usbnutshell/usb6.htm#GetDescriptor">Get Descriptor(String)</a> request.</p>
+<p>All subsequent strings take on the format below,</p>
+<table>
+<thead>
+<tr>
+<th>Offeset</th>
+<th>Field</th>
+<th>Size</th>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>bLength</td>
+<td>1</td>
+<td align="left">Number</td>
+<td align="left">Size of Descriptor in Bytes(7 bytes)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>bDescriptorType</td>
+<td>1</td>
+<td align="left">Constant</td>
+<td align="left">Configuration Descriptor(0x05)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>bString</td>
+<td>n</td>
+<td align="left">Unicode</td>
+<td align="left">Unicode Encoded String</td>
+</tr>
+</tbody>
+</table>
+<h2 id="chapter-6-usb-requests"><a href="http://www.beyondlogic.org/usbnutshell/usb6.shtml">Chapter 6 : USB Requests</a></h2>
+<h3 id="the-setup-packet"><a name="user-content-the-setup-packet" href="#the-setup-packet" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The Setup Packet</h3>
+<p>Every USB device must respond to setup packets on the default pipe. The setup packets are used for detection and configuration of the device and carry out common functions such as setting the USB device’s address, requesting a device descriptor or checking the status of a endpoint.</p>
+<p>A USB compliant Host expects all requests to be processed within a maximum period of 5 seconds. It also specifies stricter timing for specific requests :</p>
+<ul>
+<li>Standard Device requests without a data stage must be completed in 50ms.</li>
+<li>Standard Device requests with a data stage must start to return data 500ms after the request.<ul>
+<li>Each data packet must be sent within 500ms of the successful transmission of the previous packet.</li>
+<li>The status stage must complete within 50ms after the transmission of the last data packet.</li>
+</ul>
+</li>
+<li>The SetAddress command (which contains a data phase) must process the command and return status within 50ms. The device then has 2ms to change address before the next request is sent.</li>
+</ul>
+<p>These timeout periods are quite acceptable for even the slowest of devices, but can be a restriction during debugging. 50mS doesn&rsquo;t provide for many debugging characters to be sent at 9600bps on an asynchronous serial port or for a In Circuit Debugger/Emulator to single step or to break execution to examine the internal Registers. As a result, USB requires some different debugging methods to that of other microcontroller projects.</p>
+<p><em>Casually reading through the XP DDK, one may note the Host Controller Driver now has a USBUSER_OP_SEND_ONE_PACKET command which is commented to read &ldquo;This API is used to implement the &lsquo;single step&rsquo; USB transaction development tool.&rdquo; While such a tool has not been released yet, we can only hope to see one soon.</em></p>
+<p>Each request starts with a 8 byte long Setup Packet which has the following format,</p>
+<table>
+<thead>
+<tr>
+<th>Offeset</th>
+<th>Field</th>
+<th>Size</th>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>bmRequestType</td>
+<td>1</td>
+<td align="left">Bit-Map</td>
+<td align="left"><strong>D7 Data Phase Transfer Direction</strong> <br> 0 = Host to Device<br>1 = Device to Host<strong><br>D6..5 Type</strong><br>0 = Standard<br>1 = Class<br>2 = Vendor<br>3 = Reserved<strong><br>D4..0 Recipient</strong><br>0 = Device<br>1 = Interface<br>2 = Endpoint<br>3 = Other<br>4..31 = Reserved</td>
+</tr>
+<tr>
+<td>1</td>
+<td>bRequest</td>
+<td>1</td>
+<td align="left">Value</td>
+<td align="left">Request</td>
+</tr>
+<tr>
+<td>2</td>
+<td>wValue</td>
+<td>1</td>
+<td align="left">Value</td>
+<td align="left">Value</td>
+</tr>
+<tr>
+<td>4</td>
+<td>wIndex</td>
+<td>2</td>
+<td align="left">Index or Offset</td>
+<td align="left">Index</td>
+</tr>
+<tr>
+<td>6</td>
+<td>wLength</td>
+<td>2</td>
+<td align="left">Count</td>
+<td align="left">Number of bytes to transfer if there is a data phase</td>
+</tr>
+</tbody>
+</table>
+<p>The bmRequestType field will determine the direction of the request, type of request and designated recipient. The bRequest field determines the request being made. The bmRequestType is normally parsed and execution is branched to a number of handlers such as a Standard Device request handler, a Standard Interface request handler, a Standard Endpoint request handler, a Class Device request handler etc. How you parse the setup packet is entirely up to your preference. Others may choose to parse the bRequest first and then determine the type and recipient based on each request.</p>
+<p>Standard requests are common to all USB device&rsquo;s and are detailed in the next coming pages. Class requests are common to classes of drivers. For example, all device conforming to the HID class will have a common set of class specific requests. These will differ to a device conforming to the communications class and differ again to that of a device conforming to the mass storage class.</p>
+<p>And last of all are the vendor defined requests. These are requests which you as the USB device designer can assign. These are normally different from device to device, but this is all up to your implementation and imagination.</p>
+<p>A common request can be directed to different recipients and based on the recipient perform different functions. A GetStatus Standard request for example, can be directed at the device, interface or endpoint. When directed to a device it returns flags indicating the status of remote wakeup and if the device is self powered. However if the same request is directed at the interface it always returns zero, or should it be directed at an endpoint will return the halt flag for the endpoint.</p>
+<p>The wValue and wIndex fields allow parameters to be passed with the request. wLength is used the specify the number of bytes to be transferred should there be a data phase.</p>
+<h3 id="standard-requests"><a name="user-content-standard-requests" href="#standard-requests" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Standard Requests</h3>
+<p>Section 9.4 of the USB specification details the &ldquo;Standard Device&rdquo; requests required to be implemented for every USB device. The standard provides a single table grouping items by request. Considering most firmware will parse the setup packet by recipient we will opt to break up the requests based by recipient for easier examination and implementation.</p>
+<h3 id="standard-device-requests"><a name="user-content-standard-device-requests" href="#standard-device-requests" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Standard Device Requests</h3>
+<p>There are currently eight Standard Device requests, all of which are detailed in the table below.</p>
+<table>
+<thead>
+<tr>
+<th>bmRequestType</th>
+<th>bRequest</th>
+<th>wValue</th>
+<th align="left">wIndex</th>
+<th align="left">wLength</th>
+<th align="left">Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1000 0000b</td>
+<td>GET_STATUS(0x00)</td>
+<td>Zero</td>
+<td align="left">Zero</td>
+<td align="left">Two</td>
+<td align="left">Device Status</td>
+</tr>
+<tr>
+<td>0000 0000b</td>
+<td>CLEAR_FEATURE(0x01)</td>
+<td>Feature Selector</td>
+<td align="left">Zero</td>
+<td align="left">Zero</td>
+<td align="left">None</td>
+</tr>
+<tr>
+<td>0000 0000b</td>
+<td>SET_FEATURE(0x05)</td>
+<td>Device Address</td>
+<td align="left">Zero</td>
+<td align="left">Zero</td>
+<td align="left">None</td>
+</tr>
+<tr>
+<td>1000 0000b</td>
+<td>GET_DESCRIPTOR(0x05)</td>
+<td>Descriptor Type &amp; Index</td>
+<td align="left">Zero or Language ID</td>
+<td align="left">Descriptor Length</td>
+<td align="left">Descriptor</td>
+</tr>
+<tr>
+<td>0000 0000b</td>
+<td>SET_DESCRIPTOR(0x07)</td>
+<td>Descriptor Type &amp; Index</td>
+<td align="left">Zero or Language ID</td>
+<td align="left">Descriptor Length</td>
+<td align="left">Descriptor</td>
+</tr>
+<tr>
+<td>1000 0000b</td>
+<td>GET_CONFIGURATION(0x08)</td>
+<td>Zero</td>
+<td align="left">Zero</td>
+<td align="left">1</td>
+<td align="left">Configuration Value</td>
+</tr>
+<tr>
+<td>0000 0000b</td>
+<td>SET_CONFIGURATION(0x09)</td>
+<td>Configuration Value</td>
+<td align="left">Zero</td>
+<td align="left">Zero</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The Get Status request directed at the device will return two bytes during the data stage with the following format,<br />
+<img alt="Paste_Image.png" src="http://upload-images.jianshu.io/upload_images/26219-65b4b701d1a59811.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></li>
+<li>If D0 is set, then this indicates the device is self powered. If clear, the device is bus powered. If D1 is set, the device has remote wakeup enabled and can wake the host up during suspend. The remote wakeup bit can be by the SetFeature and ClearFeature requests with a feature selector of DEVICE_REMOTE_WAKEUP (0x01)</li>
+<li>Clear Feature and Set Feature requests can be used to set boolean features. When the designated recipient is the device, the only two feature selectors available are DEVICE_REMOTE_WAKEUP and TEST_MODE. Test mode allows the device to exhibit various conditions. These are further documented in the USB Specification Revision 2.0.</li>
+<li>Set Address is used during enumeration to assign a unique address to the USB device. The address is specified in wValue and can only be a maximum of 127. This request is unique in that the device does not set its address until after the completion of the status stage. (See Control Transfers.) All other requests must complete before the status stage.</li>
+<li>Set Descriptor/Get Descriptor is used to return the specified descriptor in wValue. A request for the configuration descriptor will return the device descriptor and all interface and endpoint descriptors in the one request.<ul>
+<li>Endpoint Descriptors cannot be accessed directly by a GetDescriptor/SetDescriptor Request.</li>
+<li>Interface Descriptors cannot be accessed directly by a GetDescriptor/SetDescriptor Request.</li>
+<li>String Descriptors include a Language ID in wIndex to allow for multiple language support.</li>
+</ul>
+</li>
+<li>Get Configuration/Set Configuration is used to request or set the current device configuration. In the case of a Get Configuration request, a byte will be returned during the data stage indicating the devices status. A zero value means the device is not configured and a non-zero value indicates the device is configured. Set Configuration is used to enable a device. It should contain the value of bConfigurationValue of the desired configuration descriptor in the lower byte of wValue to select which configuration to enable.</li>
+</ul>
+<h3 id="standard-interface-requests"><a name="user-content-standard-interface-requests" href="#standard-interface-requests" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Standard Interface Requests</h3>
+<p>The specification currently defines five Standard Interface requests which are detailed in the table below. Interestingly enough, only two requests do anything intelligible.</p>
+<table>
+<thead>
+<tr>
+<th>bmRequestType</th>
+<th>bRequest</th>
+<th>wValue</th>
+<th align="left">wIndex</th>
+<th align="left">wLength</th>
+<th align="left">Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1000 0001b</td>
+<td>GET_STATUS(0x00)</td>
+<td>Zero</td>
+<td align="left">Interface</td>
+<td align="left">Two</td>
+<td align="left">Interface Status</td>
+</tr>
+<tr>
+<td>0000 0001b</td>
+<td>CLEAR_FEATURE(0x01)</td>
+<td>Feature Selector</td>
+<td align="left">Interface</td>
+<td align="left">Zero</td>
+<td align="left">None</td>
+</tr>
+<tr>
+<td>0000 0001b</td>
+<td>SET_FEATURE(0x03)</td>
+<td>Feature Selector</td>
+<td align="left">Interface</td>
+<td align="left">Zero</td>
+<td align="left">None</td>
+</tr>
+<tr>
+<td>1000 0001b</td>
+<td>GET_INTERFACE(0x0A)</td>
+<td>Zero</td>
+<td align="left">Interface</td>
+<td align="left">One</td>
+<td align="left">Alternate Interface</td>
+</tr>
+<tr>
+<td>0000 0001b</td>
+<td>SET_INTERFACE(0x11)</td>
+<td>Alternative Setting</td>
+<td align="left">Interface</td>
+<td align="left">Zero</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>wIndex is normally used to specify the referring interface for requests directed at the interface. Its format is shown below.<br />
+<img alt="Paste_Image.png" src="http://upload-images.jianshu.io/upload_images/26219-273c7833138ebc2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></li>
+<li>Get Status is used to return the status of the interface. Such a request to the interface should return two bytes of 0x00, 0x00. (Both bytes are reserved for future use)</li>
+<li>Clear Feature and Set Feature requests can be used to set boolean features. When the designated recipient is the interface, the current USB Specification Revision 2 specifies no interface features.</li>
+<li>Get Interface and Set Interface set the Alternative Interface setting which is described in more detail under the Interface Descriptor.</li>
+</ul>
+<h3 id="standard-endpoint-requests"><a name="user-content-standard-endpoint-requests" href="#standard-endpoint-requests" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Standard Endpoint Requests</h3>
+<p>Standard Endpoint requests come in the four varieties listed below.</p>
+<table>
+<thead>
+<tr>
+<th>bmRequestType</th>
+<th>bRequest</th>
+<th>wValue</th>
+<th align="left">wIndex</th>
+<th align="left">wLength</th>
+<th align="left">Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1000 0010b</td>
+<td>GET_STATUS(0x00)</td>
+<td>Zero</td>
+<td align="left">Endpoint</td>
+<td align="left">Two</td>
+<td align="left">Endpoint Status</td>
+</tr>
+<tr>
+<td>0000 0010b</td>
+<td>CLEAR_FEATURE(0x01)</td>
+<td>Feature Selector</td>
+<td align="left">Endpoint</td>
+<td align="left">Zero</td>
+<td align="left">None</td>
+</tr>
+<tr>
+<td>0000 0010b</td>
+<td>SET_FEATURE(0x03)</td>
+<td>Feature Selector</td>
+<td align="left">Endpoint</td>
+<td align="left">Zero</td>
+<td align="left">None</td>
+</tr>
+<tr>
+<td>1000 0010b</td>
+<td>SYNCH_FRAME(0x12)</td>
+<td>Zero</td>
+<td align="left">Endpoint</td>
+<td align="left">Two</td>
+<td align="left">Frame</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The wIndex field is normally used to specify the referring endpoint and direction for requests directed to an endpoint. Its format is shown below.<br />
+<img alt="Paste_Image.png" src="http://upload-images.jianshu.io/upload_images/26219-438e8aa6e4706c4f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></li>
+<li>Get Status returns two bytes indicating the status (Halted/Stalled) of a endpoint. The format of the two bytes returned is illustrated below.<br />
+<img alt="Paste_Image.png" src="http://upload-images.jianshu.io/upload_images/26219-45bb5cd875aef7c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></li>
+<li>Clear Feature and Set Feature are used to set Endpoint Features. The standard currently defines one endpoint feature selector, ENDPOINT_HALT (0x00) which allows the host to stall and clear an endpoint. Only endpoints other than the default endpoint are recommended to have this functionality.</li>
+<li>A Synch Frame request is used to report an endpoint synchronisation frame.</li>
+</ul></article></body></html>
