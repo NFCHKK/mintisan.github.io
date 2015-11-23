@@ -67,7 +67,7 @@ or:
 modprobe msdos
 ```
 
-What we've seen here is: insmod requires you to pass it the full pathname and to insert the modules in the right order, while modprobe just takes the name, without any extension, and figures out all it needs to know by parsing /lib/modules/version/modules.dep.
+What we've seen here is: insmod requires you to pass it the full pathname and to insert the modules in the right order, while modprobe just takes the name, without any extension, and figures out all it needs to know by parsing `/lib/modules/version/modules.dep`.
 
 Linux distros provide modprobe, insmod and depmod as a package called module-init-tools. In previous versions that package was called modutils. Some distros also set up some wrappers that allow both packages to be installed in parallel and do the right thing in order to be able to deal with 2.4 and 2.6 kernels. Users should not need to care about the details, as long as they're running recent versions of those tools.
 

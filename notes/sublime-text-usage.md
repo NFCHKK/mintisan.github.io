@@ -69,8 +69,14 @@
 1.  软件自带：在`Preferences->Color Theme`中可以任意选择，选择完即可查看主题风格，不用重启。并且会在`Preferebces.sublime-seetings`中自动保存设定。
 ![Color Theme](http://mint-blog.qiniudn.com/sublime-text-27.png)
 2. [官方插件](https://packagecontrol.io/browse/labels/theme)搜索安装，不过基本上都被下面那个网站收纳了，并做了一个管理主题的插件，方便预览和安装。在设置一个新的主题时，需要设置`theme`和`color_scheme`两个方面，前者决定了打开不同类型文件的配色，后者决定了Tab栏，SideBar大小和图标，以及相应字体的大小设置。
-3. [ColorSublime](http://colorsublime.com/)：一个Sublime主题的网站，推荐使用`Package Control`的方式来[安装](http://colorsublime.com/how-to-install-a-theme)[ColorSublime插件](https://github.com/Colorsublime/Colorsublime-Plugin)，安装完可以使用在控制面板中移动上下箭头就可以预览，回车即可安装。
+3. [ColorSublime](http://colorsublime.com/)：一个Sublime主题配色的网站，推荐使用`Package Control`的方式来[安装](http://colorsublime.com/how-to-install-a-theme)[ColorSublime插件](https://github.com/Colorsublime/Colorsublime-Plugin)，安装完可以使用在控制面板中移动上下箭头就可以预览，回车即可安装。
 ![预览主题](http://mint-blog.qiniudn.com/sublime-text-28.gif)
+4. [Themr](https://github.com/benweier/Themr)：管理安装过的主题样式的工具
+> Themr allows you to quickly change your UI theme using the command palette or keyboard shortcuts. With Themr, you get commands to easily cycle forward, backward and randomly through your available themes.
+5. [Soda](http://buymeasoda.github.io/soda-theme/)：很有质感的一套主题样式
+![](http://buymeasoda.github.com/soda-theme/images/features/multiple-tab-styles.png)
+6. [Seti](https://github.com/ctf0/Seti_ST3)：各种不同类型的图标
+![](https://github.com/ctf0/Seti_ST3/blob/master/+res/screenshot-1.png)
 4. [Predawn](https://github.com/jamiewilson/predawn)：一款为Sublime和Atom打造的暗色主题，可以定义Tab的大小，SideBar大小，Find栏大小，为Markdown高亮着色，并提供主题同款的ICON。
 ![predawn](http://mint-blog.qiniudn.com/sublime-text-29.png)
 5. [Spacegray](https://github.com/kkga/spacegray)：3种不同深度的颜色，可以定义Tab的大小，SideBar字体大小，文件之间的间隔大小。

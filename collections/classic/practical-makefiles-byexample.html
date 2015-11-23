@@ -1,0 +1,1380 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>practical-makefiles-byexample</title></head><body><article class="markdown-body"><h1 id="practical-makefiles-by-example"><a href="http://nuclear.mutantstargoat.com/articles/make/">Practical Makefiles, by example</a></h1>
+<p><strong>Author</strong> : John Tsiombikas<br />
+<strong>Contact</strong> : <a href="mailto:nuclear@member.fsf.org"><a href="mailto:nuclear@member.fsf.org"><a href="mailto:nuclear@member.fsf.org">nuclear@member.fsf.org</a></a></a></p>
+<div class="toc">
+<ul>
+<li><a href="#practical-makefiles-by-example">Practical Makefiles, by example</a><ul>
+<li><a href="#1-rationale">1. Rationale</a></li>
+<li><a href="#2-building-cc-programs">2. Building C/C++ programs</a></li>
+<li><a href="#3-enter-make">3. Enter make</a></li>
+<li><a href="#4-simpler-makefile">4. Simpler makefile</a></li>
+<li><a href="#5-a-makefile-for-99-of-your-programs">5. A makefile for 99% of your programs</a></li>
+<li><a href="#6-further-improvements">6. Further improvements</a><ul>
+<li><a href="#61-multiple-source-directories">6.1 Multiple source directories</a></li>
+<li><a href="#62-handling-cross-platform-differences">6.2 Handling cross-platform differences</a></li>
+<li><a href="#63-wildcard-rules">6.3 Wildcard rules</a></li>
+<li><a href="#64-automatic-include-dependency-tracking">6.4 Automatic #include dependency tracking</a></li>
+<li><a href="#65-building-sub-projects">6.5 Building sub-projects</a></li>
+</ul>
+</li>
+<li><a href="#7-going-the-extra-mile-for-release">7. Going the extra mile for release</a><ul>
+<li><a href="#71-writing-installuninstall-rules">7.1 Writing install/uninstall rules</a></li>
+<li><a href="#72-installing-libraries">7.2 Installing libraries</a></li>
+<li><a href="#73-build-options">7.3 Build options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="1-rationale"><a name="user-content-1-rationale" href="#1-rationale" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. Rationale</h2>
+<p>The purpose of this document is to explain how to write practical makefiles for your everyday hacks and projects. I want to illustrate, how easy it is to use make for building your programs, and doing so, dispel the notion that resorting to big clunky graphical IDEs, or makefile generators such as autotools or cmake, is the way to focus on your code faster.</p>
+<p>The purpose of this document is certainly <em>not</em>, to teach you how to write user-friendly, all-encompassing, release-quality build systems. You can certainly arrive to that by extending a simple makefile, and I&rsquo;ll give you a few pointers about that sort of thing in the end, but I will not focus on complexity and completeness, but rather on simplicity and practicality.</p>
+<p>Finally, it&rsquo;s worth spelling out up front that when I say &ldquo;make&rdquo;, I&rsquo;m really referring to the GNU implementation of make, which is packed with useful features, not necessarily found in other make programs out there. It might be interesting to write a follow-up article, providing similar examples for other make implementations out there, such as BSD make, Watcom make, Borland make, or Microsoft&rsquo;s nmake. But I&rsquo;ll leave that for another time.</p>
+<h2 id="2-building-cc-programs"><a name="user-content-2-building-cc-programs" href="#2-building-cc-programs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. Building C/C++ programs</h2>
+<p>First let&rsquo;s consider an example C program, and how to build it without make.<br />
+In order to escape the trap of an oversimplified toy program, let&rsquo;s assume we&rsquo;re making a small computer game. Our game is made up of the following source and header files:</p>
+<table>
+<thead>
+<tr>
+<th align="left">main.c</th>
+<th align="left">entry point and system event loop</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">game.h &amp; game.c</td>
+<td align="left">event handlers and game update/redraw loop</td>
+</tr>
+<tr>
+<td align="left">player.h &amp; player.c</td>
+<td align="left">player state and input</td>
+</tr>
+<tr>
+<td align="left">level.h &amp; level.c</td>
+<td align="left">game world state</td>
+</tr>
+<tr>
+<td align="left">enemy.h &amp; enemy.c</td>
+<td align="left">enemy state and AI</td>
+</tr>
+<tr>
+<td align="left">renderer.h &amp; renderer.c</td>
+<td align="left">graphics algorithms / game drawing</td>
+</tr>
+<tr>
+<td align="left">vecmath.h &amp; vecmath.c</td>
+<td align="left">vector &amp; matrix math needed for simulation and rendering</td>
+</tr>
+<tr>
+<td align="left">image.h &amp; image.c</td>
+<td align="left">image loading for textures</td>
+</tr>
+<tr>
+<td align="left">mesh.h &amp; mesh.c</td>
+<td align="left">3D mesh data structures &amp; loading</td>
+</tr>
+</tbody>
+</table>
+<p>Also, our game depends on a number of 3rd party libraries:</p>
+<table>
+<thead>
+<tr>
+<th align="left">OpenGL</th>
+<th align="left">Low level graphics library</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">GLUT</td>
+<td align="left">Cross-platform OpenGL window setup &amp; event handling</td>
+</tr>
+<tr>
+<td align="left">libpng</td>
+<td align="left">PNG image file format reader/decoder</td>
+</tr>
+<tr>
+<td align="left">zlib</td>
+<td align="left">Needed by libpng for lz77 decompression</td>
+</tr>
+</tbody>
+</table>
+<p>To build this program we would first have to run the compiler on each source file, generating a corresponding object code file:</p>
+<pre><code>cc -c main.c
+cc -c game.cc
+c -c level.c...
+</code></pre>
+
+<p>Then, we would have to feed all the object files to the linker (possibly still using the C compiler front-end for convenience), instructing it to link all the libraries we need as well:</p>
+<pre><code>cc -o mygame *.o -lGL -lglut -lpng -lz -lm
+</code></pre>
+
+<p>Obviously, such tediousness could be automated with a shell script. However, that would be a grossly sub-optimal solution, as it would recompile all source files from scratch, every time we try to build with it.</p>
+<h2 id="3-enter-make"><a name="user-content-3-enter-make" href="#3-enter-make" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. Enter make</h2>
+<p>Make is a much more elegant solution to our building problems. We create a file named <code>Makefile</code>, which contains a set of rules describing build products, their dependencies, and which commands are needed to build them. Then when we ask make to build our program binary, it recursively traverses the dependency graph to figure out which parts need to be re-created, based on the last-modified timestamps of the target file, and its dependency files.</p>
+<p>Warning: do not run away terrified by the first makefile example. It&rsquo;s only meant to illustrate how make works, so it&rsquo;s needlessly verbose. If you&rsquo;re easily scared, skip to section: <a href="http://nuclear.mutantstargoat.com/articles/make/#practical-makefile">&ldquo;A makefile for 99% of your programs&rdquo;</a>.</p>
+<p>Back to our game example, the binary <code>mygame</code>, obviously depends on <code>main.o</code> (among other object files). <code>main.o</code> in turn, is created by compiling <code>main.c</code>. So, let&rsquo;s define two make rules for creating these two files:</p>
+<pre><code>mygame: main.o player.o enemy.o renderer.o vecmath.o image.o mesh.o
+    cc -o mygame main.o player.o enemy.o renderer.o vecmath.o image.o mesh.o -lGL -lglut -lpng -lz -lm
+
+main.o: main.c
+    cc -c main.c
+
+player.o: player.c
+    cc -c player.c
+
+# ... and so on, and so forth ...
+</code></pre>
+
+<p>Essentially for each rule, the part before the colon is the filename we want to build when this rule is executed, the part after the colon is the list of dependencies, i.e. what is needed to create this rule&rsquo;s target. And finally, in subsequent lines, we just type the commands needed to make this happen.</p>
+<p>Note that each line in the commands part of a rule needs to begin with a leading tab. Spaces will not work, it really has to be a tab character, so pay extra attention to your text editor settings, about how it treats any tabs you enter.</p>
+<p>So, if we modify <code>main.c</code>, and then type <code>make</code> (which means: build the first rule in the makefile), make will try to build the file named <code>mygame</code>. In order to build it, make will have to use the declared dependency files, so it will execute each rule corresponding to those files in turn, starting from <code>main.o</code>.</p>
+<p>To build <code>main.o</code>, make sees that it needs <code>main.c</code>, which having been modified more recently than <code>main.o</code>, is deemed out of date and must be re-created by executing the command specified in this rule.</p>
+<p>Similarly, returning to the initial rule, since now <code>main.o</code> is newer than the old <code>mygame</code> binary, the binary will be rebuilt by running the linking command, after visiting each object file rule in turn and determining that none of them needs rebuilding, since we didn&rsquo;t touch any of their dependencies.</p>
+<h2 id="4-simpler-makefile"><a name="user-content-4-simpler-makefile" href="#4-simpler-makefile" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4. Simpler makefile</h2>
+<p>Obviously, having to type rules for each of our source files is tedious, and thankfully unnecessary. Make actually knows how to create object code from C source files, so we can skip the object file rules, and also provides some handy variables for referring to the target or dependency files in rule commands without having to re-type everything. So here is a slightly simpler makefile for the same task:</p>
+<pre><code>myprog: main.o game.o level.o player.o enemy.o renderer.o vecmath.o image.o mesh.o
+    cc -o $@ $^ -lGL -lglut -lpng -lz -lm
+</code></pre>
+
+<p><code>@</code> is a built-in make variable containing the target of each rule (myprog in this case), and <code>^</code> is another built-in variable containing all the dependencies of each rule (so the list of object files in this case). Similarly, although not useful for this particular rule, there is also the <code>&lt;</code> variable, which contains only the first element of the dependencies (so <code>main.o</code> if we used it in the rule above).</p>
+<p>We substitute the value of any variable (built-in or not) by prepending a dollar sign to its name. However, one peculiarity of the make syntax, as opposed to say the bourne shell syntax, is that only the first character following the dollar sign is considered to be the variable name. If we want to use longer names, we have to parenthesize the name before applying the dollar sign to extract its value. So for instance if we had defined a variable: <code>obj = main.o game.o level.o ... (etc) ...</code>, then to substitute its contents we have to use parentheses: <code>$(obj)</code>. If we instead tried to use <code>$obj</code> then make would try to expand a variable named &ldquo;o&rdquo;, and then append the string &ldquo;bj&rdquo; to the result.</p>
+<h2 id="5-a-makefile-for-99-of-your-programs"><a name="user-content-5-a-makefile-for-99-of-your-programs" href="#5-a-makefile-for-99-of-your-programs" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5. A makefile for 99% of your programs</h2>
+<p>There&rsquo;s one last thing bugging me in the last example. I hate having to type manually the list of object files needed to build the program. Thankfully it turns out we don&rsquo;t need to do that either. See the following example:</p>
+<pre><code>src = $(wildcard *.c)
+obj = $(src:.c=.o)
+
+LDFLAGS = -lGL -lglut -lpng -lz -lm
+
+myprog: $(obj)
+    $(CC) -o $@ $^ $(LDFLAGS)
+
+.PHONY: clean
+clean:
+    rm -f $(obj) myprog
+</code></pre>
+
+<p>The first line of this example collects all source files in the current directory in the <code>src</code> variable. Then, the second line transforms the contents of the <code>src</code> variable, changing all file suffixes from <code>.c</code> to <code>.o</code>, thus constructing the object file list we need.</p>
+<p>I also used a new variable called <code>LDFLAGS</code> for the list of libraries required during linking (<code>LDFLAGS</code> is conventionally used for this usage, while similarly <code>CFLAGS</code> and <code>CXXFLAGS</code>can be used to pass flags to the C and C++ compilers respectively).</p>
+<p>Finally, I added a new rule for cleaning up every target, in order to rebuild the whole program from scratch. The <code>clean</code> rule is marked as <em>phony</em>, because it&rsquo;s target is not an actual file that will be generated, but just an arbitrary name that we wish to use for executing this rule. In order to run any rule other than the first one, the user needs to pass the target name as a command-line argument to make. So, for instance, to clean everything in this example, just type <code>make clean</code>.</p>
+<h2 id="6-further-improvements"><a name="user-content-6-further-improvements" href="#6-further-improvements" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>6. Further improvements</h2>
+<p>The makefile listed above is sufficient for most small programs you&rsquo;ll ever write. In this section, I&rsquo;ll go over a few improvements for larger projects.</p>
+<h3 id="61-multiple-source-directories"><a name="user-content-61-multiple-source-directories" href="#61-multiple-source-directories" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>6.1 Multiple source directories</h3>
+<p>Let&rsquo;s say you have some source files under <code>src/</code>, other source files under, <code>src/engine</code>, and some more source files under <code>src/audio</code>. Also, to make it more interesting, let&rsquo;s assume that your code is a mix of C and C++ in any of these directories. Here&rsquo;s a very simple modification which handles this situation:</p>
+<pre><code>csrc = $(wildcard src/*.c) \
+       $(wildcard src/engine/*.c) \
+       $(wildcard src/audio/*.c)
+ccsrc = $(wildcard src/*.cc) \
+        $(wildcard src/engine/*.cc) \
+        $(wildcard src/audio/*.cc)
+obj = $(csrc:.c=.o) $(ccsrc:.cc=.o)
+
+LDFLAGS = -lGL -lglut -lpng -lz -lm
+
+mygame: $(obj)
+    $(CXX) -o $@ $^ $(LDFLAGS)
+</code></pre>
+
+<p>The rest is exactly the same as previously. Note that I used the CXX<br />
+ built-in variable, which defaults to <code>c++</code> instead of <code>cc</code>, to invoke the linker in the correct way for C++ programs, automatically linking libstdc++<br />
+ with it. Also, backslashes at the end of lines serve to merge multiple lines together by escaping the newline character.</p>
+<h3 id="62-handling-cross-platform-differences"><a name="user-content-62-handling-cross-platform-differences" href="#62-handling-cross-platform-differences" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>6.2 Handling cross-platform differences</h3>
+<p>So far, in all the examples, I&rsquo;ve linked OpenGL and GLUT by passing the <code>-lGL -lglut</code> flags to the linker. That&rsquo;s how reasonable UNIX systems do it, but what if we want to build our project on vaguely UNIX-like abominations like MacOSX, where you have to use the following command-line arguments: <code>-framework OpenGL -frameworkGLUT</code> (since OpenGL and GLUT they are &ldquo;<em>frameworks</em>&rdquo; and not <em>just</em> libraries &hellip; <em>sigh</em>) ? Simple; use <code>uname -s</code> to figure out if we&rsquo;re building on MacOSX, and modify <code>theLDFLAGS</code> variable accordingly:</p>
+<pre><code>LDFLAGS = $(libgl) -lpng -lz -lm
+
+ifeq ($(shell uname -s), Darwin)
+    libgl = -framework OpenGL -framework GLUT
+else
+    libgl = -lGL -lglut
+endif
+</code></pre>
+
+<p>The order of defining <code>libgl</code> and defining <code>LDFLAGS</code> doesn&rsquo;t matter, as long as they&rsquo;re both before the first rule which uses either of them, since LDFLAGS<br />
+ won&rsquo;t be evaluated (and thus require substitution of the <code>libgl</code> variable) until it&rsquo;s used in a rule.</p>
+<p>A slightly more elegant, but not exactly equivalent way of doing the above would be the following instead:</p>
+<pre><code>LDFLAGS = $(libgl_$(shell uname -s)) -lpng -lz -lm
+
+libgl_Linux = -lGL -lglut
+libgl_Darwin = -framework OpenGL -framework GLUT
+</code></pre>
+
+<p>I said not exactly equivalent, because in this way we would have to enumerate all possible UNIX systems we&rsquo;d like to support instead of just handling them in the <code>else</code> part of the conditional statement.</p>
+<h3 id="63-wildcard-rules"><a name="user-content-63-wildcard-rules" href="#63-wildcard-rules" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>6.3 Wildcard rules</h3>
+<p>As I mentioned above, make knows how to compile C and C++ source files to create object code, and you don&rsquo;t have to explicitly write rules of the form:</p>
+<pre><code>main.o: main.c 
+    $(CC) $(CFLAGS) -o $@ -c $&lt;
+</code></pre>
+
+<p>But let&rsquo;s say you want to compile code for a new language, which make knows nothing about. There is a mechanism to write generic rules, so that you won&rsquo;t have to laboriously type specific rules for each file you wish to compile.<br />
+If you wish to inform make, on the generic form of rules for building object files out of source files in a fictitious <em>foo</em> language, which are commonly in files with a <code>.foo</code>suffix, and compiled by running <code>fooc -c</code>, you can write the following wildcard rule:</p>
+<pre><code>%.o: %.foo 
+    fooc $(FOOFLAGS) -o $@ -c $&lt;
+</code></pre>
+
+<p>Then, whenever make needs to build <code>xyzzy.o</code>, and there is a file named <code>xyzzy.foo</code>, it will use that rule to compile it.</p>
+<h3 id="64-automatic-include-dependency-tracking"><a name="user-content-64-automatic-include-dependency-tracking" href="#64-automatic-include-dependency-tracking" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>6.4 Automatic #include dependency tracking</h3>
+<p>The built-in rule for compiling C source files, is similar to:</p>
+<pre><code>%.o: %.c 
+    $(CC) $(CFLAGS) -o $@ -c $&lt;
+</code></pre>
+
+<p>Which means, that if we change <code>foo.c</code>, <code>foo.o</code> will be out of date and will be rebuilt automatically. There are, however, usually many more dependencies that need to be considered to determine if <code>foo.o</code> needs rebuilding, which fall through the cracks in this simple but generic scheme.</p>
+<p>Specifically, if <code>foo.c</code> also includes <code>foo.h</code> and <code>bar.h</code>, then if we fail to rebuild <code>foo.o</code> when either of these header files change, will result in a potentially incorrect program, and depending on the nature of the modifications, possibly memory corruption, and hopefully segmentation faults at runtime.</p>
+<p>For simple hacks with a couple of source and header files, we can afford to just clean and rebuild any time we change header files significantly, for larger programs however, we&rsquo;d really like to have our build system track dependencies due to header file inclusion too.</p>
+<p>Make can&rsquo;t possibly know what constitutes a dependency, and include a syntactic analyzer to detect it, for each and every language, which is why this doesn&rsquo;t happen automatically. However with the help of our compiler&rsquo;s pre-processor, we can create the necessary rules to do it.</p>
+<p>We&rsquo;ll write a wildcard rule to generate makefile fragments with an explicit rule for each source file in our project, which also includes header files in the dependency list. Then we&rsquo;ll instruct make to include these makefile fragments in our makefile as if we wrote them by hand. Any missing makefile fragments will be automatically generated with our wildcard rule during this inclusion. Finally we&rsquo;ll add a rule to clean all these dependency files (the makefile fragments).</p>
+<pre><code>src = $(wildcard *.c)
+obj = $(src:.c=.o)
+dep = $(obj:.o=.d)  # one dependency file for each source
+
+LDFLAGS = -lGL -lglut -lpng -lz -lm
+
+mygame: $(obj)
+    $(CC) -o $@ $^ $(LDFLAGS)
+
+-include $(dep)   # include all dep files in the makefile
+
+# rule to generate a dep file by using the C preprocessor
+# (see man cpp for details on the -MM and -MT options)
+%.d: %.c
+    @$(CPP) $(CFLAGS) $&lt; -MM -MT $(@:.d=.o) &gt;$@
+
+.PHONY: clean
+clean:
+    rm -f $(obj) mygame
+
+.PHONY: cleandep
+cleandep:
+    rm -f $(dep)
+</code></pre>
+
+<p>The added lines are marked with comments in the example above. To see exactly what the C preprocessor outputs when instructed to write dependency information, try running the following in a file with a single include statement:</p>
+<pre><code>cpp foo.c -MM -MT foo.o
+</code></pre>
+
+<p>That&rsquo;s right, it just outputs a single makefile rule! Which is exactly what we need for make to track all the dependencies correctly.</p>
+<h3 id="65-building-sub-projects"><a name="user-content-65-building-sub-projects" href="#65-building-sub-projects" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>6.5 Building sub-projects</h3>
+<p>Consider the following case: our game has source files in <code>src/</code>, but we also need to use an external library called <code>libfoo</code>, which is not a system-wide installed library, but one we want to carry with our source tree under <code>libs/foo</code>. How would we integrate that in our build system?</p>
+<p>Very simply, instruct make to first build <code>libfoo</code>, by running <code>make</code> after changing to the <code>libs/foo</code> directory, and then link it as usual:</p>
+<pre><code>src = $(wildcard src/*.c)
+obj = $(src:.c=.o)
+
+LDFLAGS = -Llibs/foo -lfoo -lGL -lglut -lpng -lz -lm
+
+# list the libfoo rule as a dependency
+mygame: $(obj) libfoo
+    $(CC) -o $@ $^ $(LDFLAGS)
+
+.PHONY: clean
+    rm -f $(obj) mygame
+
+# this is the new rule for recursively building libfoo
+.PHONY: libfoo
+libfoo:
+    $(MAKE) -C libs/foo
+</code></pre>
+
+<p>By adding the phony <code>libfoo</code> rule as a dependency to our binary linking rule, we essentially force make to always change into <code>libs/foo</code> and run make before linking our binary. If there is no need to actually rebuild <code>libfoo</code> because it has no changes, that makefile will do nothing and return immediately, so there&rsquo;s no harm in trying every time.</p>
+<p>Arbitrarily complex programs can be built by using a similar approach, to build various modules as separate libraries. So this little snippet really scales our simple build system to easily handle huge projects as well.</p>
+<h2 id="7-going-the-extra-mile-for-release"><a name="user-content-7-going-the-extra-mile-for-release" href="#7-going-the-extra-mile-for-release" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>7. Going the extra mile for release</h2>
+<p>I promised in the beginning that I&rsquo;d give a few pointers on how to move from a practical makefile, to a release-quality build system. First of all, what do I mean by that. Surely in the last section we&rsquo;ve seen many improvements that can be used to handle pretty much anything a project might need. We are missing however, some things that end-users expect; mainly &ldquo;install&rdquo; and &ldquo;uninstall&rdquo; rules, and build options.</p>
+<h3 id="71-writing-installuninstall-rules"><a name="user-content-71-writing-installuninstall-rules" href="#71-writing-installuninstall-rules" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>7.1 Writing install/uninstall rules</h3>
+<p>Writing installation rules for standalone programs is very easy. Simply make your install rule depend on the binary, and copy it to the appropriate place. The appropriate place on UNIX systems is usually <code>/usr/local/bin</code>, but it may vary from system to system, and based on administrator preferences, so it&rsquo;s customary to use a <code>PREFIX</code> variable for the prefix to the path of the <code>bin</code> directory:</p>
+<pre><code>PREFIX = /usr/local
+
+.PHONY: install
+install: mygame
+    mkdir -p $(DESTDIR)$(PREFIX)/bin
+    cp $&lt; $(DESTDIR)$(PREFIX)/bin/mygame
+
+.PHONY: uninstall
+uninstall:
+    rm -f $(DESTDIR)$(PREFIX)/bin/mygame
+</code></pre>
+
+<p>Special care should be taken when writing install and uninstall rules, because these are necessarily executed with root privileges by the user, when installing system-wide. Avoid wildcards in <code>rm</code> commands like the plague.</p>
+<p>Note that I also concatenated another variable in front of the PREFIX<br />
+, called <code>DESTDIR</code>. This variable is most of the time undefined (and thus the empty string), and has no effect whatsoever; it&rsquo;s use is to allow for staging installations to temporary directories before manually moving them to their actual place, and it&rsquo;s commonly required by software packaging and distribution systems.</p>
+<p>So for instance running this with: <code>make DESTDIR=/tmp/stage</code> install<br />
+ will result in our program being installed under <code>/tmp/stage/usr/local/bin</code>, where it can be inspected and then moved safely by the packaging software to the correct place. This becomes much more important when dealing with installing libraries, which generally contain a lot more of files going many different places in the filesystem.</p>
+<h3 id="72-installing-libraries"><a name="user-content-72-installing-libraries" href="#72-installing-libraries" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>7.2 Installing libraries</h3>
+<p>Correctly building and installing shared libraries on various systems, is a big topic and definitely requires its own article. I may write that article at some point if there is any demand for it, but for now, let&rsquo;s stick to static libraries.</p>
+<p>Static libraries are basically archives of a bunch of object files, conventionally using the <code>.a</code> suffix. The archive itself goes under <code>$(PREFIX)/lib</code>, while any public API header files it provides need to end up in <code>$(PREFIX)/include</code>. Here&rsquo;s a short makefile fragment, illustrating how to build and install libraries:</p>
+<pre><code>alib = libfoo.a
+
+$(alib): $(obj)
+    $(AR) rcs $@ $^
+
+.PHONY: install
+install: $(alib)
+    mkdir -p $(DESTDIR)$(PREFIX)/lib
+    mkdir -p $(DESTDIR)$(PREFIX)/include
+    cp $(alib) $(DESTDIR)$(PREFIX)/lib/$(alib)
+    cp foo.h $(DESTDIR)$(PREFIX)/include/
+
+.PHONY: uninstall
+uninstall:
+    rm -f $(DESTDIR)$(PREFIX)/lib/$(alib)
+    rm -f $(DESTDIR)$(PREFIX)/include/foo.h
+</code></pre>
+
+<h3 id="73-build-options"><a name="user-content-73-build-options" href="#73-build-options" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>7.3 Build options</h3>
+<p>Build options can clearly be specified by setting make variables on the command-line as I&rsquo;ve shown previously in the <code>DESTDIR</code> example. Users, however really expect a <em>configure</em> script with common command-line options, which then generates the makefile.</p>
+<p>One way to achieve that is to move the whole makefile, minus the optional parts, to a file called <code>Makefile.in</code>, and write a <code>configure</code> shell script similar to this:</p>
+<pre><code>#!/bin/sh
+
+prefix=/usr/local
+debugsym=true
+
+for arg in &quot;$@&quot;; do
+    case &quot;$arg&quot; in
+    --prefix=*)
+        prefix=`echo $arg | sed 's/--prefix=//'`
+        ;;
+
+    --enable-debug)
+        debugsym=true;;
+    --disable-debug)
+        debugsym=false;;
+
+    --help)
+        echo 'usage: ./configure [options]'
+        echo 'options:'
+        echo '  --prefix=&lt;path&gt;: installation prefix'
+        echo '  --enable-debug: include debug symbols'
+        echo '  --disable-debug: do not include debug symbols'
+        echo 'all invalid options are silently ignored'
+        exit 0
+        ;;
+    esac
+done
+
+echo 'generating makefile ...'
+echo &quot;PREFIX = $prefix&quot; &gt;Makefile
+if $debugsym; then
+    echo 'dbg = -g' &gt;&gt;Makefile
+fi
+cat Makefile.in &gt;&gt;Makefile
+echo 'configuration complete, type make to build.'
+</code></pre>
+
+<p>Then <code>Makefile.in</code> can contain things like <code>CFLAGS = $(dbg)</code>, and also use the <code>PREFIX</code> variable as usual. The user can then use the conventional build &amp; install commands, and our makefile will be able to act accordingly:</p>
+<pre><code>./configure --prefix=/usr/local --disable-debugmake
+sudo make install
+</code></pre></article></body></html>
