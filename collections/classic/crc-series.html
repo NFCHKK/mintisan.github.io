@@ -1,0 +1,1576 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>crc-series</title></head><body><article class="markdown-body"><h1 id="crc-series"><a name="user-content-crc-series" href="#crc-series" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CRC Series</h1>
+<p>Sat, 2007-12-01 23:21 - webmaster<br />
+by <a href="http://www.barrgroup.com/Embedded-Systems/Experts">Michael Barr</a></p>
+<div class="toc">
+<ul>
+<li><a href="#crc-series">CRC Series</a><ul>
+<li><a href="#crc-series-part-1-additive-checksums">CRC Series, Part 1: Additive Checksums</a><ul>
+<li><a href="#parity-bits">Parity Bits</a></li>
+<li><a href="#checksums">Checksums</a></li>
+<li><a href="#the-internet-checksum">The Internet Checksum</a></li>
+<li><a href="#further-reading">Further reading</a></li>
+</ul>
+</li>
+<li><a href="#crc-series-part-2-crc-mathematics-and-theory">CRC Series, Part 2: CRC Mathematics and Theory</a><ul>
+<li><a href="#error-correction">Error Correction</a></li>
+<li><a href="#binary-long-division">Binary Long Division</a></li>
+<li><a href="#generator-polynomials">Generator Polynomials</a></li>
+</ul>
+</li>
+<li><a href="#ethernet-slip-and-ppp">Ethernet, SLIP, and PPP</a></li>
+<li><a href="#crc-series-part-3-crc-implementation-code-in-cc">CRC Series, Part 3: CRC Implementation Code in C/C++</a><ul>
+<li><a href="#modulo-2-binary-division">Modulo-2 Binary Division</a></li>
+<li><a href="#bit-by-bit">Bit by Bit</a></li>
+<li><a href="#code-cleanup">Code Cleanup</a></li>
+<li><a href="#byte-by-byte">Byte by Byte</a></li>
+<li><a href="#crc-standards-and-parameters">CRC standards and parameters</a></li>
+<li><a href="#acknowledgement">Acknowledgement</a></li>
+<li><a href="#free-source-code-in-c-and-c">Free Source Code in C and C++</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="crc-series-part-1-additive-checksums"><a href="http://www.barrgroup.com/Embedded-Systems/How-To/Additive-Checksums">CRC Series, Part 1: Additive Checksums</a></h2>
+<p>Whenever you connect two or more computers together with the intent of exchanging information, you assume that the exchange will take place without errors. But what if some of the data is lost or corrupted in transit? Communication protocols usually attempt to detect such errors automatically. To do that they use checksums.</p>
+<p>The most important part of listening to someone speak is ensuring that you&rsquo;ve heard them correctly. Your brain performs the tasks of error detection and correction for you, automatically. It does this by examining extra bits of information from the speaker and the speech; if a phrase or sentence makes sense as a whole and it makes sense coming from the mouth of the particular speaker, then the individual words were probably heard correctly. The same principle applies when you are reading. But what happens when computers are communicating with one another? How does the receiving computer know if an error has occurred in transmission?</p>
+<p>Establishing correctness is more difficult for computers than humans. At the lowest level, communication between computers consists of nothing but a stream of binary digits. Meaning is only assigned to that particular sequence of bits at higher levels. We call that meaningful sequence of bits the message; it is analogous to a spoken or written phrase. If one or more bits within the message are inverted (a logic one becomes a logic zero, or vice versa) as it travels between computers, the receiver has no way to detect the error. No environmental or syntactical context is available to the receiver, since it cannot understand the message in its transmitted form.</p>
+<h3 id="parity-bits"><a name="user-content-parity-bits" href="#parity-bits" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parity Bits</h3>
+<p>If we want communicating computers to detect and correct transmission errors automatically, we must provide a replacement for context. This usually takes the form of an error correction code or error detection code. A simple type of error detection code that you are probably already familiar with is called a parity bit. A parity bit is a single, extra binary digit that is appended to the message by the sender and transmitted along with it. Depending on the type of parity used, the parity bit ensures that the total number of logic ones sent is even (even parity) or odd (odd parity). For an example of even parity, consider the sequence:</p>
+<pre><code>10101110 1
+</code></pre>
+
+<p>in which the eight-bit message contains five ones and three zeros. The parity bit is one in this case to force the total number of ones in the transmitted data stream to be even.</p>
+<p>When a parity bit is appended to a message, one additional bit of data must be sent between the computers. So there must be some benefit associated with the lost bandwidth. The most obvious benefit is that if any single bit in the message is inverted during transmission, the number of ones will either increase or decrease by one, thus making the received number of ones odd and the parity incorrect. The receiver can now detect such an error automatically and request a retransmission of the entire stream of bits. Interestingly, the receiver can also now detect any odd number of bit inversions. (Note that all of this still applies even when the parity bit is one of the inverted bits.)</p>
+<p>However, as you may have already noticed, if two bits are inverted (two ones become zeros, for example), the parity of the stream of bits will not change; a receiver will not be able to detect such errors. In fact, the same is true for any even number of bit inversions. A parity bit is a weak form of error detection code. It has a small cost (one bit per message), but it is unable to detect many types of possible errors. (By the way, odd parity has the same costs, benefits, and weaknesses as even parity.)</p>
+<p>Perhaps this is not acceptable for your application. An alternative that might occur to you is to send the entire message twice. If you&rsquo;re already spending bandwidth sending an error detection code, why not spend half of the bandwidth? The problem is that you could actually be spending much more than half of the available bandwidth. If a computer receives two copies of a message and the bits that comprise them aren&rsquo;t exactly the same, it cannot tell which one of the two is correct. In fact, it may be that both copies contain errors. So the receiver must request a retransmission whenever there is a discrepancy between the message and the copy sent as an error detection code.</p>
+<p>With that in mind, let&rsquo;s compare the bandwidth costs of using a parity bit vs. resending the entire message. We&rsquo;ll assume that all messages are 1,000-bits long and that the communications channel has a bit error rate (average number of inverted bits) of one per 10,000 bits sent. Using a parity bit, we&rsquo;d spend 0.1% of our bandwidth sending the error detection code (one bit of error protection for 1,000 bits of message) and have to retransmit one out of every 10 messages due to errors. If we send two complete copies of each message instead, the smallest unit of transmission is 2,000 bits (50% of our bandwidth is now spent sending the error detection code). In addition, we&rsquo;ll have to retransmit one out of every five messages. Therefore, the achievable bandwidths are approximately 90% and 40%, respectively. As the width of the code increases, the message plus code lengthens and becomes more vulnerable to bit errors and, as a result, expensive retransmissions.</p>
+<p>From this type of analysis it should be clear that keeping the size of an error detection code as small as possible is a good thing, even if it does mean that some types of errors will be undetectable. (Note that even sending two copies of the message is not a perfect solution. If the same bit errors should happen to occur in both copies, the errors will not be detected by the receiver.) In addition to reducing the bandwidth cost of transmitting the error detection code itself, this also increases the message throughput. But we still don&rsquo;t want to go so far as using a one-bit error detection scheme like parity. That would let too many possible errors escape detection.</p>
+<p>In practice, of course, we can achieve far better error detection capabilities than just odd numbers of inverted bits. But in order to do so we have to use error detection codes that are more complex than simple parity, and also contain more bits. I&rsquo;ll spend the remainder of this column and most of the next two discussing the strengths and weaknesses of various types of checksums, showing you how to compute them, and explaining how each can be best employed for purposes of error detection.</p>
+<h3 id="checksums"><a name="user-content-checksums" href="#checksums" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Checksums</h3>
+<p>As the name implies, a checksum usually involves a summation of one sort or another. For example, one of the most common checksum algorithms involves treating the message like a sequence of bytes and summing them. Listing 1 shows how this simple algorithm might be implemented in C.</p>
+<pre><code class="c">uint8_t Sum(uint8_t const message[], int nBytes)
+{
+    uint8_t  sum = 0;
+
+    while (nBytes-- &gt; 0)
+    {
+        sum += *(message++);
+    }
+
+    return (sum);
+
+}   /* Sum() */
+</code></pre>
+
+<p>Listing 1. A sum-of-bytes checksum</p>
+<p>The sum-of-bytes algorithm is straightforward to compute. However, understanding its strengths and weaknesses as a checksum is more difficult. What types of errors does it detect? What errors is it unable to detect? These are important factors to consider whenever you are selecting a checksum algorithm for a particular application. You want the algorithm you choose to be well matched to the types of errors you expect to occur in your transmission environment. For example, a parity bit would be a poor choice for a checksum if bit errors will frequently occur in pairs.</p>
+<p>A noteworthy weakness of the sum-of-bytes algorithm is that no error will be detected if the entire message and data are somehow received as a string of all zeros. (A message of all zeros is a possibility, and the sum of a large block of zeros is still zero.) The simplest way to overcome this weakness is to add a final step to the checksum algorithm: invert the bits of the final sum. The new proper checksum for a message of all zeros would be FFh. That way, if the message and checksum are both all zeros, the receiver will know that something&rsquo;s gone terribly wrong. A modified version of the checksum implementation is shown in Listing 2.</p>
+<pre><code class="c">uint8_t SumAndInvert(uint8_t const message[], int nBytes)
+{
+    uint8_t  sum = 0;
+
+
+    while (nBytes-- &gt; 0)
+    {
+        sum += *(message++);
+    }
+
+    return (~sum);
+
+}   /* SumAndInvert() */
+</code></pre>
+
+<p>Listing 2. A slightly more robust sum-of-bytes checksum algorithm</p>
+<p>This final inversion does not affect any of the other error detection capabilities of this checksum, so let&rsquo;s go back to discussing the basic sum-of-bytes algorithm in Listing 1. First, it should be obvious that any single bit inversion in the message or checksum will be detectable. Such an error will always affect at least one bit within the checksum. (It could affect more, of course, but not less.) Observe that the sum-of-bytes is performed by essentially lining up all of the bytes that comprise the message and performing addition on them, like this:</p>
+<pre><code>  10110101
+  11000000
+  00001101
++ 11100011
+----------
+  01100101
+</code></pre>
+
+<p>Because of this mathematical arrangement, simultaneous single-bit inversions could occur in each of any number of the &ldquo;columns.&rdquo; At least one bit of the checksum will always be affected. No matter how the inversions occur, at least the lowest-order column with an error will alter the checksum. This is an important point, because it helps us to understand the broader class of errors that can be detected by this type of checksum. I&rsquo;ll say it again: no matter how the inversions occur, at least the lowest order column with an error will alter the checksum, which means that two or more bit inversions in higher-order columns may cancel each other out. As long as the lowest-order column with an error has only one, it doesn&rsquo;t matter what other errors may be hidden within the message.</p>
+<p>Now let&rsquo;s step back for a minute and talk about errors more formally. What exactly does a transmission error look like? Well, the first and most obvious type of error is a single bit that is inverted. That happens sometimes and is easy to detect (even a parity bit will do the job). Other times, bit inversions are part of an error burst. Not all of the bits within an error burst must be inverted. The defining characteristic is simply an inverted bit on each end. So an error burst may be 200 bits long, but contain just two inverted bits&ndash;one at each end.</p>
+<p>A sum-of-bytes checksum will detect the vast majority of error bursts, no matter what their length. However, describing exactly which ones is generally difficult. Only one class of error bursts is always detectable: those of length eight bits or less. As long as the two inverted bits that bound the error burst have no more than six bits between them, the error will always be detected by this algorithm. That&rsquo;s because our previous requirement for error detection&ndash;that the lowest-order column with an error have only one error&ndash;is always met when the length of the error burst is no longer than the width of the checksum. We can know with certainty that such errors will always be detected.</p>
+<p>Of course, many longer error bursts will also be detected. The probability of detecting a random error burst longer than eight bits is 99.6%. Errors will only be overlooked if the modified message has exactly the same sum as the original one, for which there is a 2-8 chance. That&rsquo;s much better error detection than a simple parity bit, and for not too much more cost.</p>
+<p>The sum-of-bytes algorithm becomes even more powerful when the width of the checksum is increased. In other words, increasing the number of bits in the checksum causes it to detect even more types of errors. A 16-bit sum-of-words checksum will detect all single bit errors and all error bursts of length 16 bits or fewer. It will also detect 99.998% of longer error bursts. A 32-bit sum will detect even more errors. In practice, this increase in performance must be weighed against the increased cost of sending the extra checksum bits as part of every exchange of data.</p>
+<h3 id="the-internet-checksum"><a name="user-content-the-internet-checksum" href="#the-internet-checksum" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The Internet Checksum</h3>
+<p>Many protocol stacks include some sort of a checksum within each protocol layer. The TCP/IP suite of protocols is no exception in this regard. In addition to a checksum at the lowest layer (within Ethernet packets, for example), checksums also exist within each IP, UDP, and TCP header. Figure 1 shows what some of these headers look like in the case of some data sent via UDP/IP. Here the fields of the IP header are summed to generate the 16-bit IP checksum and the data, fields of the UDP header, and certain fields of the IP header are summed to generate the 16-bit UDP checksum.</p>
+<p><img alt="" src="http://www.barrgroup.com/images/articles/InternetChecksum.gif" /></p>
+<p>Figure 1. UDP and IP headers with checksum fields highlighted</p>
+<p>A function that calculates the IP header checksum is shown in Listing 3. This function can be used before sending an IP packet or immediately after receiving one. If the packet is about to be sent, the checksum field should be set to zero before calculating the checksum and filled with the returned value afterward. If the packet has just been received, the checksum routine is expected to return a value of <code>0xFFFF</code> to indicate that the IP header was received correctly. This result is a property of the type of addition used to compute the IP checksum.</p>
+<pre><code class="c">uint16_t NetIpChecksum(uint16_t const ipHeader[], int nWords)
+{
+    uint32_t  sum = 0;
+
+
+    /*
+     * IP headers always contain an even number of bytes.
+     */
+    while (nWords-- &gt; 0)
+    {
+        sum += *(ipHeader++);
+    }
+
+    /*
+     * Use carries to compute 1's complement sum.
+     */
+    sum = (sum &gt;&gt; 16) + (sum &amp; 0xFFFF);
+    sum += sum &gt;&gt; 16;
+    //**attenstion**: maybe the sentence above is the same, use either is ok
+
+    /*
+     * Return the inverted 16-bit result.
+     */
+    return ((unsigned short) ~sum);
+
+}   /* NetIpChecksum() */
+</code></pre>
+
+<p>Listing 3. IP header checksum calculation</p>
+<p>The IP header to be checksummed should be passed to <code>NetIpChecksum()</code> as an array of 16-bit words. Since the length of an IP header is always a multiple of four bytes, it is sufficient to provide the header length as a number of 16-bit words. The checksum is then computed by the function and returned to the caller for insertion into the header for validation of the header contents.</p>
+<p>When you first look at this function, you may be overcome with a feeling of deja vu. The IP checksum algorithm begins in much the same way as the sum-of-bytes algorithm I discussed earlier. However, this algorithm is actually different. First, of course, we&rsquo;re computing a 16-bit checksum instead of an eight-bit one, so we&rsquo;re summing words rather than bytes. That difference is obvious. Less obvious is that we&rsquo;re actually computing a ones complement sum.</p>
+<p>Recall that most computers store integers in a twos complement representation. Simply adding two integers, as we did in the previous algorithm, will therefore result in a twos complement sum. In order to compute the ones complement sum, we need to perform our addition with &ldquo;end around carry.&rdquo; This means that carries out of the most significant bit (MSB) are not discarded, as they were previously. Instead, carries are added back into the checksum at the least significant bit (LSB). This could be done after each addition, but testing for a carry after each addition is expensive in C. A faster way is to let the carries accumulate in the upper half of a 32-bit accumulator. Once the sum-of-words is complete, the upper half of the 32-bit accumulator is turned into a 16-bit value and added to the 16-bit twos complement sum (the lower half). One final carry is possible at that point, and must be included in the final sum. The IP checksum is the inverted ones complement sum of all of the words in the IP header.</p>
+<p>For checksum purposes, ones complement arithmetic has an important advantage over twos complement arithmetic. Recall that the biggest weakness of a parity bit is that it can&rsquo;t detect a pair of bit errors or any even number of errors, for that matter. A twos complement sum suffers from a similar weakness. Only one of the bits in the sum (the MSB) is affected by changes in the most significant of the 16 columns. If an even number of bit errors occurs within that column, the checksum will appear to be correct and the error will not be detected. A ones complement sum does not suffer this weakness.</p>
+<p>Because carries out of the MSB are added back into the LSB during a ones complement sum, errors in any one column of the data will be reflected in more than one bit of the checksum. So a ones complement sum is a stronger checksum (for example, will detect more errors) than a twos complement sum, and only slightly more expensive. Hence, it is chosen for use in a lot of different situations.</p>
+<p>The checksums within the UDP and TCP headers are computed in exactly the same way as the IP checksum. In fact, the only major difference is the set of words over which the sum is calculated. (A minor difference is that UDP checksums are optional.) In both cases, these layer 4 protocols include the message, their own header fields, and a few important fields of the IP header in the checksum calculation. The inclusion of some IP header fields in the UDP and TCP checksums is one of the biggest reasons that these layers of the protocol stack cannot be completely separated from the IP layer in a software implementation. The reason that IP checksums include only the IP header is that many intermediate computers must validate, read, and modify the contents of the IP header as a packet travels from its source to the destination. By reducing the number of words involved in the calculation, the speed with which all IP packets move across the Internet is improved. Including a larger set of words in the UDP and TCP checksums does not slow down communications; rather, it increases the likelihood that the message received is the same as the message sent.</p>
+<h3 id="further-reading"><a name="user-content-further-reading" href="#further-reading" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Further reading</h3>
+<p>The checksum algorithms considered here are based on simple binary addition. That makes them relatively inexpensive to compute. However, these are weak checksum algorithms that will allow common types of hardware errors to escape detection.</p>
+<p>A more sophisticated type of checksum is called a cyclic redundancy code (CRC). Related articles cover CRC mathematics and theory and CRC implementation in C.</p>
+<p>This article began as a column in the November 1999 issue of <a href="http://www.embedded.com/magazines">Embedded Systems Programming (link is external)</a>, the original of which is available <a href="http://www.embedded.com/1999/9911/9911connect.htm">here (link is external)</a>.</p>
+<h2 id="crc-series-part-2-crc-mathematics-and-theory"><a href="http://www.barrgroup.com/Embedded-Systems/How-To/CRC-Math-Theory">CRC Series, Part 2: CRC Mathematics and Theory</a></h2>
+<p>Checksum algorithms based solely on addition are easy to implement and can be executed efficiently on any microcontroller. However, many common types of transmission errors cannot be detected when such simple checksums are used. This article describes a stronger type of checksum, commonly known as a CRC.</p>
+<p>A cyclic redundancy check (CRC) is is based on division instead of addition. The error detection capabilities of a CRC make it a much stronger checksum and, therefore, often worth the price of additional computational complexity.</p>
+<p>Additive checksums are error detection codes as opposed to error correction codes. A mismatch in the checksum will tell you there&rsquo;s been an error but not where or how to fix it. In implementation terms, there&rsquo;s not much difference between an error detection code and an error correction code. In both cases, you take the message you want to send, compute some mathematical function over its bits (usually called a checksum), and append the resulting bits to the message during transmission.</p>
+<h3 id="error-correction"><a name="user-content-error-correction" href="#error-correction" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Error Correction</h3>
+<p>The difference between error detection and error correction lies primarily in what happens next. If the receiving system detects an error in the packet&ndash;for example, the received checksum bits do not accurately describe the received message bits&ndash;it may either discard the packet and request a retransmission (error detection) or attempt to repair the damage on its own (error correction). If packet repairs are to be attempted, the checksum is said to be an error correcting code.</p>
+<p>The key to repairing corrupted packets is a stronger checksum algorithm. Specifically, what&rsquo;s needed is a checksum algorithm that distributes the set of valid bit sequences randomly and evenly across the entire set of possible bit sequences. For example, if the minimum number of bits that must change to turn any one valid packet into some other valid packet is seven, then any packet with three or fewer bit inversions can be corrected automatically by the receiver. (If four bit errors occur during transmission, the packet will seem closer to some other valid packet with only three errors in it.) In this case, error correction can only be done for up to three bit errors, while error detection can be done for up to six.</p>
+<p>This spreading of the valid packets across the space of possible packets can be measured by the Hamming distance, which is the number of bit positions in which any two equal-length packets differ. In other words, it&rsquo;s the number of bit errors that must occur if one of those packets is to be incorrectly received as the other. A simple example is the case of the two binary strings 1001001 and 1011010, which are separated by a Hamming distance of three. (To see which bits must be changed, simply XOR the two strings together and note the bit positions that are set. In our example, the result is 0010011.)</p>
+<p>The beauty of all this is that the mere presence of an error detection or correction code within a packet means that not all of the possible packets are valid. Figure 1 shows what a packet looks like after a checksum has been appended to it. Since the checksum bits contain redundant information (they are completely a function of the message bits that precede them), not all of the 2(m+c) possible packets are valid packets. In fact, the stronger the checksum algorithm used, the greater the number of invalid packets will be.</p>
+<p><img alt="Packet Containing Message and Checksum" src="http://www.barrgroup.com/images/articles/CRC_Packet.gif" /></p>
+<p>Figure 1. A packet of information including checksum</p>
+<p>By adjusting the ratio of the lengths m and c and carefully selecting the checksum algorithm, we can increase the number of bits that must be in error for any one valid packet to be inadvertently changed into another valid packet during transmission or storage and, hence, the likelihood of successful transmission. In essence, what we want to do is to maximize the &ldquo;minimum Hamming distance across the entire set of valid packets.&rdquo; In other words, to distribute the set of 2m valid packets as evenly as possible across the set of possible bit sequences of length m + c. This has the useful real-world effect of increasing the percentage of detectable and/or correctable errors.</p>
+<h3 id="binary-long-division"><a name="user-content-binary-long-division" href="#binary-long-division" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Binary Long Division</h3>
+<p>It turns out that once you start to focus on maximizing the &ldquo;minimum Hamming distance across the entire set of valid packets,&rdquo; it becomes obvious that simple checksum algorithms based on binary addition don&rsquo;t have the necessary properties. A change in one of the message bits does not affect enough of the checksum bits during addition. Fortunately, you don&rsquo;t have to develop a better checksum algorithm on your own. Researchers figured out long ago that modulo-2 binary division is the simplest mathematical operation that provides the necessary properties for a strong checksum.</p>
+<p>All of the CRC formulas you will encounter are simply checksum algorithms based on modulo-2 binary division. Though some differences exist in the specifics across different CRC formulas, the basic mathematical process is always the same:</p>
+<ul>
+<li>The message bits are appended with c zero bits; this augmented message is the dividend</li>
+<li>A predetermined c+1-bit binary sequence, called the &ldquo;generator polynomial&rdquo;, is the divisor</li>
+<li>The checksum is the c-bit remainder that results from the division operation</li>
+</ul>
+<p>In other words, you divide the augmented message by the generator polynomial, discard the quotient, and use the remainder as your checksum. It turns out that the mathematically appealing aspect of division is that remainders fluctuate rapidly as small numbers of bits within the message are changed. Sums, products, and quotients do not share this property. To see what I mean, look at the example of modulo-2 division in Figure 2. In this example, the message contains eight bits while the checksum is to have four bits. As the division is performed, the remainder takes the values 0111, 1111, 0101, 1011, 1101, 0001, 0010, and, finally, 0100. The final remainder becomes the checksum for the given message.</p>
+<p><img alt="Modulo-2 Binary Division Example" src="http://www.barrgroup.com/images/articles/CRC_Modulo2Division.gif" /></p>
+<p>Figure 2. An example of modulo-2 binary division</p>
+<p>For most people, the overwhelmingly confusing thing about CRCs is the implementation. Knowing that all CRC algorithms are simply long division algorithms in disguise doesn&rsquo;t help. Modulo-2 binary division doesn&rsquo;t map well to the instruction sets of general-purpose processors. So, whereas the implementation of a checksum algorithm based on addition is straightforward, the implementation of a binary division algorithm with an m+c-bit numerator and a c+1-bit denominator is nowhere close. <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> For one thing, there aren&rsquo;t generally any m+c or c+1-bit registers in which to store the operands. You will learn how to deal with this problem in the next article, where I talk about various software implementations of the CRC algorithms. For now, let&rsquo;s just focus on their strengths and weaknesses as potential checksums.</p>
+<h3 id="generator-polynomials"><a name="user-content-generator-polynomials" href="#generator-polynomials" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Generator Polynomials</h3>
+<p>Why is the predetermined c+1-bit divisor that&rsquo;s used to calculate a CRC called a generator polynomial? In my opinion, far too many explanations of CRCs actually try to answer that question. This leads their authors and readers down a long path that involves tons of detail about polynomial arithmetic and the mathematical basis for the usefulness of CRCs. This academic stuff is not important for understanding CRCs sufficiently to implement and/or use them and serves only to create potential confusion. So I&rsquo;m not going to answer that question here. <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup></p>
+<p>Suffice it to say here only that the divisor is sometimes called a generator polynomial and that you should never make up the divisor&rsquo;s value on your own. Several mathematically well-understood generator polynomials have been adopted as parts of various international communications standards; you should always use one of those. If you have a background in polynomial arithmetic then you know that certain generator polynomials are better than others for producing strong checksums. The ones that have been adopted internationally are among the best of these.</p>
+<p>Table 1 lists some of the most commonly used generator polynomials for 16- and 32-bit CRCs. Remember that the width of the divisor is always one bit wider than the remainder. So, for example, you&rsquo;d use a 17-bit generator polynomial whenever a 16-bit checksum is required.</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">Checksum Width</th>
+<th align="left">Generator Polynomial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CRC-CCITT</td>
+<td align="left">16 bits</td>
+<td align="left">10001000000100001</td>
+</tr>
+<tr>
+<td align="left">CRC-16</td>
+<td align="left">16 bits</td>
+<td align="left">11000000000000101</td>
+</tr>
+<tr>
+<td align="left">CRC-32</td>
+<td align="left">32 bits</td>
+<td align="left">100000100110000010001110110110111</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. International standard CRC polynomials</p>
+<p>As is the case with other types of checksums, the width of the CRC plays an important role in the error detection capabilities of the algorithm. Ignoring special types of errors that are always detected by a particular checksum algorithm, the percentage of detectable errors is limited strictly by the width of a checksum. A checksum of c bits can only take one of 2c unique values. Since the number of possible messages is significantly larger than that, the potential exists for two or more messages to have an identical checksum. If one of those messages is somehow transformed into one of the others during transmission, the checksum will appear correct and the receiver will unknowingly accept a bad message. The chance of this happening is directly related to the width of the checksum. Specifically, the chance of such an error is 1/2c. Therefore, the probability of any random error being detected is 1-1/2c.</p>
+<p>To repeat, the probability of detecting any random error increases as the width of the checksum increases. Specifically, a 16-bit checksum will detect 99.9985% of all errors. This is far better than the 99.6094% detection rate of an eight-bit checksum, but not nearly as good as the 99.9999% detection rate of a 32-bit checksum. All of this applies to both CRCs and addition-based checksums. What really sets CRCs apart, however, is the number of special cases that can be detected 100% of the time. For example, I pointed out last month that two opposite bit inversions (one bit becoming 0, the other becoming 1) in the same column of an addition would cause the error to be undetected. Well, that&rsquo;s not the case with a CRC.</p>
+<p>By using one of the mathematically well-understood generator polynomials like those in Table 1 to calculate a checksum, it&rsquo;s possible to state that the following types of errors will be detected without fail:</p>
+<ul>
+<li>A message with any one bit in error</li>
+<li>A message with any two bits in error (no matter how far apart, which column, and so on)</li>
+<li>A message with any odd number of bits in error (no matter where they are)</li>
+<li>A message with an error burst as wide as the checksum itself</li>
+</ul>
+<p>The first class of detectable error is also detected by an addition-based checksum, or even a simple parity bit. However, the middle two classes of errors represent much stronger detection capabilities than those other types of checksum. The fourth class of detectable error sounds at first to be similar to a class of errors detected by addition-based checksums, but in the case of CRCs, any odd number of bit errors will be detected. So the set of error bursts too wide to detect is now limited to those with an even number of bit errors. All other types of errors fall into the relatively high 1-1/2c probability of detection.</p>
+<h2 id="ethernet-slip-and-ppp"><a name="user-content-ethernet-slip-and-ppp" href="#ethernet-slip-and-ppp" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Ethernet, SLIP, and PPP</h2>
+<p>Ethernet, like most physical layer protocols, employs a CRC rather than an additive checksum. Specifically, it employs the CRC-32 algorithm. The likelihood of an error in a packet sent over Ethernet being undetected is, therefore, extremely low. Many types of common transmission errors are detected 100% of the time, with the less likely ones detected 99.9999% of the time. Even if an error would somehow manage to get through at the Ethernet layer, it would probably be detected at the IP layer checksum (if the error is in the IP header) or in the TCP or UDP layer checksum above that. After all the chances of two or more different checksum algorithms not detecting the same error is extremely remote.</p>
+<p>However, many embedded systems that use TCP/IP will not employ Ethernet. Instead, they will use either the serial line Internet protocol (SLIP) or point-to-point protocol (PPP) to send and receive IP packets directly over a serial connection of some sort. Unfortunately, SLIP does not add a checksum or a CRC to the data from the layers above. So unless a pair of modems with error correction capabilities sits in between the two communicating systems, any transmission errors must hope to be detected by the relatively weak, addition-based Internet checksum described last month. The newer, compressed SLIP (CSLIP) shares this weakness with its predecessor. PPP, on the other hand, does include a 16-bit CRC in each of its frames, which can carry the same maximum size IP packet as an Ethernet frame. So while PPP doesn&rsquo;t offer the same amount of error detection capability as Ethernet, by using PPP you&rsquo;ll at least avoid the much larger number of undetected errors that may occur with SLIP or CSLIP.</p>
+<p>Read my article on CRC calculations in C, to learn about various software implementations of CRCs. We&rsquo;ll start with an inefficient, but comprehendible, implementation and work to gradually increase its efficiency. You&rsquo;ll see then that the desire for an efficient implementation is the cause of much of the confusion surrounding CRCs. In the meantime, stay connected..</p>
+<h2 id="crc-series-part-3-crc-implementation-code-in-cc"><a href="http://www.barrgroup.com/Embedded-Systems/How-To/CRC-Calculation-C-Code">CRC Series, Part 3: CRC Implementation Code in C/C++</a></h2>
+<p>CRCs are among the best checksums available to detect and/or correct errors in communications transmissions. Unfortunately, the modulo-2 arithmetic used to compute CRCs doesn&rsquo;t map easily into software. This article shows how to implement an efficient CRC in C.</p>
+<p>I&rsquo;m going to complete my discussion of checksums by showing you how to implement CRCs in software. I&rsquo;ll start with a naive implementation and gradually improve the efficiency of the code as I go along. However, I&rsquo;m going to keep the discussion at the level of the C language, so further steps could be taken to improve the efficiency of the final code simply by moving into the assembly language of your particular processor.</p>
+<p>For most software engineers, the overwhelmingly confusing thing about CRCs is their implementation. Knowing that all CRC algorithms are simply long division algorithms in disguise doesn&rsquo;t help. Modulo-2 binary division doesn&rsquo;t map particularly well to the instruction sets of off-the-shelf processors. For one thing, generally no registers are available to hold the very long bit sequence that is the numerator. For another, modulo-2 binary division is not the same as ordinary division. So even if your processor has a division instruction, you won&rsquo;t be able to use it.</p>
+<h3 id="modulo-2-binary-division"><a name="user-content-modulo-2-binary-division" href="#modulo-2-binary-division" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Modulo-2 Binary Division</h3>
+<p>Before writing even one line of code, let&rsquo;s first examine the mechanics of modulo-2 binary division. We&rsquo;ll use the example in Figure 1 to guide us. The number to be divided is the message augmented with zeros at the end. The number of zero bits added to the message is the same as the width of the checksum (what I call c); in this case four bits were added. The divisor is a c+1-bit number known as the generator polynomial.</p>
+<p><img alt="Modulo-2 Binary Division Example" src="http://www.barrgroup.com/images/articles/CRC_Modulo2Division.gif" /></p>
+<p>Figure 1. An example of modulo-2 binary division</p>
+<p>The modulo-2 division process is defined as follows:</p>
+<ul>
+<li>Call the uppermost c+1 bits of the message the remainder</li>
+<li>Beginning with the most significant bit in the original message and for each bit position that follows, look at the c+1 bit remainder:<ul>
+<li>If the most significant bit of the remainder is a one, the divisor is said to divide into it. If that happens (just as in any other long division) it is necessary to indicate a successful division in the appropriate bit position in the quotient and to compute the new remainder. In the case of modulo-2 binary division, we simply:<ul>
+<li>Set the appropriate bit in the quotient to a one, and</li>
+<li>XOR the remainder with the divisor and store the result back into the remainder</li>
+</ul>
+</li>
+<li>Otherwise (if the first bit is not a one):<ul>
+<li>Set the appropriate bit in the quotient to a zero, and</li>
+<li>XOR the remainder with zero (no effect)</li>
+</ul>
+</li>
+<li>Left-shift the remainder, shifting in the next bit of the message. The bit that&rsquo;s shifted out will always be a zero, so no information is lost.</li>
+</ul>
+</li>
+</ul>
+<p>The final value of the remainder is the CRC of the given message.</p>
+<p>What&rsquo;s most important to notice at this point is that we never use any of the information in the quotient, either during or after computing the CRC. So we won&rsquo;t actually need to track the quotient in our software implementation. Also note here that the result of each XOR with the generator polynomial is a remainder that has zero in its most significant bit. So we never lose any information when the next message bit is shifted into the remainder.</p>
+<h3 id="bit-by-bit"><a name="user-content-bit-by-bit" href="#bit-by-bit" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Bit by Bit</h3>
+<p>Listing 1 contains a naive software implementation of the CRC computation just described. It simply attempts to implement that algorithm as it was described above for this one particular generator polynomial. Even though the unnecessary steps have been eliminated, it&rsquo;s extremely inefficient. Multiple C statements (at least the decrement and compare, binary AND, test for zero, and left shift operations) must be executed for each bit in the message. Given that this particular message is only eight bits long, that might not seem too costly. But what if the message contains several hundred bytes, as is typically the case in a real-world application? You don&rsquo;t want to execute dozens of processor opcodes for each byte of input data.</p>
+<pre><code class="c">#define POLYNOMIAL 0xD8  /* 11011 followed by 0's */
+
+uint8_t
+crcNaive(uint8_t const message)
+{
+    uint8_t  remainder; 
+
+
+    /*
+     * Initially, the dividend is the remainder.
+     */
+    remainder = message;
+
+    /*
+     * For each bit position in the message....
+     */
+    for (uint8_t bit = 8; bit &gt; 0; --bit)
+    {
+        /*
+         * If the uppermost bit is a 1...
+         */
+        if (remainder &amp; 0x80)
+        {
+            /*
+             * XOR the previous remainder with the divisor.
+             */
+            remainder ^= POLYNOMIAL;
+        }
+
+        /*
+         * Shift the next bit of the message into the remainder.
+         */
+        remainder = (remainder &lt;&lt; 1);
+    }
+
+    /*
+     * Return only the relevant bits of the remainder as CRC.
+     */
+    return (remainder &gt;&gt; 4);
+
+}   /* crcNaive() */
+</code></pre>
+
+<p>Listing 1. A naive CRC implementation in C</p>
+<h3 id="code-cleanup"><a name="user-content-code-cleanup" href="#code-cleanup" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Code Cleanup</h3>
+<p>Before we start making this more efficient, the first thing to do is to clean this naive routine up a bit. In particular, let&rsquo;s start making some assumptions about the applications in which it will most likely be used. First, let&rsquo;s assume that our CRCs are always going to be 8-, 16-, or 32-bit numbers. In other words, that the remainder can be manipulated easily in software. That means that the generator polynomials will be 9, 17, or 33 bits wide, respectively. At first it seems we may be stuck with unnatural sizes and will need special register combinations, but remember these two facts:</p>
+<ul>
+<li>The most significant bit of any generator polynomial is always a one</li>
+<li>The uppermost bit of the XOR result is always zero and promptly shifted out of the remainder</li>
+</ul>
+<p>Since we already have the information in the uppermost bit and we don&rsquo;t need it for the XOR, the polynomial can also be stored in an 8-, 16-, or 32-bit register. We can simply discard the most significant bit. The register size that we use will always be equal to the width of the CRC we&rsquo;re calculating.</p>
+<p>As long as we&rsquo;re cleaning up the code, we should also recognize that most CRCs are computed over fairly long messages. The entire message can usually be treated as an array of unsigned data bytes. The CRC algorithm should then be iterated over all of the data bytes, as well as the bits within those bytes.</p>
+<p>The result of making these two changes is the code shown in Listing 2. This implementation of the CRC calculation is still just as inefficient as the previous one. However, it is far more portable and can be used to compute a number of different CRCs of various widths.</p>
+<pre><code class="c">/*
+ * The width of the CRC calculation and result.
+ * Modify the typedef for a 16 or 32-bit CRC standard.
+ */
+typedef uint8_t crc;
+
+#define WIDTH  (8 * sizeof(crc))
+#define TOPBIT (1 &lt;&lt; (WIDTH - 1))
+
+crc
+crcSlow(uint8_t const message[], int nBytes)
+{
+    crc  remainder = 0; 
+
+
+    /*
+     * Perform modulo-2 division, a byte at a time.
+     */
+    for (int byte = 0; byte &lt; nBytes; ++byte)
+    {
+        /*
+         * Bring the next byte into the remainder.
+         */
+        remainder ^= (message[byte] &lt;&lt; (WIDTH - 8));
+
+        /*
+         * Perform modulo-2 division, a bit at a time.
+         */
+        for (uint8_t bit = 8; bit &gt; 0; --bit)
+        {
+            /*
+             * Try to divide the current data bit.
+             */
+            if (remainder &amp; TOPBIT)
+            {
+                remainder = (remainder &lt;&lt; 1) ^ POLYNOMIAL;
+            }
+            else
+            {
+                remainder = (remainder &lt;&lt; 1);
+            }
+        }
+    }
+
+    /*
+     * The final remainder is the CRC result.
+     */
+    return (remainder);
+
+}   /* crcSlow() */
+</code></pre>
+
+<p>Listing 2. A more portable but still naive CRC implementation</p>
+<h3 id="byte-by-byte"><a name="user-content-byte-by-byte" href="#byte-by-byte" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Byte by Byte</h3>
+<p>The most common way to improve the efficiency of the CRC calculation is to throw memory at the problem. For a given input remainder and generator polynomial, the output remainder will always be the same. If you don&rsquo;t believe me, just reread that sentence as &ldquo;for a given dividend and divisor, the remainder will always be the same.&rdquo; It&rsquo;s true. So it&rsquo;s possible to precompute the output remainder for each of the possible byte-wide input remainders and store the results in a lookup table. That lookup table can then be used to speed up the CRC calculations for a given message. The speedup is realized because the message can now be processed byte by byte, rather than bit by bit.</p>
+<p>The code to precompute the output remainders for each possible input byte is shown in Listing 3. The computed remainder for each possible byte-wide dividend is stored in the array <code>crcTable[]</code>. In practice, the <code>crcInit()</code> function could either be called during the target&rsquo;s initialization sequence (thus placing <code>crcTable[]</code> in RAM) or it could be run ahead of time on your development workstation with the results stored in the target device&rsquo;s ROM.</p>
+<pre><code class="c">crc  crcTable[256];
+
+void crcInit(void)
+{
+    crc  remainder;
+
+
+    /*
+     * Compute the remainder of each possible dividend.
+     */
+    for (int dividend = 0; dividend &lt; 256; ++dividend)
+    {
+        /*
+         * Start with the dividend followed by zeros.
+         */
+        remainder = dividend &lt;&lt; (WIDTH - 8);
+
+        /*
+         * Perform modulo-2 division, a bit at a time.
+         */
+        for (uint8_t bit = 8; bit &gt; 0; --bit)
+        {
+            /*
+             * Try to divide the current data bit.
+             */         
+            if (remainder &amp; TOPBIT)
+            {
+                remainder = (remainder &lt;&lt; 1) ^ POLYNOMIAL;
+            }
+            else
+            {
+                remainder = (remainder &lt;&lt; 1);
+            }
+        }
+
+        /*
+         * Store the result into the table.
+         */
+        crcTable[dividend] = remainder;
+    }
+
+}   /* crcInit() */
+</code></pre>
+
+<p>Listing 3. Computing the CRC lookup table</p>
+<p>Of course, whether it is stored in RAM or ROM, a lookup table by itself is not that useful. You&rsquo;ll also need a function to compute the CRC of a given message that is somehow able to make use of the values stored in that table. Without going into all of the mathematical details of why this works, suffice it to say that the previously complicated modulo-2 division can now be implemented as a series of lookups and XORs. (In modulo-2 arithmetic, XOR is both addition and subtraction.)</p>
+<p>A function that uses the lookup table contents to compute a CRC more efficiently is shown in Listing 4. The amount of processing to be done for each byte is substantially reduced.</p>
+<pre><code>crc crcFast(uint8_t const message[], int nBytes)
+{
+    uint8_t data;
+    crc remainder = 0;
+
+
+    /*
+     * Divide the message by the polynomial, a byte at a time.
+     */
+    for (int byte = 0; byte &lt; nBytes; ++byte)
+    {
+        data = message[byte] ^ (remainder &gt;&gt; (WIDTH - 8));
+        remainder = crcTable[data] ^ (remainder &lt;&lt; 8);
+    }
+
+    /*
+     * The final remainder is the CRC.
+     */
+    return (remainder);
+
+}   /* crcFast() */
+</code></pre>
+
+<p>Listing 4. A more efficient, table-driven, CRC implementation</p>
+<p>As you can see from the code in Listing 4, a number of fundamental operations (left and right shifts, XORs, lookups, and so on) still must be performed for each byte even with this lookup table approach. So to see exactly what has been saved (if anything) I compiled both <code>crcSlow()</code> and <code>crcFast()</code> with IAR (link is external)&rsquo;s C compiler for the PIC family of eight-bit RISC processors. <sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup> I figured that compiling for such a low-end processor would give us a good worst-case comparison for the numbers of instructions to do these different types of CRC computations. The results of this experiment were as follows:</p>
+<ul>
+<li><code>crcSlow()</code>: 185 instructions per byte of message data</li>
+<li><code>crcFast()</code>: 36 instructions per byte of message data</li>
+</ul>
+<p>So, at least on one processor family, switching to the lookup table approach results in a more than five-fold performance improvement. That&rsquo;s a pretty substantial gain considering that both implementations were written in C. A bit more could probably be done to improve the execution speed of this algorithm if an engineer with a good understanding of the target processor were assigned to hand-code or tune the assembly code. My somewhat-educated guess is that another two-fold performance improvement might be possible. Actually achieving that is, as they say in textbooks, left as an exercise for the curious reader.</p>
+<h3 id="crc-standards-and-parameters"><a name="user-content-crc-standards-and-parameters" href="#crc-standards-and-parameters" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CRC standards and parameters</h3>
+<p>Now that we&rsquo;ve got our basic CRC implementation nailed down, I want to talk about the various types of CRCs that you can compute with it. As I mentioned last month, several mathematically well understood and internationally standardized CRC generator polynomials exist and you should probably choose one of those, rather than risk inventing something weaker.</p>
+<p>In addition to the generator polynomial, each of the accepted CRC standards also includes certain other parameters that describe how it should be computed. Table 1 contains the parameters for three of the most popular CRC standards. Two of these parameters are the &ldquo;initial remainder&rdquo; and the &ldquo;final XOR value&rdquo;. The purpose of these two c-bit constants is similar to the final bit inversion step added to the sum-of-bytes checksum algorithm. Each of these parameters helps eliminate one very special, though perhaps not uncommon, class of ordinarily undetectable difference. In effect, they bulletproof an already strong checksum algorithm.</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">CRC-CCITT</th>
+<th align="left">CRC-16</th>
+<th align="left">CRC-32</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Width</td>
+<td align="left">16 bits</td>
+<td align="left">16 bits</td>
+<td align="left">32 bits</td>
+</tr>
+<tr>
+<td align="left">(Truncated) Polynomial</td>
+<td align="left">0x1021</td>
+<td align="left">0x8005</td>
+<td align="left">0x04C11DB7</td>
+</tr>
+<tr>
+<td align="left">Initial Remainder</td>
+<td align="left">0xFFFF</td>
+<td align="left">0x0000</td>
+<td align="left">0xFFFFFFFF</td>
+</tr>
+<tr>
+<td align="left">Final XOR Value</td>
+<td align="left">0x0000</td>
+<td align="left">0x0000</td>
+<td align="left">0xFFFFFFFF</td>
+</tr>
+<tr>
+<td align="left">Reflect Data?</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Reflect Remainder?</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">Check Value</td>
+<td align="left">0x29B1</td>
+<td align="left">0xBB3D</td>
+<td align="left">0xCBF43926</td>
+</tr>
+</tbody>
+</table>
+<p>Table 1. Computational parameters for popular CRC standards</p>
+<p>To see what I mean, consider a message that begins with some number of zero bits. The remainder will never contain anything other than zero until the first one in the message is shifted into it. That&rsquo;s a dangerous situation, since packets beginning with one or more zeros may be completely legitimate and a dropped or added zero would not be noticed by the CRC. (In some applications, even a packet of all zeros may be legitimate!) The simple way to eliminate this weakness is to start with a nonzero remainder. The parameter called initial remainder tells you what value to use for a particular CRC standard. And only one small change is required to the <code>crcSlow()</code> and <code>crcFast()</code> functions:</p>
+<pre><code class="c">    crc remainder = INITIAL_REMAINDER; 
+</code></pre>
+
+<p>The final XOR value exists for a similar reason. To implement this capability, simply change the value that&rsquo;s returned by <code>crcSlow()</code> and <code>crcFast()</code> as follows:</p>
+<pre><code class="c">    return (remainder ^ FINAL_XOR_VALUE);
+</code></pre>
+
+<p>If the final XOR value consists of all ones (as it does in the CRC-32 standard), this extra step will have the same effect as complementing the final remainder. However, implementing it this way allows any possible value to be used in your specific application.</p>
+<p>In addition to these two simple parameters, two others exist that impact the actual computation. These are the binary values &ldquo;reflect data&rdquo; and &ldquo;reflect remainder&rdquo;. The basic idea is to reverse the bit ordering of each byte within the message and/or the final remainder. The reason this is sometimes done is that a good number of the hardware CRC implementations operate on the &ldquo;reflected&rdquo; bit ordering of bytes that is common with some UARTs. Two slight modifications of the code are required to prepare for these capabilities.</p>
+<p>What I&rsquo;ve generally done is to implement one function and two macros. This code is shown in Listing 5. The function is responsible for reflecting a given bit pattern. The macros simply call that function in a certain way.</p>
+<pre><code class="c">#define REFLECT_DATA(X)       ((uint8_t) reflect((X), 8))
+#define REFLECT_REMAINDER(X)  ((crc) reflect((X), WIDTH))
+
+uint32_t reflect(uint32_t data, uint8_t nBits)
+{
+    uint32_t  reflection = 0;
+
+
+    /*
+     * Reflect the data about the center bit.
+     */
+    for (uint8_t bit = 0; bit &lt; nBits; ++bit)
+    {
+        /*
+         * If the LSB bit is set, set the reflection of it.
+         */
+        if (data &amp; 0x01)
+        {
+            reflection |= (1 &lt;&lt; ((nBits - 1) - bit));
+        }
+
+        data = (data &gt;&gt; 1);
+    }
+
+    return (reflection);
+
+}   /* reflect() */
+</code></pre>
+
+<p>Listing 5. Reflection macros and function</p>
+<p>By inserting the macro calls at the two points that reflection may need to be done, it is easier to turn reflection on and off. To turn either kind of reflection off, simply redefine the appropriate macro as (X). That way, the unreflected data byte or remainder will be used in the computation, with no overhead cost. Also note that for efficiency reasons, it may be desirable to compute the reflection of all of the 256 possible data bytes in advance and store them in a table, then redefine the <code>REFLECT_DATA()</code> macro to use that lookup table.</p>
+<p>Tested, full-featured implementations of both <code>crcSlow()</code> and <code>crcFast()</code> are available for download. These implementations include the reflection capabilities just described and can be used to implement any parameterized CRC formula. Simply change the constants and macros as necessary.</p>
+<p>The final parameter that I&rsquo;ve included in Table 1 is a &ldquo;check value&rdquo; for each CRC standard. This is the CRC result that&rsquo;s expected for the simple ASCII test message &ldquo;123456789&rdquo;. To test your implementation of a particular standard, simply invoke your CRC computation on that message and check the result:</p>
+<pre><code class="c">crcInit();
+
+checksum = crcFast(&quot;123456789&quot;, 9);
+</code></pre>
+
+<p>If checksum has the correct value after this call, then you know your implementation is correct. This is a handy way to ensure compatibility between two communicating devices with different CRC implementations or implementors.</p>
+<h3 id="acknowledgement"><a name="user-content-acknowledgement" href="#acknowledgement" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Acknowledgement</h3>
+<p>Through the years, each time I&rsquo;ve had to learn or relearn something about the various CRC standards or their implementation, I&rsquo;ve referred to the paper &ldquo;A Painless Guide to CRC Error Detection Algorithms, 3rd Edition (link is external)&rdquo; by Ross Williams. There are a few holes that I&rsquo;ve hoped for many years that the author would fill with a fourth edition, but all in all it&rsquo;s the best coverage of a complex topic that I&rsquo;ve seen. Many thanks to Ross for sharing his expertise with others and making several of my networking projects possible.</p>
+<h3 id="free-source-code-in-c-and-c"><a name="user-content-free-source-code-in-c-and-c" href="#free-source-code-in-c-and-c" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Free Source Code in C and C++</h3>
+<p>The source code for these CRC computations is placed into the public domain and is available in electronic form at <a href="http://www.barrgroup.com/code/crc.zip"><a href="http://www.barrgroup.com/code/crc.zip"><a href="http://www.barrgroup.com/code/crc.zip">http://www.barrgroup.com/code/crc.zip</a></a></a>.</p>
+<p>Inspired by the treatment of CRC computations here and in Ross Williams&rsquo; paper, a gentleman named Daryle Walker &lt;<a href="darylew@mac.com"><a href="mailto:darylew@mac.com"><a href="mailto:darylew@mac.com">darylew@mac.com</a></a> (link sends e-mail)</a>&gt; has implemented some very nice C++ class and function templates for doing the same. The entire library, which is distributed in source code form and in the public domain, is available at <a href="http://www.boost.org/libs/crc/"><a href="http://www.boost.org/libs/crc/"><a href="http://www.boost.org/libs/crc/">http://www.boost.org/libs/crc/</a></a> (link is external)</a>.</p>
+<hr />
+<p>This column was published in the January 2000 issue of <a href="http://www.embedded.com/magazines">Embedded Systems Programming (link is external)</a>. If you wish to cite the article in your own work, you may find the following MLA-style information helpful:</p>
+<blockquote>
+<p>Barr, Michael. &ldquo;Slow and Steady Never Lost the Race,&rdquo; Embedded Systems Programming, January 2000, pp. 37-46.</p>
+</blockquote>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Implementing modulo-2 division is much more straightforward in hardware than it is in software. You simply need to shift the message bits through a linear feedback shift register as they are received. The bits of the divisor are represented by physical connections in the feedback paths. Due to the increased simplicity and efficiency, CRCs are usually implemented in hardware whenever possible.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>If you really want to understand the underlying mathematical basis for CRCs, I recommend the following reference: Bertsekas, Dimitri and Robert Gallager. Data Networks, second ed. Inglewood Cliffs, NJ: Prentice-Hall, 1992, pp. 61-64.&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>I first modified both functions to use unsigned char instead of int for variables nBytes and byte. This effectively caps the message size at 256 bytes, but I thought that was probably a pretty typical compromise for use on an eight-bit processor. I also had the compiler optimize the resulting code for speed, at its highest setting. I then looked at the actual assembly code produced by the compiler and counted the instructions inside the outer for loop in both cases. In this experiment, I was specifically targeting the PIC16C67 variant of the processor, using <a href="http://www.iar.com/ew">IAR Embedded Workbench (link is external)</a> 2.30D (PICmicro engine 1.21A).&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div></article></body></html>
