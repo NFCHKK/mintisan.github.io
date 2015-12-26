@@ -1,0 +1,1399 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>the-lost-art-of-c-structure-packing</title></head><body><article class="markdown-body"><h1 id="the-lost-art-of-c-structure-packing"><a href="http://www.catb.org/esr/structure-packing/">The Lost Art of C Structure Packing</a></h1>
+<p><a href="mailto:esr@thyrsus.com">Eric S. Raymond</a></p>
+<div class="toc">
+<ul>
+<li><a href="#the-lost-art-of-c-structure-packing">The Lost Art of C Structure Packing</a><ul>
+<li><a href="#1-who-should-read-this">1. Who should read this</a></li>
+<li><a href="#2-why-i-wrote-it">2. Why I wrote it</a></li>
+<li><a href="#3-alignment-requirements">3. Alignment requirements</a></li>
+<li><a href="#4-padding">4. Padding</a></li>
+<li><a href="#5-structure-alignment-and-padding">5. Structure alignment and padding</a></li>
+<li><a href="#6-bitfields">6. Bitfields</a></li>
+<li><a href="#7-structure-reordering">7. Structure reordering</a></li>
+<li><a href="#8-awkward-scalar-cases">8. Awkward scalar cases</a></li>
+<li><a href="#9-readability-and-cache-locality">9. Readability and cache locality</a></li>
+<li><a href="#10-other-packing-techniques">10. Other packing techniques</a></li>
+<li><a href="#11-overriding-alignment-rules">11. Overriding alignment rules</a></li>
+<li><a href="#12-tools">12. Tools</a></li>
+<li><a href="#13-proof-and-exceptional-cases">13. Proof and exceptional cases</a></li>
+<li><a href="#14-related-reading">14. Related Reading</a></li>
+<li><a href="#15-version-history">15. Version history</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="1-who-should-read-this"><a name="user-content-1-who-should-read-this" href="#1-who-should-read-this" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1. Who should read this</h2>
+<p>This page is about a technique for reducing the memory footprint of C programs - manually repacking C structure declarations for reduced size. To read it, you will require basic knowledge of the C programming language.</p>
+<p>You need to know this technique if you intend to write code for memory-constrained embedded systems, or operating-system kernels. It is useful if you are working with application data sets so large that your programs routinely hit memory limits. It is good to know in any application where you really, really care about minimizing cache-line misses.</p>
+<p>Finally, knowing this technique is a gateway to other esoteric C topics. You are not an advanced C programmer until you have grasped it. You are not a master of C until you could have written this document yourself and can criticize it intelligently.</p>
+<h2 id="2-why-i-wrote-it"><a name="user-content-2-why-i-wrote-it" href="#2-why-i-wrote-it" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2. Why I wrote it</h2>
+<p>This webpage exists because in late 2013 I found myself heavily applying a C optimization technique that I had learned more than two decades previously and not used much since.</p>
+<p>I needed to reduce the memory footprint of a program that used thousands - sometimes hundreds of thousands - of C struct instances. The program was <a href="http://www.catb.org/~esr/cvs-fast-export">cvs-fast-export</a> and the problem was that it was dying with out-of-memory errors on large repositories.</p>
+<p>There are ways to reduce memory usage significantly in situations like this, by rearranging the order of structure members in careful ways. This can lead to dramatic gains - in my case I was able to cut the working-set size by around 40%, enabling the program to handle much larger repositories without dying.</p>
+<p>But as I worked, and thought about what I was doing, it began to dawn on me that the technique I was using has been more than half forgotten in these latter days. A little web research confirmed that C programmers don’t seem to talk about it much any more, at least not where a search engine can see them. A couple of Wikipedia entries touch the topic, but I found nobody who covered it comprehensively.</p>
+<p>There are actually reasons for this that aren’t stupid. CS courses (rightly) steer people away from micro-optimization towards finding better algorithms. The plunging price of machine resources has made squeezing memory usage less necessary. And the way hackers used to learn how to do it back in the day was by bumping their noses on strange hardware architectures - a less common experience now.</p>
+<p>But the technique still has value in important situations, and will as long as memory is finite. This document is intended to save C programmers from having to rediscover the technique, so they can concentrate effort on more important things.</p>
+<h2 id="3-alignment-requirements"><a name="user-content-3-alignment-requirements" href="#3-alignment-requirements" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>3. Alignment requirements</h2>
+<p>The first thing to understand is that, on modern processors, the way your C compiler lays out basic C datatypes in memory is constrained in order to make memory accesses faster.</p>
+<p>Storage for the basic C datatypes on an x86 or ARM processor doesn’t normally start at arbitrary byte addresses in memory. Rather, each type except char has an alignment requirement; chars can start on any byte address, but 2-byte shorts must start on an even address, 4-byte ints or floats must start on an address divisible by 4, and 8-byte longs or doubles must start on an address divisible by 8. Signed or unsigned makes no difference.</p>
+<p>The jargon for this is that basic C types on x86 and ARM are self-aligned. Pointers, whether 32-bit (4-byte) or 64-bit (8-byte) are self-aligned too.</p>
+<p>Self-alignment makes access faster because it facilitates generating single-instruction fetches and puts of the typed data. Without alignment constraints, on the other hand, the code might end up having to do two or more accesses spanning machine-word boundaries. Characters are a special case; they’re equally expensive from anywhere they live inside a single machine word. That’s why they don’t have a preferred alignment.</p>
+<p>I said &ldquo;on modern processors&rdquo; because on some older ones forcing your C program to violate alignment rules (say, by casting an odd address into an int pointer and trying to use it) didn’t just slow your code down, it caused an illegal instruction fault. This was the behavior, for example, on Sun SPARC chips. In fact, with sufficient determination and the right (e18) hardware flag set on the processor, you can still trigger this on x86.</p>
+<p>Also, self-alignment is not the only possible rule. Historically, some processors (especially those lacking <a href="https://en.wikipedia.org/wiki/Barrel_shifter">barrel shifters</a>) have had more restrictive ones. If you do embedded systems, you might trip over one of these lurking in the underbrush. Be aware this is possible.</p>
+<h2 id="4-padding"><a name="user-content-4-padding" href="#4-padding" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>4. Padding</h2>
+<p>Now we’ll look at a simple example of variable layout in memory. Consider the following series of variable declarations in the top level of a C module:</p>
+<pre><code class="c">char *p;
+char c;
+int x;
+</code></pre>
+
+<p>If you didn’t know anything about data alignment, you might assume that these three variables would occupy a continuous span of bytes in memory. That is, on a 32-bit machine 4 bytes of pointer would be immediately followed by 1 byte of char and that immediately followed by 4 bytes of int. And a 64-bit machine would be different only in that the pointer would be 8 bytes.</p>
+<p>Here’s what actually happens (on an x86 or ARM or anything else with self-aligned types). The storage for p starts on a self-aligned 4- or 8-byte boundary depending on the machine word size. This is pointer alignment - the strictest possible.</p>
+<p>The storage for c follows immediately. But the 4-byte alignment requirement of x forces a gap in the layout; it comes out as though there were a fourth intervening variable, like this:</p>
+<pre><code class="c">char *p;      /* 4 or 8 bytes */
+char c;       /* 1 byte */
+char pad[3];  /* 3 bytes */
+int x;        /* 4 bytes */
+</code></pre>
+
+<p>The <code>pad[3]</code> character array represents the fact that there are three bytes of waste space in the structure. The old-school term for this was &ldquo;slop&rdquo;. The value of the padding bits is undefined; in particular it is not guaranteed that they will be zeroed.</p>
+<p>Compare what happens if <code>x</code> is a 2-byte short:</p>
+<pre><code class="c">char *p;
+char c;
+short x;
+In that case, the actual layout will be this:
+
+char *p;      /* 4 or 8 bytes */
+char c;       /* 1 byte */
+char pad[1];  /* 1 byte */
+short x;      /* 2 bytes */
+</code></pre>
+
+<p>On the other hand, if <code>x</code> is a long on a 64-bit machine</p>
+<pre><code class="c">char *p;
+char c;
+long x;
+we end up with this:
+
+char *p;     /* 8 bytes */
+char c;      /* 1 byte
+char pad[7]; /* 7 bytes */
+long x;      /* 8 bytes */
+</code></pre>
+
+<p>If you have been following carefully, you are probably now wondering about the case where the shorter variable declaration comes first:</p>
+<pre><code class="c">char c;
+char *p;
+int x;
+</code></pre>
+
+<p>If the actual memory layout were written like this</p>
+<pre><code class="c">char c;
+char pad1[M];
+char *p;
+char pad2[N];
+int x;
+</code></pre>
+
+<p>what can we say about <code>M</code> and <code>N</code>?</p>
+<p>First, in this case <code>N</code> will be zero. The address of <code>x</code>, coming right after p, is guaranteed to be pointer-aligned, which is never less strict than int-aligned.</p>
+<p>The value of <code>M</code> is less predictable. If the compiler happened to map c to the last byte of a machine word, the next byte (the first of p) would be the first byte of the next one and properly pointer-aligned. <code>M</code> would be zero.</p>
+<p>It is more likely that c will be mapped to the first byte of a machine word. In that case <code>M</code> will be whatever padding is needed to ensure that p has pointer alignment - 3 on a 32-bit machine, 7 on a 64-bit machine.</p>
+<p>Intermediate cases are possible. <code>M</code> can be anything from 0 to 7 (0 to 3 on 32-bit) because a char can start on any byte boundary in a machine word.</p>
+<p>If you wanted to make those variables take up less space, you could get that effect by swapping <code>x</code> with <code>c</code> in the original sequence.</p>
+<pre><code>char *p;     /* 8 bytes */
+long x;      /* 8 bytes */
+char c;      /* 1 byte
+</code></pre>
+
+<p>Usually, for the small number of scalar variables in your C programs, bumming out the few bytes you can get by changing the order of declaration won’t save you enough to be significant. The technique becomes more interesting when applied to nonscalar variables - especially structs.</p>
+<p>Before we get to those, let’s dispose of arrays of scalars. On a platform with self-aligned types, arrays of <code>char/short/int/long/pointer</code> have no internal padding; each member is automatically self-aligned at the end of the next one.</p>
+<p>In the next section we will see that the same is <strong>not</strong> necessarily true of structure arrays.</p>
+<h2 id="5-structure-alignment-and-padding"><a name="user-content-5-structure-alignment-and-padding" href="#5-structure-alignment-and-padding" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>5. Structure alignment and padding</h2>
+<p>In general, a struct instance will have the alignment of its widest scalar member. Compilers do this as the easiest way to ensure that all the members are self-aligned for fast access.</p>
+<p>Also, in C the address of a struct is the same as the address of its first member - there is no leading padding. Beware: in C++, classes that look like structs may break this rule! (Whether they do or not depends on how base classes and virtual member functions are implemented, and varies by compiler.)</p>
+<p>(When you’re in doubt about this sort of thing, ANSI C provides an offsetof() macro which can be used to read out structure member offsets.)</p>
+<p>Consider this struct:</p>
+<pre><code class="c">struct foo1 {
+    char *p;
+    char c;
+    long x;
+};
+</code></pre>
+
+<p>Assuming a 64-bit machine, any instance of struct foo1 will have 8-byte alignment. The memory layout of one of these looks unsurprising, like this:</p>
+<pre><code class="c">struct foo1 {
+    char *p;     /* 8 bytes */
+    char c;      /* 1 byte
+    char pad[7]; /* 7 bytes */
+    long x;      /* 8 bytes */
+};
+</code></pre>
+
+<p>It’s laid out exactly as though variables of these types has been separately declared. But if we put c first, that’s no longer true.</p>
+<pre><code class="c">struct foo2 {
+    char c;      /* 1 byte */
+    char pad[7]; /* 7 bytes */
+    char *p;     /* 8 bytes */
+    long x;      /* 8 bytes */
+};
+</code></pre>
+
+<p>If the members were separate variables, c could start at any byte boundary and the size of pad might vary. Because struct foo2 has the pointer alignment of its widest member, that’s no longer possible. Now c has to be pointer-aligned, and following padding of 7 bytes is locked in.</p>
+<p>Now let’s talk about trailing padding on structures. To explain this, I need to introduce a basic concept which I’ll call the stride address of a structure. It is the first address following the structure data that has the <strong>same alignment as the structure</strong>.</p>
+<p>The general rule of trailing structure padding is this: the compiler will behave as though the structure has trailing padding out to its stride address. This rule controls what <code>sizeof()</code> will return.</p>
+<p>Consider this example on a 64-bit x86 or ARM machine:</p>
+<pre><code class="c">struct foo3 {
+    char *p;     /* 8 bytes */
+    char c;      /* 1 byte */
+};
+
+struct foo3 singleton;
+struct foo3 quad[4];
+</code></pre>
+
+<p>You might think that sizeof(struct foo3) should be 9, but it’s actually 16. The stride address is that of <code>(&amp;p)[2]</code>. Thus, in the <code>quad</code> array, each member has 7 bytes of trailing padding, because the first member of each following struct wants to be self-aligned on an 8-byte boundary. The memory layout is as though the structure had been declared like this:</p>
+<pre><code class="c">struct foo3 {
+    char *p;     /* 8 bytes */
+    char c;      /* 1 byte */
+    char pad[7];
+};
+</code></pre>
+
+<p>For contrast, consider the following example:</p>
+<pre><code class="c">struct foo4 {
+    short s;     /* 2 bytes */
+    char c;      /* 1 byte */
+};
+</code></pre>
+
+<p>Because s only needs to be 2-byte aligned, the stride address is just one byte after <code>c</code>, and <code>struct foo4</code> as a whole only needs one byte of trailing padding. It will be laid out like this:</p>
+<pre><code class="c">struct foo4 {
+    short s;     /* 2 bytes */
+    char c;      /* 1 byte */
+    char pad[1];
+};
+</code></pre>
+
+<p>and <code>sizeof(struct foo4)</code> will return 4.</p>
+<p>Here’s a last important detail: If your structure has structure members, the inner structs want to have the alignment of longest scalar too. Suppose you write this:</p>
+<pre><code class="c">struct foo5 {
+    char c;
+    struct foo5_inner {
+        char *p;
+        short x;
+    } inner;
+};
+</code></pre>
+
+<p>The <code>char *p</code> member in the inner struct forces the outer struct to be pointer-aligned as well as the inner. Actual layout will be like this on a 64-bit machine:</p>
+<pre><code class="c">struct foo5 {
+    char c;           /* 1 byte*/
+    char pad1[7];     /* 7 bytes */
+    struct foo5_inner {
+        char *p;      /* 8 bytes */
+        short x;      /* 2 bytes */
+        char pad2[6]; /* 6 bytes */
+    } inner;
+};
+</code></pre>
+
+<p>This structure gives us a hint of the savings that might be possible from repacking structures. Of 24 bytes, 13 of them are padding. That’s more than 50% waste space!</p>
+<h2 id="6-bitfields"><a name="user-content-6-bitfields" href="#6-bitfields" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>6. Bitfields</h2>
+<p>Now let’s consider bitfields. What they give you the ability to do is declare structure fields of smaller than character width, down to 1 bit, like this:</p>
+<pre><code class="c">struct foo6 {
+    short s;
+    char c;
+    int flip:1;
+    int nybble:4;
+    int septet:7;
+};
+</code></pre>
+
+<p>The thing to know about bitfields is that they are implemented with word- and byte-level mask and rotate instructions operating on machine words, and cannot cross word boundaries. C99 guarentees that bit-fields will be packed as tightly as possible, provided they don’t cross storage unit boundaries (6.7.2.1 #10).</p>
+<p>Assuming we’re on a 32-bit machine, that implies that the layout may look like this:</p>
+<pre><code class="c">struct foo6 {
+    short s;       /* 2 bytes */
+    char c;        /* 1 byte */
+    int flip:1;    /* total 1 bit */
+    int nybble:4;  /* total 5 bits */
+    int pad1:3;    /* pad to an 8-bit boundary */
+    int septet:7;  /* 7 bits */
+    int pad2:25;   /* pad to 32 bits */
+};
+</code></pre>
+
+<p>But this isn’t the only possibility, because the C standard does not specify that bits are allocated low-to-high. So the layout could look like this:</p>
+<pre><code class="c">struct foo6 {
+    short s;       /* 2 bytes */
+    char c;        /* 1 byte */
+    int pad1:3;    /* pad to an 8-bit boundary */
+    int flip:1;    /* total 1 bit */
+    int nybble:4;  /* total 5 bits */
+    int pad2:25;   /* pad to 32 bits */
+    int septet:7;  /* 7 bits */
+};
+</code></pre>
+
+<p>That is, the padding could precede rather than following the payload bits.</p>
+<p>Note also that, as with normal structure padding, the padding bits are not guaranteed to be zero; C99 mentions this.</p>
+<p>Note that the base type of a bit field is interpreted for signedness but not necessarily for size. It is up to implementors whether &ldquo;short flip:1&rdquo; or &ldquo;long flip:1&rdquo; are supported, and whether those base types change the size of the storage unit the field is packed into.</p>
+<p>Proceed with caution and check with -Wpadded if you have it available (e.g. under clang). Compilers on exotic hardware, might interpret the C99 rules in surprising ways; older compilers might not quite follow them.</p>
+<p>The restriction that bitfields cannot cross machine word boundaries means that, while the first two of the following structures pack into one and two 32-bit words as you’d expect, the third (struct foo9) takes up <strong>three</strong> 32-bit words, in the last of which only one bit is used.</p>
+<pre><code class="c">struct foo7 {
+    int bigfield:31;      /* 32-bit word 1 begins */
+    int littlefield:1;
+};
+
+struct foo8 {
+    int bigfield1:31;     /* 32-bit word 1 begins /*
+    int littlefield1:1;
+    int bigfield2:31;     /* 32-bit word 2 begins */
+    int littlefield2:1;
+};
+
+struct foo9 {
+    int bigfield1:31;     /* 32-bit word 1 begins */
+    int bigfield2:31;     /* 32-bit word 2 begins */
+    int littlefield1:1;
+    int littlefield2:1;   /* 32-bit word 3 begins */
+};
+</code></pre>
+
+<p>On the other hand, <code>struct foo8</code> would fit into a single 64-bit word if the machine has those.</p>
+<h2 id="7-structure-reordering"><a name="user-content-7-structure-reordering" href="#7-structure-reordering" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>7. Structure reordering</h2>
+<p>Now that you know how and why compilers insert padding in and after your structures we’ll examine what you can do to squeeze out the slop. This is the art of structure packing.</p>
+<p>The first thing to notice is that slop only happens in two places. One is where storage bound to a larger data type (with stricter alignment requirements) follows storage bound to a smaller one. The other is where a struct naturally ends before its stride address, requiring padding so the next one will be properly aligned.</p>
+<p>The simplest way to eliminate slop is to reorder the structure members by decreasing alignment. That is: make all the pointer-aligned subfields come first, because on a 64-bit machine they will be 8 bytes. Then the 4-byte ints; then the 2-byte shorts; then the character fields.</p>
+<p>So, for example, consider this simple linked-list structure:</p>
+<pre><code class="c">struct foo10 {
+    char c;
+    struct foo10 *p;
+    short x;
+};
+</code></pre>
+
+<p>With the implied slop made explicit, here it is:</p>
+<pre><code class="c">struct foo10 {
+    char c;          /* 1 byte */
+    char pad1[7];    /* 7 bytes */
+    struct foo10 *p; /* 8 bytes */
+    short x;         /* 2 bytes */
+    char pad2[6];    /* 6 bytes */
+};
+</code></pre>
+
+<p>That’s 24 bytes. If we reorder by size, we get this:</p>
+<pre><code class="c">struct foo11 {
+    struct foo11 *p;
+    short x;
+    char c;
+};
+</code></pre>
+
+<p>Considering self-alignment, we see that none of the data fields need padding. This is because the stride address for a (longer) field with stricter alignment is always a validly-aligned start address for a (shorter) field with less strict requirements. All the repacked struct actually requires is trailing padding:</p>
+<pre><code class="c">struct foo11 {
+    struct foo11 *p; /* 8 bytes */
+    short x;         /* 2 bytes */
+    char c;          /* 1 byte */
+    char pad[5];     /* 5 bytes */
+};
+</code></pre>
+
+<p>Our repack transformation drops the size from 24 to 16 bytes. This might not seem like a lot, but suppose you have a linked list of 200K of these? The savings add up fast - especially on memory-constrained embedded systems or in the core part of an OS kernel that has to stay resident.</p>
+<p>Note that reordering is not guaranteed to produce savings. Applying this technique to an earlier example, <code>struct foo9</code>, we get this:</p>
+<pre><code class="c">struct foo12 {
+    struct foo12_inner {
+        char *p;      /* 8 bytes */
+        int x;        /* 4 bytes */
+    } inner;
+    char c;           /* 1 byte*/
+};
+</code></pre>
+
+<p>With padding written out, this is</p>
+<pre><code class="c">struct foo12 {
+    struct foo12_inner {
+        char *p;      /* 8 bytes */
+        int x;        /* 4 bytes */
+        char pad[4];  /* 4 bytes */
+    } inner;
+    char c;           /* 1 byte*/
+    char pad[7];      /* 7 bytes */
+};
+</code></pre>
+
+<p>It’s still 24 bytes because c cannot back into the inner struct’s trailing padding. To collect that gain you would need to redesign your data structures.</p>
+<p>Since shipping the first version of this guide I have been asked why, if reordering for minimal slop is so simple, C compilers don’t do it automatically. The answer: C is a language originally designed for writing operating systems and other code close to the hardware. Automatic reordering would interfere with a systems programmer’s ability to lay out structures that exactly match the byte and bit-level layout of memory-mapped device control blocks.</p>
+<h2 id="8-awkward-scalar-cases"><a name="user-content-8-awkward-scalar-cases" href="#8-awkward-scalar-cases" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>8. Awkward scalar cases</h2>
+<p>Using enumerated types instead of #defines is a good idea, if only because symbolic debuggers have those symbols available and can show them rather than raw integers. But, while enums are guaranteed to be compatible with an integral type, the C standard does not specify which underlying integral type is to be used for them.</p>
+<p>Be aware when repacking your structs that while enumerated-type variables are usually ints, this is compiler-dependent; they could be shorts, longs, or even chars by default. Your compiler may have a pragma or command-line option to force the size.</p>
+<p>The <code>long double</code> type is a similar trouble spot. Some C platforms implement this in 80 bits, some in 128, and some of the 80-bit platforms pad it to 96 or 128 bits.</p>
+<p>In both cases it’s best to use <code>sizeof()</code> to check the storage size.</p>
+<p>Finally, under x86 Linux doubles are sometimes an exception to the self-alignment rule; an 8-byte double may require only 4-byte alignment within a struct even though standalone doubles variables have 8-byte self-alignment. This depends on compiler and options.</p>
+<h2 id="9-readability-and-cache-locality"><a name="user-content-9-readability-and-cache-locality" href="#9-readability-and-cache-locality" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>9. Readability and cache locality</h2>
+<p>While reordering by size is the simplest way to eliminate slop, it’s not necessarily the right thing. There are two more issues: readability and cache locality.</p>
+<p>Programs are not just communications to a computer, they are communications to other human beings. Code readability is important even (or especially!) when the audience of the communication is only your future self.</p>
+<p>A clumsy, mechanical reordering of your structure can harm readability. When possible, it is better to reorder fields so they remain in coherent groups with semantically related pieces of data kept close together. Ideally, the design of your structure should communicate the design of your program.</p>
+<p>When your program frequently accesses a structure, or parts of a structure, it is helpful for performance if the accesses tend to fit within a cache line - the memory block fetched by your processor when it is told to get any single address within the block. On 64-bit x86 a cache line is 64 bytes beginning on a self-aligned address; on other platforms it is often 32 bytes.</p>
+<p>The things you should do to preserve readability - grouping related and co-accessed data in adjacent fields - also improve cache-line locality. These are both reasons to reorder intelligently, with awareness of your code’s data-access patterns.</p>
+<p>If your code does concurrent access to a structure from multiple threads, there’s a third issue: cache line bouncing. To minimize expensive bus traffic, you should arrange your data so that reads come from one cache line and writes go to another in your tighter loops.</p>
+<p>And yes, this sometimes contradicts the previous guidance about grouping related data in the same cache-line-sized block. Multithreading is hard. Cache-line bouncing and other multithread optimization issues are very advanced topics which deserve an entire tutorial of their own. The best I can do here is make you aware that these issues exist.</p>
+<h2 id="10-other-packing-techniques"><a name="user-content-10-other-packing-techniques" href="#10-other-packing-techniques" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>10. Other packing techniques</h2>
+<p>Reordering works best when combined with other techniques for slimming your structures. If you have several boolean flags in a struct, for example, consider reducing them to 1-bit bitfields and packing them into a place in the structure that would otherwise be slop.</p>
+<p>You’ll take a small access-time penalty for this - but if it squeezes the working set enough smaller, that penalty will be swamped by your gains from avoided cache misses.</p>
+<p>More generally, look for ways to shorten data field sizes. In cvs-fast-export, for example, one squeeze I applied was to use the knowledge that RCS and CVS repositories didn’t exist before 1982. I dropped a 64-bit Unix <code>time_t</code> (zero date at the beginning of 1970) for a 32-bit time offset from 1982-01-01T00:00:00; this will cover dates to 2118. (Note: if you pull a trick like this, do a bounds check whenever you set the field to prevent nasty bugs!)</p>
+<p>Each such field shortening not only decreases the explicit size of your structure, it may remove slop and/or create additional opportunities for gains from field reordering. Virtuous cascades of such effects are not very hard to trigger.</p>
+<p>The riskiest form of packing is to use unions. If you know that certain fields in your structure are never used in combination with certain other fields, consider using a union to make them share storage. But be extra careful and verify your work with regression testing, because if your lifetime analysis is even slightly wrong you will get bugs ranging from crashes to (much worse) subtle data corruption.</p>
+<h2 id="11-overriding-alignment-rules"><a name="user-content-11-overriding-alignment-rules" href="#11-overriding-alignment-rules" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>11. Overriding alignment rules</h2>
+<p>Sometimes you can coerce your compiler into not using the processor’s normal alignment rules by using a pragma, usually <code>#pragma pack</code>. GCC and clang have an attributepacked you can attach to individual structure declarations; GCC has an -fpack-struct option for entire compilations.</p>
+<p>Do not do this casually, as it forces the generation of more expensive and slower code. Usually you can save as much memory, or almost as much, with the techniques I describe here.</p>
+<p>The only good reason for <code>#pragma pack</code> is if you have to exactly match your C data layout to some kind of bit-level hardware or protocol requirement, like a memory-mapped hardware port, and violating normal alignment is required for that to work. If you’re in that situation, and you don’t already know everything else I’m writing about here, you’re in deep trouble and I wish you luck.</p>
+<h2 id="12-tools"><a name="user-content-12-tools" href="#12-tools" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>12. Tools</h2>
+<p>The clang compiler has a -Wpadded option that causes it to generate messages about alignment holes and padding. Some versions also have an undocumented -fdump-record-layouts option that yields <a href="http://lists.cs.uiuc.edu/pipermail/cfe-dev/2014-July/037778.html">more information</a>.</p>
+<p>I have not used it myself, but several respondents speak well of a program called <code>pahole</code>. This tool cooperates with a compiler to produce reports on your structures that describe padding, alignment, and cache line boundaries.</p>
+<p>I’ve received a report that a proprietary code auding tool called &ldquo;PVS Studio&rdquo; can detect structure-packing opportunities.</p>
+<h2 id="13-proof-and-exceptional-cases"><a name="user-content-13-proof-and-exceptional-cases" href="#13-proof-and-exceptional-cases" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>13. Proof and exceptional cases</h2>
+<p>You can download sourcecode for a little program that demonstrates the assertions about scalar and structure sizes made above. It is <a href="http://www.catb.org/esr/structure-packing/packtest.c">packtest.c</a>.</p>
+<p>If you look through enough strange combinations of compilers, options, and unusual hardware, you will find exceptions to some of the rules I have described. They get more common as you go back in time to older processor designs.</p>
+<p>The next level beyond knowing these rules is knowing how and when to expect that they will be broken. In the years when I learned them (the early 1980s) we spoke of people who didn’t get this as victims of &ldquo;all-the-world’s-a-VAX syndrome&rdquo;. Remember that not all the world is a PC.</p>
+<h2 id="14-related-reading"><a name="user-content-14-related-reading" href="#14-related-reading" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>14. Related Reading</h2>
+<p>This section exists to collect pointers to essays on other advanced C topics which I judge to be good companions to this one.</p>
+<ul>
+<li><a href="http://blog.regehr.org/archives/213">A Guide to Undefined Behavior in C and C++</a></li>
+<li><a href="http://www.catb.org/esr/time-programming/">Time, Clock, and Calendar Programming In C</a></li>
+</ul>
+<h2 id="15-version-history"><a name="user-content-15-version-history" href="#15-version-history" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>15. Version history</h2>
+<ul>
+<li>1.14 @ 2015-12-19 Typo correction: -Wpadding → -Wpadded.</li>
+<li>1.13 @ 2015-11-23 Be explicit about padding bits being undefined. More about bitfields.</li>
+<li>1.12 @ 2015-11-11 Major revision of section on bitfields reflecting C99 rules.</li>
+<li>1.11 @ 2015-07-23 Mention the clang -fdump-record-layouts option.</li>
+<li>1.10 @ 2015-02-20 Mention attributepacked, -fpack-struct, and PVS Studio.</li>
+<li>1.9 @ 2014-10-01 Added link to &ldquo;Time, Clock, and Calendar Programming In C&rdquo;.</li>
+<li>1.8 @ 2014-05-20 Improved explanation for the bitfield examples,</li>
+<li>1.7 @ 2014-05-17 Correct a minor error in the description of the layout of struct foo8.</li>
+<li>1.6 @ 2014-05-14 Emphasize that bitfields cannot cross word boundaries. Idea from Dale Gulledge.</li>
+<li>1.5 @ 2014-01-13 Explain why structure member reordering is not done automatically.</li>
+<li>1.4 @ 2014-01-04 A note about double under x86 Linux.</li>
+<li>1.3 @ 2014-01-03 New sections on awkward scalar cases, readability and cache locality, and tools.</li>
+<li>1.2 @ 2014-01-02 Correct an erroneous address calculation.</li>
+<li>1.1 @ 2014-01-01 Explain why aligned accesses are faster. Mention offsetof. Various minor fixes, including the packtest.c download link.</li>
+<li>1.0 @ 2014-01-01 Initial release.</li>
+</ul></article></body></html>
