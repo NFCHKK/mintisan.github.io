@@ -53,7 +53,7 @@
 
 - [LinuxLive USB Creator](http://www.linuxliveusb.com/): Persistence
 - [UNetbootin](https://unetbootin.github.io/)
-- [Universal USB Installer](http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/)
+- [Universal USB Installer](http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/): Persistence
 - [Rufus](https://rufus.akeo.ie/): Fast
 - [Windows USB/DVD Download Tool
 ](http://wudt.codeplex.com/)
