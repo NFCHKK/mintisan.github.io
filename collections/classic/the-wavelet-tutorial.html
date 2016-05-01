@@ -1,0 +1,1508 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>the-wavelet-tutorial</title></head><body><article class="markdown-body"><h1 id="the-wavelet-tutorial"><a href="http://users.rowan.edu/~polikar/WAVELETS/WTtutorial.html">The Wavelet Tutorial</a></h1>
+<p>by <a href="http://users.rowan.edu/~polikar/">ROBI POLIKAR</a></p>
+<div class="toc">
+<ul>
+<li><a href="#the-wavelet-tutorial">The Wavelet Tutorial</a><ul>
+<li><a href="#preface">PREFACE</a></li>
+<li><a href="#part-i-overview-why-wavelet-transform">PART I: OVERVIEW: WHY WAVELET TRANSFORM?</a><ul>
+<li><a href="#trans-what">TRANS&hellip; WHAT?</a></li>
+<li><a href="#why-do-we-need-the-frequency-information">Why do we need the frequency information?</a></li>
+<li><a href="#the-ultimate-solution-the-wavelet-transform">THE ULTIMATE SOLUTION: THE WAVELET TRANSFORM</a></li>
+</ul>
+</li>
+<li><a href="#part-ii-fundamentals-the-fourier-transform-and-the-short-term-fourier-transform-resolution-problems">PART II: FUNDAMENTALS: THE FOURIER TRANSFORM AND THE SHORT TERM FOURIER TRANSFORM, RESOLUTION PROBLEMS</a><ul>
+<li><a href="#fundamentals">FUNDAMENTALS</a></li>
+<li><a href="#the-fourier-transform">THE FOURIER TRANSFORM</a></li>
+<li><a href="#the-short-term-fourier-transform">THE SHORT TERM FOURIER TRANSFORM</a></li>
+</ul>
+</li>
+<li><a href="#part-iii-multiresolution-analysis-the-continuous-wavelet-transform">PART III: MULTIRESOLUTION ANALYSIS: THE CONTINUOUS WAVELET TRANSFORM</a><ul>
+<li><a href="#multiresolution-analysis">MULTIRESOLUTION ANALYSIS</a></li>
+<li><a href="#the-continuous-wavelet-transform">THE CONTINUOUS WAVELET TRANSFORM</a></li>
+<li><a href="#the-scale">The Scale</a></li>
+<li><a href="#computation-of-the-cwt">COMPUTATION OF THE CWT</a></li>
+<li><a href="#time-and-frequency-resolutions">TIME AND FREQUENCY RESOLUTIONS</a></li>
+<li><a href="#the-wavelet-theory-a-mathematical-approach">THE WAVELET THEORY: A MATHEMATICAL APPROACH</a></li>
+<li><a href="#basis-vectors">Basis Vectors</a></li>
+<li><a href="#inner-products-orthogonality-and-orthonormality">Inner Products, Orthogonality, and Orthonormality</a></li>
+<li><a href="#examples">EXAMPLES</a></li>
+<li><a href="#the-wavelet-synthesis">THE WAVELET SYNTHESIS</a></li>
+<li><a href="#discretization-of-the-continuous-wavelet-transform-the-wavelet-series">Discretization of the Continuous Wavelet Transform: The Wavelet Series</a></li>
+</ul>
+</li>
+<li><a href="#part-iv-multiresolution-analysis-the-discrete-wavelet-transform">PART IV: MULTIRESOLUTION ANALYSIS: THE DISCRETE WAVELET TRANSFORM</a><ul>
+<li><a href="#why-is-the-discrete-wavelet-transform-needed">Why is the Discrete Wavelet Transform Needed?</a></li>
+<li><a href="#the-discrete-wavelet-transform-dwt">THE DISCRETE WAVELET TRANSFORM (DWT)</a></li>
+<li><a href="#the-subband-coding-and-the-multiresolution-analysis">The Subband Coding and The Multiresolution Analysis</a></li>
+</ul>
+</li>
+<li><a href="#acknowledgments">ACKNOWLEDGMENTS</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><img alt="" src="http://engineering.rowan.edu/~polikar/WAVELETS/waveletrp1.gif" /></p>
+<h2 id="preface"><a href="http://engineering.rowan.edu/~polikar/WAVELETS/WTpreface.html">PREFACE</a></h2>
+<h2 id="part-i-overview-why-wavelet-transform"><a href="http://engineering.rowan.edu/~polikar/WAVELETS/WTpart1.html">PART I: </a>OVERVIEW: WHY WAVELET TRANSFORM?</h2>
+<p><img alt="" src="http://users.rowan.edu/~polikar/WAVELETS/waveletrp2.gif" /></p>
+<p>Welcome to this introductory tutorial on wavelet transforms. The wavelet transform is a relatively new concept (about 10 years old), but yet there are quite a few articles and books written on them. However, most of these books and articles are written by math people, for the other math people; still most of the math people don&rsquo;t know what the other math people are talking about (a math professor of mine made this confession). In other words, majority of the literature available on wavelet transforms are of little help, if any, to those who are new to this subject (this is my personal opinion).</p>
+<p>When I first started working on wavelet transforms I have struggled for many hours and days to figure out what was going on in this mysterious world of wavelet transforms, due to the lack of introductory level text(s) in this subject. Therefore, I have decided to write this tutorial for the ones who are new to the this topic. I consider myself quite new to the subject too, and I have to confess that I have not figured out all the theoretical details yet. However, as far as the engineering applications are concerned, I think all the theoretical details are not necessarily necessary (!).</p>
+<p>In this tutorial I will try to give basic principles underlying the wavelet theory. The proofs of the theorems and related equations will not be given in this tutorial due to the simple assumption that the intended readers of this tutorial do not need them at this time. However, interested readers will be directed to related references for further and in-depth information.</p>
+<p>In this document I am assuming that you have no background knowledge, whatsoever. If you do have this background, please disregard the following information, since it may be trivial.</p>
+<p>Should you find any inconsistent, or incorrect information in the following tutorial, please feel free to contact me. I will appreciate any comments on this page.</p>
+<p><em>Robi POLIKAR <strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong></em>**</p>
+<h3 id="trans-what"><a name="user-content-trans-what" href="#trans-what" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TRANS&hellip; WHAT?</h3>
+<p>First of all, why do we need a transform, or what is a transform anyway?<br />
+Mathematical transformations are applied to signals to obtain a further information from that signal that is not readily available in the raw signal. In the following tutorial I will assume a time-domain signal as a <strong>raw</strong> signal, and a signal that has been &ldquo;transformed&rdquo; by any of the available mathematical transformations as a <strong>processed </strong>signal.<br />
+There are number of transformations that can be applied, among which the Fourier transforms are probably by far the most popular.</p>
+<p>Most of the signals in practice, are <strong>TIME-DOMAIN</strong> signals in their raw format. That is, whatever that signal is measuring, is a function of time. In other words, when we plot the signal one of the axes is time (independent variable), and the other (dependent variable) is usually the amplitude. When we plot time-domain signals, we obtain a <strong>time-amplitude representation</strong> of the signal. This representation is not always the best representation of the signal for most signal processing related applications. In many cases, the most distinguished information is hidden in the frequency content of the signal. The <strong>frequency SPECTRUM</strong> of a signal is basically the frequency components (spectral components) of that signal. The frequency spectrum of a signal shows what frequencies exist in the signal.</p>
+<p>Intuitively, we all know that the frequency is something to do with the change in rate of something. If something ( a mathematical or physical variable, would be the technically correct term) changes rapidly, we say that it is of high frequency, where as if this variable does not change rapidly, i.e., it changes smoothly, we say that it is of low frequency. If this variable does not change at all, then we say it has zero frequency, or no frequency. For example the publication frequency of a daily newspaper is higher than that of a monthly magazine (it is published more frequently).</p>
+<p>The frequency is measured in cycles/second, or with a more common name, in &ldquo;Hertz&rdquo;. For example the electric power we use in our daily life in the US is 60 Hz (50 Hz elsewhere in the world). This means that if you try to plot the electric current, it will be a sine wave passing through the same point 50 times in 1 second. Now, look at the following figures. The first one is a sine wave at 3 Hz, the second one at 10 Hz, and the third one at 50 Hz. Compare them.</p>
+<p><img alt="" src="http://users.rowan.edu/~polikar/WAVELETS/figure1_123.gif" /><br />
+</p>
+<p>So how do we measure frequency, or how do we find the frequency content of a signal? The answer is <strong>FOURIER TRANSFORM (FT)</strong>. If the FT of a signal in time domain is taken, the frequency-amplitude representation of that signal is obtained. In other words, we now have a plot with one axis being the frequency and the other being the amplitude. This plot tells us how much of each frequency exists in our signal.</p>
+<p>The frequency axis starts from zero, and goes up to infinity. For every frequency, we have an amplitude value. For example, if we take the FT of the electric current that we use in our houses, we will have one spike at 50 Hz, and nothing elsewhere, since that signal has only 50 Hz frequency component. No other signal, however, has a FT which is this simple. For most practical purposes, signals contain more than one frequency component. The following shows the FT of the 50 Hz signal:</p>
+<p><img alt="Figure 1.4 The FT of the 50 Hz signal given in Figure 1.3" src="http://users.rowan.edu/~polikar/WAVELETS/figure1_4.gif" /></p>
+<p>One word of caution is in order at this point. Note that two plots are given in Figure 1.4. The bottom one plots only the first half of the top one. Due to reasons that are not crucial to know at this time, the frequency spectrum of a real valued signal is always symmetric. The top plot illustrates this point. However, since the symmetric part is exactly a mirror image of the first part, it provides no additional information, and therefore, this symmetric second part is usually not shown. In most of the following figures corresponding to FT, I will only show the first half of this symmetric spectrum.</p>
+<h3 id="why-do-we-need-the-frequency-information"><a name="user-content-why-do-we-need-the-frequency-information" href="#why-do-we-need-the-frequency-information" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Why do we need the frequency information?</h3>
+<p>Often times, the information that cannot be readily seen in the time-domain can be seen in the frequency domain.</p>
+<p>Let&rsquo;s give an example from biological signals. Suppose we are looking at an ECG signal (ElectroCardioGraphy, graphical recording of heart&rsquo;s electrical activity). The typical shape of a healthy ECG signal is well known to cardiologists. Any significant deviation from that shape is usually considered to be a symptom of a pathological condition.</p>
+<p>This pathological condition, however, may not always be quite obvious in the original time-domain signal. Cardiologists usually use the time-domain ECG signals which are recorded on strip-charts to analyze ECG signals. Recently, the new computerized ECG recorders/analyzers also utilize the frequency information to decide whether a pathological condition exists. A pathological condition can sometimes be diagnosed more easily when the frequency content of the signal is analyzed.</p>
+<p>This, of course, is only one simple example why frequency content might be useful. Today Fourier transforms are used in many different areas including all branches of engineering.</p>
+<p>Although FT is probably the most popular transform being used (especially in electrical engineering), it is not the only one. There are many other transforms that are used quite often by engineers and mathematicians. Hilbert transform, short-time Fourier transform (more about this later), Wigner distributions, the Radon Transform, and of course our <strong>featured transformation </strong>, the wavelet transform, constitute only a small portion of a huge list of transforms that are available at engineer&rsquo;s and mathematician&rsquo;s disposal. Every transformation technique has its own area of application, with advantages and disadvantages, and the wavelet transform (WT) is no exception.</p>
+<p>For a better understanding of the need for the WT let&rsquo;s look at the FT more closely. FT (as well as WT) is a reversible transform, that is, it allows to go back and forward between the raw and processed (transformed) signals. However, only either of them is available at any given time. That is, no frequency information is available in the time-domain signal, and no time information is available in the Fourier transformed signal. The natural question that comes to mind is that is it necessary to have both the time and the frequency information at the same time?</p>
+<p>As we will see soon, the answer depends on the particular application, and the nature of the signal in hand. Recall that the FT gives the frequency information of the signal, which means that it tells us how much of each frequency exists in the signal, but it does not tell us <strong>when in time </strong>these frequency components exist. This information is not required when the signal is so-called <strong>stationary </strong>.</p>
+<p>Let&rsquo;s take a closer look at this <strong>stationarity<strong><em>* </em>*concept more closely, since it is of paramount importance in signal analysis. Signals whose frequency content do not change in time are called </strong>stationarysignals .</strong> In other words, the frequency content of stationary signals do not change in time. In this case, one does not need to know <strong>at what times frequency components exist ,</strong> since <strong>all frequency components exist at all times !!! </strong>.</p>
+<p>For example the following signal</p>
+<pre><code>x(t)=cos(2*pi*10*t)+cos(2*pi*25*t)+cos(2*pi*50*t)+cos(2*pi*100*t)
+</code></pre>
+
+<p>is a stationary signal, because it has frequencies of 10, 25, 50, and 100 Hz at any given time instant. This signal is plotted below:</p>
+<p><img alt="Figure 1.5" src="http://users.rowan.edu/~polikar/WAVELETS/figure1_5.gif" /></p>
+<p>And the following is its FT:</p>
+<p><img alt="Figure 1.6" src="http://users.rowan.edu/~polikar/WAVELETS/figure1_6.gif" /></p>
+<p>The top plot in Figure 1.6 is the (half of the symmetric) frequency spectrum of the signal in Figure 1.5. The bottom plot is the zoomed version of the top plot, showing only the range of frequencies that are of interest to us. Note the four spectral components corresponding to the frequencies 10, 25, 50 and 100 Hz.</p>
+<p>Contrary to the signal in Figure 1.5, the following signal is not stationary. Figure 1.7 plots a signal whose frequency constantly changes in time. This signal is known as the &ldquo;chirp&rdquo; signal. This is a non-stationary signal.</p>
+<p><img alt="Figure 1.7" src="http://users.rowan.edu/~polikar/WAVELETS/figure1_7.gif" /></p>
+<p>Let&rsquo;s look at another example. Figure 1.8 plots a signal with four different frequency components at four different time intervals, hence a non-stationary signal. The interval 0 to 300 ms has a 100 Hz sinusoid, the interval 300 to 600 ms has a 50 Hz sinusoid, the interval 600 to 800 ms has a 25 Hz sinusoid, and finally the interval 800 to 1000 ms has a 10 Hz sinusoid.</p>
+<p><img alt="Figure 1.8" src="http://users.rowan.edu/~polikar/WAVELETS/figure1_8.gif" /></p>
+<p>And the following is its FT:</p>
+<p><img alt="Figure 1.9" src="http://users.rowan.edu/~polikar/WAVELETS/figure1_9.gif" /></p>
+<p>Do not worry about the little ripples at this time; they are due to sudden changes from one frequency component to another, which have no significance in this text. Note that the amplitudes of higher frequency components are higher than those of the lower frequency ones. This is due to fact that higher frequencies last longer (300 ms each) than the lower frequency components (200 ms each). (The exact value of the amplitudes are not important).</p>
+<p>Other than those ripples, everything seems to be right. The FT has four peaks, corresponding to four frequencies with reasonable amplitudes&hellip; Right</p>
+<p><strong>WRONG (!)</strong></p>
+<p>Well, not exactly wrong, but not exactly right either&hellip;Here is why:</p>
+<p>For the first signal, plotted in Figure 1.5, consider the following question:<br />
+At what times (or time intervals), do these frequency components occur?<br />
+Answer:</p>
+<p>At all times! Remember that in stationary signals, all frequency components that exist in the signal, exist throughout the entire duration of the signal. There is 10 Hz at all times, there is 50 Hz at all times, and there is 100 Hz at all times.</p>
+<p>Now, consider the same question for the non-stationary signal in Figure 1.7 or in Figure 1.8.</p>
+<p>At what times these frequency components occur?</p>
+<p>For the signal in Figure 1.8, we know that in the first interval we have the highest frequency component, and in the last interval we have the lowest frequency component. For the signal in Figure 1.7, the frequency components change continuously. Therefore, for these signals the frequency components <strong>do not </strong>appear at all times!</p>
+<p>Now, compare the Figures 1.6 and 1.9. The similarity between these two spectrum should be apparent. Both of them show four spectral components at exactly the same frequencies, i.e., at 10, 25, 50, and 100 Hz. Other than the ripples, and the difference in amplitude (which can always be normalized), the two spectrums are almost identical, although the corresponding time-domain signals are not even close to each other. Both of the signals involves the same frequency components, but the first one has these frequencies at all times, the second one has these frequencies at different intervals. So, how come the spectrums of two entirely different signals look very much alike? Recall that the FT gives the spectral content of the signal, but it gives no information regarding <strong>where in time those spectral components appear .</strong> Therefore, FT is not a suitable technique for non-stationary signal, with one exception:</p>
+<p>FT can be used for non-stationary signals, if we are only interested in what spectral components exist in the signal, but not interested where these occur. However, if this information is needed, i.e., if we want to know, what spectral component occur at what time (interval) , then Fourier transform is not the right transform to use.</p>
+<p>For practical purposes it is difficult to make the separation, since there are a lot of practical stationary signals, as well as non-stationary ones. Almost all biological signals, for example, are non-stationary. Some of the most famous ones are ECG (electrical activity of the heart , electrocardiograph), EEG (electrical activity of the brain, electroencephalograph), and EMG (electrical activity of the muscles, electromyogram).</p>
+<p><strong>Once again please note that, the FT gives what frequency components (spectral components) exist in the signal. Nothing more, nothing less.</strong></p>
+<p>When the <strong>time localization </strong>of the spectral components are needed, a transform giving the TIME-FREQUENCY REPRESENTATION of the signal is needed.</p>
+<hr />
+<h3 id="the-ultimate-solution-the-wavelet-transform"><a name="user-content-the-ultimate-solution-the-wavelet-transform" href="#the-ultimate-solution-the-wavelet-transform" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>THE ULTIMATE SOLUTION: THE WAVELET TRANSFORM</h3>
+<p>The Wavelet transform is a transform of this type. It provides the time-frequency representation. (There are other transforms which give this information too, such as short time Fourier transform, Wigner distributions, etc.)</p>
+<p>Often times a particular spectral component occurring at any instant can be of particular interest. In these cases it may be very beneficial to know the time intervals these particular spectral components occur. For example, in EEGs, the latency of an event-related potential is of particular interest (Event-related potential is the response of the brain to a specific stimulus like flash-light, the latency of this response is the amount of time elapsed between the onset of the stimulus and the response).</p>
+<p>Wavelet transform is capable of providing the time and frequency information simultaneously, hence giving a time-frequency representation of the signal.</p>
+<p>How wavelet transform works is completely a different fun story, and should be explained after <strong>short time Fourier Transform (STFT) .</strong> The WT was developed as an alternative to the STFT. The STFT will be explained in great detail in the second part of this tutorial. It suffices at this time to say that the WT was developed to overcome some resolution related problems of the STFT, as explained in Part II.</p>
+<p>To make a real long story short, we pass the time-domain signal from various highpass and low pass filters, which filters out either high frequency or low frequency portions of the signal. This procedure is repeated, every time some portion of the signal corresponding to some frequencies being removed from the signal.</p>
+<p>Here is how this works: Suppose we have a signal which has frequencies up to 1000 Hz. In the first stage we split up the signal in to two parts by passing the signal from a highpass and a lowpass filter (filters should satisfy some certain conditions, so-called <strong>admissibility condition</strong>) which results in two different versions of the same signal: portion of the signal corresponding to 0-500 Hz (low pass portion), and 500-1000 Hz (high pass portion).</p>
+<p>Then, we take either portion (usually low pass portion) or both, and do the same thing again. This operation is called <strong>decomposition </strong>.</p>
+<p>Assuming that we have taken the lowpass portion, we now have 3 sets of data, each corresponding to the same signal at frequencies 0-250 Hz, 250-500 Hz, 500-1000 Hz.</p>
+<p>Then we take the lowpass portion again and pass it through low and high pass filters; we now have 4 sets of signals corresponding to 0-125 Hz, 125-250 Hz,250-500 Hz, and 500-1000 Hz. We continue like this until we have decomposed the signal to a pre-defined certain level. Then we have a bunch of signals, which actually represent the same signal, but all corresponding to different frequency bands. We know which signal corresponds to which frequency band, and if we put all of them together and plot them on a 3-D graph, we will have time in one axis, frequency in the second and amplitude in the third axis. This will show us which frequencies exist at which time ( there is an issue, called &ldquo;uncertainty principle&rdquo;, which states that, we cannot exactly know <strong>what frequency exists </strong>at <strong>what time instance </strong>, but we can only know <strong>what frequency bands </strong>exist at <strong>what time intervals </strong>, more about this in the subsequent parts of this tutorial).</p>
+<p>However, I still would like to explain it briefly:</p>
+<p>The uncertainty principle, originally found and formulated by Heisenberg, states that, the momentum and the position of a moving particle cannot be known simultaneously. This applies to our subject as follows:</p>
+<p>The frequency and time information of a signal at some certain point in the time-frequency plane cannot be known. In other words: We cannot know <strong>what spectral component </strong>exists at any given time <strong>instant</strong>. The best we can do is to investigate what <strong>spectral components </strong>exist at any given <strong>interval</strong> of time. This is a problem of resolution, and it is the main reason why researchers have switched to WT from STFT. STFT gives a fixed resolution at all times, whereas WT gives a variable resolution as follows:</p>
+<p>Higher frequencies are better resolved in time, and lower frequencies are better resolved in frequency. This means that, a certain high frequency component can be located better in time (with less relative error) than a low frequency component. On the contrary, a low frequency component can be located better in frequency compared to high frequency component.Take a look at the following grid:<br />
+<br />
+<pre><code> f ^
+   |*******************************************         continuous
+   |*  *  *  *  *  *  *  *  *  *  *  *  *  *  *         wavelet transform
+   |*     *     *     *     *     *     *          
+   |*           *           *           *          
+   |*                       *
+    --------------------------------------------&gt; time
+</code></pre></p>
+<p>Interpret the above grid as follows: The top row shows that at higher frequencies we have more samples corresponding to smaller intervals of time. In other words, higher frequencies can be resolved better in time. The bottom row however, corresponds to low frequencies, and there are less number of points to characterize the signal, therefore, low frequencies are not resolved well in time.</p>
+<pre><code>^frequency
+|     
+|
+|
+| *******************************************************
+|       
+|    
+|        
+| *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *   discrete time
+|                                                           wavelet transform
+| *     *     *     *     *     *     *     *     *     *    
+|
+| *           *           *           *           *
+| *                       *                       *
+|----------------------------------------------------------&gt; time
+</code></pre>
+
+<p>In discrete time case, the time resolution of the signal works the same as above, but now, the frequency information has different resolutions at every stage too. Note that, lower frequencies are better resolved in frequency, where as higher frequencies are not. Note how the spacing between subsequent frequency components increase as frequency increases.</p>
+<p>Below , are some examples of continuous wavelet transform:<br />
+Let&rsquo;s take a sinusoidal signal, which has two different frequency components at two different times:</p>
+<p>Note the low frequency portion first, and then the high frequency.</p>
+<p><img alt="Figure 1.10" src="http://users.rowan.edu/~polikar/WAVELETS/figure1_10.gif" /></p>
+<p>The continuous wavelet transform of the above signal:</p>
+<p><img alt="Figure 1.11" src="http://users.rowan.edu/~polikar/WAVELETS/figure1_11.gif" /></p>
+<p>Note however, the frequency axis in these plots are labeled as <strong> <br />
+</strong><br />
+<strong>scale </strong>. The concept of the scale will be made more clear in the subsequent sections, but it should be noted at this time that the scale is inverse of frequency. That is, high scales correspond to low frequencies, and low scales correspond to high frequencies. Consequently, the little peak in the plot corresponds to the high frequency components in the signal, and the large peak corresponds to low frequency components (which appear before the high frequency components in time) in the signal.</p>
+<p>You might be puzzled from the frequency resolution shown in the plot, since it shows good frequency resolution at high frequencies. Note however that, it is the good <strong> scale resolution </strong> that looks good at high frequencies (low scales), and good scale resolution means poor frequency resolution and vice versa. More about this in Part II and III.</p>
+<p><strong>TO BE CONTINUED&hellip;</strong></p>
+<p>This concludes the first part of this tutorial, where I have tried to give a brief overview of signal processing, the Fourier transform and the wavelet transform.</p>
+<p>First written: November 1994<br />
+Revised: July 23, 1995<br />
+Second Edition: June 5 , 1996</p>
+<h2 id="part-ii-fundamentals-the-fourier-transform-and-the-short-term-fourier-transform-resolution-problems"><a href="http://engineering.rowan.edu/~polikar/WAVELETS/WTpart2.html">PART II: </a>FUNDAMENTALS: THE FOURIER TRANSFORM AND THE SHORT TERM FOURIER TRANSFORM, RESOLUTION PROBLEMS</h2>
+<p><img alt="" src="http://users.rowan.edu/~polikar/WAVELETS/stft2.gif" /></p>
+<h3 id="fundamentals"><a name="user-content-fundamentals" href="#fundamentals" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>FUNDAMENTALS</h3>
+<p>Let&rsquo;s have a short review of the first part. We basically need Wavelet Transform (WT) to analyze non-stationary signals, i.e., whose frequency response varies in time. I have written that Fourier Transform (FT) is not suitable for non-stationary signals, and I have shown examples of it to make it more clear. For a quick recall, let me give the following example.</p>
+<p>Suppose we have two different signals. Also suppose that they both have the same spectral components, with one major difference. Say one of the signals have four frequency components at all times, and the other have the same four frequency components at different times. The FT of both of the signals would be the same, as shown in the example in part 1 of this tutorial. Although the two signals are completely different, their (magnitude of) FT are the SAME <strong>!</strong>. This, obviously tells us that we can not use the FT for non-stationary signals.</p>
+<p><strong>But why does this happen?</strong> In other words, how come both of the signals have the same FT? <strong>HOW DOES FOURIER TRANSFORM WORK ANYWAY?</strong></p>
+<p>An Important Milestone in Signal Processing:</p>
+<h3 id="the-fourier-transform"><a name="user-content-the-fourier-transform" href="#the-fourier-transform" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>THE FOURIER TRANSFORM</h3>
+<p>I will not go into the details of FT for two reasons: </p>
+<ol>
+<li>It is too wide of a subject to discuss in this tutorial. </li>
+<li>It is not our main concern anyway. </li>
+</ol>
+<p>However, I would like to mention a couple important points again for two reasons:</p>
+<ol>
+<li>It is a necessary background to understand how WT works. </li>
+<li>It has been by far the most important signal processing tool for many (and I mean many many) years.</li>
+</ol>
+<p>In 19th century (1822*, to be exact, but you do not need to know the exact time. Just trust me that it is far before than you can remember), the French mathematician J. Fourier, showed that any periodic function can be expressed as an infinite sum of periodic complex exponential functions. Many years after he had discovered this remarkable property of (periodic) functions, his ideas were generalized to first non-periodic functions, and then periodic or non-periodic discrete time signals. It is after this generalization that it became a very suitable tool for computer calculations. In 1965, a new algorithm called fast Fourier Transform (FFT) was developed and FT became even more popular.</p>
+<p>(* I thank Dr. Pedregal for the valuable information he has provided)<br />
+Now let us take a look at how Fourier transform works: FT decomposes a signal to complex exponential functions of different frequencies. The way it does this, is defined by the following two equations:</p>
+<p><img alt="Figure 2.1" src="http://users.rowan.edu/~polikar/WAVELETS/fteq.gif" /></p>
+<p>In the above equation, <strong>t</strong> stands for time, <strong>f</strong> stands for frequency, and <strong>x</strong> denotes the signal at hand. Note that <strong>x</strong> denotes the signal in time domain and the <strong>X</strong> denotes the signal in frequency domain. This convention is used to distinguish the two representations of the signal. Equation (1) is called the <strong>Fourier transform of x(t)</strong>, and equation (2) is called the <strong>inverse Fourier transform of X(f)</strong>, which is x(t).</p>
+<p>For those of you who have been using the Fourier transform are already familiar with this. Unfortunately many people use these equations without knowing the underlying principle.</p>
+<p>Please take a closer look at equation (1):</p>
+<p>The signal x(t), is multiplied with an exponential term, <strong>at some certain frequency &ldquo;f&rdquo; </strong>, and then integrated over <strong>ALL TIMES !!!</strong> (The key words here are &ldquo;all times&rdquo; , as will explained below).</p>
+<p>Note that the exponential term in Eqn. (1) can also be written as:</p>
+<pre><code>Cos(2.pi.f.t)+j.Sin(2.pi.f.t).......(3)
+</code></pre>
+
+<p>The above expression has a real part of cosine of frequency <strong>f</strong>, and an imaginary part of sine of frequency <strong>f</strong>. So what we are actually doing is, multiplying the original signal with a complex expression which has sines and cosines of frequency <strong>f</strong>. Then we integrate this product. In other words, we add all the points in this product. If the result of this integration (which is nothing but some sort of infinite summation) is a large value, then we say that : <strong>the signal x(t), has a dominant spectral component at frequency &ldquo;f&rdquo;</strong>. This means that, a major portion of this signal is composed of frequency <strong>f</strong>. If the integration result is a small value, than this means that the signal does not have a major frequency component of <strong>f</strong> in it. If this integration result is zero, then the signal does not contain the frequency &ldquo;f&rdquo; at all.</p>
+<p>It is of particular interest here to see how this integration works: The signal is multiplied with the sinusoidal term of frequency &ldquo;f&rdquo;. If the signal has a high amplitude component of frequency &ldquo;f&rdquo;, then that component and the sinusoidal term will coincide, and the product of them will give <strong>a (relatively) large value</strong>. This shows that, the signal &ldquo;x&rdquo;, has a major frequency component of &ldquo;f&rdquo;.</p>
+<p>However, if the signal does not have a frequency component of &ldquo;f&rdquo;, the product will yield zero, which shows that, the signal does not have a frequency component of &ldquo;f&rdquo;. If the frequency &ldquo;f&rdquo;, is not a major component of the signal &ldquo;x(t)&rdquo;, then the product will give <strong>a (relatively) small value</strong>. This shows that, the frequency component &ldquo;f&rdquo; in the signal &ldquo;x&rdquo;, has a small amplitude, in other words, it is not a major component of &ldquo;x&rdquo;.</p>
+<p>Now, note that the integration in the transformation equation (Eqn. 1) is over time. The left hand side of (1), however, is a function of frequency. Therefore, the integral in (1), is calculated for every value of <strong>f</strong>.</p>
+<p><strong>IMPORTANT(!) </strong>The information provided by the integral, corresponds to all time instances, since the integration is from minus infinity to plus infinity over time. It follows that no matter where in time the component with frequency &ldquo;f&rdquo; appears, it will affect the result of the integration equally as well. In other words, whether the frequency component &ldquo;f&rdquo; appears at time t1 or t2 , it will have the same effect on the integration. This is why <strong>Fourier transform is not suitable if the signal has time varying frequency</strong>, i.e., the signal is <strong>non-stationary.</strong> If only the signal has the frequency component &ldquo;f&rdquo; at all times (for all &ldquo;t&rdquo; values), then the result obtained by the Fourier transform makes sense.</p>
+<p>Note that <strong>the Fourier transform tells whether a certain frequency component exists or not.</strong> This information is independent of where in time this component appears. It is therefore very important to know whether a signal is stationary or not, prior to processing it with the FT.</p>
+<p>The example given in part one should now be clear. I would like to give it here again:</p>
+<p>Look at the following figure, which shows the signal:</p>
+<pre><code>x(t)=cos(2*pi*5*t)+cos(2*pi*10*t)+cos(2*pi*20*t)+cos(2*pi*50*t)
+</code></pre>
+
+<p>that is , it has four frequency components of 5, 10, 20, and 50 Hz., all occurring at all times.</p>
+<p><img alt="Figure 2.2" src="http://users.rowan.edu/~polikar/WAVELETS/cosfourfreq.gif" /></p>
+<p>And here is the FT of it. The frequency axis has been cut here, but theoretically it extends to infinity (for continuous Fourier transform (CFT). Actually, here we calculate the discrete Fourier transform (DFT), in which case the frequency axis goes up to (at least) twice the sampling frequency of the signal, and the transformed signal is symmetrical. However, this is not that important at this time.)</p>
+<p><img alt="Figure 2.3" src="http://users.rowan.edu/~polikar/WAVELETS/fftcosfourfreq.gif" /></p>
+<p>Note the four peaks in the above figure, which correspond to four different frequencies.</p>
+<p>Now, look at the following figure: Here the signal is again the cosine signal, and it has the same four frequencies. However, these components occur at <strong>different times</strong>.</p>
+<p><img alt="Figure 2.4" src="http://users.rowan.edu/~polikar/WAVELETS/nonstationary.gif" /></p>
+<p>And here is the Fourier transform of this signal:</p>
+<p><img alt="Figure 2.5" src="http://users.rowan.edu/~polikar/WAVELETS/fftnonstationary.gif" /></p>
+<p>What you are supposed to see in the above figure, is it is (almost) same with the previous FT figure. Please look carefully and note the major four peaks corresponding to 5, 10, 20, and 50 Hz. I could have made this figure look very similar to the previous one, but I did not do that on purpose. The reason of the noise like thing in between peaks show that, those frequencies also exist in the signal. But the reason they have a small amplitude , is because, <strong>they are not major spectral components of the given signal</strong>, and the reason we see those, is because of the sudden change between the frequencies. Especially note how time domain signal changes at around time 250 (ms) (With some suitable filtering techniques, the noise like part of the frequency domain signal can be cleaned, but this has not nothing to do with our subject now. If you need further information please send me an e-mail).</p>
+<p>By this time you should have understood the basic concepts of Fourier transform, when we can use it and we can not. As you can see from the above example, FT cannot distinguish the two signals very well. To FT, both signals are the same, because they constitute of the same frequency components. Therefore, FT is not a suitable tool for analyzing non-stationary signals, i.e., signals with time varying spectra.</p>
+<p>Please keep this very important property in mind. Unfortunately, many people using the FT do not think of this. They assume that the signal they have is stationary where it is not in many practical cases. Of course if you are not interested in<strong> at what times these frequency components occur</strong>, but only interested in what frequency components exist, then FT can be a suitable tool to use.</p>
+<p>So, now that we know that we can not use (well, we can, but we shouldn&rsquo;t) FT for non-stationary signals, what are we going to do?<br />
+Remember that, I have mentioned that wavelet transform is only (about) a decade old. You may wonder if researchers noticed this non-stationarity business only ten years ago or not.</p>
+<p>Obviously not.</p>
+<p>Apparently they must have done something about it before they figured out the wavelet transform....? Well&hellip;, they sure did&hellip;They have come up with &hellip;</p>
+<p>LINEAR TIME FREQUENCY REPRESENTATIONS</p>
+<h3 id="the-short-term-fourier-transform"><a name="user-content-the-short-term-fourier-transform" href="#the-short-term-fourier-transform" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>THE SHORT TERM FOURIER TRANSFORM</h3>
+<p>So, how are we going to insert this time business into our frequency plots? Let&rsquo;s look at the problem in hand little more closer.</p>
+<p>What was wrong with FT? It did not work for non-stationary signals. Let&rsquo;s think this: <strong>Can we assume that , some portion of a non-stationary signal is stationary?</strong></p>
+<p>The answer is yes.</p>
+<p>Just look at the third figure above. The signal is stationary every 250 time unit intervals.</p>
+<p>You may ask the following question?</p>
+<p>What if the part that we can consider to be stationary is very small?<br />
+Well, if it is too small, it is too small. There is nothing we can do about that, and actually, there is nothing wrong with that either. We have to play this game with the physicists&rsquo; rules.</p>
+<p>If this region where the signal can be assumed to be stationary is too small, then we look at that signal from narrow windows, narrow enough that the portion of the signal seen from these windows are indeed stationary.</p>
+<p>This approach of researchers ended up with a <strong>revised </strong>version of the Fourier transform, so-called : The Short Time Fourier Transform (STFT) .</p>
+<p>There is only a minor difference between STFT and FT. In STFT, the signal is divided into small enough segments, where these segments (portions) of the signal can be assumed to be stationary. For this purpose, a window function <strong>&ldquo;w&rdquo;</strong> is chosen. The width of this window must be equal to the segment of the signal where its stationarity is valid.</p>
+<p>This window function is first located to the very beginning of the signal. That is, the window function is located at t=0. Let&rsquo;s suppose that the width of the window is <strong>&ldquo;T&rdquo;</strong> s. At this time instant (t=0), the window function will overlap with the first <strong>T/2</strong> seconds (I will assume that all time units are in seconds). The window function and the signal are then multiplied. By doing this, only the first T/2 seconds of the signal is being chosen, with the appropriate weighting of the window (if the window is a rectangle, with amplitude &ldquo;1&rdquo;, then the product will be equal to the signal). Then this product is assumed to be just another signal, whose FT is to be taken. In other words, FT of this product is taken, just as taking the FT of any signal.</p>
+<p>The result of this transformation is the FT of the first <strong>T/2</strong> seconds of the signal. If this portion of the signal is stationary, as it is assumed, then there will be no problem and the obtained result will be a true frequency representation of the first T/2 seconds of the signal.</p>
+<p>The next step, would be shifting this window (for some t1 seconds) to a new location, multiplying with the signal, and taking the FT of the product. This procedure is followed, until the end of the signal is reached by shifting the window with &ldquo;t1&rdquo; seconds intervals.</p>
+<p>The following definition of the STFT summarizes all the above explanations in one line:</p>
+<p><img alt="Figure 2.6" src="http://users.rowan.edu/~polikar/WAVELETS/stfteqn.gif" /></p>
+<p>Please look at the above equation carefully. <strong>x(t)</strong> is the signal itself, <strong>w(t)</strong> is the window function, and <strong>*</strong> is the complex conjugate. As you can see from the equation, the STFT of the signal is nothing but the FT of the signal multiplied by a window function.</p>
+<p>For every <strong>t&rsquo;</strong> and <strong>f</strong> a new STFT coefficient is computed (Correction: The &ldquo;t&rdquo; in the parenthesis of STFT should be &ldquo;t&rsquo;&ldquo;. I will correct this soon. I have just noticed that I have mistyped it).</p>
+<p>The following figure may help you to understand this a little better:</p>
+<p><img alt="Figure 2.7" src="http://users.rowan.edu/~polikar/WAVELETS/stftfig.gif" /></p>
+<p>The Gaussian-like functions in color are the windowing functions. The red one shows the window located at t=t1&rsquo;, the blue shows t=t2&rsquo;, and the green one shows the window located at t=t3&rsquo;. These will correspond to three different FTs at three different times. Therefore, we will obtain a true <strong>time-frequency representation (TFR)</strong> of the signal.</p>
+<p>Probably the best way of understanding this would be looking at an example. First of all, since our transform is a function of both time and frequency (unlike FT, which is a function of frequency only), the transform would be two dimensional (three, if you count the amplitude too). Let&rsquo;s take a non-stationary signal, such as the following one:</p>
+<p><img alt="Figure 2.8" src="http://users.rowan.edu/~polikar/WAVELETS/stft_time1.gif" /></p>
+<p>In this signal, there are four frequency components at different times. The interval 0 to 250 ms is a simple sinusoid of 300 Hz, and the other 250 ms intervals are sinusoids of 200 Hz, 100 Hz, and 50 Hz, respectively. Apparently, this is a non-stationary signal. Now, let&rsquo;s look at its STFT:</p>
+<p><img alt="Figure 2.9" src="http://users.rowan.edu/~polikar/WAVELETS/stft1.gif" /></p>
+<p>As expected, this is two dimensional plot (3 dimensional, if you count the amplitude too). The &ldquo;x&rdquo; and &ldquo;y&rdquo; axes are time and frequency, respectively. Please, ignore the numbers on the axes, since they are normalized in some respect, which is not of any interest to us at this time. Just examine the shape of the time-frequency representation.</p>
+<p>First of all, note that the graph is symmetric with respect to midline of the frequency axis. Remember that, although it was not shown, FT of a real signal is always symmetric, since STFT is nothing but a windowed version of the FT, it should come as no surprise that STFT is also symmetric in frequency. The symmetric part is said to be associated with negative frequencies, an odd concept which is difficult to comprehend, fortunately, it is not important; it suffices to know that STFT and FT are symmetric.</p>
+<p>What is important, are the four peaks; note that there are four peaks corresponding to four different frequency components. Also note that, unlike FT, <strong>these four peaks are located at different time intervals along the time axis </strong>. Remember that the original signal had four spectral components located at different times.</p>
+<p>Now we have a true time-frequency representation of the signal. We not only know what frequency components are present in the signal, but we also know where they are located in time.</p>
+<p>It is grrrreeeaaatttttt!!!! Right?</p>
+<p>Well, not really!</p>
+<p>You may wonder, since STFT gives the TFR of the signal, why do we need the wavelet transform. The implicit problem of the STFT is not obvious in the above example. Of course, an example that would work nicely was chosen on purpose to demonstrate the concept.</p>
+<p>The problem with STFT is the fact whose roots go back to what is known as the <strong>Heisenberg Uncertainty Principle </strong>. This principle originally applied to the momentum and location of moving particles, can be applied to time-frequency information of a signal. Simply, this principle states that one cannot know the exact time-frequency representation of a signal, i.e., one cannot know what spectral components exist at what instances of times. What one <strong>can </strong>know are the <strong>time intervals </strong>in which certain <strong>band of frequencies </strong>exist, which is a <strong>resolution </strong>problem.</p>
+<p>The problem with the STFT has something to do with the <strong>width </strong>of the window function that is used. To be technically correct, this width of the window function is known as <strong>the support </strong>of the window. If the window function is narrow, than it is known as <strong>compactly supported </strong>. This terminology is more often used in the wavelet world, as we will see later.</p>
+<p>Here is what happens:</p>
+<p>Recall that in the FT there is no resolution problem in the frequency domain, i.e., we know exactly what frequencies exist; similarly we there is no time resolution problem in the time domain, since we know the value of the signal at every instant of time. Conversely, the time resolution in the FT, and the frequency resolution in the time domain are zero, since we have no information about them. What gives the perfect frequency resolution in the FT is the fact that the window used in the FT is its kernel, the <strong>exp{jwt} </strong>function, which lasts at all times from minus infinity to plus infinity. Now, in STFT, our window is of finite length, thus it covers only a portion of the signal, which causes the frequency resolution to get poorer. What I mean by getting poorer is that, we no longer know the exact frequency components that exist in the signal, but we only know a band of frequencies that exist:</p>
+<p>In FT, the kernel function, allows us to obtain perfect frequency resolution, because the kernel itself is a window of infinite length. In STFT is window is of finite length, and we no longer have perfect frequency resolution. You may ask, why don&rsquo;t we make the length of the window in the STFT infinite, just like as it is in the FT, to get perfect frequency resolution? Well, than you loose all the time information, you basically end up with the FT instead of STFT. To make a long story real short, we are faced with the following dilemma:</p>
+<p>If we use a window of infinite length, we get the FT, which gives perfect frequency resolution, but no time information. Furthermore, in order to obtain the stationarity, we have to have a short enough window, in which the signal is stationary. The narrower we make the window, the better the time resolution, and better the assumption of stationarity, but poorer the frequency resolution:</p>
+<p>Narrow window ===&gt;good time resolution, poor frequency resolution. Wide window ===&gt;good frequency resolution, poor time resolution.</p>
+<p>In order to see these effects, let&rsquo;s look at a couple examples: I will show four windows of different length, and we will use these to compute the STFT, and see what happens:</p>
+<p>The window function we use is simply a Gaussian function in the form:</p>
+<pre><code>w(t)=exp(-a*(t^2)/2);
+</code></pre>
+
+<p>where <strong>a </strong>determines the length of the window, and <strong>t </strong>is the time. The following figure shows four window functions of varying regions of support, determined by the value of <strong>a </strong>. Please disregard the numeric values of <strong>a </strong>since the time interval where this function is computed also determines the function. Just note the length of each window. The above example given was computed with the second value, <strong>a=0.001 </strong>. I will now show the STFT of the same signal given above computed with the other windows.</p>
+<p><img alt="Figure 2.10" src="http://users.rowan.edu/~polikar/WAVELETS/stft_time2.gif" /></p>
+<p>First let&rsquo;s look at the first most narrow window. We expect the STFT to have a very good time resolution, but relatively poor frequency resolution:</p>
+<p><img alt="Figure 2.11" src="http://users.rowan.edu/~polikar/WAVELETS/stft2.gif" /></p>
+<p>The above figure shows this STFT. The figure is shown from a top bird-eye view with an angle for better interpretation. Note that the four peaks are well separated from each other in time. Also note that, in frequency domain, every peak covers a range of frequencies, instead of a single frequency value. Now let&rsquo;s make the window wider, and look at the third window (the second one was already shown in the first example).</p>
+<p><img alt="Figure 2.12" src="http://users.rowan.edu/~polikar/WAVELETS/stft3.gif" /></p>
+<p>Note that the peaks are not well separated from each other in time, unlike the previous case, however, in frequency domain the resolution is much better. Now let&rsquo;s further increase the width of the window, and see what happens:</p>
+<p><img alt="Figure 2.13" src="http://users.rowan.edu/~polikar/WAVELETS/stft4.gif" /></p>
+<p>Well, this should be of no surprise to anyone now, since we would expect a terrible (and I mean absolutely terrible) time resolution.</p>
+<p>These examples should have illustrated the implicit problem of resolution of the STFT. Anyone who would like to use STFT is faced with this problem of resolution. What kind of a window to use? Narrow windows give good time resolution, but poor frequency resolution. Wide windows give good frequency resolution, but poor time resolution; furthermore, wide windows may violate the condition of stationarity. The problem, of course, is a result of choosing a window function, once and for all, and use that window in the entire analysis. The answer, of course, is application dependent: If the frequency components are well separated from each other in the original signal, than we may sacrifice some frequency resolution and go for good time resolution, since the spectral components are already well separated from each other. However, if this is not the case, then a good window function, could be more difficult than finding a good stock to invest in.</p>
+<p>By now, you should have realized how wavelet transform comes into play. The Wavelet transform (WT) solves the dilemma of resolution to a certain extent, as we will see in the next part.</p>
+<p>This completes Part II of this tutorial. The continuous wavelet transform is the subject of the Part III of this tutorial. If you did not have much trouble in coming this far, and what have been written above make sense to you, you are now ready to take the ultimate challenge in understanding the basic concepts of the wavelet theory.</p>
+<h2 id="part-iii-multiresolution-analysis-the-continuous-wavelet-transform"><a href="http://engineering.rowan.edu/~polikar/WAVELETS/WTpart3.html">PART III: </a>MULTIRESOLUTION ANALYSIS: THE CONTINUOUS WAVELET TRANSFORM</h2>
+<p><img alt="" src="http://users.rowan.edu/~polikar/WAVELETS/wt7.gif" /></p>
+<h3 id="multiresolution-analysis"><a name="user-content-multiresolution-analysis" href="#multiresolution-analysis" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>MULTIRESOLUTION ANALYSIS</h3>
+<p>Although the time and frequency resolution problems are results of a physical phenomenon (the Heisenberg uncertainty principle) and exist regardless of the transform used, it is possible to analyze any signal by using an alternative approach called the <strong>multiresolution analysis (MRA) .</strong> MRA, as implied by its name, analyzes the signal at different frequencies with different resolutions. Every spectral component is not resolved equally as was the case in the STFT.</p>
+<p>MRA is designed to give good time resolution and poor frequency resolution at high frequencies and good frequency resolution and poor time resolution at low frequencies. This approach makes sense especially when the signal at hand has high frequency components for short durations and low frequency components for long durations. </p>
+<p>Fortunately, the signals that are encountered in practical applications are often of this type. For example, the following shows a signal of this type. It has a relatively low frequency component throughout the entire signal and relatively high frequency components for a short duration somewhere around the middle.</p>
+<p><img alt="" src="http://users.rowan.edu/~polikar/WAVELETS/wt_time1.gif" /><br />
+</p>
+<h3 id="the-continuous-wavelet-transform"><a name="user-content-the-continuous-wavelet-transform" href="#the-continuous-wavelet-transform" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>THE CONTINUOUS WAVELET TRANSFORM</h3>
+<p>The continuous wavelet transform was developed as an alternative approach to the short time Fourier transform to overcome the resolution problem. The wavelet analysis is done in a similar way to the STFT analysis, in the sense that the signal is multiplied with a function, {\it the wavelet}, similar to the window function in the STFT, and the transform is computed separately for different segments of the time-domain signal. However, there are two main differences between the STFT and the CWT:</p>
+<ol>
+<li>The Fourier transforms of the windowed signals are not taken, and therefore single peak will be seen corresponding to a sinusoid, i.e., negative frequencies are not computed.</li>
+<li>The width of the window is changed as the transform is computed for every single spectral component, which is probably the most significant characteristic of the wavelet transform.</li>
+</ol>
+<p>The continuous wavelet transform is defined as follows</p>
+<p><img alt="Equation 3.1" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn1.gif" /></p>
+<p>As seen in the above equation , the transformed signal is a function of two variables, <strong>tau<strong><em>* </em>*and </strong>s </strong>, the <strong>translation </strong>and <strong>scale </strong>parameters, respectively. <strong>psi<strong><em>*(</em></strong>*t)</strong> is the transforming function, and it is called <strong>the mother wavelet </strong>. The term <strong>mother wavelet </strong>gets its name due to two important properties of the wavelet analysis as explained below:</p>
+<p>The term <strong>wavelet</strong> means a <strong>small wave .</strong> The smallness refers to the condition that this (window) function is of finite length ( <strong>compactly<strong><em>* supported</em>*). The wave refers to the condition that this function is oscillatory . The term </strong>mother </strong>implies that the functions with different region of support that are used in the transformation process are derived from one main function, or the mother wavelet. In other words, the mother wavelet is a <strong>prototype </strong>for generating the other window functions.</p>
+<p>The term <strong>translation </strong>is used in the same sense as it was used in the STFT; it is related to the location of the window, as the window is shifted through the signal. This term, obviously, corresponds to time information in the transform domain. However, we do not have a frequency parameter, as we had before for the STFT. Instead, we have scale parameter which is defined as $1/frequency$. The term frequency is reserved for the STFT. Scale is described in more detail in the next section.</p>
+<h3 id="the-scale"><a name="user-content-the-scale" href="#the-scale" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The Scale</h3>
+<p>The parameter <strong>scale </strong>in the wavelet analysis is similar to the scale used in maps. As in the case of maps, high scales correspond to a non-detailed global view (of the signal), and low scales correspond to a detailed view. Similarly, in terms of frequency, low frequencies (high scales) correspond to a global information of a signal (that usually spans the entire signal), whereas high frequencies (low scales) correspond to a detailed information of a hidden pattern in the signal (that usually lasts a relatively short time). Cosine signals corresponding to various scales are given as examples in the following figure .</p>
+<p><img alt="Figure 3.2" src="http://users.rowan.edu/~polikar/WAVELETS/wt_time2.gif" /></p>
+<p>Fortunately in practical applications, low scales (high frequencies) do not last for the entire duration of the signal, unlike those shown in the figure, but they usually appear from time to time as short bursts, or spikes. High scales (low frequencies) usually last for the entire duration of the signal.</p>
+<p>Scaling, as a mathematical operation, either dilates or compresses a signal. Larger scales correspond to dilated (or stretched out) signals and small scales correspond to compressed signals. All of the signals given in the figure are derived from the same cosine signal, i.e., they are dilated or compressed versions of the same function. In the above figure, <strong>s=0.05 </strong>is the smallest scale, and <strong>s=1 </strong>is the largest scale.<br />
+In terms of mathematical functions, if <strong>f(<strong><em>*t) </em>*is a given function </strong>f(st) </strong>corresponds to a contracted (compressed) version of <strong>f(t) </strong>if <strong>s &gt; 1 </strong>and to an expanded (dilated) version of <strong>f(t) </strong>if <strong>s &lt; 1 </strong>.</p>
+<p>However, in the definition of the wavelet transform, the scaling term is used in the denominator, and therefore, the opposite of the above statements holds, i.e., scales <strong>s &gt; 1 </strong>dilates the signals whereas scales <strong>s &lt; 1 </strong>, compresses the signal. This interpretation of scale will be used throughout this text.</p>
+<h3 id="computation-of-the-cwt"><a name="user-content-computation-of-the-cwt" href="#computation-of-the-cwt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>COMPUTATION OF THE CWT</h3>
+<p>Interpretation of the above equation will be explained in this section. Let <strong>x(</strong><strong>t) </strong>is the signal to be analyzed. The mother wavelet is chosen to serve as a prototype for all windows in the process. All the windows that are used are the dilated (or compressed) and shifted versions of the mother wavelet. There are a number of functions that are used for this purpose. The Morlet wavelet and the Mexican hat function are two candidates, and they are used for the wavelet analysis of the examples which are presented later in this chapter.</p>
+<p>Once the mother wavelet is chosen the computation starts with <strong>s=1 </strong>and the continuous wavelet transform is computed for all values of <strong>s </strong>, smaller and larger than ``1&rsquo;&lsquo;. However, depending on the signal, a complete transform is usually not necessary. For all practical purposes, the signals are bandlimited, and therefore, computation of the transform for a limited interval of scales is usually adequate. In this study, some finite interval of values for <strong>s </strong>were used, as will be described later in this chapter.</p>
+<p>For convenience, the procedure will be started from scale <strong>s=1 </strong>and will continue for the increasing values of <strong>s </strong>, i.e., the analysis will start from high frequencies and proceed towards low frequencies. This first value of <strong>s </strong>will correspond to the most compressed wavelet. As the value of <strong>s </strong>is increased, the wavelet will dilate.</p>
+<p>The wavelet is placed at the beginning of the signal at the point which corresponds to time=0. The wavelet function at scale ``1&rsquo;&lsquo; is multiplied by the signal and then integrated <strong>over all times</strong>. The result of the integration is then multiplied by the constant number <strong>1/sqrt{s} .</strong> This multiplication is for energy normalization purposes so that the transformed signal will have the same energy at every scale. The final result is the value of the transformation, i.e., the value of the continuous wavelet transform <strong>at time zero </strong>and <strong>scale s=1 .</strong> In other words, it is the value that corresponds to the point <strong>tau</strong><strong> =0 , s=1 </strong>in the time-scale plane.</p>
+<p>The wavelet at scale <strong>s=1 </strong>is then shifted towards the right by <strong>tau<strong><em>* </em>*amount to the location </strong>t=tau ,</strong> and the above equation is computed to get the transform value at <strong>t=tau , s=1 </strong>in the time-frequency plane.</p>
+<p>This procedure is repeated until the wavelet reaches the end of the signal. <strong>One row of points on the time-scale plane </strong>for the scale <strong>s=1 </strong>is now completed.</p>
+<p>Then, <strong>s</strong> is increased by a small value. Note that, this is a continuous transform, and therefore, both <strong>tau<strong><em>* </em>*and </strong>s </strong>must be incremented continuously . However, if this transform needs to be computed by a computer, then both parameters are increased by <strong>a sufficiently small step size</strong>. This corresponds to sampling the time-scale plane.</p>
+<p>The above procedure is repeated for every value of <strong>s</strong>. Every computation for a given value of <strong>s</strong> fills the corresponding single row of the time-scale plane. When the process is completed for all desired values of <strong>s</strong>, the CWT of the signal has been calculated.</p>
+<p>The figures below illustrate the entire process step by step.</p>
+<p><img alt="Figure 3.3" src="http://users.rowan.edu/~polikar/WAVELETS/wt_time3.gif" /></p>
+<p>In Figure 3.3, the signal and the wavelet function are shown for four different values of <strong>tau<strong><em>* </em>*. The signal is a truncated version of the signal shown in Figure 3.1. The scale value is </strong>1 </strong>, corresponding to the lowest scale, or highest frequency. Note how compact it is (the blue window). It should be as narrow as the highest frequency component that exists in the signal. Four distinct locations of the wavelet function are shown in the figure at <strong>to=2 , to=40, to=90, and to=140 </strong>. At every location, it is multiplied by the signal. Obviously, the product is nonzero only where the signal falls in the region of support of the wavelet, and it is zero elsewhere. By shifting the wavelet in time, the signal is localized in time, and by changing the value of <strong>s </strong>, the signal is localized in scale (frequency).</p>
+<p>If the signal has a spectral component that corresponds to the current value of <strong>s </strong>(which is 1 in this case), the product of the wavelet with the signal <strong>at the location where this spectral component exists </strong>gives a relatively large value. If the spectral component that corresponds to the current value of <strong>s </strong>is not present in the signal, the product value will be relatively small, or zero. The signal in Figure 3.3 has spectral components comparable to the window&rsquo;s width at <strong>s=1 </strong>around t=100 ms.</p>
+<p>The continuous wavelet transform of the signal in Figure 3.3 will yield large values for low scales around time 100 ms, and small values elsewhere. For high scales, on the other hand, the continuous wavelet transform will give large values for almost the entire duration of the signal, since low frequencies exist at all times.</p>
+<p><img alt="Figure 3.4" src="http://users.rowan.edu/~polikar/WAVELETS/wt_time4.gif" /></p>
+<p><img alt="Figure 3.5" src="http://users.rowan.edu/~polikar/WAVELETS/wt_time5.gif" /></p>
+<p>Figures 3.4 and 3.5 illustrate the same process for the scales s=5 and s=20, respectively. Note how the window width changes with increasing scale (decreasing frequency). As the window width increases, the transform starts picking up the lower frequency components.</p>
+<p>As a result, for every scale and for every time (interval), one point of the time-scale plane is computed. The computations at one scale construct the rows of the time-scale plane, and the computations at different scales construct the columns of the time-scale plane.</p>
+<p>Now, let&rsquo;s take a look at an example, and see how the wavelet transform really looks like. Consider the <strong>non-stationary </strong>signal in Figure 3.6. This is similar to the example given for the STFT, except at different frequencies. As stated on the figure, the signal is composed of four frequency components at 30 Hz, 20 Hz, 10 Hz and 5 Hz.</p>
+<p><img alt="Figure 3.6" src="http://users.rowan.edu/~polikar/WAVELETS/wt_time6.gif" /></p>
+<p>Figure 3.7 is the continuous wavelet transform (CWT) of this signal. Note that the axes are translation and scale, not time and frequency. However, translation is strictly related to time, since it indicates where the mother wavelet is located. The translation of the mother wavelet can be thought of as the time elapsed since <strong>t=0 .</strong> The scale, however, has a whole different story. Remember that the scale parameter <strong>s </strong>in equation 3.1 is actually inverse of frequency. In other words, whatever we said about the properties of the wavelet transform regarding the frequency resolution, inverse of it will appear on the figures showing the WT of the time-domain signal.</p>
+<p><img alt="Figure 3.7" src="http://users.rowan.edu/~polikar/WAVELETS/wt7.gif" /></p>
+<p>Note that in Figure 3.7 that smaller scales correspond to higher frequencies, i.e., frequency decreases as scale increases, therefore, that portion of the graph with scales around zero, actually correspond to highest frequencies in the analysis, and that with high scales correspond to lowest frequencies. Remember that the signal had 30 Hz (highest frequency) components first, and this appears at the lowest scale at a translations of 0 to 30. Then comes the 20 Hz component, second highest frequency, and so on. The 5 Hz component appears at the end of the translation axis (as expected), and at higher scales (lower frequencies) again as expected.</p>
+<p><img alt="Figure 3.8" src="http://users.rowan.edu/~polikar/WAVELETS/wt8.gif" /></p>
+<p>Now, recall these resolution properties: Unlike the STFT which has a constant resolution at all times and frequencies, the WT has a good time and poor frequency resolution at high frequencies, and good frequency and poor time resolution at low frequencies. Figure 3.8 shows the same WT in Figure 3.7 from another angle to better illustrate the resolution properties: In Figure 3.8, lower scales (higher frequencies) have <strong>better scale resolution </strong>(narrower in scale, which means that it is less ambiguous what the exact value of the scale) which correspond to <strong>poorer frequency resolution </strong>. Similarly, higher scales have scale frequency resolution (wider support in scale, which means it is more ambitious what the exact value of the scale is) , which correspond to better frequency resolution of lower frequencies.</p>
+<p>The axes in Figure 3.7 and 3.8 are normalized and should be evaluated accordingly. Roughly speaking the 100 points in the translation axis correspond to 1000 ms, and the 150 points on the scale axis correspond to a frequency band of 40 Hz (the numbers on the translation and scale axis <strong>do not correspond to seconds and Hz, respectively </strong>, they are just the number of samples in the computation).</p>
+<h3 id="time-and-frequency-resolutions"><a name="user-content-time-and-frequency-resolutions" href="#time-and-frequency-resolutions" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>TIME AND FREQUENCY RESOLUTIONS</h3>
+<p>In this section we will take a closer look at the resolution properties of the wavelet transform. Remember that the resolution problem was the main reason why we switched from STFT to WT.</p>
+<p>The illustration in Figure 3.9 is commonly used to explain how time and frequency resolutions should be interpreted. Every box in Figure 3.9 corresponds to a value of the wavelet transform in the time-frequency plane. Note that boxes have a certain <strong>non-zero </strong>area, which implies that the value of a particular point in the time-frequency plane cannot be known. All the points in the time-frequency plane that falls into a box is represented by one value of the WT.</p>
+<p><img alt="Figure 3.9" src="http://users.rowan.edu/~polikar/WAVELETS/wt_resolution9.gif" /></p>
+<p>Let&rsquo;s take a closer look at Figure 3.9: First thing to notice is that although the widths and heights of the boxes change, the area is constant. That is each box represents an equal portion of the time-frequency plane, but giving different proportions to time and frequency. Note that at low frequencies, the height of the boxes are shorter (which corresponds to better frequency resolutions, since there is less ambiguity regarding the value of the exact frequency), but their widths are longer (which correspond to poor time resolution, since there is more ambiguity regarding the value of the exact time). At higher frequencies the width of the boxes decreases, i.e., the time resolution gets better, and the heights of the boxes increase, i.e., the frequency resolution gets poorer.</p>
+<p>Before concluding this section, it is worthwhile to mention how the partition looks like in the case of STFT. Recall that in STFT the time and frequency resolutions are determined by the width of the analysis window, which is selected once for the entire analysis, i.e., both time and frequency resolutions are constant. Therefore the time-frequency plane consists of <strong>squares </strong>in the STFT case.</p>
+<p>Regardless of the dimensions of the boxes, the areas of all boxes, both in STFT and WT, are the same and determined by <strong>Heisenberg&rsquo;s inequality .</strong> As a summary, the area of a box is fixed for each window function (STFT) or mother wavelet (CWT), whereas different windows or mother wavelets can result in different areas. However, <strong>all areas are lower bounded by 1/4 \pi .</strong> That is, we cannot reduce the areas of the boxes as much as we want due to the Heisenberg&rsquo;s uncertainty principle. On the other hand, for a given mother wavelet the dimensions of the boxes can be changed, while keeping the area the same. This is exactly what wavelet transform does.</p>
+<h3 id="the-wavelet-theory-a-mathematical-approach"><a name="user-content-the-wavelet-theory-a-mathematical-approach" href="#the-wavelet-theory-a-mathematical-approach" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>THE WAVELET THEORY: A MATHEMATICAL APPROACH</h3>
+<p>This section describes the main idea of wavelet analysis theory, which can also be considered to be the underlying concept of most of the signal analysis techniques. The FT defined by Fourier use<strong>basis functions </strong>to analyze and reconstruct a function. <strong>Every vector in a vector space can be written as a linear combination of the basis vectors in that vector space </strong>, i.e., by multiplying the vectors by some constant numbers, and then by taking the summation of the products. The analysis of the signal involves the estimation of these constant numbers (transform coefficients, or Fourier coefficients, wavelet coefficients, etc). The synthesis, or the reconstruction, corresponds to computing the linear combination equation.</p>
+<p>All the definitions and theorems related to this subject can be found in Keiser&rsquo;s book, <strong>A Friendly Guide to Wavelets </strong>but an introductory level knowledge of how basis functions work is necessary to understand the underlying principles of the wavelet theory. Therefore, this information will be presented in this section.</p>
+<h3 id="basis-vectors"><a name="user-content-basis-vectors" href="#basis-vectors" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Basis Vectors</h3>
+<p>Note: Most of the equations include letters of the Greek alphabet. These letters are written out explicitly in the text with their names, such as <strong>tau<strong><em>*, psi, phi </em>*etc. For capital letters, the first letter of the name has been capitalized, such as,</strong> Tau, Psi, Phi </strong>etc. Also, subscripts are shown by the underscore character <strong>_ </strong>, and superscripts are shown by the <strong>^ </strong>character. Also note that all letters or letter names written in bold type face represent vectors, Some important points are also written in bold face, but the meaning should be clear from the context.<br />
+A <strong>basis </strong>of a vector space <strong>V </strong>is a set of linearly independent vectors, such that any vector <strong>v </strong>in <strong>V </strong>can be written as a linear combination of these basis vectors. There may be more than one basis for a vector space. However, all of them have the same number of vectors, and this number is known as the <strong>dimension </strong>of the vector space. For example in two-dimensional space, the basis will have two vectors.</p>
+<p><img alt="Equation 3.2" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn2.gif" /></p>
+<p>Equation 3.2 shows how any vector <strong>v </strong>can be written as a linear combination of the basis vectors <strong>b_k<strong><em>* </em>*and the corresponding coefficients </strong>nu^k</strong><strong> </strong>.</p>
+<p>This concept, given in terms of vectors, can easily be generalized to functions, by replacing the basis vectors <strong>b_k<strong><em>* </em>*with basis functions phi_k(t), and the vector </strong>v </strong>with a function f(t). Equation 3.2 then becomes</p>
+<p><img alt="Equation 3.2a" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn2a.gif" /></p>
+<p>The complex exponential (sines and cosines) functions are the basis functions for the FT. Furthermore, they are orthogonal functions, which provide some desirable properties for reconstruction.</p>
+<p>Let f(t) and g(t) be two functions in L^2 [a,b]. ( L^2 [a,b] denotes the set of square integrable functions in the interval [a,b]). The inner product of two functions is defined by Equation 3.3:</p>
+<p><img alt="Equation 3.3" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn3.gif" /></p>
+<p>According to the above definition of the inner product, the CWT can be thought of as the inner product of the test signal with the basis functions psi_(tau ,s)(t):</p>
+<p><img alt="Equation 3.4" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn4.gif" /></p>
+<p>where,</p>
+<p><img alt="Equation 3.5" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn5.gif" /></p>
+<p>This definition of the CWT shows that the wavelet analysis is a measure of similarity between the basis functions (wavelets) and the signal itself. Here the similarity is in the sense of similar frequency content. The calculated CWT coefficients refer to the closeness of the signal to the wavelet <strong>at the current scale .</strong></p>
+<p>This further clarifies the previous discussion on the correlation of the signal with the wavelet at a certain scale. If the signal has a major component of the frequency corresponding to the current scale, then the wavelet (the basis function) at the current scale will be <strong>similar </strong>or <strong>close </strong>to the signal at the particular location where this frequency component occurs. Therefore, the CWT coefficient computed at this point in the time-scale plane will be a relatively large number.</p>
+<h3 id="inner-products-orthogonality-and-orthonormality"><a name="user-content-inner-products-orthogonality-and-orthonormality" href="#inner-products-orthogonality-and-orthonormality" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Inner Products, Orthogonality, and Orthonormality</h3>
+<p>Two vectors <strong>v </strong>, <strong>w </strong>are said to be <strong>orthogonal </strong>if their inner product equals zero:</p>
+<p><img alt="Equation 3.6" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn6.gif" /></p>
+<p>Similarly, two functions $f$ and $g$ are said to be orthogonal to each other if their inner product is zero:</p>
+<p><img alt="Equation 3.7" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn7.gif" /></p>
+<p>A set of vectors <strong>{v_1, v_2, ....,v_n} </strong>is said to be <strong>orthonormal</strong><strong> </strong>, if they are pairwise orthogonal to each other, and all have length ``1&rsquo;&lsquo;. This can be expressed as:</p>
+<p><img alt="Equation 3.8" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn8.gif" /><br />
+</p>
+<p>Similarly, a set of functions {phi_k(t)}, k=1,2,3,&hellip;, is said to be orthonormal if</p>
+<p><img alt="Equation 3.9" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn9.gif" /></p>
+<p>and</p>
+<p><img alt="Equation 3.10" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn10.gif" /></p>
+<p>or equivalently</p>
+<p><img alt="Equation 3.11" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn11.gif" /></p>
+<p>where, delta_{kl} is the <strong>Kronecker</strong><strong> delta </strong>function, defined as:</p>
+<p><img alt="Equation 3.12" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn12.gif" /></p>
+<p>As stated above, there may be more than one set of basis functions (or vectors). Among them, the orthonormal basis functions (or vectors) are of particular importance because of the nice properties they provide in finding these analysis coefficients. The orthonormal bases allow computation of these coefficients in a very simple and straightforward way using the orthonormality property.</p>
+<p>For orthonormal bases, the coefficients, mu_k , can be calculated as</p>
+<p><img alt="Equation 3.13" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn13.gif" /></p>
+<p>and the function f(t) can then be reconstructed by Equation 3.2_a by substituting the mu_k coefficients. This yields</p>
+<p><img alt="Equation 3.14" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn14.gif" /></p>
+<p>Orthonormal bases may not be available for every type of application where a generalized version, <strong>biorthogonal<strong><em>* </em>*bases can be used. The term ``biorthogonal&rsquo;&lsquo; refers to two different bases which are orthogonal to each other, but each do not form an orthogonal set.<br />
+In some applications, however, biorthogonal bases also may not be available in which case </strong>frames </strong>can be used. Frames constitute an important part of wavelet theory, and interested readers are referred to Kaiser&rsquo;s book mentioned earlier.</p>
+<p>Following the same order as in chapter 2 for the STFT, some examples of continuous wavelet transform are presented next. The figures given in the examples were generated by a program written to compute the CWT.<br />
+Before we close this section, I would like to include two mother wavelets commonly used in wavelet analysis. The Mexican Hat wavelet is defined as the second derivative of the Gaussian function:</p>
+<p><img alt="Equation 3.15" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn15.gif" /></p>
+<p>which is</p>
+<p><img alt="Equation 3.16" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn16.gif" /></p>
+<p>The Morlet wavelet is defined as</p>
+<p><img alt="Equation 3.16a" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn_morlet.gif" /></p>
+<p>where <strong>a </strong>is a modulation parameter, and <strong>sigma </strong>is the scaling parameter that affects the width of the window.</p>
+<h3 id="examples"><a name="user-content-examples" href="#examples" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>EXAMPLES</h3>
+<p>All of the examples that are given below correspond to real-life non-stationary signals. These signals are drawn from a database signals that includes <strong>event related potentials </strong>of normal people, and patients with Alzheimer&rsquo;s disease. Since these are not test signals like simple sinusoids, it is not as easy to interpret them. They are shown here only to give an idea of how real-life CWTs look like.</p>
+<p>The following signal shown in Figure 3.11 belongs to a normal person.</p>
+<p><img alt="Figure 3.11" src="http://users.rowan.edu/~polikar/WAVELETS/wt_time11.gif" /></p>
+<p>and the following is its CWT. The numbers on the axes are of no importance to us. those numbers simply show that the CWT was computed at 350 translation and 60 scale locations on the translation-scale plane. The important point to note here is the fact that the computation is not a true <strong>continuous </strong>WT, as it is apparent from the computation at finite number of locations. This is only a discretized version of the CWT, which is explained later on this page. Note, however, that this is NOT discrete wavelet transform (DWT) which is the topic of Part IV of this tutorial.</p>
+<p><img alt="Figure 3.12" src="http://users.rowan.edu/~polikar/WAVELETS/wt12.gif" /></p>
+<p>and the Figure 3.13 plots the same transform from a different angle for better visualization.</p>
+<p><img alt="Figure 3.13" src="http://users.rowan.edu/~polikar/WAVELETS/wt13.gif" /></p>
+<p>Figure 3.14 plots an event related potential of a patient diagnosed with Alzheimer&rsquo;s disease</p>
+<p><img alt="Figure 3.14" src="http://users.rowan.edu/~polikar/WAVELETS/wt_14.gif" /></p>
+<p>and Figure 3.15 illustrates its CWT:</p>
+<p><img alt="Figure 3.15" src="http://users.rowan.edu/~polikar/WAVELETS/wt_15.gif" /></p>
+<p>and here is another view from a different angle</p>
+<p><img alt="Figure 3.16" src="http://users.rowan.edu/~polikar/WAVELETS/wt_16.gif" /></p>
+<h3 id="the-wavelet-synthesis"><a name="user-content-the-wavelet-synthesis" href="#the-wavelet-synthesis" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>THE WAVELET SYNTHESIS</h3>
+<p>The continuous wavelet transform is a reversible transform, provided that Equation 3.18 is satisfied. Fortunately, this is a very non-restrictive requirement. The continuous wavelet transform is reversible if Equation 3.18 is satisfied, even though the basis functions are in general may not be orthonormal. The reconstruction is possible by using the following reconstruction formula:</p>
+<p><img alt="Equation 3.17 Inverse Wavelet Transform" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn17.gif" /></p>
+<p>where C_psi is a constant that depends on the wavelet used. The success of the reconstruction depends on this constant called, <strong>the admissibility constant ,</strong> to satisfy the following <strong>admissibility condition </strong>:</p>
+<p><img alt="Equation 3.18 Admissibility Condition" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn18.gif" /></p>
+<p>where psi^hat(xi) is the FT of psi(t). Equation 3.18 implies that psi^hat(0) = 0, which is</p>
+<p><img alt="Equation 3.19" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn19.gif" /></p>
+<p>As stated above, Equation 3.19 is not a very restrictive requirement since many wavelet functions can be found whose integral is zero. For Equation 3.19 to be satisfied, the wavelet must be oscillatory.</p>
+<h3 id="discretization-of-the-continuous-wavelet-transform-the-wavelet-series"><a name="user-content-discretization-of-the-continuous-wavelet-transform-the-wavelet-series" href="#discretization-of-the-continuous-wavelet-transform-the-wavelet-series" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Discretization of the Continuous Wavelet Transform: The Wavelet Series</h3>
+<p>In today&rsquo;s world, computers are used to do most computations (well,&hellip;ok&hellip; almost all computations). It is apparent that neither the FT, nor the STFT, nor the CWT can be practically computed by using analytical equations, integrals, etc. It is therefore necessary to discretize the transforms. As in the FT and STFT, the most intuitive way of doing this is simply sampling the time-frequency (scale) plane. Again intuitively, sampling the plane with a uniform sampling rate sounds like the most natural choice. However, in the case of WT, the scale change can be used to reduce the sampling rate.</p>
+<p>At higher scales (lower frequencies), the sampling rate can be decreased, according to Nyquist&rsquo;s rule. In other words, if the time-scale plane needs to be sampled with a sampling rate of <strong>N_1 </strong>at scale<strong>s_1 </strong>, the same plane can be sampled with a sampling rate of <strong>N_2 </strong>, at scale <strong>s_2 </strong>, where, <strong>s_1 &lt; s_2 </strong>(corresponding to frequencies <strong>f1&gt;f2 </strong>) and <strong>N_2 &lt; N_1 </strong>. The actual relationship between <strong>N_1 </strong>and<strong>N_2 </strong>is</p>
+<p><img alt="Equation 3.20" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn20.gif" /></p>
+<p>or</p>
+<p><img alt="Equation 3.21" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn21.gif" /></p>
+<p>In other words, at lower frequencies the sampling rate can be decreased which will save a considerable amount of computation time.</p>
+<p>It should be noted at this time, however, that the discretization can be done in any way without any restriction as far as the analysis of the signal is concerned. If synthesis is not required, even the Nyquist criteria does not need to be satisfied. The restrictions on the discretization and the sampling rate become important if, and only if, the signal reconstruction is desired. Nyquist&rsquo;s sampling rate is the minimum sampling rate that allows the original <strong>continuous time </strong>signal to be reconstructed from its <strong>discrete </strong>samples. The basis vectors that are mentioned earlier are of particular importance for this reason.</p>
+<p>As mentioned earlier, the wavelet <strong>psi<strong><em>*(</em></strong>*tau,s</strong><strong>) </strong>satisfying Equation 3.18, allows reconstruction of the signal by Equation 3.17. However, this is true for the continuous transform. The question is: can we still reconstruct the signal if we discretize the time and scale parameters? The answer is ``yes&rsquo;&lsquo;, under certain conditions (as they always say in commercials: certain restrictions apply !!!).</p>
+<p>The scale parameter <strong>s </strong>is discretized first on a logarithmic grid. The time parameter is then discretized <strong>with respect to the scale parameter ,</strong> i.e., a different sampling rate is used for every scale. In other words, the sampling is done on the <strong>dyadic </strong>sampling grid shown in Figure 3.17 :</p>
+<p><img alt="Figure 3.17" src="http://users.rowan.edu/~polikar/WAVELETS/wt17.gif" /></p>
+<p>Think of the area covered by the axes as the entire time-scale plane. The CWT assigns a value to the continuum of points on this plane. Therefore, there are an infinite number of CWT coefficients. First consider the discretization of the scale axis. Among that infinite number of points, only a finite number are taken, using a logarithmic rule. The base of the logarithm depends on the user. The most common value is <strong>2 </strong>because of its convenience. If 2 is chosen, only the scales 2, 4, 8, 16, 32, 64,&hellip;etc. are computed. If the value was 3, the scales 3, 9, 27, 81, 243,&hellip;etc. would have been computed. The time axis is then discretized according to the discretization of the scale axis. Since the discrete scale changes by factors of <strong>2 </strong>, the sampling rate is reduced for the time axis by a factor of <strong>2 </strong>at every scale.</p>
+<p>Note that at the lowest scale (s=2), only 32 points of the time axis are sampled (for the particular case given in Figure 3.17). At the next scale value, s=4, the sampling rate of time axis is reduced by a factor of 2 since the scale is increased by a factor of 2, and therefore, only 16 samples are taken. At the next step, s=8 and 8 samples are taken in time, and so on.<br />
+Although it is called the time-scale plane, it is more accurate to call it the <strong>translation-scale </strong>plane, because ``time&rsquo;&lsquo; in the transform domain actually corresponds to the shifting of the wavelet in time. For the wavelet series, the actual time is still continuous.</p>
+<p>Similar to the relationship between continuous Fourier transform, Fourier series and the discrete Fourier transform, there is a continuous wavelet transform, a semi-discrete wavelet transform (also known as wavelet series) and a discrete wavelet transform.</p>
+<p>Expressing the above discretization procedure in mathematical terms, the scale discretization is <strong>s = s_0^j ,</strong> and translation discretization is <strong>tau<strong><em>* = k.s_0^j.tau_0 </em>*where </strong>s_0&gt;1 </strong>and <strong>tau_0&gt;0 </strong>. Note, how the translation discretization is dependent on scale discretization with <strong>s_0 .</strong></p>
+<p>The continuous wavelet function</p>
+<p><img alt="Equation 3.22" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn22.gif" /></p>
+<p><img alt="Equation 3.23" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn23.gif" /></p>
+<p>by inserting <strong>s = s_0^j </strong>, and <strong>tau<strong psi__j_k_="psi_(j,k)"><em>* = k.s_0^j.tau_0 </em>*.<br />
+If </strong> </strong>constitutes an orthonormal basis, the wavelet series transform becomes</p>
+<p><img alt="Equation 3.24" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn24.gif" /></p>
+<p>or</p>
+<p><img alt="Equation 3.25" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn25.gif" /></p>
+<p>A wavelet series requires that <strong>{psi_(j,k)} </strong>are either orthonormal, biorthogonal, or frame. If <strong>{psi_(j,k)} </strong>are not orthonormal, Equation 3.24 becomes</p>
+<p><img alt="Equation 3.26" src="http://users.rowan.edu/~polikar/WAVELETS/wt_eqn26.gif" /></p>
+<p>where <strong>hat{ psi_{j,k}^*(t)} </strong>, is either the <strong>dual biorthogonal basis </strong>or <strong>dual frame </strong>(Note that <strong>* </strong>denotes the conjugate).</p>
+<p>If <strong>{psi_(j,k) } </strong>are orthonormal or biorthogonal, the transform will be non-redundant, where as if they form a frame, the transform will be redundant. On the other hand, it is much easier to find frames than it is to find orthonormal or biorthogonal bases.</p>
+<p>The following analogy may clear this concept. Consider the whole process as looking at a particular object. The human eyes first determine the coarse view which depends on the distance of the eyes to the object. This corresponds to adjusting the scale parameter <strong>s_0^(-j)</strong>. When looking at a very close object, with great detail, <strong>j </strong>is negative and large (low scale, high frequency, analyses the detail in the signal). Moving the head (or eyes) very slowly and with very small increments (of angle, of distance, depending on the object that is being viewed), corresponds to small values of <strong>tau<strong><em>* = k.s_0^j.tau_0 .</em>* Note that when </strong>j </strong>is negative and large, it corresponds to small changes in time, <strong>tau<strong><em>* </em>*, (high sampling rate) and large changes in </strong>s_0^-j </strong>(low scale, high frequencies, where the sampling rate is high). The scale parameter can be thought of as magnification too.</p>
+<p>How low can the sampling rate be and still allow reconstruction of the signal? This is the main question to be answered to optimize the procedure. The most convenient value (in terms of programming) is found to be ``2&rsquo;&lsquo; for s_0 and &ldquo;1&rdquo; for tau. Obviously, when the sampling rate is forced to be as low as possible, the number of available orthonormal wavelets is also reduced.</p>
+<p>The continuous wavelet transform examples that were given in this chapter were actually the wavelet series of the given signals. The parameters were chosen depending on the signal. Since the reconstruction was not needed, the sampling rates were sometimes far below the critical value where s_0 varied from 2 to 10, and tau_0 varied from 2 to 8, for different examples.</p>
+<p>This concludes Part III of this tutorial. I hope you now have a basic understanding of what the wavelet transform is all about. There is one thing left to be discussed however. Even though the discretized wavelet transform can be computed on a computer, this computation may take anywhere from a couple seconds to couple hours depending on your signal size and the resolution you want. An amazingly fast algorithm is actually available to compute the wavelet transform of a signal. The discrete wavelet transform (DWT) is introduced in the final chapter of this tutorial, in Part IV.</p>
+<p>Let&rsquo;s meet at the grand finale, shall we?</p>
+<h2 id="part-iv-multiresolution-analysis-the-discrete-wavelet-transform"><a href="http://engineering.rowan.edu/~polikar/WAVELETS/WTpart4.html">PART IV: </a>MULTIRESOLUTION ANALYSIS: THE DISCRETE WAVELET TRANSFORM</h2>
+<p><img alt="" src="http://users.rowan.edu/~polikar/WAVELETS/WTpart4_files/image003.jpg" /></p>
+<h3 id="why-is-the-discrete-wavelet-transform-needed"><a name="user-content-why-is-the-discrete-wavelet-transform-needed" href="#why-is-the-discrete-wavelet-transform-needed" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Why is the Discrete Wavelet Transform Needed?</h3>
+<p>Although the discretized continuous wavelet transform enables the computation of the continuous wavelet transform by computers, it is not a true discrete transform. As a matter of fact, the wavelet series is simply a sampled version of the CWT, and the information it provides is highly redundant as far as the reconstruction of the signal is concerned. This redundancy, on the other hand, requires a significant amount of computation time and resources. The discrete wavelet transform (DWT), on the other hand, provides sufficient information both for analysis and synthesis of the original signal, with a significant reduction in the computation time.</p>
+<p>The DWT is considerably easier to implement when compared to the CWT. The basic concepts of the DWT will be introduced in this section along with its properties and the algorithms used to compute it. As in the previous chapters, examples are provided to aid in the interpretation of the DWT.<br />
+</p>
+<h3 id="the-discrete-wavelet-transform-dwt"><a name="user-content-the-discrete-wavelet-transform-dwt" href="#the-discrete-wavelet-transform-dwt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>THE DISCRETE WAVELET TRANSFORM (DWT)</h3>
+<p>The foundations of the DWT go back to 1976 when Croiser, Esteban, and Galand devised a technique to decompose discrete time signals. Crochiere, Weber, and Flanagan did a similar work on coding of speech signals in the same year. They named their analysis scheme as <strong>subband<strong><em>* coding</em>*. In 1983, Burt defined a technique very similar to subband coding and named it </strong>pyramidal coding</strong>which is also known as multiresolution analysis. Later in 1989, Vetterli and Le Gall made some improvements to the subband coding scheme, removing the existing redundancy in the pyramidal coding scheme. Subband coding is explained below. A detailed coverage of the discrete wavelet transform and theory of multiresolution analysis can be found in a number of articles and books that are available on this topic, and it is beyond the scope of this tutorial.<br />
+</p>
+<h3 id="the-subband-coding-and-the-multiresolution-analysis"><a name="user-content-the-subband-coding-and-the-multiresolution-analysis" href="#the-subband-coding-and-the-multiresolution-analysis" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The Subband Coding and The Multiresolution Analysis</h3>
+<p>The main idea is the same as it is in the CWT. A time-scale representation of a digital signal is obtained using digital filtering techniques. Recall that the CWT is a correlation between a wavelet at different scales and the signal with the scale (or the frequency) being used as a measure of similarity. The continuous wavelet transform was computed by changing the scale of the analysis window, shifting the window in time, multiplying by the signal, and integrating over all times. In the discrete case, filters of different cutoff frequencies are used to analyze the signal at different scales. The signal is passed through a series of high pass filters to analyze the high frequencies, and it is passed through a series of low pass filters to analyze the low frequencies.</p>
+<p>The resolution of the signal, which is a measure of the amount of detail information in the signal, is changed by the filtering operations, and the scale is changed by upsampling and downsampling (subsampling) operations. Subsampling a signal corresponds to reducing the sampling rate, or removing some of the samples of the signal. For example, subsampling by two refers to dropping every other sample of the signal. Subsampling by a factor <em>n</em> reduces the number of samples in the signal <em>n</em> times.</p>
+<p>Upsampling a signal corresponds to increasing the sampling rate of a signal by adding new samples to the signal. For example, upsampling by two refers to adding a new sample, usually a zero or an interpolated value, between every two samples of the signal. Upsampling a signal by a factor of <em>n</em> increases the number of samples in the signal by a factor of <em>n</em>.</p>
+<p>Although it is not the only possible choice, DWT coefficients are usually sampled from the CWT on a dyadic grid, i.e., s0 = 2 and t 0 = 1, yielding s=2j and t =k*2j, as described in Part 3. Since the signal is a discrete time function, the terms function and sequence will be used interchangeably in the following discussion. This sequence will be denoted by x[n], where n is an integer.</p>
+<p>The procedure starts with passing this signal (sequence) through a half band digital lowpass filter with impulse response h[n]. Filtering a signal corresponds to the mathematical operation of convolution of the signal with the impulse response of the filter. The convolution operation in discrete time is defined as follows:</p>
+<p><img alt="" src="http://users.rowan.edu/~polikar/WAVELETS/Image10.gif" /></p>
+<p>A half band lowpass filter removes all frequencies that are above half of the highest frequency in the signal. For example, if a signal has a maximum of 1000 Hz component, then half band lowpass filtering removes all the frequencies above 500 Hz.</p>
+<p>The unit of frequency is of particular importance at this time. In discrete signals, frequency is expressed in terms of radians. Accordingly, the sampling frequency of the signal is equal to 2p radians in terms of radial frequency. Therefore, the highest frequency component that exists in a signal will be p radians, if the signal is sampled at Nyquist&rsquo;s rate (which is twice the maximum frequency that exists in the signal); that is, the Nyquist&rsquo;s rate corresponds to p rad/s in the discrete frequency domain. Therefore using Hz is not appropriate for discrete signals. However, Hz is used whenever it is needed to clarify a discussion, since it is very common to think of frequency in terms of Hz. It should always be remembered that the unit of frequency for discrete time signals is radians.</p>
+<p>After passing the signal through a half band lowpass filter, half of the samples can be eliminated according to the Nyquist&rsquo;s rule, since the signal now has a highest frequency of p/2 radians instead of p radians. Simply discarding every other sample will <strong>subsample</strong> the signal by two, and the signal will then have half the number of points. The scale of the signal is now doubled. Note that the lowpass filtering removes the high frequency information, but leaves the scale unchanged. Only the subsampling process changes the scale. Resolution, on the other hand, is related to the amount of information in the signal, and therefore, it is affected by the filtering operations. Half band lowpass filtering removes half of the frequencies, which can be interpreted as losing half of the information. Therefore, the resolution is halved after the filtering operation. Note, however, the subsampling operation after filtering does not affect the resolution, since removing half of the spectral components from the signal makes half the number of samples redundant anyway. Half the samples can be discarded without any loss of information. In summary, the lowpass filtering halves the resolution, but leaves the scale unchanged. The signal is then subsampled by 2 since half of the number of samples are redundant. This doubles the scale.</p>
+<p>This procedure can mathematically be expressed as</p>
+<p><img alt="" src="http://users.rowan.edu/~polikar/WAVELETS/Image11.gif" /></p>
+<p>Having said that, we now look how the DWT is actually computed: The DWT analyzes the signal at different frequency bands with different resolutions by decomposing the signal into a coarse approximation and detail information. DWT employs two sets of functions, called scaling functions and wavelet functions, which are associated with low pass and highpass filters, respectively. The decomposition of the signal into different frequency bands is simply obtained by successive highpass and lowpass filtering of the time domain signal. The original signal x[n] is first passed through a halfband highpass filter g[n] and a lowpass filter h[n]. After the filtering, half of the samples can be eliminated according to the Nyquist&rsquo;s rule, since the signal now has a highest frequency of p/2 radians instead of p . The signal can therefore be subsampled by 2, simply by discarding every other sample. This constitutes one level of decomposition and can mathematically be expressed as follows:</p>
+<p><img alt="" src="http://users.rowan.edu/~polikar/WAVELETS/Image12.gif" /></p>
+<p>where <code>yhigh[k]</code> and <code>ylow[k]</code> are the outputs of the highpass and lowpass filters, respectively, after subsampling by 2.</p>
+<p>This decomposition halves the time resolution since only half the number of samples now characterizes the entire signal. However, this operation doubles the frequency resolution, since the frequency band of the signal now spans only half the previous frequency band, effectively reducing the uncertainty in the frequency by half. The above procedure, which is also known as thesubband coding, can be repeated for further decomposition. At every level, the filtering and subsampling will result in half the number of samples (and hence half the time resolution) and half the frequency band spanned (and hence double the frequency resolution). Figure 4.1 illustrates this procedure, where x[n] is the original signal to be decomposed, and h[n] and g[n] are lowpass and highpass filters, respectively. The bandwidth of the signal at every level is marked on the figure as &ldquo;f&rdquo;.</p>
+<p><img alt="Figure 4.1. " src="http://users.rowan.edu/~polikar/WAVELETS/Image13.gif" /></p>
+<p>The Subband Coding Algorithm<strong><em> </em></strong>As an example, suppose that the original signal x[n] has 512 sample points, spanning a frequency band of zero to p rad/s. At the first decomposition level, the signal is passed through the highpass and lowpass filters, followed by subsampling by 2. The output of the highpass filter has 256 points (hence half the time resolution), but it only spans the frequencies p/2 to p rad/s (hence double the frequency resolution). These 256 samples constitute the first level of DWT coefficients. The output of the lowpass filter also has 256 samples, but it spans the other half of the frequency band, frequencies from 0 to p/2 rad/s. This signal is then passed through the same lowpass and highpass filters for further decomposition. The output of the second lowpass filter followed by subsampling has 128 samples spanning a frequency band of 0 to p/4 rad/s, and the output of the second highpass filter followed by subsampling has 128 samples spanning a frequency band of p/4 to p/2 rad/s. The second highpass filtered signal constitutes the second level of DWT coefficients. This signal has half the time resolution, but twice the frequency resolution of the first level signal. In other words, time resolution has decreased by a factor of 4, and frequency resolution has increased by a factor of 4 compared to the original signal. The lowpass filter output is then filtered once again for further decomposition. This process continues until two samples are left. For this specific example there would be 8 levels of decomposition, each having half the number of samples of the previous level. The DWT of the original signal is then obtained by concatenating all coefficients starting from the last level of decomposition (remaining two samples, in this case). The DWT will then have the same number of coefficients as the original signal.</p>
+<p>The frequencies that are most prominent in the original signal will appear as high amplitudes in that region of the DWT signal that includes those particular frequencies. The difference of this transform from the Fourier transform is that the time localization of these frequencies will not be lost. However, the time localization will have a resolution that depends on which level they appear. If the main information of the signal lies in the high frequencies, as happens most often, the time localization of these frequencies will be more precise, since they are characterized by more number of samples. If the main information lies only at very low frequencies, the time localization will not be very precise, since few samples are used to express signal at these frequencies. This procedure in effect offers a good time resolution at high frequencies, and good frequency resolution at low frequencies. Most practical signals encountered are of this type.</p>
+<p>The frequency bands that are not very prominent in the original signal will have very low amplitudes, and that part of the DWT signal can be discarded without any major loss of information, allowing data reduction. Figure 4.2 illustrates an example of how DWT signals look like and how data reduction is provided. Figure 4.2a shows a typical 512-sample signal that is normalized to unit amplitude. The horizontal axis is the number of samples, whereas the vertical axis is the normalized amplitude. Figure 4.2b shows the 8 level DWT of the signal in Figure 4.2a. The last 256 samples in this signal correspond to the highest frequency band in the signal, the previous 128 samples correspond to the second highest frequency band and so on. It should be noted that only the first 64 samples, which correspond to lower frequencies of the analysis, carry relevant information and the rest of this signal has virtually no information. Therefore, all but the first 64 samples can be discarded without any loss of information. This is how DWT provides a very effective data reduction scheme.</p>
+<p><img alt="Figure 4.2 Example of a DWT" src="http://users.rowan.edu/~polikar/WAVELETS/WTpart4_files/image004.jpg" /></p>
+<p>We will revisit this example, since it provides important insight to how DWT should be interpreted. Before that, however, we need to conclude our mathematical analysis of the DWT.</p>
+<p>One important property of the discrete wavelet transform is the relationship between the impulse responses of the highpass and lowpass filters. The highpass and lowpass filters are not independent of each other, and they are related by</p>
+<p><img alt="" src="http://users.rowan.edu/~polikar/WAVELETS/Image7.gif" /></p>
+<p>where g[n] is the highpass, h[n] is the lowpass filter, and L is the filter length (in number of points). Note that the two filters are odd index alternated reversed versions of each other. Lowpass to highpass conversion is provided by the (-1)n<br />
+ term. Filters satisfying this condition are commonly used in signal processing, and they are known as the Quadrature Mirror Filters (QMF). The two filtering and subsampling operations can be expressed by</p>
+<p><img alt="" src="http://users.rowan.edu/~polikar/WAVELETS/Image8.gif" /></p>
+<p>The reconstruction in this case is very easy since halfband filters form orthonormal bases. The above procedure is followed in reverse order for the reconstruction. The signals at every level areupsampled by two, passed through the synthesis filters g[n], and h[n] (highpass and lowpass, respectively), and then added. The interesting point here is that the analysis and synthesis filters are identical to each other, except for a time reversal. Therefore, the reconstruction formula becomes (for each layer)</p>
+<p><img alt="" src="http://users.rowan.edu/~polikar/WAVELETS/Image9.gif" /></p>
+<p>However, if the filters are not ideal halfband, then perfect reconstruction cannot be achieved. Although it is not possible to realize ideal filters, under certain conditions it is possible to find filters that provide perfect reconstruction. The most famous ones are the ones developed by Ingrid Daubechies, and they are known as Daubechies wavelets.</p>
+<p>Note that due to successive subsampling by 2, the signal length must be a power of 2, or at least a multiple of power of 2, in order this scheme to be efficient. The length of the signal determines the number of levels that the signal can be decomposed to. For example, if the signal length is 1024, ten levels of decomposition are possible.</p>
+<p>Interpreting the DWT coefficients can sometimes be rather difficult because the way DWT coefficients are presented is rather peculiar. To make a real long story real short, DWT coefficients of each level are concatenated, starting with the last level. An example is in order to make this concept clear:</p>
+<p>Suppose we have a 256-sample long signal sampled at 10 MHZ and we wish to obtain its DWT coefficients. Since the signal is sampled at 10 MHz, the highest frequency component that exists in the signal is 5 MHz. At the first level, the signal is passed through the lowpass filter h[n], and the highpass filter g[n], the outputs of which are subsampled by two. The highpass filter output is the first level DWT coefficients. There are 128 of them, and they represent the signal in the [2.5 5] MHz range. These 128 samples are the last 128 samples plotted. The lowpass filter output, which also has 128 samples, but spanning the frequency band of [0 2.5] MHz, are further decomposed by passing them through the same h[n] and g[n]. The output of the second highpass filter is the level 2 DWT coefficients and these 64 samples precede the 128 level 1 coefficients in the plot. The output of the second lowpass filter is further decomposed, once again by passing it through the filters h[n] and g[n]. The output of the third highpass filter is the level 3 DWT coefficiets. These 32 samples precede the level 2 DWT coefficients in the plot.</p>
+<p>The procedure continues until only 1 DWT coefficient can be computed at level 9. This one coefficient is the first to be plotted in the DWT plot. This is followed by 2 level 8 coefficients, 4 level 7 coefficients, 8 level 6 coefficients, 16 level 5 coefficients, 32 level 4 coefficients, 64 level 3 coefficients, 128 level 2 coefficients and finally 256 level 1 coefficients. Note that less and less number of samples is used at lower frequencies, therefore, the time resolution decreases as frequency decreases, but since the frequency interval also decreases at low frequencies, the frequency resolution increases. Obviously, the first few coefficients would not carry a whole lot of information, simply due to greatly reduced time resolution. To illustrate this richly bizarre DWT representation let us take a look at a real world signal. Our original signal is a 256-sample long ultrasonic signal, which was sampled at 25 MHz. This signal was originally generated by using a 2.25 MHz transducer,therefore the main spectral component of the signal is at 2.25 MHz. The last 128 samples correspond to [6.25 12.5] MHz range. As seen from the plot, no information is available here, hence these samples can be discarded without any loss of information. The preceding 64 samples represent the signal in the [3.12 6.25] MHz range, which also does not carry any significant information. The little glitches probably correspond to the high frequency noise in the signal. The preceding 32 samples represent the signal in the [1.5 3.1] MHz range. As you can see, the majority of the signal&rsquo;s energy is focused in these 32 samples, as we expected to see. The previous 16 samples correspond to [0.75 1.5] MHz and the peaks that are seen at this level probably represent the lower frequency envelope of the signal. The previous samples probably do not carry any other significant information. It is safe to say that we can get by with the 3rd and 4th level coefficients, that is we can represent this 256 sample long signal with 16+32=48 samples, a significant data reduction which would make your computer quite happy.</p>
+<p>One area that has benefited the most from this particular property of the wavelet transforms is image processing. As you may well know, images, particularly high-resolution images, claim a lot of disk space. As a matter of fact, if this tutorial is taking a long time to download, that is mostly because of the images. DWT can be used to reduce the image size without losing much of the resolution. Here is how:</p>
+<p>For a given image, you can compute the DWT of, say each row, and discard all values in the DWT that are less then a certain threshold. We then save only those DWT coefficients that are above the threshold for each row, and when we need to reconstruct the original image, we simply pad each row with as many zeros as the number of discarded coefficients, and use the inverse DWT to reconstruct each row of the original image. We can also analyze the image at different frequency bands, and reconstruct the original image by using only the coefficients that are of a particular band. I will try to put sample images hopefully soon, to illustrate this point.</p>
+<p>Another issue that is receiving more and more attention is carrying out the decomposition (subband coding) not only on the lowpass side but on both sides. In other words, zooming into both low and high frequency bands of the signal separately. This can be visualized as having both sides of the tree structure of Figure 4.1. What result is what is known as the <strong>wavelet packages.</strong> We will not discuss wavelet packages in this here, since it is beyond the scope of this tutorial. Anyone who is interested in wavelet packages, or more information on DWT can find this information in any of the numerous texts available in the market.<br />
+And this concludes our mini series of wavelet tutorial. If I could be of any assistance to anyone struggling to understand the wavelets, I would consider the time and the effort that went into this tutorial well spent. I would like to remind that this tutorial is neither a complete nor a through coverage of the wavelet transforms. It is merely an overview of the concept of wavelets and it was intended to serve as a first reference for those who find the available texts on wavelets rather complicated. There might be many structural and/or technical mistakes, and I would appreciate if you could point those out to me. Your feedback is of utmost importance for the success of this tutorial.</p>
+<p>Thank you very much for your interest in The Wavelet Tutorial .<br />
+</p>
+<h2 id="acknowledgments"><a href="http://engineering.rowan.edu/~polikar/WAVELETS/WTacknowledment.html">ACKNOWLEDGMENTS</a></h2></article></body></html>
