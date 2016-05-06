@@ -42,5 +42,28 @@
 
 ![](http://mint-blog.qiniudn.com/si-problem3.gif)
 
+## 主题
 
+[Son of Obsidian for Visual Studio ](https://plus.google.com/+AndreaDellaCorte85/posts/KgwXQEdcFnN)
+
+![Custom Son Of Obsidian](http://mint-blog.qiniudn.com/siCustomSonOfObsidian.png)
+
+[Download Custom Son Of Obsidian](http://mint-blog.qiniudn.com/siCustomSonOfObsidian.CF3)
+
+[Source Insight 3.5 Solarized(Light)配色方案  ](http://download.csdn.net/detail/heranl/8990411)
+![Solarized-Light)](http://mint-blog.qiniudn.com/siSolarized-Light.png)
+
+[Download Solarized-Light](http://mint-blog.qiniudn.com/siSolarized-Light.CF3)
+
+
+[给 source insight 做了个 style 配色方案，风格类似 sublime text](http://www.amobbs.com/thread-5589365-1-1.html)
+![Monokai](http://mint-blog.qiniudn.com/siMonokai.png)
+
+[Download Monokai](http://mint-blog.qiniudn.com/siMonokai.CF3)
+
+
+[Source Insight Extra（背景主题颜色+其它）](http://download.csdn.net/detail/better0332/2480193)
+![ExtraBlack](http://mint-blog.qiniudn.com/siExtraBlack.png)
+
+[Download ExtraBlack](http://mint-blog.qiniudn.com/siExtraBlack.CF3)
 
