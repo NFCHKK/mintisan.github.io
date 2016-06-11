@@ -2,6 +2,10 @@
 
 [TOC]
 
+## 官网
+
+- http://www.sourceinsight.com/
+- http://www.sourceinsight.com/docs35/UserManual.pdf
 
 ## 设置工程相对路径
 
@@ -41,6 +45,13 @@
 完成修改之后，括号不会对歪了
 
 ![](http://mint-blog.qiniudn.com/si-problem3.gif)
+
+## 使用小技巧
+
+- 按住"ctrl", 再用鼠标指向某个变量，点击一下，就能进入这个变量的定义。
+- 让每个字符的宽度一致 : 选上"view --> draft view"， 就可以了。快捷键是 "Alt + F12"
+- "shift+F8" 标亮所有文本中光标所在位置的单词
+- 跳到某一行："ctrl + g"
 
 ## 主题
 
