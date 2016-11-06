@@ -1,0 +1,2241 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>MDK-ARM-Primer</title></head><body><article class="markdown-body"><h1 id="mdk-arm-primer"><a name="user-content-mdk-arm-primer" href="#mdk-arm-primer" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>MDK-ARM Primer</h1>
+<p><a href="http://www.keil.com/support/man/docs/gsac/">Develop Embedded Applications for Cortex-M processor-based devices with µVision®</a></p>
+<hr />
+<div class="toc">
+<ul>
+<li><a href="#mdk-arm-primer">MDK-ARM Primer</a><ul>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#software-development-cycle">Software Development Cycle</a><ul>
+<li><a href="#vision-integrated-development-environment-ide">µVision Integrated Development Environment (IDE)</a></li>
+<li><a href="#cc-compiler-and-macro-assembler">C/C++ Compiler and Macro Assembler</a></li>
+<li><a href="#library-manager">Library Manager</a></li>
+<li><a href="#linkerlocator">Linker/Locator</a></li>
+<li><a href="#vision-debugger">µVision Debugger</a></li>
+</ul>
+</li>
+<li><a href="#development-tools">Development Tools</a><ul>
+<li><a href="#vision">µVision</a></li>
+<li><a href="#compilation-tools">Compilation Tools</a></li>
+<li><a href="#ulink-usb-jtag-adapter">ULINK USB-JTAG Adapter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#create-application">Create Application</a><ul>
+<li><a href="#create-project-file">Create Project File</a></li>
+<li><a href="#set-options-for-target">Set Options for Target</a></li>
+<li><a href="#configure-cortex-m-target">Configure Cortex-M Target</a><ul>
+<li><a href="#configure-startup-code">Configure Startup Code</a></li>
+<li><a href="#cmsis">CMSIS</a></li>
+<li><a href="#library-retarget-file">Library Retarget File</a></li>
+<li><a href="#low-level-io-routines">Low Level I/O Routines</a></li>
+</ul>
+</li>
+<li><a href="#create-file-group">Create File Group</a></li>
+<li><a href="#specify-memory-layout">Specify Memory Layout</a></li>
+<li><a href="#build-project">Build Project</a></li>
+</ul>
+</li>
+<li><a href="#flash-application">Flash Application</a><ul>
+<li><a href="#flash-download">Flash Download</a></li>
+</ul>
+</li>
+<li><a href="#debug-application">Debug Application</a><ul>
+<li><a href="#select-debug-driver">Select Debug Driver</a></li>
+<li><a href="#configure-debug-driver">Configure Debug Driver</a></li>
+<li><a href="#start-debugging">Start Debugging</a></li>
+</ul>
+</li>
+<li><a href="#use-on-chip-peripherals">Use on-chip Peripherals</a><ul>
+<li><a href="#cortex-m-core-peripherals">Cortex-M Core Peripherals</a><ul>
+<li><a href="#nested-vectored-interrupt-controller">Nested Vectored Interrupt Controller</a></li>
+<li><a href="#system-tick-timer">System Tick Timer</a></li>
+</ul>
+</li>
+<li><a href="#vendor-peripherals">Vendor Peripherals</a><ul>
+<li><a href="#general-purpose-io">General Purpose I/O</a></li>
+<li><a href="#serial-interface">Serial Interface</a></li>
+<li><a href="#timer">Timer</a></li>
+<li><a href="#analog-digital-converter">Analog Digital Converter</a></li>
+<li><a href="#power-reduction-modes">Power Reduction Modes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#appendix-migrate-rl-arm-to-mdk-professional">Appendix: Migrate RL-ARM to MDK-Professional</a><ul>
+<li><a href="#differences">Differences</a></li>
+<li><a href="#migrate-flashfs-projects">Migrate FlashFS Projects</a></li>
+<li><a href="#migrate-usb-projects">Migrate USB Projects</a></li>
+<li><a href="#license-status">License Status</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>This Primer provides an overview of the <strong>Keil MDK-ARM Microcontroller Development Kit</strong> and contains the following chapters:</p>
+<ul>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_Intro.htm">Introduction</a> provides an overview of the development cycle and tools, and presents the default installation folder structure.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_createApps.htm">Create Application</a> describes how to create projects, edit and compile source files, fix syntax errors, and generate executable target programs.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_flashApplication.htm">Flash Application</a> describes how to setup ULINK for Flash programming via the JTAG interface.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_debugApplication.htm">Debug Application</a> describes the µVision debugger as hardware debugger and simulator.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_useOCPeripherals.htm">Use on-chip Peripherals</a> shows how to access the on-chip peripherals with the development tools.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_mig_prof.htm">Appendix: Migrate RL-ARM to MDK-Professional</a> is a guide for porting USB and Flash File System projects to MDK-Professional. The license status is explained.</li>
+</ul>
+<h2 id="introduction"><a name="user-content-introduction" href="#introduction" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Introduction</h2>
+<p><strong>MDK-ARM Microcontroller Development Tool Kits</strong> (MDK-ARM) generate embedded applications for many popular ARM-powered devices. The tools allow engineers to write software programs in assembly language or in a high-level language (like C or C++) and to create a complete application that can be programmed into microcontrollers or other memory devices. MDK-ARM tools are designed for the professional software developer, but any level of programmer can use them to get the most out of ARM-powered devices.</p>
+<p>The <a href="http://www2.keil.com/docs/default-source/default-document-library/mdk5-getting-started.pdf?sfvrsn=0">Getting Started</a> user&rsquo;s guide explains how to create applications for ARM Cortex-M microcontrollers. The book starts with the installation of MDK and describes the software components along with the complete workflow from starting a project to debugging on hardware.</p>
+<p>The <a href="http://www.keil.com/mdk5/">Microcontroller Development Kit Version 5</a> web page provides videos that explain the installers for MDK Core and Software Packs, and the usage of the <a href="http://www.keil.com/support/man/docs/uv4/uv4_ca_rtemanager.htm">Run-Time Environment</a> for installing <a href="http://www.keil.com/support/man/docs/uv4/uv4_ca_swComponents.htm">Software Components</a> when building a project.</p>
+<p>This primer includes explanations about the:</p>
+<ul>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_devCycle.htm">Software Development Cycle</a> describing the development cycle and components.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_devTools.htm">Development Tools</a> describing the major tool features including the µVision IDE and Debugger.</li>
+</ul>
+<h3 id="software-development-cycle"><a name="user-content-software-development-cycle" href="#software-development-cycle" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Software Development Cycle</h3>
+<p>The software development cycle is roughly the same with µVision as it is with any other development tool:</p>
+<ol>
+<li>Create a new project, select the target chip from the Device Database, and configure the tool settings.</li>
+<li>Create source files and write the code in C, C++, or Assembly.</li>
+<li>Build the application with the project manager.</li>
+<li>Correct the errors.</li>
+<li>Test the application.</li>
+</ol>
+<p>The block diagram below illustrates the build process and the involved components.</p>
+<p><img alt="Development Cycle" src="http://upload-images.jianshu.io/upload_images/26219-932ca81adfee95e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<h4 id="vision-integrated-development-environment-ide"><a name="user-content-vision-integrated-development-environment-ide" href="#vision-integrated-development-environment-ide" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>µVision Integrated Development Environment (IDE)</h4>
+<p>The µVision IDE is a window-based software development platform combining a robust editor, project manager, and make facility. µVision supports the MDK-ARM tools including C/C++ compiler, macro assembler, linker, library manager, and object-HEX converter. Use µVision to create source files and organize them into a project that defines the target application. µVision compiles, assembles, and links the application automatically and provides a single focal point for your development efforts.</p>
+<h4 id="cc-compiler-and-macro-assembler"><a name="user-content-cc-compiler-and-macro-assembler" href="#cc-compiler-and-macro-assembler" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>C/C++ Compiler and Macro Assembler</h4>
+<p>Source files are created with the µVision IDE are passed to the C/C++ compiler or macro assembler. The compiler and assembler process the source files and create relocatable object files.</p>
+<h4 id="library-manager"><a name="user-content-library-manager" href="#library-manager" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Library Manager</h4>
+<p>The library manager allows creating a library from the object files created by the compiler and assembler. Libraries have a special format and are ordered collections of object modules. Libraries can be used by the linker at a later time. When the linker processes a library, it links only those object modules that are necessary to create the program.</p>
+<h4 id="linkerlocator"><a name="user-content-linkerlocator" href="#linkerlocator" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Linker/Locator</h4>
+<p>The linker/locator creates an absolute ELF/DWARF file using the object modules extracted from libraries and those created by the compiler and assembler. An absolute object file or module contains no relocatable code or data. All code and data reside at fixed memory locations. The absolute ELF/DWARF file can be used:</p>
+<ul>
+<li>To program a Flash ROM or other memory devices.</li>
+<li>With the µVision Debugger for target debugging and simulation.</li>
+<li>With an in-circuit emulator for program testing.</li>
+</ul>
+<h4 id="vision-debugger"><a name="user-content-vision-debugger" href="#vision-debugger" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>µVision Debugger</h4>
+<p>The µVision Debugger is ideally suited for fast, reliable program debugging. The debugger includes a high-speed Simulator capable of simulating external hardware and most on-chip peripherals. The chip attributes are set automatically when selecting the device from the Device Database.</p>
+<p>The µVision Debugger provides several ways to test programs:</p>
+<ul>
+<li>Connected to a <a href="http://www.keil.com/ulink">Keil ULINK USB-JTAG adapter</a>, which allows downloading the program to Flash and debugging the program on ARM-powered devices.</li>
+<li>Connected to the AGDI interface, which allows connecting to and using the µVision Debugger on target systems.</li>
+</ul>
+<h3 id="development-tools"><a name="user-content-development-tools" href="#development-tools" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Development Tools</h3>
+<p>The Keil MDK-ARM development tools for ARM-powered devices offer numerous features and advantages that help developing embedded applications quickly and successfully.</p>
+<ul>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_uVisionIDE.htm">µVision</a> describes the Integrated Development Environment (IDE) that combines the project manager, source code editor, and program debugger into one single, powerful environment.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_compTools.htm">Compilation Tools</a> includes the compiler, assembler, linker, and utilities.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_ulink.htm">ULINK USB-JTAG Adapter</a> is an interface that connects to the target system (via JTAG or similar debug interface) and allows debugging programs running on the target hardware.</li>
+</ul>
+<h4 id="vision"><a name="user-content-vision" href="#vision" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>µVision</h4>
+<p>µVision is a window-based software development platform that helps expedite the development process by providing a:</p>
+<ul>
+<li><strong>Project Manager</strong> to create and maintain projects.</li>
+<li><strong>Device Database</strong> for selecting a device and configuring the development tools for that particular microcontroller.</li>
+<li><strong>Make facility</strong> for assembling, compiling, and linking your embedded applications.</li>
+<li>Rich-featured <strong>Source Code Editor</strong>.</li>
+<li><strong>Template Editor</strong> that is used to insert common text sequences or header blocks.</li>
+<li><strong>Source Browser</strong> for rapidly exploring code objects, locating, and analyzing data in your application.</li>
+<li><strong>Function Browser</strong> for quickly navigating between functions in your program.</li>
+<li><strong>Function Outlining</strong> for controlling the visual scope within a source file.</li>
+<li>Built-in utilities, such as <strong>Find in Files</strong> and functions for commenting and uncommenting source code.</li>
+<li><strong>Simulator</strong> and <strong>Target Debugger</strong> are fully integrated.</li>
+<li><strong>Configuration Wizard</strong> providing graphical editing for microcontroller startup-code and configuration files.</li>
+<li>Interface to configure <strong>Software Version Control Systems</strong> and third-party utilities.</li>
+<li><strong>Flash Programming Utilities</strong> dialog.</li>
+<li><strong>Dialogs</strong> for tool settings and target configurations.</li>
+<li><strong>Online Help</strong> that links to microcontroller data sheets and user guides.</li>
+</ul>
+<h4 id="compilation-tools"><a name="user-content-compilation-tools" href="#compilation-tools" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Compilation Tools</h4>
+<p>The Keil MDK-ARM Compilation Tools allow writing applications for ARM-powered microcontroller in C or C++, which, once compiled, have the efficiency and speed of an assembly language. The compilation tools include:</p>
+<ul>
+<li>ARM C/C++ Compiler (armcc).</li>
+<li>ARM Macro Assembler (armasm).</li>
+<li>ARM Linker (armLink).</li>
+<li>ARM Utilities (Librarian and FromELF).</li>
+</ul>
+<p>The Keil MDK-ARM Compilation Tools translate C/C++ source files into relocatable object modules that contain full symbolic information for debugging with the µVision Debugger.</p>
+<p><strong>ARM C/C++ Compiler (armcc)</strong></p>
+<ul>
+<li><strong>ARM and Thumb® generation modes</strong> can be mixed in the same source file. ARM mode allows faster code execution, making it ideal for interrupt handlers. Thumb mode provides the smallest code size.</li>
+<li><strong>Industry leading code size optimizations</strong> achieves memory cost savings by generating the smallest compiled code size.</li>
+<li><strong>Industry leading code performance optimizations</strong> reduces power consumption by enabling increased through-put without clock speed increases.</li>
+<li><strong>Function Attributes for Hardware Support</strong> gives access to ARM hardware features.</li>
+<li><strong>Embedded Assembler</strong> code can be inserted into C functions. This capability is useful for fast DSP and other signal-processing algorithms. The ARM compiler supports full program optimization even when embedded assembler is used.</li>
+<li><strong>Function Inlining</strong> to speed-up execution of frequently called functions. Such functions are expanded without the overhead associated with the function call, parameter passing, and return.</li>
+<li><strong>Parameter Passing in CPU Registers</strong> used automatically by the ARM compiler to pass most function arguments. It can even pass and return small C structs into and from registers.</li>
+<li><strong>Run-time Library routines</strong> are mostly reentrant and can be invoked from the main program and from interrupts. Special protection schemes for library calls are not needed.</li>
+<li><strong>IEEE 754 Compliant Single and Double Precision Floating-point</strong> for high accuracy floating-point support.</li>
+</ul>
+<p><strong>ARM Macro Assembler (armasm)</strong></p>
+<ul>
+<li><strong>Standard Macro Processor</strong> supports assembler macros to repeat or automate assembler instruction sequences.</li>
+<li><strong>Conditional Assembler Controls</strong> control the assembler source code to create multiple target applications from the same source file(s).</li>
+<li><strong>Source Listing with Symbol Reference</strong> file includes an optional cross reference that provides detailed information about the assembled source file.</li>
+</ul>
+<p><strong>ARM Linker (armlink)</strong></p>
+<ul>
+<li><strong>Detailed Listing File</strong> that is easy to understand is created by the linker. It contains details like the memory configuration, input modules, memory map, symbol table, and cross reference.</li>
+<li><strong>Global Code Listing</strong> file that shows symbolic disassembly of the generated code is created by the linker.</li>
+<li><strong>Static Stack Analysis</strong> for stack requirements at link-time is calculated by the linker.</li>
+</ul>
+<p><strong>ARM Library Manager (armar)</strong></p>
+<ul>
+<li><strong>Module Management</strong> library files provide a convenient way to combine and reference a large number of modules that can be used by the linker. Library files can be built with µVision.</li>
+<li><strong>Variable and Function Reference</strong>; modules from libraries are extracted and added to programs only if required. Modules containing routines that are not invoked by the program are not included in the final output.</li>
+<li><strong>Security, Speed, and Minimized Disk Space</strong>; Libraries provide a vehicle for distributing large numbers of functions and routines without distributing the original source code.</li>
+</ul>
+<h4 id="ulink-usb-jtag-adapter"><a name="user-content-ulink-usb-jtag-adapter" href="#ulink-usb-jtag-adapter" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>ULINK USB-JTAG Adapter</h4>
+<p>The <a href="http://www.keil.com/ulink">Keil ULINK</a> family of USB-JTAG Adapters connect the PC&rsquo;s USB port to the target system (via JTAG or a similar debug interface) and allow debugging embedded programs running on target hardware.</p>
+<p><img alt="ULINKPro and ULINK2 Adapter" src="http://upload-images.jianshu.io/upload_images/26219-68ddc8d9665af8fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<ul>
+<li>ULINK adapters enable the developer to:</li>
+<li>Download programs to target hardware.</li>
+<li>Examine the memory and registers.</li>
+<li>Single-step through the program code.</li>
+<li>Insert multiple breakpoints.</li>
+<li>Run programs in real-time.</li>
+<li>Program Flash memory.</li>
+<li>Connect to the target system in JTAG or Serial Wire mode.</li>
+<li>Debug Cortex-M devices on-the-fly.</li>
+<li>Examine trace information from Cortex-M devices.</li>
+</ul>
+<p>ULINK<em>pro</em> is a debug unit that captures data and trace instructions in real-time via USB. In addition to the features above, ULINK<em>pro</em> has the following features:<br />
+- Data and Instruction Trace for Cortex-M systems.<br />
+- High-Speed Flash download.</p>
+<p>For more information refer to <a href="http://www.keil.com/support/man/docs/gsac/GSAC_FlashApplication.HTM">Flash Application</a> and <a href="http://www.keil.com/support/man/docs/gsac/GSAC_debugApplication.htm">Debug Application</a>.</p>
+<h2 id="create-application"><a name="user-content-create-application" href="#create-application" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Create Application</h2>
+<p>Follow the steps below to create an application with µVision:</p>
+<ol>
+<li><a href="http://www.keil.com/support/man/docs/uv4/uv4_ca_packinstaller.htm">Pack Installer</a> installs, updates, and removes Software Packs, and can be launched from within µVision or standalone, outside of µVision.</li>
+<li><a href="http://www.keil.com/support/man/docs/uv4/uv4_ca_createprjfile.htm">Setup the Project</a> to define the project file and <strong>select the device.</strong></li>
+<li><a href="http://www.keil.com/support/man/docs/uv4/uv4_ca_swcomponents.htm">Software Components</a> can be used to create applications with the <a href="http://www.keil.com/support/man/docs/uv4/uv4_ca_rtemanager.htm">Manage Run-Time Environment</a> dialog.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_ToolOpts.htm">Set Options for Target</a> explains how to specify relevant parameters for your target.</li>
+<li><a href="http://www.keil.com/support/man/docs/uv4/uv4_ca_sourcefiles.htm">Add Source File</a> to a project</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_ConfigCortex.htm">Configure Cortex-M Target</a> describes how to change the startup-code and how to use the library retarget file for Cortex-M devices. In addition, this is a brief explanation of CMSIS.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_CreateGroup.htm">Create File Group</a> explains how to structure the code files for a better overview.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_SpecificMemoryAreas.htm">Specify Memory Layout</a> describes how to change file and group attributes.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_BuildProject.htm">Build Project</a> describes the build-options.</li>
+<li><a href="http://www.keil.com/support/man/docs/uv4/uv4_ca_tipsandtricks.htm">Tips and Tricks</a> show advanced techniques to build applications.</li>
+</ol>
+<p>Detailed information can be found in the chapter <a href="http://www.keil.com/support/man/docs/uv4/uv4_creating_apps.htm">Creating Applications</a> of the <a href="http://www.keil.com/support/man/docs/uv4/">µVision User&rsquo;s Guide</a>.</p>
+<h3 id="create-project-file"><a name="user-content-create-project-file" href="#create-project-file" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Create Project File</h3>
+<p>µVision maintains the files that belong to a project in one project file. It takes only a few steps to create a new project file:</p>
+<ol>
+<li>Select <strong>Project - New Project</strong> from the µVision menu.This opens a standard Windows dialog, which prompts you for the new project file name.<img alt="Menu New Project File" src="http://upload-images.jianshu.io/upload_images/26219-d2e9de759ac10d7f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></li>
+<li>Create a new folder <strong>Test</strong>.</li>
+<li>Switch to the new folder and type the project name <strong>MyApp</strong>. µVision automatically adds the extension<strong>.uvproj</strong>.</li>
+<li>Click <strong>Save</strong>.<img alt="Dialog New Project File" src="http://upload-images.jianshu.io/upload_images/26219-82bf0cc5b7fbf7fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /><br />
+<img alt="" src="http://upload-images.jianshu.io/upload_images/26219-5eb421c1e1a99970.gif?imageMogr2/auto-orient/strip" /> </li>
+</ol>
+<p><strong>Note</strong>: It is good practice to use a separate folder for each project.</p>
+<h3 id="set-options-for-target"><a name="user-content-set-options-for-target" href="#set-options-for-target" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Set Options for Target</h3>
+<p>Set target parameters in the dialog <strong>Options for Target - Target</strong>.<br />
+<img alt="Target Options Button" src="http://upload-images.jianshu.io/upload_images/26219-2cdefca430b402bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /> </p>
+<p>Open the dialog via the toolbar icon or the menu <strong>Project - Options for Target</strong>.<br />
+<img alt="Dialog Options for Target" src="http://upload-images.jianshu.io/upload_images/26219-952ad58af860fecc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>The following options can be set:</p>
+<p><img alt="options" src="http://upload-images.jianshu.io/upload_images/26219-7096e96d28e13f55.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p><strong>Note</strong>: <strong>Read/Only Memory Areas</strong> and <strong>Read/Write Memory Areas</strong> are used to create a linker scatter file. In addition, enable the check box <strong>Use Memory Layout from Target Dialog</strong> in the dialog <a href="http://www.keil.com/support/man/docs/uv4/uv4_dg_adsld.htm">Linker</a>.</p>
+<p>Related Knowledgebase Articles: <a href="http://www.keil.com/support/docs/3847.htm">LARM: &ldquo;No Tools.ini found&rdquo; reported by Linker</a></p>
+<h3 id="configure-cortex-m-target"><a name="user-content-configure-cortex-m-target" href="#configure-cortex-m-target" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configure Cortex-M Target</h3>
+<p>Writing embedded programs with the MDK-ARM is straightforward. This chapter explains some of the configuration steps required when using Cortex-M devices in embedded applications:</p>
+<ul>
+<li><a href="http://www.keil.com/support/man/docs/gsac/gsac_startupcodecortex.htm">Configure Startup Code</a> explains the initializations done before the main function of your application is called. In addition it defines the stack space and memory heap for memory allocation functions.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/gsac_cmsis.htm">CMSIS</a> explains the usage of the software standard for interfacing peripherals, real-time operating systems, and middleware components.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/gsac_retargetcortex.htm">Library Retarget File</a> configures the C run-time library for the I/O interfaces of your hardware.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/gsac_lowlevelroutinescortex.htm">Low Level I/O Routines</a> explains the usage of serial I/O routines in conjunction with the Library Retarget File.</li>
+</ul>
+<h4 id="configure-startup-code"><a name="user-content-configure-startup-code" href="#configure-startup-code" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configure Startup Code</h4>
+<p>Typically, target programs require a startup-code to initialize the CPU to match the configuration of the hardware design. When creating a project, µVision adds the device specific CPU startup-code for most devices to the project.</p>
+<p>The startup-code executes immediately upon RESET of the target system. It performs the following operations:</p>
+<ol>
+<li>Reserves memory and initializes the stack.</li>
+<li>Reserves memory for the heap.</li>
+</ol>
+<p>A more flexible software concept, the Cortex Microcontroller Software Interface Standard - <a href="http://www.keil.com/support/man/docs/gsac/GSAC_cmsis.htm">CMSIS</a>, has been introduced with the Cortex device family.</p>
+<p>µVision provides a <strong>Configuration Wizard</strong> that makes it easy to configure the device:</p>
+<ol>
+<li>Double click the <strong><em>startup_xxx.s (Startup)</em></strong> file. The file opens in the <strong>Editor Window</strong>. Two tabs are displayed at the bottom of the Editor: <strong>Text Editor</strong> and <a href="http://www.keil.com/support/man/docs/uv4/uv4_ut_configwizard.htm">Configuration Wizard</a>.<br />
+<img alt="Config Wizard" src="http://upload-images.jianshu.io/upload_images/26219-6569af5504ef9a67.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></li>
+<li>Choose the <strong>Configuration Wizard</strong> tab.</li>
+<li>Click the <strong>Value</strong> field to change the content.</li>
+</ol>
+<p><strong>Note</strong>: <strong>Startup</strong> files can have a file name matching the device family name.</p>
+<h4 id="cmsis"><a name="user-content-cmsis" href="#cmsis" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>CMSIS</h4>
+<p>The Cortex Microcontroller Software Interface Standard (CMSIS) provides a single standard across all Cortex-M processor series vendors. It enables code re-use and code sharing across software projects and reduces development time for new embedded applications. A detailed description can be found in the <a href="http://www.keil.com/cmsis">CMSIS Introduction</a>.</p>
+<p>CMSIS provides a common approach to interface peripherals, real-time operating systems, and middleware components across all silicon vendor products.</p>
+<p>You can make use of the advantages offered through CMSIS and set configuration options by using the provided <strong>system_<em>family name</em>.c</strong> and <strong>RTE_Device.h</strong> files.</p>
+<p>You can:</p>
+<ol>
+<li>Define interrupt and exception vectors.</li>
+<li>Initialize the external bus controller.</li>
+<li>Configure the CPU clock source.</li>
+<li>Copy the exception vectors from ROM to RAM for systems with memory remapping.</li>
+<li>Initialize other low level peripherals.</li>
+</ol>
+<p>Some files have <a href="http://www.keil.com/support/man/docs/uv4/uv4_ut_configwizard.htm">Configuration Wizard</a> annotations and display a GUI-like interface to set options.</p>
+<ol>
+<li>Open the file in the <strong>Editor Window</strong>. Two tabs are displayed at the bottom: <strong>Text Editor</strong> and <strong>Configuration Wizard</strong>.<br />
+<img alt="Cortex System File" src="http://upload-images.jianshu.io/upload_images/26219-686acddbcce22b0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></li>
+<li>Click on a value to change the content.</li>
+</ol>
+<h4 id="library-retarget-file"><a name="user-content-library-retarget-file" href="#library-retarget-file" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Library Retarget File</h4>
+<p>Semihosting is not supported by MDK-ARM. Use the retargeting functionality of MDK-ARM instead. To prevent the linker from selecting libraries functions that use semihosting, MDK-ARM includes retarget files that redefine low-level I/O routines.</p>
+<ol>
+<li>A <strong>RETARGET.C</strong> template file, located in the folder <strong><em>..</em>\ARM\Startup</strong>, implements the functionality required to adapt character I/O functions such as printf() and scanf().</li>
+<li>Copy the <strong>RETARGET.C</strong> template to the project folder.<br />
+Include the copied file to the project.</li>
+<li>Edit the file and make your changes. You may use the following code as a template and adapt it to your needs.<br />
+<pre><code>/*----------------------------------------------------------------------------
+ * Name:    Retarget.c
+ * Purpose: 'Retarget' layer for target-dependent low level functions
+ * Note(s):
+ *----------------------------------------------------------------------------
+ * This file is part of the µVision/ARM development tools.
+ * This software may only be used under the terms of a valid, current,
+ * end user licence from KEIL for a compatible version of KEIL software
+ * development tools. Nothing else gives you the right to use this software.
+ *
+ * This software is supplied &quot;AS IS&quot; without warranties of any kind.
+ *
+ * Copyright (c) 2009 Keil - An ARM Company. All rights reserved.
+ *----------------------------------------------------------------------------*/
+
+#include &lt;stdio.h&gt;
+#include &lt;rt_misc.h&gt;
+
+#pragma import(__use_no_semihosting_swi)
+
+
+extern int sendchar (int c);
+extern int getkey   (void);
+
+
+struct __FILE { int handle; /* Add whatever you need here */ };
+FILE __stdout;
+FILE __stdin;
+
+
+int fputc(int c, FILE *f) {
+  return (sendchar(c));
+}
+
+
+int fgetc(FILE *f) {
+  return (getkey());
+}
+
+
+int ferror(FILE *f) {
+  /* Your implementation of ferror */
+  return EOF;
+}
+
+
+void _ttywrch(int c) {
+  sendchar(c);
+}
+
+
+void _sys_exit(int return_code) {
+label:  goto label;  /* endless loop */
+}
+</code></pre></li>
+</ol>
+<p><strong>Note</strong>: </p>
+<ul>
+<li>Refer to <a href="http://www.keil.com/support/man/docs/armlib/armlib_chr1358938921910.htm">Tailoring the C library to a new execution environment</a> for information about library retargeting.</li>
+<li>Refer to <a href="http://www.keil.com/support/man/docs/armlib/armlib_chr1358938932518.htm">Redefining target-dependent system I/O functions in the C library</a>.</li>
+<li>Refer to <a href="http://www.keil.com/support/man/docs/armlib/armlib_chr1358938931411.htm">Redefining low-level library functions to enable direct use of high-level library functions in the C library</a></li>
+<li>Refer to <a href="http://www.keil.com/support/man/docs/armcc/armcc_pge1358787046598.htm.htm">What is semihosting?</a></li>
+</ul>
+<p>Related Knowledgebase Articles:<a href="http://www.keil.com/support/docs/3614.htm">ARM: Application Builds Without Error, But Does Not Run</a></p>
+<h4 id="low-level-io-routines"><a name="user-content-low-level-io-routines" href="#low-level-io-routines" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Low Level I/O Routines</h4>
+<p>The library retarget file has been added to the project in the previous step. The implementation of getkey() and sendchar() is done in a separate file, <strong>Serial.c</strong>.</p>
+<p>Several examples provided with the MDK-ARM include a ready-to-use Serial.c file for various evaluation boards. You can simply re-use such a <strong>Serial.c</strong> in your project.</p>
+<ol>
+<li>If you want to redirect to a different UART or peripheral, create a new file <strong>Serial.c</strong> and add it to the project.</li>
+<li>You may use the following code as a template and adapt it to your needs.<br />
+<pre><code class="c">/*----------------------------------------------------------------------------
+ * Name:    Serial.c
+ * Purpose: Low level serial routines
+ * Note(s):
+ *----------------------------------------------------------------------------
+ * This file is part of the µVision/ARM development tools.
+ * This software may only be used under the terms of a valid, current,
+ * end user licence from KEIL for a compatible version of KEIL software
+ * development tools. Nothing else gives you the right to use this software.
+ *
+ * This software is supplied &quot;AS IS&quot; without warranties of any kind.
+ *
+ * Copyright (c) 2009 Keil - An ARM Company. All rights reserved.
+ *----------------------------------------------------------------------------*/
+
+#include &lt;stm32f10x_cl.h&gt;
+
+/*----------------------------------------------------------------------------
+  Initialize UART pins, Baud-rate
+ *----------------------------------------------------------------------------*/
+void init_serial (void) {
+  int i;
+
+  /* Configure UART2 for 115200 baud                                         */
+  RCC-&gt;APB2ENR |=  1 &lt;&lt;  0;            /* Enable AFIO clock                  */
+  RCC-&gt;APB2ENR |=  1 &lt;&lt;  5;            /* Enable GPIOD clock                 */
+  AFIO-&gt;MAPR |= 0x00000008;            /* Configure used Pins                */
+  GPIOD-&gt;CRL &amp;= 0xF00FFFFF;
+  GPIOD-&gt;CRL |= 0x04B00000;
+
+  RCC-&gt;APB1ENR |= 0x00020000;          /* Enable USART#2 clock               */
+  USART2-&gt;BRR = 0x0135;                /* Configure 115200 baud,             */
+  USART2-&gt;CR3 = 0x0000;                /*           8 bit, 1 stop bit,       */
+  USART2-&gt;CR2 = 0x0000;                /*           no parity                */
+  for (i = 0; i &lt; 0x1000; i++) __NOP();/* avoid unwanted output              */
+  USART2-&gt;CR1 = 0x200C;
+}
+
+
+/*----------------------------------------------------------------------------
+  Write character to Serial Port
+ *----------------------------------------------------------------------------*/
+int sendchar (int c) {
+
+  while (!(USART2-&gt;SR &amp; 0x0080));
+  USART2-&gt;DR = (c &amp; 0x1FF);
+
+  return (c);
+}
+
+
+/*----------------------------------------------------------------------------
+  Read character from Serial Port   (blocking read)
+ *----------------------------------------------------------------------------*/
+int getkey (void) {
+
+  while (!(USART2-&gt;SR &amp; 0x0020));
+  return (USART2-&gt;DR);
+}
+</code></pre></li>
+</ol>
+<h3 id="create-file-group"><a name="user-content-create-file-group" href="#create-file-group" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Create File Group</h3>
+<p>For an improved overview of the code structure, µVision offers the possibility to group files.</p>
+<ol>
+<li>Invoke the <strong>Context Menu</strong> of the <strong>Project Window</strong> and choose <strong>Add Group</strong>.<br />
+<img alt="Context Menu" src="http://upload-images.jianshu.io/upload_images/26219-865fc5a5f7e4d507.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></li>
+<li>A box, <strong>New Group</strong>, is created in the <strong>Project Window</strong>. Enter the new group name.<br />
+<img alt="New-Group Box" src="http://upload-images.jianshu.io/upload_images/26219-bef4678c35911aa9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></li>
+<li>Create the groups <strong>Source</strong>, <strong>System</strong>, and <strong>Documentation</strong>.</li>
+<li>Click on <strong>Source Group 1</strong>, press <strong>F2</strong>, and re-name it to <strong>Startup</strong>.</li>
+<li>Create and add a file, <strong>Abstract.txt</strong>, to the project.</li>
+<li>Drag and drop the files to the desired group.</li>
+<li>The screen might look like the screenshot below.<br />
+<img alt="New-Group Box" src="http://upload-images.jianshu.io/upload_images/26219-afbaef892ba1cd86.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></li>
+</ol>
+<p><strong>Note</strong>: Highlight a Group or file and press <strong>DEL</strong>. This removes the object form the Project Window, without deleting the source file physically.</p>
+<h3 id="specify-memory-layout"><a name="user-content-specify-memory-layout" href="#specify-memory-layout" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Specify Memory Layout</h3>
+<p>Define specific memory areas for source files or groups using the <strong>Options for &hellip; - Properties</strong> dialog. Use this feature to place variables defined in that object into a certain memory area.</p>
+<ol>
+<li>Invoke the <strong>Context Menu</strong> of an object located in the <strong>Project Window</strong>.<br />
+<img alt="Context Menu" src="http://upload-images.jianshu.io/upload_images/26219-45a375884f7cbd73.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></li>
+<li>The <strong>Memory Assignment</strong> section allocates data types to specific memory areas, which in turn have been defined in the <a href="http://www.keil.com/support/man/docs/gsac/GSAC_ToolOpts.htm">Project - Options for Target - Target</a> dialog.<br />
+<img alt="Memory Assignment" src="http://upload-images.jianshu.io/upload_images/26219-1e717573013610ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></li>
+</ol>
+<p><strong>Note</strong>: </p>
+<ul>
+<li>When RAM is used for <strong>Code / Const</strong> , the <strong>__main</strong> initialization copies the program code and constants to this RAM for execution. The image is stored in the default read/only memory area specified in the dialog <a href="http://www.keil.com/support/man/docs/gsac/GSAC_ToolOpts.htm">Project - Options for Target - Target</a>.</li>
+<li>These settings are used to generate a scatter-loading description file for the linker. Nevertheless, the settings are ignored, if you disable <strong>Use Memory Layout from Target Dialog</strong> in the dialog <strong>Project - Options for Target - Linker</strong>.</li>
+<li>This feature is not available in the <strong>Keil MDK-ARM Evaluation Version</strong>.</li>
+</ul>
+<h3 id="build-project"><a name="user-content-build-project" href="#build-project" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Build Project</h3>
+<p>Typically, the tool settings defined through the <strong>Options for Target</strong> dialog are all that&rsquo;s needed to build a new application.</p>
+<ol>
+<li>Translate and link the source files of the application with a click on one of the build-buttons located in the <strong>Build Toolbar</strong>.<br />
+<img alt="Build buttons" src="http://upload-images.jianshu.io/upload_images/26219-16c9ad9dfde4d6e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /> </li>
+<li>Errors or warnings are displayed in the <strong>Build Output Window</strong>. Double-click on a message to jump to the line where the incident occurred.<br />
+<img alt="Build Output Window" src="http://upload-images.jianshu.io/upload_images/26219-0444eeffd8b38a00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></li>
+<li>Correct the errors and warnings, and compile the application again.<img alt="Build Output Window" src="http://upload-images.jianshu.io/upload_images/26219-280c9377078b036f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></li>
+<li>Once you have generated your application successfully, you can start debugging.<br />
+<img alt="Debug" src="http://upload-images.jianshu.io/upload_images/26219-dcf7e1e03e05e29a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></li>
+</ol>
+<h2 id="flash-application"><a name="user-content-flash-application" href="#flash-application" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Flash Application</h2>
+<p>µVision can be configured to program the Flash memory of the target system. The <a href="http://www.keil.com/support/man/docs/uv4/uv4_ui_flash.htm">Flash Menu</a> includes commands to configure, erase, and program Flash memory. Configure and use Flash programming utilities as describe below:</p>
+<ol>
+<li>Configure Flash utilities for <a href="http://www.keil.com/support/man/docs/uv4/uv4_flash_programming.htm">Flash Programming</a>.<strong>ULINK</strong> settings are explained in <a href="http://www.keil.com/support/man/docs/uv4/uv4_fl_ulinkconfiguration.htm">ULINK Configuration</a>.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_flashDownload.htm">Flash Download</a> programs the application to hardware.</li>
+</ol>
+<p>Configuration settings are saved in context of the current <a href="http://www.keil.com/support/man/docs/uv4/uv4_ca_projtargfilegr.htm">Project Target</a>.</p>
+<p><strong>See also:</strong> <a href="http://www.keil.com/support/man/docs/uv4/uv4_fl_flash_algorithms.htm">Flash Algorithms</a> can be created and added to MDK by software developers.</p>
+<h3 id="flash-download"><a name="user-content-flash-download" href="#flash-download" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Flash Download</h3>
+<p>Once the command interface is configured, you can use the <a href="http://www.keil.com/support/man/docs/uv4/uv4_ui_flash.htm">Flash Menu</a> commands to <strong>Download</strong> or <strong>Erase</strong>the Flash memory on your target device.</p>
+<p><img alt="Download Button" src="http://upload-images.jianshu.io/upload_images/26219-853134dafb3b0792.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /> </p>
+<p>Click the <strong>Download</strong> button of the <strong>Build Toolbar</strong> or <strong>Flash Menu</strong> to download the program.</p>
+<p><img alt="Output Window" src="http://upload-images.jianshu.io/upload_images/26219-6f4b5d4f84356d95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>The <strong>Build Output Window</strong> informs about the download process. In case of errors, check the configuration settings of the target driver, re-build the application if necessary, and download to Flash again.</p>
+<h2 id="debug-application"><a name="user-content-debug-application" href="#debug-application" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Debug Application</h2>
+<p>This section describes the µVision <strong>Debug Mode</strong> and the interface for debugging applications.</p>
+<p><strong>Using a Target Debugger</strong></p>
+<p>The options described below configure µVision for using a ULINK adapter:</p>
+<ol>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_selectDebugDriver.htm">Select Debug Driver</a> describes how to choose the debug adapter in µVision.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_configDebugDriver.htm">Configure Debug Driver</a> describes how to configure the debug adapter.</li>
+</ol>
+<h3 id="select-debug-driver"><a name="user-content-select-debug-driver" href="#select-debug-driver" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Select Debug Driver</h3>
+<p>This section describes how to select a <strong>driver</strong> for debugging on hardware. The debug driver connects µVision to a debugger adapter, for example ULINK, which interfaces to the target system. Perform the following steps:</p>
+<ol>
+<li>Connect the ULINK adapter to the PC and to the target system.</li>
+<li>Power up the target system.</li>
+<li>Click the toolbar button <strong>Target Options</strong>.<br />
+<img alt="Options for Target Button" src="http://upload-images.jianshu.io/upload_images/26219-7a7552c5d8e7aa13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /> </li>
+<li>Click the tab <strong>Debug</strong>.<img alt="Debugger Options" src="http://upload-images.jianshu.io/upload_images/26219-04dbc5b82e266d40.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></li>
+</ol>
+<ul>
+<li>
+<p>Enable <strong>Use: *Debug Driver<strong><em> and choose:</em>*ULINK ARM Debugger</strong> - for connecting to ARM7 or ARM9 devices.<br />
+</strong>ULINK Cortex Debugger** - for connecting to Cortex-M devices.</p>
+</li>
+<li>
+<p>Enable <strong>Load Application at Startup</strong> - for loading the application into the µVision Debugger whenever a debugging session is started.</p>
+</li>
+<li>Enable <strong>Run to main()</strong> - for executing the instructions up to the first executable statement of the <strong>main()</strong>function. The instructions are executed upon each RESET.</li>
+<li>Click the button <strong>Settings</strong> to <a href="http://www.keil.com/support/man/docs/gsac/GSAC_configDebugDriver.htm">Configure the Debug Driver</a>.</li>
+</ul>
+<h3 id="configure-debug-driver"><a name="user-content-configure-debug-driver" href="#configure-debug-driver" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Configure Debug Driver</h3>
+<p>This section shows the dialog <strong>Target Driver Setup</strong>, which configures the debug driver interface. The dialog opens from the menu <strong>Flash - Configure Flash Tools - Debug - Settings</strong>.</p>
+<p><img alt="Cortex Target Driver Setup" src="http://upload-images.jianshu.io/upload_images/26219-aee382bd6954677e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>The following data blocks are completed automatically after the debugging environment has been connected and configured:</p>
+<ul>
+<li><strong>ULINK USB-JTAG/SW Adapter</strong>: Displays driver, device, and firmware data about the ULINK adapter.</li>
+<li><strong>JTAG/SW Device Chain</strong>: Displays the target device, or devices, connected to the JTAG/SW interface. ULINK shows the <code>IDCODE</code>,<code>Device Name</code>, and <code>IR Length</code> of all JTAG-compatible targets or Serial-Wire (SW) targets it detects.<br />
+This icon, marking the <code>IDCODE</code>, identifies the device that is being debugged and assures that the device is working.</li>
+<li><strong>Debug</strong><br />
+Configures the cache, download, and device reset options applied upon RESET.</li>
+</ul>
+<p><a href="http://www.keil.com/support/man/docs/gsac/GSAC_startDebugging.htm">Start debugging</a> with the default settings. Usually, <strong>no further configuration is required</strong>.</p>
+<p><strong>Note</strong>: </p>
+<ul>
+<li>The screen layout and options vary depending on the device and debug driver selected.</li>
+<li>For details, refer to the <em>User&rsquo;s Guide</em> of the debug adapter in use, or simply click the <strong>Help</strong> button.</li>
+</ul>
+<h3 id="start-debugging"><a name="user-content-start-debugging" href="#start-debugging" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Start Debugging</h3>
+<p>µVision provides several ways to debug an application. For example, developers can:</p>
+<ul>
+<li>Select commands from the <a href="http://www.keil.com/support/man/docs/uv4/uv4_ui_debug.htm">Debug Menu</a> or the <strong>Debug Toolbar</strong>.</li>
+<li>Use the command <strong>Run to Cursor line</strong> from the <strong>Context Menu</strong> of the window <a href="http://www.keil.com/support/man/docs/uv4/uv4_db_dbg_disasmwin.htm">Disassembly Window</a>.</li>
+<li>Enter debugger commands in the <a href="http://www.keil.com/support/man/docs/uv4/uv4_db_dbg_outputwin.htm">Command Window</a>.</li>
+<li>Execute <a href="http://www.keil.com/support/man/docs/uv4/uv4_debug_functions.htm">Debug Functions</a> from an initialization file.<br />
+Use most editor features. For example, correct program errors or use the <strong>Edit - Find</strong> command.</li>
+</ul>
+<p><strong>Start the Debugger</strong></p>
+<ul>
+<li><strong>Load Application at Startup</strong> and <strong>Run to main()</strong> determine the debugger behaviour at startup. The options are configured in the dialog <a href="http://www.keil.com/support/man/docs/gsac/gsac_selectdebugdriver.htm">Options for Target — Debug</a>.</li>
+<li>µVision saves and restores the screen layout of the last debugging session.</li>
+</ul>
+<p><img alt="Start/Stop Debug Session" src="http://upload-images.jianshu.io/upload_images/26219-57d795de82167643.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /><br />
+The button <strong>Start/Stop Debug Session</strong> starts or closes a debugging session.</p>
+<p><img alt="next instruction" src="http://upload-images.jianshu.io/upload_images/26219-e580c0755f8e9072.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>The yellow arrow marks the next instruction or high-level statement ready to be executed.</p>
+<p><strong>Execute Commands</strong></p>
+<p><img alt="Reset" src="http://upload-images.jianshu.io/upload_images/26219-f01366863bcdde7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /><br />
+Reset the CPU with the button <strong>Reset</strong>, the menu <strong>Debug – Reset CPU</strong>, or with the command <a href="http://www.keil.com/support/man/docs/uv4/uv4_cm_reset.htm">RESET</a>typed into the <strong>Command Window</strong>.<br />
+<img alt="Halt" src="http://upload-images.jianshu.io/upload_images/26219-819797ff642c89aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /><br />
+Halt program execution with the button <strong>Stop</strong>, the menu <strong>Debug - Stop</strong>, or press Esc while in the<strong>Command Window</strong>. When program execution is stopped, µVision opens the Editor window displaying the source code.<br />
+<img alt="Run" src="http://upload-images.jianshu.io/upload_images/26219-32d317c2a076fe81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /><br />
+Continue program execution with the button <strong>Run</strong>, the menu <strong>Debug - Run</strong>, or type <a href="http://www.keil.com/support/man/docs/uv4/uv4_cm_go.htm">GO</a> into the <strong>Command Line</strong>.</p>
+<p><strong>Single-Stepping Commands</strong></p>
+<p><img alt="Step" src="http://upload-images.jianshu.io/upload_images/26219-24364a70e4cee179.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /><br />
+To execute one instruction use the button <strong>Step</strong>, the menu <strong>Debug - Step</strong>, or type <a href="http://www.keil.com/support/man/docs/uv4/uv4_cm_tstep.htm">TSTEP</a> into the<strong>Command Window</strong>.<br />
+<img alt="Step Over" src="http://upload-images.jianshu.io/upload_images/26219-0eb0662fd8e5422e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /><br />
+To step over the program and over function calls use the button <strong>Step Over</strong>, the menu <strong>Debug - Step Over</strong>, or enter <a href="http://www.keil.com/support/man/docs/uv4/uv4_cm_pstep.htm">PSTEP</a> in the <strong>Command Window</strong>.<br />
+<img alt="Step Out" src="http://upload-images.jianshu.io/upload_images/26219-3f5ff0b0f8fbdb44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /><br />
+To step out of the current function use the button <strong>Step Out</strong>, the menu <strong>Debug - Step Out</strong>, or enter <a href="http://www.keil.com/support/man/docs/uv4/uv4_cm_ostep.htm">OSTEP</a>in the <strong>Command Window</strong>.</p>
+<h2 id="use-on-chip-peripherals"><a name="user-content-use-on-chip-peripherals" href="#use-on-chip-peripherals" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use on-chip Peripherals</h2>
+<p>This section describes techniques that help creating programs that use various on-chip peripherals and features of ARM-powered microcontrollers. Use the code examples, specifically tuned for Cortex-M devices, as a template for future programs.</p>
+<p>The status of on-chip peripherals can be reviewed with the µVision Debugger using the menu <strong>Peripherals</strong>. The menu items are device specific and get configured dynamically based on information extracted from the<a href="http://www.keil.com/dd">Device Database</a>. Detailed information about the device peripherals and the simulation are provided under the menu <strong>Help - Simulated Peripherals for &lsquo;<em>device name</em>&lsquo;</strong>.</p>
+<p>The following topics are included:</p>
+<ul>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_periphCortexCore.htm">Cortex-M Core Peripherals</a> describes the standardized peripherals and includes code examples.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_vendorPeriph.htm">Vendor Peripherals</a> describes common peripherals provided by vendors and their use with CMSIS.</li>
+</ul>
+<p><strong>Note</strong>: </p>
+<ul>
+<li>Application Notes are available on <a href="http://www.keil.com/appnotes"><a href="http://www.keil.com/appnotes"><a href="http://www.keil.com/appnotes">www.keil.com/appnotes</a></a></a>.</li>
+<li>The applications described in the following sections have been tested with the STM32F107VC device on the Keil MCBSTM32C board.</li>
+</ul>
+<h3 id="cortex-m-core-peripherals"><a name="user-content-cortex-m-core-peripherals" href="#cortex-m-core-peripherals" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Cortex-M Core Peripherals</h3>
+<p>Cortex-M offers two standard core peripherals, the <strong>Nested Vectored Interrupt Controller (NVIC)</strong> and the<strong>System Tick Timer (SYSTICK Timer)</strong>. Due to the standardization, the code used in applications can be ported between different microcontroller implementations. This section explains the functionality of the two peripherals, how they are configured and used.</p>
+<ul>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_NVIC.htm">Nested Vectored Interrupt Controller (NVIC)</a> describes helper functions, priority grouping, and interrupt numbers. An example is given on how to enable the NVIC and reset the system.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_SYSTICKtimer.htm">System Tick Timer (SYSTICK Timer)</a> describes how to configure this timer.</li>
+</ul>
+<h4 id="nested-vectored-interrupt-controller"><a name="user-content-nested-vectored-interrupt-controller" href="#nested-vectored-interrupt-controller" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Nested Vectored Interrupt Controller</h4>
+<p>The Nested Vectored Interrupt Controller (NVIC) offers very fast interrupt handling and provides the vector table as a set of real vectors (addresses).<br />
+In addition, the NVIC:</p>
+<ul>
+<li>Saves and restores automatically a set of the CPU registers (R0-R3, R12, PC, PSR, and LR).</li>
+<li>Does a quick entry to the next pending interrupt without a complete pop/push sequence.</li>
+<li>Serves a complete set of 255 (240 external) interrupts.</li>
+</ul>
+<p><strong>Interrupt Numbers</strong></p>
+<p>In CMSIS, interrupts are enumerated from negative to positive numbers:<br />
+- Core interrupt numbers rank from [-15 .. -1].<br />
+- External interrupts rank from [0 .. n].</p>
+<p>Example of an Interrupt Table for an STM32:<br />
+<pre><code>typedef enum IRQn
+{
+/****** Cortex -M3 Processor Exceptions Numbers ***********************************************/
+   NonMaskableInt_IRQn      = -14,  // 2 Non Maskable Interrupt
+   MemoryManagement_IRQn    = -12,  // 4 Memory Management Interrupt
+   BusFault_IRQn            = -11,  // 5 Bus Fault Interrupt
+   UsageFault_IRQn          = -10,  // 6 Usage Fault Interrupt
+   SVCall_IRQn              = -5,   // 11 SV Call Interrupt
+   DebugMonitor_IRQn        = -4,   // 12 Debug Monitor Interrupt
+   PendSV_IRQn              = -2,   // 14 Pend SV Interrupt
+   SysTick_IRQn             = -1,   // 15 System Tick Interrupt
+
+/****** STM32 specific Interrupt Numbers *****************************************************/
+   WWDG_IRQn                = 0,    // 16 Window WatchDog Interrupt
+   PVD_IRQn                 = 1,    // 17 PVD through EXTI Line detection Interrupt
+   TAMPER_IRQn              = 2,    // 18 Tamper Interrupt
+   ...
+   TIM1_UP_IRQn             = 25,   // n Timer1 Update Interrupt
+   ...
+} IRQn_Type ;
+</code></pre></p>
+<p><strong>NVIC functions</strong></p>
+<p>The CMSIS core module <strong>core_cm3.h</strong> provides a set of inlined functions and helper functions.</p>
+<p><img alt="CMSIS core module" src="http://upload-images.jianshu.io/upload_images/26219-1ed4087485427c75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p><strong>Example of using NVIC functions</strong>:</p>
+<pre><code>NVIC_SetPriorityGrouping (3);       // sets PRIGROUP 4.4 (or 4.0 on STM32 )
+NVIC_SetPriority (2);               // sets priority value 2 to the IRQ
+NVIC_EnableIRQ (TIM1_UP_IRQn);      // enables Timer 1 UP IRQ
+
+void TIM1_UP_IRQn (void)  {
+   ...
+}
+</code></pre>
+
+<p><strong>Note</strong>: NVIC functions work only in Privileged Mode, which is the default mode for Cortex-M microcontroller.</p>
+<p><strong>Related Knowledgebase Articles</strong>: <a href="http://www.keil.com/support/docs/3816.htm">µVISION DEBUGGER: missing interrupt names at NVIC window</a></p>
+<h4 id="system-tick-timer"><a name="user-content-system-tick-timer" href="#system-tick-timer" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>System Tick Timer</h4>
+<p>The System Tick Timer (SYSTICK Timer) is a simple 24-bit down counter. The timer can be started and configured with an automatic reload value. If the timer is running and it&rsquo;s IRQ is enabled, it generates periodic interrupts. The System Tick Timer can use the internal clock (FCLK, the free running clock signal on the Cortex-M processor) or the external clock (the STCLK signal on the Cortex-M processor). The System Tick Timer is often used by the RTOS.</p>
+<p>When used with CMSIS, the System Tick timer is started and setup with the following function:</p>
+<pre><code>SysTick_Config (numberOfTicks);
+</code></pre>
+
+<p>The following code can be used as a template for further applications.</p>
+<pre><code>/******************************************************************************
+ * @file:    main.c
+ * @purpose: Systick Timer usage with CMSIS for Cortex-M microcontroller
+ *
+******************************************************************************/
+#include &quot;stm32f10x_cl.h&quot;
+
+volatile uint32_t msTicks;                  // Counts 1ms timeTicks
+
+/*-----------------------------------------------------------------------------
+  SysTick_Handler
+*----------------------------------------------------------------------------*/
+void SysTick_Handler (void)  {
+  msTicks++;                                // Increment counter
+}
+
+/*-----------------------------------------------------------------------------
+  MAIN function
+*----------------------------------------------------------------------------*/
+int main (void)  {
+
+  SystemInit ();                            // Initialize clocks
+  SysTick_Config (SystemFrequency/1000);    // Configure the SYSTICK
+
+  while (1)  {
+    ...
+  }
+
+}
+</code></pre>
+
+<h3 id="vendor-peripherals"><a name="user-content-vendor-peripherals" href="#vendor-peripherals" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Vendor Peripherals</h3>
+<p>Chip vendors use a wide variety of on-chip peripherals to distinguish their parts from each other. Device peripherals such as I/O Ports, Timers, PWMs, A/Ds, or D/As can have different functions and performance characteristics. This variety is a challenge for the software developer and makes code reuse difficult. <a href="http://www.onarm.com/">CMSIS</a> addresses these difficulties by providing a vendor-independent hardware abstraction layer with a common approach to interface peripherals, real-time operating systems, and middleware components across all silicon vendor products.</p>
+<p>The code examples in this chapter demonstrate a possible use of peripherals with CMSIS:</p>
+<ul>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_GPIO.htm">General Purpose Input/Output</a> describes the use of standard I/O ports.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_UART.htm">Serial Interface</a> describes the implementation of UART communication.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_TIMER.htm">Timer</a> describes the use of standard timers.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_ADC.htm">Analog Digital Converter</a> describes the use of an ADC.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/GSAC_PRM.htm">Power Reduction Modes</a> describes the sleep modes for power-saving implementations.</li>
+</ul>
+<h4 id="general-purpose-io"><a name="user-content-general-purpose-io" href="#general-purpose-io" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>General Purpose I/O</h4>
+<p>Microcontrollers provide a number of I/O ports that can be used in target applications. Pins can be configured as a GPIO. However, some ports or single port pins can have functionalities that could prevent their generic usage.</p>
+<p>The steps to configure GPIO ports and pins are, basically, identical on every microcontroller:</p>
+<ul>
+<li>Enable the clock signal for the GPIO.</li>
+<li>Configure the Alternate Function to use a GPIO (usually standard after reset).</li>
+<li>Configure the GPIO pins as input or output.</li>
+<li>Set remaining parameters like speed, pull-up/down.</li>
+<li>Enable the GPIO.</li>
+<li>Read from or write to the GPIO.</li>
+</ul>
+<p>For this example the following steps are required:</p>
+<ol>
+<li>Create a new project.</li>
+<li>Select the STM32F107VC microcontroller from the Device Database.</li>
+<li>Include the files:<ul>
+<li>startup_stm32f10x_cl.s</li>
+<li>system_stm32f10x_cl.c</li>
+<li>core_cm3.c</li>
+<li>Serial.c</li>
+<li>Retarget.c</li>
+</ul>
+</li>
+<li>Create and add a new file, <strong>GPIO.c</strong>, to the project.</li>
+<li>Use the code below as a reference.<br />
+<pre><code>/*-----------------------------------------------------------------------------
+ * Name:    GPIO.c
+ * Purpose: Blink a led on GPIOE
+ * Notes:
+*----------------------------------------------------------------------------*/
+#include &lt;stm32f10x_cl.h&gt;
+
+volatile uint32_t msTicks;                      // Counts 1ms timeTicks
+/*-----------------------------------------------------------------------------
+  SysTick_Handler
+*----------------------------------------------------------------------------*/
+void SysTick_Handler (void)  {
+  msTicks++;                                    // increment Delay()-counter
+}
+
+/*-------------------------------------------------------------------------------
+  delays number of tick Systicks (happens every 1 ms)
+*------------------------------------------------------------------------------*/
+__INLINE static void Delay (uint32_t dlyTicks)  {
+  uint32_t curTicks;
+
+  curTicks = msTicks;
+  while ((msTicks - curTicks) &lt; dlyTicks);
+}
+
+/*-------------------------------------------------------------------------------
+  configer LED pins
+*------------------------------------------------------------------------------*/
+__INLINE static void LED_Config (void)  {
+
+  RCC-&gt;APB2ENR |=  1 &lt;&lt;  6;                     // Enable GPIOE clock
+  GPIOE-&gt;CRH    = 0x33333333;                   // Configure the GPIO for LEDs
+}
+
+/*-------------------------------------------------------------------------------
+  Switch on LEDs
+*------------------------------------------------------------------------------*/
+__INLINE static void LED_On (uint32_t led) {
+
+  GPIOE-&gt;BSRR = (led);                          // Turn On  LED
+}
+
+
+/*-------------------------------------------------------------------------------
+  Switch off LEDs
+*------------------------------------------------------------------------------*/
+__INLINE static void LED_Off (uint32_t led)  {
+
+  GPIOE-&gt;BRR  = (led);                          // Turn Off LED
+}
+
+/*-----------------------------------------------------------------------------
+  MAIN function
+*----------------------------------------------------------------------------*/
+int main (void)  {
+
+  SystemInit ();                                // Initialize clocks
+  SysTick_Config (SystemFrequency/1000);
+  LED_Config ();
+
+  while(1)  {
+    LED_On (0x100);                             // Turn on the LED.
+    Delay (100);                                // Delay  100 Msec
+    LED_Off (0x100);                            // Turn off the LED.
+    Delay (100);                                // Delay  100 Msec
+
+  }
+
+}
+</code></pre></li>
+<li>Build the project.</li>
+<li>Connect a debug adapter to the PC and to the board.</li>
+<li>Configure µVision for Flash downloading.</li>
+<li>Download to Flash and debug the application.</li>
+</ol>
+<h4 id="serial-interface"><a name="user-content-serial-interface" href="#serial-interface" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Serial Interface</h4>
+<p>Almost all microcontrollers have a serial interface (UART peripheral). The UART is a very simple device to send data to a PC via a terminal emulation program (Hyperterm, TeraTerm) or to another microcontroller. In general, the driver for a UART contains functions to initialize, send, and receive data.</p>
+<p>The steps to initialize an UART are:</p>
+<ul>
+<li>Enable the clock signal for the UART.</li>
+<li>Configure the Alternate Function to use a UART.</li>
+<li>Set the baud rate registers.</li>
+<li>Set the protocol parameters (stop bit, parity).</li>
+<li>Configure FIFO-buffers.</li>
+<li>Enable the UART.</li>
+<li>Read from or write to the UART.</li>
+</ul>
+<p>For this example the following steps are required:</p>
+<ol>
+<li>Create a new project.</li>
+<li>Select the STM32F107VC microcontroller from the Device Database.</li>
+<li>Include the files:<ul>
+<li>startup_stm32f10x_cl.s</li>
+<li>system_stm32f10x_cl.c</li>
+<li>core_cm3.c</li>
+<li>Serial.c</li>
+<li>Retarget.c</li>
+</ul>
+</li>
+<li>Create and add a new file, <strong>UART.c</strong>, to the project.</li>
+<li>Use the code below as a reference.<br />
+<pre><code>/*----------------------------------------------------------------------------
+ * Name:    UART.c
+ * Purpose: print a string to UART2
+ * Notes:
+ *----------------------------------------------------------------------------*/
+#include &lt;stdio.h&gt;
+#include &lt;stm32f10x_cl.h&gt;
+
+// Import external functions from Serial.c file
+extern void init_serial (void);
+
+/*----------------------------------------------------------------------------
+  MAIN function
+ *----------------------------------------------------------------------------*/
+int main (void) {
+
+  SystemInit();
+  init_serial();
+  printf (&quot;CMSIS Serial Device Example\r\n&quot;);
+
+  while (1) {
+  }
+}
+</code></pre></li>
+<li>Build the project.</li>
+<li>Connect a debug adapter to the PC and to the board.</li>
+<li>Configure µVision for Flash downloading.</li>
+<li>Download to Flash and debug the application.</li>
+</ol>
+<h4 id="timer"><a name="user-content-timer" href="#timer" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Timer</h4>
+<p>Timers are peripherals that generate periodic events in a microcontroller. A timer can be used as a PWM generator, or a trigger for a motor, or to control an ADC. The main parts of a timer are: a counter-, a reload-, and a match-register.</p>
+<p>To generate periodic events, the timer must be configured with a value and a match event or an over-/underflow event. Timers are implemented differently across various microcontrollers.</p>
+<p>The general steps to configure a timer are:</p>
+<ul>
+<li>Enable the clock signal for the timer.</li>
+<li>Setup the timer prescaler.</li>
+<li>Setup the timer reload value.</li>
+<li>Configure the timer as up- or down counter.</li>
+<li>Configure the timer match.</li>
+<li>Configure the interrupt.</li>
+</ul>
+<p>For this example the following steps are required:</p>
+<ol>
+<li>Create a new project.</li>
+<li>Select the STM32F107VC microcontroller from the Device Database.</li>
+<li>Include the files:<ul>
+<li>startup_stm32f10x_cl.s</li>
+<li>system_stm32f10x_cl.c</li>
+<li>core_cm3.c</li>
+<li>Serial.c</li>
+<li>Retarget.c</li>
+</ul>
+</li>
+<li>Create and add a new file, <strong>Timer.c</strong>, to the project.</li>
+<li>Use the code below as a reference.<br />
+<pre><code>/*-----------------------------------------------------------------------------
+ * Name:    Timer.c
+ * Purpose: Timer example. Prints a sting to UART2
+ * Notes:
+*----------------------------------------------------------------------------*/
+#include &lt;stdio.h&gt;
+#include &lt;stm32f10x_cl.h&gt;
+
+volatile unsigned long TimeTick;            // Counts 10ms timeTicks
+unsigned char clock_1s;                     // Flag activated each second
+
+extern void init_serial (void);             // Function defined in Serial.c
+
+/******************************************************************************
+  Initialise the TIM3 for 1ms @ 72MHz
+******************************************************************************/
+void TIM3_Init (void)  {
+
+  RCC-&gt;APB1ENR |= (1&lt;&lt;1);                   // enable clock for TIM3
+
+  TIM3-&gt;PSC = 3;                            // set prescaler
+  TIM3-&gt;ARR = (18000000UL / 1000UL) - 1UL;  // set auto-reload
+  TIM3-&gt;CR1 = 0;                            // reset command register 1
+  TIM3-&gt;CR2 = 0;                            // reset command register 2
+  TIM3-&gt;DIER = (1&lt;&lt;0);                      // Update interrupt enabled
+  TIM3-&gt;CR1 |= (1&lt;&lt;0);                      // Enable Timer
+
+  NVIC_EnableIRQ (TIM3_IRQn);               // Enable TIM3 interrupt
+}
+
+/*-----------------------------------------------------------------------------
+  Timer Counter 3 interrupt service function
+  executes each 1ms @ 25 MHz Crystal Clock
+*----------------------------------------------------------------------------*/
+void TIM3_IRQHandler (void)  {
+
+  if (TIM3-&gt;SR &amp; (1&lt;&lt;0))  {                 // UIF interrupt?
+    if (TimeTick++ &gt;= 999)  {               // Set clock_1s to 1 every 1 second
+      TimeTick    = 0;
+      clock_1s = 1;
+  }
+    TIM3-&gt;SR &amp;= ~(1&lt;&lt;0);                    // clear UIF flag
+  }
+}
+
+/*-----------------------------------------------------------------------------
+  MAIN function
+*----------------------------------------------------------------------------*/
+int main (void)  {
+
+  SystemInit();                             // Initialize system functions
+  init_serial();                            // Initialize serial interface
+  TIM3_Init();
+
+  while (1)  {                              // Loop forever
+    if (clock_1s)  {
+      clock_1s = 0;
+      printf (&quot;TimeTick\r\n&quot;);
+    }
+  }
+}
+</code></pre></li>
+<li>Build the project.</li>
+<li>Connect a debug adapter to the PC and to the board.</li>
+<li>Configure µVision for Flash downloading.</li>
+<li>Download to Flash and debug the application.</li>
+</ol>
+<h4 id="analog-digital-converter"><a name="user-content-analog-digital-converter" href="#analog-digital-converter" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Analog Digital Converter</h4>
+<p>Analog-to-digital converters bring the analog world to the processor. Some complex ADCs can be triggered through events, such as Timers or DMA-controllers. This section describes the very basic setup that they all have in common.</p>
+<p>For this example the following steps are required:</p>
+<ol>
+<li>Create a new project.</li>
+<li>Select the STM32F107VC microcontroller from the Device Database.</li>
+<li>Include the files:<ul>
+<li>startup_stm32f10x_cl.s</li>
+<li>system_stm32f10x_cl.c</li>
+<li>core_cm3.c</li>
+<li>Serial.c</li>
+<li>Retarget.c</li>
+</ul>
+</li>
+<li>Create and add a new file, <strong>adc.c</strong>, to the project.</li>
+<li>Use the code below as a reference.<br />
+<pre><code>/*-----------------------------------------------------------------------------
+ * Name:    ADC.c
+ * Purpose: The signal of the potentiometer is printed.
+ * Notes:
+*----------------------------------------------------------------------------*/
+#include &lt;stdio.h&gt;
+#include &lt;stm32f10x_cl.h&gt;
+
+unsigned short AD_last;                    // Last converted value
+unsigned char  clock_1s;                   // Flag activated each second
+
+extern void init_serial (void);            // Import function from Serial.c
+
+/*-----------------------------------------------------------------------------
+  Function that initializes ADC
+*----------------------------------------------------------------------------*/
+void ADC_init (void)  {
+
+  RCC-&gt;APB2ENR |= (1&lt;&lt;4);                  // enable peripheral clock for GPIOC
+  GPIOC-&gt;CRL &amp;= ~0x000F0000;               // Configure PC4 as ADC.14 input
+
+  RCC-&gt;APB2ENR |= (1&lt;&lt;9);                  // enable peripheral clock for ADC1
+
+  ADC1-&gt;SQR1    = 0x00000000;              // Regular channel 1 conversion
+  ADC1-&gt;SQR2    = 0x00000000;              // Clear register
+  ADC1-&gt;SQR3    = (14&lt;&lt; 0);                // SQ1 = channel 14
+  ADC1-&gt;SMPR1   = ( 5&lt;&lt;12);                // sample time channel 14 55,5 cycles
+  ADC1-&gt;CR1     = (1 &lt;&lt;  8) |              // Scan mode on
+                  (1 &lt;&lt;  5) ;              // EOC interrupt enable
+  ADC1-&gt;CR2     = (1 &lt;&lt; 20) |              // Enable external trigger
+                  (7 &lt;&lt; 17) |              // EXTSEL = SWSTART
+                  (1 &lt;&lt;  0) ;              // ADC enable
+  ADC1-&gt;CR2    |= (1 &lt;&lt;  3);               // Reset calibration
+  while (ADC1-&gt;CR2 &amp; (1 &lt;&lt; 3));            // wait until reset finished
+
+  ADC1-&gt;CR2    |= (1 &lt;&lt;  2);               // start calibration
+  while (ADC1-&gt;CR2 &amp; (1 &lt;&lt; 2));            // wait until calibration finished
+
+  NVIC_EnableIRQ (ADC_IRQn);               // enable ADC Interrupt
+}
+
+/*-----------------------------------------------------------------------------
+  SysTick IRQ: Executed periodically (10ms)
+*----------------------------------------------------------------------------*/
+void SysTick_Handler (void)  {
+static unsigned long ticks;
+
+  if (ticks++ &gt;= 99)  {                    // Set Clock1s to 1 every 1 second
+    ticks    = 0;
+    clock_1s = 1;
+  }
+
+  ADC1-&gt;CR2  |= (1 &lt;&lt; 22);                 // start SW conversion
+}
+
+/*-----------------------------------------------------------------------------
+  A/D IRQ: Executed when A/D Conversion is done
+*----------------------------------------------------------------------------*/
+void ADC1_2_IRQHandler (void)  {
+  if (ADC1-&gt;SR &amp; (1&lt;&lt;1))  {                // ADC1 EOC interrupt?
+    AD_last = (ADC1-&gt;DR) &amp; 0xFFF;          // Read Conversion Result
+
+    ADC1-&gt;SR &amp;= ~(1&lt;&lt;1);                   // clear EOC interrupt
+  }
+
+}
+
+/*-----------------------------------------------------------------------------
+  MAIN function
+*----------------------------------------------------------------------------*/
+int main (void)  {
+
+  SystemInit ();
+  SysTick_Config (SystemFrequency/100);    // Generate interrupt each 10 ms
+
+  init_serial();                           // UART#2 Initialization
+  ADC_init();                              // ADC Initialization
+
+  while (1)  {                             // Loop forever
+    if (clock_1s)  {
+      clock_1s = 0;
+      printf (&quot;AD value = 0x%03x\n\r&quot;, AD_last);
+    }
+  }
+}
+</code></pre></li>
+<li>Build the project.</li>
+<li>Connect a debug adapter to the PC and to the board.</li>
+<li>Configure µVision for Flash downloading.</li>
+<li>Download to Flash and debug the application.</li>
+</ol>
+<h4 id="power-reduction-modes"><a name="user-content-power-reduction-modes" href="#power-reduction-modes" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Power Reduction Modes</h4>
+<p>Cortex-M devices implement various mechanisms to reduce power consumption. One of the techniques is to switch off or even disable the clock for every peripheral. By disabling the clock, the complete peripheral is disabled.</p>
+<p>Cortex-M cores have two sleep modes SLEEP and DEEP SLEEP. The SLEEPDEEP-bit selects the sleep mode. The following instructions handle the low power mode entry:</p>
+<ul>
+<li>WFE: Wait for Event</li>
+<li>WFI: Wait for Interrupt</li>
+</ul>
+<p>Whether the SLEEP or DEEP SLEEP mode is used depends on the implementation of the Cortex-M microcontroller.</p>
+<pre><code>#include &lt;stm32f10x_lib.h&gt;              // STM32F10x Library Definitions
+#include &quot;STM32_Init.h&quot;                 // STM32 Initialization
+
+unsigned int ledPosExti = 0;            // led position (from 0..7) for EXTI
+unsigned int ledExti    = 0;
+
+void Sleep (void) {
+   __wfi();
+}
+
+/*---------------------------------------------------------------------------------
+  EXTI15..10 Interrupt Handler
+ *---------------------------------------------------------------------------------*/
+void EXTI15_10_IRQHandler(void)
+{
+   //wakes up from power down
+}
+
+
+/*---------------------------------------------------------------------------------
+  MAIN function
+ *---------------------------------------------------------------------------------*/
+int main (void) {
+
+   stm32_Init ();                        // STM32 setup
+   Sleep();                              // Call the wfi() - wait for interrupt
+
+   while (1);                            // Loop forever
+}
+</code></pre>
+
+<h2 id="appendix-migrate-rl-arm-to-mdk-professional"><a name="user-content-appendix-migrate-rl-arm-to-mdk-professional" href="#appendix-migrate-rl-arm-to-mdk-professional" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Appendix: Migrate RL-ARM to MDK-Professional</h2>
+<p><strong>Migrate RL-ARM to MDK-Professional</strong> describes the differences between MDK-Professional and RL-ARM. Projects that might need adaptation are explained below. Licenses can be migrated to reflect the new product structure.</p>
+<p>The migration guide includes the following topics:</p>
+<ul>
+<li><a href="http://www.keil.com/support/man/docs/gsac/gsac_mig_diffs.htm">Differences</a> describes differences between RL-ARM and MDK-Professional.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/gsac_mig_flashfs.htm">Migrate FlashFS Projects</a> describes the migration steps for Flash File applications.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/gsac_mig_usb.htm">Migrate USB Projects</a> describes the migration steps for USB applications.</li>
+<li><a href="http://www.keil.com/support/man/docs/gsac/gsac_mig_lic.htm">License Status</a> explains the license status when updating RL-ARM to MDK-Professional.</li>
+</ul>
+<h3 id="differences"><a name="user-content-differences" href="#differences" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Differences</h3>
+<p><strong>Differences</strong> lists the differences to be considered when migrating from RL-ARM to MDK-Professional.<br />
+- The Middleware Components RL-FlashFS and RL-USB are provided as libraries. No source code is included.<br />
+- The RL-FlashFS and RL-USB API functions can be used across supported devices.<br />
+- RL-USB supports USB Devices and USB Hosts.</p>
+<p><strong>RL-FlashFS Details</strong></p>
+<ul>
+<li>Multiple FAT drives can be operated at the same time.</li>
+<li>The Flash File System allows multiple instances of the same driver.</li>
+<li>The file <strong>File_Config.c</strong> has been rewritten and contains macro definitions and no code.</li>
+<li>The function <strong>finit()</strong> accepts an argument to initialize one or all drives.</li>
+<li>The function <strong>funinit()</strong> has been added to shutdown a volume.</li>
+<li>The IOC interface has been added to handle read/write operations on FAT media. The related functions start with <strong>ioc_</strong>.</li>
+</ul>
+<p><strong>RL-USB Details</strong></p>
+<ul>
+<li>Software abstraction layers have been added to handle the USB Device specific communication.</li>
+<li>USB settings are done in a common file <strong>usb_config.c</strong> using the µVision Configuration Wizard.</li>
+<li>Descriptors and Endpoints are created automatically based on the configuration settings in <strong>usb_config.c</strong>.</li>
+<li>User code should be added into the file <strong>usbd_user_<em>class</em>.c</strong>.</li>
+<li>The device initialization code should be added to the function <strong>usbd_<em>class</em>_init()</strong> located in the file<strong>usbd_user_<em>class</em>.c</strong>.</li>
+<li>Device specific library functions start with <strong>usbd_</strong>.</li>
+<li>Host specific library functions start with <strong>usbh_</strong>.</li>
+</ul>
+<h3 id="migrate-flashfs-projects"><a name="user-content-migrate-flashfs-projects" href="#migrate-flashfs-projects" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Migrate FlashFS Projects</h3>
+<p>This section describes the migration of Flash File System applications built with RL-ARM to be used with MDK-Professional. Make the following changes to the project:</p>
+<p><strong>Include the library</strong>Include the library from the folder <strong>\ARM\RV31\Lib</strong>.</p>
+<ul>
+<li><strong>FS_ARM_L.lib</strong> for ARM7 and ARM9 devices.</li>
+<li><strong>FS_CM3.lib</strong> for Cortex-M devices.</li>
+</ul>
+<p><strong>Replace the configuration file</strong></p>
+<ol>
+<li>Rename the original File_Config.c to File_Config_old.c.</li>
+<li>Copy File_Config.c from the folder <strong>\ARM\RL\FlashFS\Config</strong> to the project folder.</li>
+<li>Open both files, File_Config.c and File_Config_old.c, with the µVision Configuration Wizard.</li>
+<li>Transpose the option settings to File_Config.c. For new options refer to the section <a href="http://www.keil.com/support/man/docs/rlarm/rlarm_fs_config.htm">Configuration Options</a> of <strong>RL-FlashFS</strong>.</li>
+</ol>
+<p><strong>Replace SD/MMC drivers</strong></p>
+<ol>
+<li>Delete the original MCI_<em>device_family</em>, SDIO_<em>device_family</em>, or SPI_<em>device_family</em> driver files.</li>
+<li>Copy the new MCI_<em>device_family</em>, SDIO_<em>device_family</em>, or SPI_<em>device_family</em> driver files from the folder<strong>\ARM\RL\FlashFS\Drivers</strong>.</li>
+<li>Update the driver instance definition. The first driver instance is <em>mci0_drv</em>.<br />
+<pre><code>#define  __DRV_ID  mci0_drv           // First instance definition of the mci driver
+#define  __DRV_ID  mci1_drv           // Second instance definition of the mci driver
+</code></pre></li>
+<li>Update the clock definitions to reflect the real clock settings.<br />
+<pre><code>#define  __MCLK    48000000
+#define  __CPUCLK  48000000
+</code></pre></li>
+<li>Modify the function <strong>CheckMedia</strong> of the SD Card driver. If the CD (CardDetect) and WP (WriteProtect) digital inputs are connected, then change the code to check the signals from the SD Card socket.<br />
+<pre><code>
+static U32 CheckMedia (void)  {       // Read CardDetect and WriteProtect card socket pins
+U32 stat = 0;
+  if (!(FIO0PIN &amp; 0x04))  {           // Card is inserted (CD=0)
+    stat |= M_INSERTED;
+  }
+  if ((FIO0PIN &amp; 0x20))  {            // Write Protect switch is active (WP=1)
+    stat |= M_PROTECTED;
+  }
+  return (stat);
+}
+</code></pre></li>
+<li>The function returns <strong>M_INSERTED</strong>, if the signals are not connected.<br />
+<pre><code>static U32 CheckMedia (void)  {       // CardDetect and WriteProtect pins not connected
+  return (M_INSERTED);
+}
+</code></pre></li>
+</ol>
+<p><strong>Replace Flash programming algorithms</strong></p>
+<ol>
+<li>Delete the original file <strong>FS_FlashPrg.c</strong> or <strong>FS_SPI_FlashPrg.c</strong>.</li>
+<li>Copy the new Flash programming algorithm file <strong>FS_FlashPrg.c</strong> or <strong>FS_SPI_FlashPrg.c</strong> from the folder<strong>\ARM\RL\FlashFS\Flash*device_family</strong>*.</li>
+<li>Update the <strong>SPI driver instance</strong> definition (for SD Card in SPI mode). The first SPI driver instance is <em>spi0_drv</em>.<br />
+<pre><code>#define __SPI spi0_drv                // Default and first SPI driver instance definition
+#define __SPI spi1_drv                // Second SPI driver instance definition
+</code></pre></li>
+</ol>
+<p><strong>Update the code</strong></p>
+<ol>
+<li>Replace the function call <strong>finit()</strong> with <strong>finit (NULL)</strong>.<br />
+<pre><code>finit (NULL); // Before: *finit();*
+</code></pre></li>
+</ol>
+<p><strong>Note</strong>: Make a backup copy of the original project.</p>
+<h3 id="migrate-usb-projects"><a name="user-content-migrate-usb-projects" href="#migrate-usb-projects" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Migrate USB Projects</h3>
+<p>This section describes the migration of USB Device applications built with RL-ARM to be used with MDK-Professional. Make the following changes to USB Device projects:</p>
+<p><strong>Include the library</strong>Include the library into the project from the folder <strong>\ARM\RV31\Lib</strong>.</p>
+<ul>
+<li><strong>USB_ARM_L.lib</strong> for ARM7 and ARM9 devices.</li>
+<li><strong>USB_CM3.lib</strong> for Cortex-M devices.</li>
+</ul>
+<p><strong>Add the configuration file</strong></p>
+<ol>
+<li>Copy the file <strong>usb_config.c</strong> from the folder <strong>\ARM\RL\USB\Config</strong>.</li>
+<li>Add the file to the project.</li>
+<li>Open <strong>usb_config.c</strong> with the µVision Configuration Wizard and set the options as defined in <strong>usbcfg.h</strong>. For new options refer to <a href="http://www.keil.com/support/man/docs/rlarm/rlarm_usb_configuration.htm">RL-USB Device Configuration</a>.</li>
+</ol>
+<p><strong>Add the hardware layer driver</strong></p>
+<ol>
+<li>Copy the file <strong>usb_<em>device_family</em>.c</strong> from the folder <strong>\ARM\RL\USB\Drivers</strong>.<br />
+- Add the file to the project.</li>
+</ol>
+<p><strong>Add the user class module</strong></p>
+<ol>
+<li>Copy the file <strong>usbd_user_<em>class</em>.c</strong> from an example project that matches the device (<strong>\ARM\Boards*vendor<em>*board</em>\RL\USB\Device*Class Example</strong>*).</li>
+<li>Add the file to the project.</li>
+<li>Port the class functionality from <strong>usbuser.c</strong>, or any other user files, to the file <strong>usbd_user_<em>class</em>.c</strong>.</li>
+</ol>
+<p><strong>Update the high-level code</strong></p>
+<ol>
+<li>Include the files <strong>RTL.h</strong> and <strong>rl_usb.h</strong> into the code.<br />
+<pre><code>#include &lt;RTL.h&gt;
+#include &lt;rl_usb.h&gt;
+</code></pre></li>
+<li>Change the function call <strong>USB_Init()</strong> to <strong>usbd_init()</strong>.<br />
+<pre><code>usbd_init (); // Before: *USB_Init();*
+</code></pre></li>
+<li>Change the function call <strong>USB_Connect()</strong> to <strong>usbd_connect()</strong>.<br />
+<pre><code>usbd_connect (__TRUE); // Before: *USB_Connect (__TRUE);*
+</code></pre></li>
+</ol>
+<p><strong>Remove files from the project folder</strong></p>
+<ul>
+<li><em>class</em>.h</li>
+<li><em>class</em>user.c and <em>class</em>user.h</li>
+<li>type.h</li>
+<li>usb.h</li>
+<li>usbcfg.h</li>
+<li>usbcore.c and usbcore.h</li>
+<li>usbdesc.c and usbdesc.h</li>
+<li>usbhw.c and usbhw.h</li>
+<li>usbuser.c and usbuser.h</li>
+</ul>
+<p><strong>Note</strong>:</p>
+<ul>
+<li>Make a backup copy of the original project.</li>
+<li>It is not imposed to migrate projects to MDK-Professional. Applications written with RL-ARM are still working.</li>
+</ul>
+<h3 id="license-status"><a name="user-content-license-status" href="#license-status" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>License Status</h3>
+<p>This section describes the license status when updating RL-ARM to MDK-Professional.</p>
+<p>Starting with the MDK-ARM version 4.20, MDK-ARM Standard and RL-ARM together make up the <strong>MDK-Professional</strong> Edition. Although the license status has been updated internally to MDK-Professional, the field<strong>Product</strong> of the screen <strong>File - License Manager</strong> shows two entries: MDK-ARM Standard and RL-ARM.</p>
+<p><img alt="License Management Screen" src="http://upload-images.jianshu.io/upload_images/26219-edcf361ffdf46552.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p>If the <strong>Support Period</strong> of the two products differ, we recommend:<br />
+Extending the Support Period such that both products have the same expiration date.</p>
+<p>Optionally, applying for an MDK-ARM Professional license key to replace both entries with one entry.</p>
+<p><img alt="MDK-ARM Professional License" src="http://upload-images.jianshu.io/upload_images/26219-a93a50ca65c15f3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /></p>
+<p><strong>Note</strong>:</p>
+<ul>
+<li>MDK-Lite, MDK-Basic, and MDK-Standard (without RL-ARM) are not affected.</li>
+<li>Do not install an older version of RL-ARM on top of MDK-Professional. Older versions of RL-ARM will not work properly with MDK-Professional.</li>
+<li><a href="http://www.keil.com/arm/selector.asp">Product Selector</a> shows the MDK-ARM product editions and related components.</li>
+</ul></article></body></html>
