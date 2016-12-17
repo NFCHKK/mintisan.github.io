@@ -1014,308 +1014,57 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>platformio_tutorial</title></head><body><article class="markdown-body"><h1 id="platform-io"><a name="user-content-platform-io" href="#platform-io" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Platform IO 上手</h1>
+</style><title>A-Basic-Introduction-To-Neural-Networks</title></head><body><article class="markdown-body"><h1 id="a-basic-introduction-to-neural-networks"><a href="http://pages.cs.wisc.edu/~bolo/shipyard/neural/local.html">A Basic Introduction To Neural Networks</a></h1>
 <div class="toc">
 <ul>
-<li><a href="#platform-io">Platform IO 上手</a><ul>
-<li><a href="#mbed">mbed 篇</a><ul>
-<li><a href="#_1">准备材料</a></li>
-<li><a href="#_2">新建工程</a></li>
-<li><a href="#_3">例程</a><ul>
-<li><a href="#_4">基础例程</a><ul>
-<li><a href="#_5">串口</a></li>
-</ul>
-</li>
-<li><a href="#mbed-os">mbed-os</a></li>
-<li><a href="#_6">外设库</a></li>
-</ul>
-</li>
-<li><a href="#_7">参考链接</a></li>
-</ul>
-</li>
-<li><a href="#nodemcu">NodeMCU 篇</a><ul>
-<li><a href="#_8">安装驱动</a></li>
-<li><a href="#_9">新建工程</a></li>
-<li><a href="#_10">例程</a><ul>
-<li><a href="#_11">串口</a></li>
-</ul>
-</li>
-<li><a href="#_12">更新固件</a></li>
-<li><a href="#_13">参考链接</a></li>
-</ul>
-</li>
-<li><a href="#arduino">Arduino 篇</a></li>
-<li><a href="#_14">树莓派篇</a></li>
-<li><a href="#_15">总结</a><ul>
-<li><a href="#_16">优点：集大成者</a></li>
-</ul>
-</li>
-<li><a href="#_17">不足</a></li>
+<li><a href="#a-basic-introduction-to-neural-networks">A Basic Introduction To Neural Networks</a><ul>
+<li><a href="#what-is-a-neural-network">What Is A Neural Network?</a></li>
+<li><a href="#the-basics-of-neural-networks">The Basics of Neural Networks</a></li>
+<li><a href="#how-do-neural-networks-differ-from-conventional-computing">How Do Neural Networks Differ From Conventional Computing?</a></li>
+<li><a href="#what-applications-should-neural-networks-be-used-for">What Applications Should Neural Networks Be Used For?</a></li>
+<li><a href="#what-are-their-limitations">What Are Their Limitations?</a></li>
+<li><a href="#what-are-their-advantages-over-conventional-techniques">What Are Their Advantages Over Conventional Techniques?</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<h2 id="mbed"><a name="user-content-mbed" href="#mbed" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>mbed 篇</h2>
-<h3 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>准备材料</h3>
+<h2 id="what-is-a-neural-network"><a name="user-content-what-is-a-neural-network" href="#what-is-a-neural-network" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What Is A Neural Network?</h2>
+<p>The simplest definition of a neural network, more properly referred to as an &lsquo;artificial&rsquo; neural network (ANN), is provided by the inventor of one of the first neurocomputers, Dr. Robert Hecht-Nielsen. He defines a neural network as:</p>
+<blockquote>
+<p>&rdquo;&hellip;a computing system made up of a number of simple, highly interconnected processing elements, which process information by their dynamic state response to external inputs.<br />
+In &ldquo;Neural Network Primer: Part I&rdquo; by Maureen Caudill, AI Expert, Feb. 1989</p>
+</blockquote>
+<p>ANNs are processing devices (algorithms or actual hardware) that are loosely modeled after the neuronal structure of the mamalian cerebral cortex but on much smaller scales. A large ANN might have hundreds or thousands of processor units, whereas a mamalian brain has billions of neurons with a corresponding increase in magnitude of their overall interaction and emergent behavior. Although ANN researchers are generally not concerned with whether their networks accurately resemble biological systems, some have. For example, researchers have accurately simulated the function of the retina and modeled the eye rather well.</p>
+<p>Although the mathematics involved with neural networking is not a trivial matter, a user can rather easily gain at least an operational understanding of their structure and function.</p>
+<h2 id="the-basics-of-neural-networks"><a name="user-content-the-basics-of-neural-networks" href="#the-basics-of-neural-networks" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>The Basics of Neural Networks</h2>
+<p>Neural neworks are typically organized in layers. Layers are made up of a number of interconnected &lsquo;nodes&rsquo; which contain an &lsquo;activation function&rsquo;. Patterns are presented to the network via the &lsquo;input layer&rsquo;, which communicates to one or more &lsquo;hidden layers&rsquo; where the actual processing is done via a system of weighted &lsquo;connections&rsquo;. The hidden layers then link to an &lsquo;output layer&rsquo; where the answer is output as shown in the graphic below.  </p>
+<p><img alt="Neural Network Schematic" src="/Users/linjinhui/Github/mintisan.github.io/images/nn_schematic.gif" /></p>
+<p>Most ANNs contain some form of &lsquo;learning rule&rsquo; which modifies the weights of the connections according to the input patterns that it is presented with. In a sense, ANNs learn by example as do their biological counterparts; a child learns to recognize dogs from examples of dogs.</p>
+<p>Although there are many different kinds of learning rules used by neural networks, this demonstration is concerned only with one; the delta rule. The delta rule is often utilized by the most common class of ANNs called &lsquo;backpropagational neural networks&rsquo; (BPNNs). Backpropagation is an abbreviation for the backwards propagation of error.</p>
+<p>With the delta rule, as with other types of backpropagation, &lsquo;learning&rsquo; is a supervised process that occurs with each cycle or &lsquo;epoch&rsquo; (i.e. each time the network is presented with a new input pattern) through a forward activation flow of outputs, and the backwards error propagation of weight adjustments. More simply, when a neural network is initially presented with a pattern it makes a random &lsquo;guess&rsquo; as to what it might be. It then sees how far its answer was from the actual one and makes an appropriate adjustment to its connection weights. More graphically, the process looks something like this:</p>
+<p><img alt="A single node example of The Delta Rule" src="/Users/linjinhui/Github/mintisan.github.io/images/single_node.gif" /></p>
+<p>Note also, that within each hidden layer node is a sigmoidal activation function which polarizes network activity and helps it to stablize.</p>
+<p>Backpropagation performs a gradient descent within the solution&rsquo;s vector space towards a &lsquo;global minimum&rsquo; along the steepest vector of the error surface. The global minimum is that theoretical solution with the lowest possible error. The error surface itself is a hyperparaboloid but is seldom &lsquo;smooth&rsquo; as is depicted in the graphic below. Indeed, in most problems, the solution space is quite irregular with numerous &lsquo;pits&rsquo; and &lsquo;hills&rsquo; which may cause the network to settle down in a &lsquo;local minum&rsquo; which is not the best overall solution. How the delta rule finds the correct answer</p>
+<p><img alt="" src="/Users/linjinhui/Github/mintisan.github.io/images/delta_rule.gif" /></p>
+<p>Since the nature of the error space can not be known a prioi, neural network analysis often requires a large number of individual runs to determine the best solution. Most learning rules have built-in mathematical terms to assist in this process which control the &lsquo;speed&rsquo; (Beta-coefficient) and the &lsquo;momentum&rsquo; of the learning. The speed of learning is actually the rate of convergence between the current solution and the global minimum. Momentum helps the network to overcome obstacles (local minima) in the error surface and settle down at or near the global miniumum.</p>
+<p>Once a neural network is &lsquo;trained&rsquo; to a satisfactory level it may be used as an analytical tool on other data. To do this, the user no longer specifies any training runs and instead allows the network to work in forward propagation mode only. New inputs are presented to the input pattern where they filter into and are processed by the middle layers as though training were taking place, however, at this point the output is retained and no backpropagation occurs. The output of a forward propagation run is the predicted model for the data which can then be used for further analysis and interpretation.</p>
+<p>It is also possible to over-train a neural network, which means that the network has been trained exactly to respond to only one type of input; which is much like rote memorization. If this should happen then learning can no longer occur and the network is refered to as having been &ldquo;grandmothered&rdquo; in neural network jargon. In real-world applications this situation is not very useful since one would need a separate grandmothered network for each new kind of input.</p>
+<h2 id="how-do-neural-networks-differ-from-conventional-computing"><a name="user-content-how-do-neural-networks-differ-from-conventional-computing" href="#how-do-neural-networks-differ-from-conventional-computing" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>How Do Neural Networks Differ From Conventional Computing?</h2>
+<p>To better understand artificial neural computing it is important to know first how a conventional &lsquo;serial&rsquo; computer and it&rsquo;s software process information. A serial computer has a central processor that can address an array of memory locations where data and instructions are stored. Computations are made by the processor reading an instruction as well as any data the instruction requires from memory addresses, the instruction is then executed and the results are saved in a specified memory location as required. In a serial system (and a standard parallel one as well) the computational steps are deterministic, sequential and logical, and the state of a given variable can be tracked from one operation to another.</p>
+<p>In comparison, ANNs are not sequential or necessarily deterministic. There are no complex central processors, rather there are many simple ones which generally do nothing more than take the weighted sum of their inputs from other processors. ANNs do not execute programed instructions; they respond in parallel (either simulated or actual) to the pattern of inputs presented to it. There are also no separate memory addresses for storing data. Instead, information is contained in the overall activation &lsquo;state&rsquo; of the network. &lsquo;Knowledge&rsquo; is thus represented by the network itself, which is quite literally more than the sum of its individual components.</p>
+<h2 id="what-applications-should-neural-networks-be-used-for"><a name="user-content-what-applications-should-neural-networks-be-used-for" href="#what-applications-should-neural-networks-be-used-for" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What Applications Should Neural Networks Be Used For?</h2>
+<p>Neural networks are universal approximators, and they work best if the system you are using them to model has a high tolerance to error. One would therefore not be advised to use a neural network to balance one&rsquo;s cheque book! However they work very well for:</p>
 <ul>
-<li>支持 mbed 的开发板子一块</li>
-<li>mbed 开发者账号一个</li>
-<li>可连接互联网的机子一台（Windows/Linux/ macOS）</li>
-<li>Atom 及 Platform IO 开发环境 </li>
-<li>各种外设硬件若干</li>
+<li>capturing associations or discovering regularities within a set of patterns;</li>
+<li>where the volume, number of variables or diversity of the data is very great;</li>
+<li>the relationships between variables are vaguely understood; or,</li>
+<li>the relationships are difficult to describe adequately with conventional approaches.</li>
 </ul>
-<h3 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>新建工程</h3>
-<p>待环境安装完成，按照如下步骤可新建一个跑马灯的工程：</p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/platformio_tutorial_create_new.png" /></p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/platformio_tutorial_create_blink_project_0.png" /></p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/platformio_tutorial_create_blink_project.png" /></p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/platformio_tutorial_create_blink_project_sucess_hint.png" /></p>
-<p>点击 <code>Process</code> 之后，Platform IO 会自动根据所选择的平台下载编译环境和所需要的库，如此处分别为 <code>arm-gcc</code> 和 <code>mbed</code> 库文件，将其保存到 <code>~/.platformio</code> 文件夹下:</p>
-<pre><code>➜  .platformio tree -d . -L 3
-.
-└── packages
-    ├── framework-mbed
-    │   ├── libs
-    │   └── variant
-    ├── ldscripts
-    ├── tool-scons
-    │   ├── engine
-    │   └── script
-    ├── tool-stlink
-    └── toolchain-gccarmnoneeabi
-        ├── arm-none-eabi
-        ├── bin
-        ├── lib
-        └── share
-</code></pre>
-
-<p>然后，新建工程目录结构如下：</p>
-<pre><code>➜  blink tree .
-.
-├── lib
-│   └── readme.txt
-├── platformio.ini
-└── src
-</code></pre>
-
-<p>此时，在 <code>src</code> 中添加 <code>main.cpp</code>：</p>
-<pre><code>#include &quot;mbed.h&quot;
-
-DigitalOut myled(LED1);
-
-int main() {
-        while(1) {
-                myled = 1; // LED is ON
-                wait(0.2); // 200 ms
-                myled = 0; // LED is OFF
-                wait(1.0); // 1 sec
-        }
-}
-</code></pre>
-
-<p>编译之后，显示如下错误，但成功生成可执行文件：</p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/platformio_tutorial_compile_error_stm32f4xx_hal_gpio_not_found.png" /></p>
-<p>放狗一搜，同样有人碰到<a href="https://github.com/platformio/platformio-core/issues/621">此问题</a>，需要重新建立工程索引<code>PlatformIO &gt; Rebuild C/C++ Project Index (Autocomplete, Linter)</code>：</p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/platformio_tutorial_rebuild_index.png" /></p>
-<p>重新编译后，完美通过~</p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/platformio_tutorial_compile_sucess_after_reindex.png" /></p>
-<p>点击上传可以将编译完成的<code>elf</code>上传到板子上，值得一提的是 Platform IO会自动寻找是否有支持 mbed 的板子，并将程序上传到板子上。</p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/platformio_tutorial_auto_upload.png" /></p>
-<p>如果你不想 Platform IO 自己去找，也可以手动指定，修改 <code>platformio.ini</code>，增加<code>upload_port</code>板子的路径，如下：</p>
-<pre><code>#
-# PlatformIO Project Configuration File
-#
-# Please make sure to read documentation with examples first
-# http://docs.platformio.org/en/stable/projectconf.html
-#
-[env:nucleo_f401re]
-platform = ststm32
-framework = mbed
-board = nucleo_f401re
-
-upload_port = /Volumes/NUCLEO
-
-</code></pre>
-
-<p>注：在下载程序的过程中，还不小心遇到了<code>SWD error</code>的问题，重新插拔 USB 线后恢复正常。</p>
-<p>新建工程可以通过菜单栏来，也可以直接手动新建如上的工程结构，然后编译的是否 Platform IO 同样会自动寻找依赖并安装，显示如下：</p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/platformio_tutorial_auto_download_env.png" /></p>
-<h3 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>例程</h3>
-<h4 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>基础例程</h4>
-<h5 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>串口</h5>
-<p>串口是调试的利器，特别在没有仿真器的时候。</p>
-<p>在写串口模块程序前，先看看是否已经连接上，方法如下：<code>Platform IO</code>-&gt;<code>List Serial Ports</code></p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/platformio_tutorial_list_serial.png" /></p>
-<p>mbed 的串口程序非常简单，实例化一个 Serial 的实例即可，默认配置为波特率9600</p>
-<pre><code>#include &quot;mbed.h&quot;
-
-//------------------------------------
-// Hyperterminal configuration
-// 9600 bauds, 8-bit data, no parity
-//------------------------------------
-
-Serial pc(SERIAL_TX, SERIAL_RX);
-
-DigitalOut myled(LED1);
-
-int main() {
-        int i = 1;
-        pc.printf(&quot;Hello World !\n&quot;);
-        while(1) {
-                wait(1);
-                pc.printf(&quot;This program runs since %d seconds.\n&quot;, i++);
-                myled = !myled;
-        }
-}
-</code></pre>
-
-<p>更新程序后，点击左侧的串口标志按钮，自动调出串口窗口如下：</p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/platformio_tutorial_serial_default_config.png" /></p>
-<p>按照默认配置即可：</p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/platformio_tutorial_serial_msg_show.png" /></p>
-<h4 id="mbed-os"><a name="user-content-mbed-os" href="#mbed-os" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>mbed-os</h4>
-<p>mbed-os 版本的跑马灯</p>
-<pre><code>#include &quot;mbed.h&quot;
-#include &quot;rtos.h&quot;
-
-/*
- * The stack size is defined in cmsis_os.h mainly dependent on the underlying toolchain and
- * the C standard library. For GCC, ARM_STD and IAR it is defined with a size of 2048 bytes
- * and for ARM_MICRO 512. Because of reduce RAM size some targets need a reduced stacksize.
- */
-#if defined(TARGET_STM32L053R8) || defined(TARGET_STM32L053C8)
-#define STACK_SIZE DEFAULT_STACK_SIZE/4
-#else
-#define STACK_SIZE DEFAULT_STACK_SIZE
-#endif
-
-void print_char(char c = '*') {
-        printf(&quot;%c&quot;, c);
-        fflush(stdout);
-}
-
-DigitalOut led1(LED1);
-DigitalOut led2(LED2);
-
-void led2_thread(void const *argument) {
-        while (true) {
-                led2 = !led2;
-                Thread::wait(1000);
-                print_char();
-        }
-}
-
-int main() {
-        Thread thread(led2_thread, NULL, osPriorityNormal, STACK_SIZE);
-
-        while (true) {
-                led1 = !led1;
-                Thread::wait(500);
-        }
-}
-</code></pre>
-
-<h4 id="_6"><a name="user-content-_6" href="#_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>外设库</h4>
-<p><img alt="" src="http://mint-blog.qiniudn.com/platformio_tutorial_install_pkg_118.png" /></p>
-<h3 id="_7"><a name="user-content-_7" href="#_7" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>参考链接</h3>
-<h2 id="nodemcu"><a href="http://nodemcu.com/">NodeMCU</a> 篇</h2>
-<h3 id="_8"><a name="user-content-_8" href="#_8" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>安装驱动</h3>
-<p>由于购买时，那时还不晓得 NodeMCU 还有版本的不同，结果商家发的老版本的 v0.9 版本的，同学们购买时需要擦亮眼睛了。如下图中，左侧的是 v0.9 （有蓝色的和黄色的区别），右侧的是 v1.0 版本的：</p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/nodemcu-v0.9-vs-nodemcu-v1.0.jpg" /></p>
-<p>注：其硬件上的主要区别在于，前者的 USB-Serial 采用 CH340；后者采用 CP2102 。买新不买旧么。</p>
-<p>macOS EI Caption 及以上的驱动，请下载<a href="https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver">此处</a>。</p>
-<p>安装后重启就可以找到如下的 USB 转串口的端口：</p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/nodemcu-ch34h-usb-serial.png" /></p>
-<h3 id="_9"><a name="user-content-_9" href="#_9" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>新建工程</h3>
-<p>新建一个跑马灯工程如下，初次使用时可能要等一会。</p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/nodemcu-board-setting.png" /></p>
-<p>由于 NodeMCU 是 Arduino 兼容的，所以可以直接使用按照 Arduino 的方式来对 NodeMCU 进行直接操作。</p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/nodemcu-v0.9-pinout.png" /></p>
-<p>Platform 官方也提供了一些例子，但是<a href="https://github.com/platformio/platformio-examples/blob/develop/espressif/esp32-arduino-blink/src/Blink.cpp">官方代码</a>好像是针对的 v1.0 的，用的 13 pin，但 v0.9 的 LED-Pin 引脚为16，不过对 Arduino 来说都是 <code>D0</code>，所以修改后兼容性更好了，修改后如下所示：</p>
-<pre><code>/*
- * Blink
- * Turns on an LED on for one second,
- * then off for one second, repeatedly.
- */
-
-#include &lt;Arduino.h&gt;
-
-#define LED_BUILTIN D0
-
-void setup()
-{
-  // initialize LED digital pin as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
-}
-
-void loop()
-{
-  // turn the LED on (HIGH is the voltage level)
-  digitalWrite(LED_BUILTIN, HIGH);
-  // wait for a second
-  delay(1000);
-  // turn the LED off by making the voltage LOW
-  digitalWrite(LED_BUILTIN, LOW);
-   // wait for a second
-  delay(1000);
-}
-</code></pre>
-
-<p>编译提示如下：</p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/nodemcu-compile-success.png" /></p>
-<p>然后上传到板子上：</p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/nodemcu-upload-success.png" /></p>
-<p>板子上的小蓝灯就闪起来了。</p>
-<h3 id="_10"><a name="user-content-_10" href="#_10" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>例程</h3>
-<h4 id="_11"><a name="user-content-_11" href="#_11" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>串口</h4>
-<p>直接上代码吧：</p>
-<pre><code>#include &lt;Arduino.h&gt;
-
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  delay(1000);
-  Serial.println(&quot;Hello World!&quot;);
-}
-</code></pre>
-
-<p>编译上传成功之后，需要先设置下串口如下：</p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/nodemcu-serial-setting.png" /></p>
-<p>然后，打开串口窗口显示如下：</p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/nodemcu-helloworld.png" /></p>
-<h3 id="_12"><a name="user-content-_12" href="#_12" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>更新固件</h3>
-<h3 id="_13"><a name="user-content-_13" href="#_13" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>参考链接</h3>
+<h2 id="what-are-their-limitations"><a name="user-content-what-are-their-limitations" href="#what-are-their-limitations" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What Are Their Limitations?</h2>
+<p>There are many advantages and limitations to neural network analysis and to discuss this subject properly we would have to look at each individual type of network, which isn&rsquo;t necessary for this general discussion. In reference to backpropagational networks however, there are some specific issues potential users should be aware of.</p>
 <ul>
-<li><a href="https://github.com/platformio/platformio-examples/tree/develop/espressif">platformio-examples-espressif</a></li>
-<li><a href="https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver">CH340G CH34G CH34X Mac OS X driver</a></li>
-<li><a href="https://tzapu.com/making-ch340-ch341-serial-adapters-work-under-el-capitan-os-x/">CH340 CH341 serial adapters fix for El Capitan OS X</a></li>
-<li><a href="https://github.com/nodemcu/nodemcu-devkit/wiki/Getting-Started-on-OSX">Getting Started on OSX</a></li>
-<li><a href="https://www.losant.com/blog/getting-started-with-platformio-esp8266-nodemcu">GETTING STARTED WITH PLATFORMIO AND ESP8266 NODEMCU</a></li>
-<li><a href="https://github.com/nodemcu/nodemcu-firmware">nodemcu-firmware</a>: A Lua based firmware for ESP8266 WiFi SOC</li>
-<li><a href="http://learn.acrobotic.com/tutorials/post/esp8266-getting-started">Getting Started: NodeMCU ESP8266 Development Board</a></li>
-<li><a href="http://www.cnx-software.com/2015/10/29/getting-started-with-nodemcu-board-powered-by-esp8266-wisoc/">Getting Started with NodeMCU Board Powered by ESP8266 WiSoC</a></li>
+<li>Backpropagational neural networks (and many other types of networks) are in a sense the ultimate &lsquo;black boxes&rsquo;. Apart from defining the general archetecture of a network and perhaps initially seeding it with a random numbers, the user has no other role than to feed it input and watch it train and await the output. In fact, it has been said that with backpropagation, &ldquo;you almost don&rsquo;t know what you&rsquo;re doing&rdquo;. Some software freely available software packages (NevProp, bp, Mactivation) do allow the user to sample the networks &lsquo;progress&rsquo; at regular time intervals, but the learning itself progresses on its own. The final product of this activity is a trained network that provides no equations or coefficients defining a relationship (as in regression) beyond it&rsquo;s own internal mathematics. The network &lsquo;IS&rsquo; the final equation of the relationship.</li>
+<li>Backpropagational networks also tend to be slower to train than other types of networks and sometimes require thousands of epochs. If run on a truly parallel computer system this issue is not really a problem, but if the BPNN is being simulated on a standard serial machine (i.e. a single SPARC, Mac or PC) training can take some time. This is because the machines CPU must compute the function of each node and connection separately, which can be problematic in very large networks with a large amount of data. However, the speed of most current machines is such that this is typically not much of an issue.</li>
 </ul>
-<h2 id="arduino"><a name="user-content-arduino" href="#arduino" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Arduino 篇</h2>
-<p><img alt="" src="http://mint-blog.qiniudn.com/platformio_tutorial_auto_download_env_arduino.png" /></p>
-<h2 id="_14"><a name="user-content-_14" href="#_14" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>树莓派篇</h2>
-<h2 id="_15"><a name="user-content-_15" href="#_15" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>总结</h2>
-<h3 id="_16"><a name="user-content-_16" href="#_16" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>优点：集大成者</h3>
-<ul>
-<li>可以选择自己喜欢的编辑器，然后配置下插件环境即可，是原版在线和 IDE 的良好替代品，得益于 Atom 的好用和 Clang 的强大，比如<ul>
-<li>好用的自动代码补全和定义跳转</li>
-<li>集成串口窗口，直接查看</li>
-<li>友好的错误和警告提示</li>
-</ul>
-</li>
-<li>同平台跨板子的支持很好，可以通过 <code>platformio.ini</code> 配置好，然后编译即可完成， Platform IO 就会自动下载相关依赖，这也得益于 Arduino 和 mbed 的良好抽象架构</li>
-<li>方便使用各种库，包括 Arduino 和 mbed</li>
-</ul>
-<h2 id="_17"><a name="user-content-_17" href="#_17" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>不足</h2>
-<ul>
-<li>无法在线单步调试，只能通过串口打印来</li>
-<li>需要单片机板子支持 Arduino 或者 mbed</li>
-</ul>
-<p>另外，Platform IO 和 mbed-os 都处在快速的迭代过程中（既是好事，也是不足），碰到问题直接放狗搜索，然后一般都会定位到官方的社区或者 GitHub Issue 中找到类似的解决方案。</p>
-<p>不过，目前蛮多的解决方案也是比较粗暴的，比如遇到一个<code>NUCLEO_F401RE.eix not found</code>的问题，找到<a href="https://community.platformio.org/t/enabling-nucleo-f401re-in-platformio/670">类似</a>，维护者的解决方案是直接把 Platform 的配置目录给全部删除，然后再重新下载。</p></article></body></html>
+<h2 id="what-are-their-advantages-over-conventional-techniques"><a name="user-content-what-are-their-advantages-over-conventional-techniques" href="#what-are-their-advantages-over-conventional-techniques" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>What Are Their Advantages Over Conventional Techniques?</h2>
+<p>Depending on the nature of the application and the strength of the internal data patterns you can generally expect a network to train quite well. This applies to problems where the relationships may be quite dynamic or non-linear. ANNs provide an analytical alternative to conventional techniques which are often limited by strict assumptions of normality, linearity, variable independence etc. Because an ANN can capture many kinds of relationships it allows the user to quickly and relatively easily model phenomena which otherwise may have been very difficult or imposible to explain otherwise.</p></article></body></html>

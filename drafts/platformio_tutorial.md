@@ -18,14 +18,14 @@
 
 待环境安装完成，按照如下步骤可新建一个跑马灯的工程：
 
-![](../images/platformio_tutorial_create_new.png)
+![](http://mint-blog.qiniudn.com/platformio_tutorial_create_new.png)
 
-![](../images/platformio_tutorial_create_blink_project_0.png)
+![](http://mint-blog.qiniudn.com/platformio_tutorial_create_blink_project_0.png)
 
-![](../images/platformio_tutorial_create_blink_project.png)
+![](http://mint-blog.qiniudn.com/platformio_tutorial_create_blink_project.png)
 
 
-![](../images/platformio_tutorial_create_blink_project_sucess_hint.png)
+![](http://mint-blog.qiniudn.com/platformio_tutorial_create_blink_project_sucess_hint.png)
 
 
 点击 `Process` 之后，Platform IO 会自动根据所选择的平台下载编译环境和所需要的库，如此处分别为 `arm-gcc` 和 `mbed` 库文件，将其保存到 `~/.platformio` 文件夹下:
@@ -79,19 +79,19 @@ int main() {
 
 编译之后，显示如下错误，但成功生成可执行文件：
 
-![](../images/platformio_tutorial_compile_error_stm32f4xx_hal_gpio_not_found.png)
+![](http://mint-blog.qiniudn.com/platformio_tutorial_compile_error_stm32f4xx_hal_gpio_not_found.png)
 
 放狗一搜，同样有人碰到[此问题](https://github.com/platformio/platformio-core/issues/621)，需要重新建立工程索引`PlatformIO > Rebuild C/C++ Project Index (Autocomplete, Linter)`：
 
-![](../images/platformio_tutorial_rebuild_index.png)
+![](http://mint-blog.qiniudn.com/platformio_tutorial_rebuild_index.png)
 
 重新编译后，完美通过~
 
-![](../images/platformio_tutorial_compile_sucess_after_reindex.png)
+![](http://mint-blog.qiniudn.com/platformio_tutorial_compile_sucess_after_reindex.png)
 
 点击上传可以将编译完成的`elf`上传到板子上，值得一提的是 Platform IO会自动寻找是否有支持 mbed 的板子，并将程序上传到板子上。
 
-![](../images/platformio_tutorial_auto_upload.png)
+![](http://mint-blog.qiniudn.com/platformio_tutorial_auto_upload.png)
 
 如果你不想 Platform IO 自己去找，也可以手动指定，修改 `platformio.ini`，增加`upload_port`板子的路径，如下：
 
@@ -115,7 +115,7 @@ upload_port = /Volumes/NUCLEO
 
 新建工程可以通过菜单栏来，也可以直接手动新建如上的工程结构，然后编译的是否 Platform IO 同样会自动寻找依赖并安装，显示如下：
 
-![](../images/platformio_tutorial_auto_download_env.png)
+![](http://mint-blog.qiniudn.com/platformio_tutorial_auto_download_env.png)
 
 
 
@@ -131,7 +131,7 @@ upload_port = /Volumes/NUCLEO
 在写串口模块程序前，先看看是否已经连接上，方法如下：`Platform IO`->`List Serial Ports`
 
 
-![](../images/platformio_tutorial_list_serial.png)
+![](http://mint-blog.qiniudn.com/platformio_tutorial_list_serial.png)
 
 mbed 的串口程序非常简单，实例化一个 Serial 的实例即可，默认配置为波特率9600
 
@@ -160,11 +160,11 @@ int main() {
 
 更新程序后，点击左侧的串口标志按钮，自动调出串口窗口如下：
 
-![](../images/platformio_tutorial_serial_default_config.png)
+![](http://mint-blog.qiniudn.com/platformio_tutorial_serial_default_config.png)
 
 按照默认配置即可：
 
-![](../images/platformio_tutorial_serial_msg_show.png)
+![](http://mint-blog.qiniudn.com/platformio_tutorial_serial_msg_show.png)
 
 #### mbed-os
 
@@ -213,15 +213,125 @@ int main() {
 
 #### 外设库
 
-![](../images/platformio_tutorial_install_pkg_118.png)
-
+![](http://mint-blog.qiniudn.com/platformio_tutorial_install_pkg_118.png)
 
 ### 参考链接
 
 
+## [NodeMCU](http://nodemcu.com/) 篇
+
+### 安装驱动
+
+由于购买时，那时还不晓得 NodeMCU 还有版本的不同，结果商家发的老版本的 v0.9 版本的，同学们购买时需要擦亮眼睛了。如下图中，左侧的是 v0.9 （有蓝色的和黄色的区别），右侧的是 v1.0 版本的：
+
+![](http://mint-blog.qiniudn.com/nodemcu-v0.9-vs-nodemcu-v1.0.jpg)
+
+注：其硬件上的主要区别在于，前者的 USB-Serial 采用 CH340；后者采用 CP2102 。买新不买旧么。
+
+macOS EI Caption 及以上的驱动，请下载[此处](https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver)。
+
+安装后重启就可以找到如下的 USB 转串口的端口：
+
+![](http://mint-blog.qiniudn.com/nodemcu-ch34h-usb-serial.png)
+
+### 新建工程
+
+新建一个跑马灯工程如下，初次使用时可能要等一会。
+
+![](http://mint-blog.qiniudn.com/nodemcu-board-setting.png)
+
+由于 NodeMCU 是 Arduino 兼容的，所以可以直接使用按照 Arduino 的方式来对 NodeMCU 进行直接操作。
+
+![](http://mint-blog.qiniudn.com/nodemcu-v0.9-pinout.png)
+
+Platform 官方也提供了一些例子，但是[官方代码](https://github.com/platformio/platformio-examples/blob/develop/espressif/esp32-arduino-blink/src/Blink.cpp)好像是针对的 v1.0 的，用的 13 pin，但 v0.9 的 LED-Pin 引脚为16，不过对 Arduino 来说都是 `D0`，所以修改后兼容性更好了，修改后如下所示：
+
+```
+/*
+ * Blink
+ * Turns on an LED on for one second,
+ * then off for one second, repeatedly.
+ */
+
+#include <Arduino.h>
+
+#define LED_BUILTIN D0
+
+void setup()
+{
+  // initialize LED digital pin as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop()
+{
+  // turn the LED on (HIGH is the voltage level)
+  digitalWrite(LED_BUILTIN, HIGH);
+  // wait for a second
+  delay(1000);
+  // turn the LED off by making the voltage LOW
+  digitalWrite(LED_BUILTIN, LOW);
+   // wait for a second
+  delay(1000);
+}
+```
+
+编译提示如下：
+
+![](http://mint-blog.qiniudn.com/nodemcu-compile-success.png)
+
+然后上传到板子上：
+
+![](http://mint-blog.qiniudn.com/nodemcu-upload-success.png)
+
+板子上的小蓝灯就闪起来了。
+
+### 例程
+
+#### 串口
+
+直接上代码吧：
+
+```
+#include <Arduino.h>
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  delay(1000);
+  Serial.println("Hello World!");
+}
+```
+
+编译上传成功之后，需要先设置下串口如下：
+
+![](http://mint-blog.qiniudn.com/nodemcu-serial-setting.png)
+
+
+然后，打开串口窗口显示如下：
+
+![](http://mint-blog.qiniudn.com/nodemcu-helloworld.png)
+
+
+### 更新固件
+
+### 参考链接
+
+- [platformio-examples-espressif](https://github.com/platformio/platformio-examples/tree/develop/espressif)
+- [CH340G CH34G CH34X Mac OS X driver](https://github.com/adrianmihalko/ch340g-ch34g-ch34x-mac-os-x-driver)
+- [CH340 CH341 serial adapters fix for El Capitan OS X](https://tzapu.com/making-ch340-ch341-serial-adapters-work-under-el-capitan-os-x/)
+- [Getting Started on OSX](https://github.com/nodemcu/nodemcu-devkit/wiki/Getting-Started-on-OSX)
+- [GETTING STARTED WITH PLATFORMIO AND ESP8266 NODEMCU](https://www.losant.com/blog/getting-started-with-platformio-esp8266-nodemcu)
+- [nodemcu-firmware](https://github.com/nodemcu/nodemcu-firmware): A Lua based firmware for ESP8266 WiFi SOC
+- [Getting Started: NodeMCU ESP8266 Development Board](http://learn.acrobotic.com/tutorials/post/esp8266-getting-started)
+- [Getting Started with NodeMCU Board Powered by ESP8266 WiSoC](http://www.cnx-software.com/2015/10/29/getting-started-with-nodemcu-board-powered-by-esp8266-wisoc/)
+
+
 ## Arduino 篇
 
-![](../images/platformio_tutorial_auto_download_env_arduino.png)
+![](http://mint-blog.qiniudn.com/platformio_tutorial_auto_download_env_arduino.png)
 
 ## 树莓派篇
 
