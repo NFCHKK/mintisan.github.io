@@ -1231,7 +1231,7 @@ int main() {
 <p><img alt="" src="http://mint-blog.qiniudn.com/nodemcu-board-setting.png" /></p>
 <p>由于 NodeMCU 是 Arduino 兼容的，所以可以直接使用按照 Arduino 的方式来对 NodeMCU 进行直接操作。</p>
 <p><img alt="" src="http://mint-blog.qiniudn.com/nodemcu-v0.9-pinout.png" /></p>
-<p>Platform 官方也提供了一些例子，但是<a href="https://github.com/platformio/platformio-examples/blob/develop/espressif/esp32-arduino-blink/src/Blink.cpp">官方代码</a>好像是针对的 v1.0 的，用的 13 pin，但 v0.9 的 LED-Pin 引脚为16，不过对 Arduino 来说都是 <code>D0</code>，所以修改后兼容性更好了，修改后如下所示：</p>
+<p>Platform 官方也提供了一些例子，但是<a href="https://github.com/platformio/platformio-examples/blob/develop/espressif/esp32-arduino-blink/src/Blink.cpp">官方代码</a>好像是针对的 <code>v1.0</code> 的，用的 13 pin，但 <code>v0.9</code> 的 LED-Pin 引脚为16，不过对 Arduino 来说都是 <code>D0</code>，所以修改后兼容性更好了，修改后如下所示：</p>
 <pre><code>/*
  * Blink
  * Turns on an LED on for one second,

@@ -244,7 +244,7 @@ macOS EI Caption 及以上的驱动，请下载[此处](https://github.com/adria
 
 ![](http://mint-blog.qiniudn.com/nodemcu-v0.9-pinout.png)
 
-Platform 官方也提供了一些例子，但是[官方代码](https://github.com/platformio/platformio-examples/blob/develop/espressif/esp32-arduino-blink/src/Blink.cpp)好像是针对的 v1.0 的，用的 13 pin，但 v0.9 的 LED-Pin 引脚为16，不过对 Arduino 来说都是 `D0`，所以修改后兼容性更好了，修改后如下所示：
+Platform 官方也提供了一些例子，但是[官方代码](https://github.com/platformio/platformio-examples/blob/develop/espressif/esp32-arduino-blink/src/Blink.cpp)好像是针对的 `v1.0` 的，用的 13 pin，但 `v0.9` 的 LED-Pin 引脚为16，不过对 Arduino 来说都是 `D0`，所以修改后兼容性更好了，修改后如下所示：
 
 ```
 /*
