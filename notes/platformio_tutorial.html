@@ -1,6 +1,5 @@
 <!DOCTYPE html><html><head>
 
-    <!-- responsive -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -1046,6 +1045,7 @@ body .markdown-body
 <li><a href="#_9">新建工程</a></li>
 <li><a href="#_10">例程</a><ul>
 <li><a href="#_11">串口</a></li>
+<li><a href="#homekit">HomeKit</a></li>
 </ul>
 </li>
 <li><a href="#_12">更新固件</a></li>
@@ -1293,6 +1293,142 @@ void loop() {
 <p><img alt="" src="http://mint-blog.qiniudn.com/nodemcu-serial-setting.png" /></p>
 <p>然后，打开串口窗口显示如下：</p>
 <p><img alt="" src="http://mint-blog.qiniudn.com/nodemcu-helloworld.png" /></p>
+<h4 id="homekit"><a name="user-content-homekit" href="#homekit" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>HomeKit</h4>
+<p>安装 <a href="https://github.com/nfarina/homebridge">Homebridge</a> 和 <a href="https://github.com/rudders/homebridge-http">homebridge-http</a>：前者是模拟 HomeKit API 的一个模拟器，后者是将开关信息放在 URL 中的方式。</p>
+<p>注：在这里，你可能会遇到无法下载，此时你需要翻墙；或者下载速度极其缓慢，此时你需要设置国内的 NPM 源；或者你可能会遇到版本过低，亦或是版本不兼容的问题，此时你需要去其 GiHub Issue 或者 Google 搜搜看。</p>
+<p>惯例，用 <code>--version</code> 来确认是否安装成功。</p>
+<pre><code>➜  ~ homebridge --version
+0.4.16
+➜  ~
+</code></pre>
+
+<p>然后，设置 <code>~/.homebridge/config.json</code>如下：</p>
+<pre><code>{
+    &quot;bridge&quot;: {
+        &quot;name&quot;: &quot;Homebridge&quot;,
+        &quot;username&quot;: &quot;CC:22:3D:E3:CE:30&quot;,
+        &quot;port&quot;: 51826,
+        &quot;pin&quot;: &quot;031-45-154&quot;
+    },
+
+    &quot;description&quot;: &quot;Config file with just lockitron&quot;,
+
+    &quot;accessories&quot;: [
+        {
+            &quot;accessory&quot;: &quot;Http&quot;,
+            &quot;name&quot;: &quot;NodeMCU1.0 LED&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;,
+            &quot;on_url&quot;:      &quot;http://192.168.1.122/ledon&quot;,
+            &quot;off_url&quot;:     &quot;http://192.168.1.122/ledoff&quot;,
+            &quot;service&quot;: &quot;Light&quot;
+       },
+        {
+            &quot;accessory&quot;: &quot;Http&quot;,
+            &quot;name&quot;: &quot;NodeMCU0.9 LED&quot;,
+            &quot;http_method&quot;: &quot;GET&quot;,
+            &quot;on_url&quot;:      &quot;http://192.168.1.120/ledon&quot;,
+            &quot;off_url&quot;:     &quot;http://192.168.1.120/ledoff&quot;,
+            &quot;service&quot;: &quot;Light&quot;
+       }
+    ]
+}
+</code></pre>
+
+<p>注：其中的<code>http://192.168.1.120</code>需自行替换为实际的局域网 IP 地址；这里放两个是因为我有两块板子，实际按需放就好了。</p>
+<p>最后，启动 <code>homebridge</code>  就可以了：</p>
+<pre><code>➜  ~ homebridge
+[1/2/2017, 9:00:20 PM] Loaded plugin: homebridge-http
+[1/2/2017, 9:00:20 PM] Registering accessory 'homebridge-http.Http'
+[1/2/2017, 9:00:20 PM] ---
+[1/2/2017, 9:00:20 PM] Loaded plugin: homebridge-httptemperaturehumidity
+[1/2/2017, 9:00:20 PM] Registering accessory 'homebridge-httptemperaturehumidity.HttpTemphum'
+[1/2/2017, 9:00:20 PM] ---
+[1/2/2017, 9:00:20 PM] Loaded plugin: homebridge-legacy-plugins
+[1/2/2017, 9:00:20 PM] Registering accessory 'homebridge-legacy-plugins.AD2USB'
+[1/2/2017, 9:00:20 PM] Registering accessory 'homebridge-legacy-plugins.Carwings'
+[1/2/2017, 9:00:20 PM] Registering accessory 'homebridge-legacy-plugins.ELKM1'
+[1/2/2017, 9:00:20 PM] Registering accessory 'homebridge-legacy-plugins.FileSensor'
+[1/2/2017, 9:00:20 PM] Registering accessory 'homebridge-legacy-plugins.GenericRS232Device'
+[1/2/2017, 9:00:20 PM] Registering accessory 'homebridge-legacy-plugins.HomeMatic'
+[1/2/2017, 9:00:20 PM] Registering accessory 'homebridge-legacy-plugins.HomeMaticThermo'
+[1/2/2017, 9:00:20 PM] Registering accessory 'homebridge-legacy-plugins.HomeMaticWindow'
+[1/2/2017, 9:00:20 PM] Registering accessory 'homebridge-legacy-plugins.HttpGarageDoorOpener'
+[1/2/2017, 9:00:20 PM] Registering accessory 'homebridge-legacy-plugins.HttpHygrometer'
+[1/2/2017, 9:00:20 PM] Registering accessory 'homebridge-legacy-plugins.HttpThermometer'
+[1/2/2017, 9:00:20 PM] Registering accessory 'homebridge-legacy-plugins.Tesla'
+[1/2/2017, 9:00:20 PM] Registering accessory 'homebridge-legacy-plugins.X10'
+[1/2/2017, 9:00:20 PM] Registering accessory 'homebridge-legacy-plugins.mpdclient'
+[1/2/2017, 9:00:20 PM] Registering platform 'homebridge-legacy-plugins.Domoticz'
+[1/2/2017, 9:00:20 PM] Registering platform 'homebridge-legacy-plugins.HomeAssistant'
+[1/2/2017, 9:00:20 PM] Registering platform 'homebridge-legacy-plugins.HomeSeer'
+[1/2/2017, 9:00:20 PM] Registering platform 'homebridge-legacy-plugins.ISY'
+[1/2/2017, 9:00:20 PM] Registering platform 'homebridge-legacy-plugins.LIFx'
+[1/2/2017, 9:00:20 PM] Registering platform 'homebridge-legacy-plugins.SmartThings'
+[1/2/2017, 9:00:20 PM] Registering platform 'homebridge-legacy-plugins.TelldusLive'
+[1/2/2017, 9:00:20 PM] Registering platform 'homebridge-legacy-plugins.ZWayServer'
+[1/2/2017, 9:00:20 PM] ---
+[1/2/2017, 9:00:21 PM] Loaded plugin: homebridge-lockitron
+[1/2/2017, 9:00:21 PM] Registering accessory 'homebridge-lockitron.Lockitron'
+[1/2/2017, 9:00:21 PM] ---
+[1/2/2017, 9:00:21 PM] Loaded plugin: homebridge-mqttswitch
+[1/2/2017, 9:00:21 PM] Registering accessory 'homebridge-mqttswitch.mqttswitch'
+[1/2/2017, 9:00:21 PM] ---
+[1/2/2017, 9:00:21 PM] Loaded config.json with 2 accessories and 0 platforms.
+[1/2/2017, 9:00:21 PM] ---
+[1/2/2017, 9:00:21 PM] Loading 2 accessories...
+[1/2/2017, 9:00:21 PM] [NodeMCU1.0 LED] Initializing Http accessory...
+[1/2/2017, 9:00:21 PM] [NodeMCU0.9 LED] Initializing Http accessory...
+Scan this code with your HomeKit App on your iOS device to pair with Homebridge:
+
+    ┌────────────┐
+    │ 031-45-154 │
+    └────────────┘
+
+[1/2/2017, 9:00:21 PM] Homebridge is running on port 51826.
+</code></pre>
+
+<p>此时，打开 iPhone 或者 iPad （iOS10+）的 Home 应用，就会显示如下的两个按钮：</p>
+<p><img alt="" src="http://mint-blog.qiniudn.com/platform_tutorial_homebridge_home.png" /></p>
+<p>至于，NodeMCU 端的代码，在官方版本的 <a href="https://github.com/platformio/platformio-examples/blob/develop/espressif/esp8266-webserver/src/HelloServer.ino">WebServer</a>基础上进行如下稍微修改即可：</p>
+<pre><code>
+void led_on(void) {
+        digitalWrite(led, 0);
+        server.send(200, &quot;text/plain&quot;, &quot;on&quot;);
+}
+
+void led_off(void) {
+        digitalWrite(led, 1);
+        server.send(200, &quot;text/plain&quot;, &quot;off&quot;);
+}
+
+  ...
+void setup(void){
+        server.on(&quot;/&quot;, handleRoot);
+
+        // for HomkeKit post
+        server.on(&quot;/ledon&quot;, led_on);
+        server.on(&quot;/ledoff&quot;,led_off);
+      }
+  ...
+</code></pre>
+
+<p>编译，下载后，就可以通过 Home 界面的按钮来进行控制了。</p>
+<p><img alt="" src="http://mint-blog.qiniudn.com/platform_tutorial_homekit_switch.GIF" /></p>
+<p>终端输出的信息如下：</p>
+<pre><code>
+    ┌────────────┐
+    │ 031-45-154 │
+    └────────────┘
+
+[1/2/2017, 9:32:12 PM] Homebridge is running on port 51826.
+[1/2/2017, 9:32:20 PM] [NodeMCU1.0 LED] Setting power state to on
+[1/2/2017, 9:32:20 PM] [NodeMCU1.0 LED] HTTP set power function succeeded!
+
+
+[1/2/2017, 9:32:23 PM] [NodeMCU1.0 LED] Setting power state to off
+[1/2/2017, 9:32:24 PM] [NodeMCU1.0 LED] HTTP set power function succeeded!
+</code></pre>
+
 <h3 id="_12"><a name="user-content-_12" href="#_12" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>更新固件</h3>
 <h3 id="_13"><a name="user-content-_13" href="#_13" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>参考链接</h3>
 <ul>
