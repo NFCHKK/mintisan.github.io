@@ -51,3 +51,5 @@
 - 太发散了，需要适当收敛
 
 ## 然而，还是，，，
+
+![](http://mint-blog.qiniudn.com/embedded-full-tech-1.0.0.JPG)
