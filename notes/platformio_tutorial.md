@@ -484,7 +484,20 @@ void setup(void){
 
 ## Arduino 篇
 
+
+![from https://lynx2015.files.wordpress.com/2015/08/arduino-mega-pinout-diagram.png](http://mint-blog.qiniudn.com/arduino-mega-2560-pinout-diagram.png)
+
 ![](http://mint-blog.qiniudn.com/platformio_tutorial_auto_download_env_arduino.png)
+
+
+
+
+### 参考链接
+
+- [Arduino MEGA 2560 & Genuino MEGA 2560](https://www.arduino.cc/en/Main/arduinoBoardMega2560)
+- [Start with Arduino Mega 2560](http://www.arduino.org/learning/getting-started/getting-started-with-arduino-mega-2560)
+- [ATmega2560 datasheet](http://www.atmel.com/Images/Atmel-2549-8-bit-AVR-Microcontroller-ATmega640-1280-1281-2560-2561_datasheet.pdf)
+
 
 ## 树莓派篇
 

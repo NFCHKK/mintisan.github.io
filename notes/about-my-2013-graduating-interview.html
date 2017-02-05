@@ -1,10 +1,10 @@
 <!DOCTYPE html><html><head>
 
+    <!-- responsive -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="HandheldFriendly" content="true">
-
 
 <meta charset="utf-8"><style>body {
   width: 45em;
@@ -1022,52 +1022,152 @@ body .markdown-body
     page-break-after: avoid;
   }
 }
-</style><title>about-my-2016</title></head><body><article class="markdown-body"><h1 id="2016"><a name="user-content-2016" href="#2016" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>2016 碎碎念</h1>
-<p><img alt="" src="http://mint-blog.qiniudn.com/2016-workstation.png" /></p>
-<h2 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>开源硬件</h2>
+</style><title>about-my-2013-graduating-interview</title></head><body><article class="markdown-body"><h1 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>毕业面试记</h1>
+<div class="toc">
 <ul>
-<li>Arduino：跑了几乎所有外设模块，怪不得是世界最为普及的开源硬件，就模型来看确实简单，两个入口函数+硬件对象封装+过程式流程</li>
-<li>mbed：发了一个文档的 PR；移植mbed代码到非官方支持的开发板；跑了几乎所有外设，其相对于 Arduino 可玩性更高，几乎达到了抽象所有硬件的完美情况，除了一些目前还没比较好的组件，如可以在哪都可以参一脚的<strong>DMA</strong>模块；初步对 mbed-os 的多线程模型有了理解</li>
-<li>NodeMCU(Esp8266)：国内的硬件真是便宜，一顿盒饭钱就可以设计一个远程控制开关（板子+继电器）</li>
-<li>Platform IO：用这货开发完 Arduino，NodeMCU 和 mbed，就再也不会想用官方的了，不过库有点旧，看明年能帮着改巴改巴；对比国外和国内的嵌入式开发情况，在开发环境，自动测试，编程模型，架构设计上，都有相当大的距离，国内还是小作坊式的，人家已经是工业革命时代的高质量批量生产了</li>
+<li><a href="#_1">毕业面试记</a><ul>
+<li><a href="#_2">故事开篇</a></li>
+<li><a href="#_3">正文面试篇</a><ul>
+<li><a href="#_4">总结流程</a></li>
+<li><a href="#_5">总结感受</a></li>
 </ul>
-<h2 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>技能树</h2>
-<ul>
-<li>C：会翻标准去找源头</li>
-<li>Git：总结了一个适合初学者的简单并行工作流</li>
-<li>Python: 能够用Pythonista实现功能；会用常用的科学库清理数据，如Numpy，Pandas；可以通过修改官方库来帮自己定位问题</li>
-<li>Linux 驱动：懂了驱动的模型，没有机会实践</li>
-<li>Machine Learning：可以自己搭建环境，手动解决不兼容的库，跑一些别人写好的库，来把 demo 跑通，如 Astyle，OpenCV 人脸追踪，处于精通各种机器学习算法（的环境安装^_^!）</li>
-<li>STM32：给一块 STM32 板子和官方库，可以<strong>合理</strong>驱动几乎所有外设；另外，通过翻阅 ARM 官方文档来挖掘一些好玩的彩蛋</li>
-<li>RTOS：初步把玩 mbed OS，尚无机会深探究竟</li>
-<li>前端：手动添加自动布局代码，熟悉了HTML的结构和常用关键字，会引用别人的代码并知晓其作用，但不知其中细节以及意义</li>
-<li>设计：处于培养美感的阶段</li>
-<li>幻灯片：走在模仿简约的路线上</li>
-<li>英语：输入(阅读技术文档没太大压力，听油管的视屏得挑慢的来);输出（说和写，额，，，）</li>
+</li>
+<li><a href="#_6">事前资料准备篇</a></li>
 </ul>
-<p><img alt="" src="http://mint-blog.qiniudn.com/embedded-full-tech-1.0.0.JPG" /></p>
-<h2 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>社区分享</h2>
-<h3 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>博客</h3>
-<p>工作了，真的记录的少了些，%&gt;<em>&lt;%</em></p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/2016-blog-snapshot.png" /></p>
-<h3 id="github"><a name="user-content-github" href="#github" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>GitHub</h3>
-<p>开始尝试参与到开源中去，尝试用蹩脚的英语去描述问题的前因后果，去沟通反馈，到目前也 Merge 了 <a href="https://github.com/pulls?q=is%3Apr+author%3Amintisan+is%3Aclosed">6 个 PR</a>，关闭了 <a href="https://github.com/issues?q=is%3Aissue+author%3Amintisan+is%3Aclosed">15 个 Issue</a>，总算是踏出去了第一步了O(∩_∩)O~</p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/2016-github.png" /></p>
-<h3 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>简书</h3>
-<p>一开始只是发现了几篇将的通熟易懂的文章，然后建立个专题好归档下，然后投稿就源源不断的投过来。所带来的附带好处是，在对每一篇文章的过一遍中，被动学到了好多，比如原来这个命令还可以这样用啊，哇，这样表达起来好通俗易懂啊。</p>
-<p><img alt="" src="http://mint-blog.qiniudn.com/2016-jianshu.png" /></p>
-<h2 id="_6"><a name="user-content-_6" href="#_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>知识信息</h2>
-<ul>
-<li>罗辑思维：用于历史和文学知识的补充，虽然也想看原著推荐书籍，但真是没时间，，，</li>
-<li>播客：内核恐慌，一天世界，代码时间，Anyway.FM，Teahour.FM，字谈自畅</li>
-<li>电子书：纸质书全部换成了电子书，虽然看的不是太多，因为搬了一次家就怕了，，，</li>
-<li>知乎：购买知乎 Live ，目前觉得这种形式和讲座类似，适合拓展知识面，看看其他行业人的<strong>表象</strong>，深入什么就算了</li>
-<li>社区：HN，AmoBSS，V2EX，NEXT</li>
-<li>游戏：第一次付费购买了 SHENZHEN I/O</li>
-<li>第一次给 Wikipedia 捐了点钱，虽然人家可能不需要，但是确实对我带来了帮助</li>
+</li>
 </ul>
-<h2 id="_7"><a name="user-content-_7" href="#_7" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>用了就回不去系列</h2>
+</div>
+<h2 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>故事开篇</h2>
+<p>和小伙伴去武汉的华科，那里确实有很多的公司会去，经过1个多月的面试，拿到的 offer 如下:</p>
 <ul>
-<li>买了一年 <strong>ShadowSocks</strong>，实现了网络的自由（历史总是惊人的相似，呵呵）</li>
-<li><strong>Aria2</strong> 几乎可以让所有资源都满速下载（当你认为购买了某度的会员以为可以，它却出来了黄金会员，，，）</li>
+<li>国名技术：深圳，国企，上市国企，标准失败了，额发展前景不好</li>
+<li>科大讯飞：合肥，私企，方向为语音识别，offer 发的比较晚</li>
+<li>联影：上海，国企，医疗，方向比较喜欢，但是三年没有涨起薪了额</li>
+<li>希捷：苏州，外企，存储，offer 发的太晚了</li>
+<li>大华：杭州，私企，监控，最后还是想去走走，，，</li>
+<li>晶晨半导体：上海，外企，芯片，最后的面试感觉不是太好</li>
+<li>汇顶：深圳，私企，就这个坑了。</li>
+</ul>
+<h2 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>正文面试篇</h2>
+<ul>
+<li>9.23 下午 有方</li>
+</ul>
+<p>入驻到华科后，看到的第一个嵌入式相关的公司，但是貌似不是诚心招人，面试是群面，最后也没啥技术面，对籍贯特别看中，当天杯具。</p>
+<ul>
+<li>9.25 上午 国民技术</li>
+</ul>
+<p>和有方比起来，其笔试和面试的规范确实好不少，毕竟上市国企公司，但是回去默默 Google 了下其业务和发展情况，，，</p>
+<ul>
+<li>9.26 下午 远方光电 （10.10网络面试）</li>
+</ul>
+<p>杭州的一家公司，先是在华科笔试和面试，最后在远程面试（估计是人没有招够，再挑一点，⊙﹏⊙b汗）。期间在河畔找到在那里的学长问了下，学长的建议是，额，，，</p>
+<ul>
+<li>9.27 下午 全智科技</li>
+</ul>
+<p>珠海的一家芯片公司，主要给平板和电视盒子，提供解决方案，是一家蛮想去的公司，但是笔试时拿错了题，没换成。虽然经过同学（感谢小强同学）推荐得到面试的机会，但是还是被斩落马下。</p>
+<p>原因还是紧张了，ucos 最熟悉的那部分竟然一下想不起来了，⊙﹏⊙b汗，看来还是不够熟悉啊</p>
+<ul>
+<li>9.29 晚上 国民offer</li>
+</ul>
+<p>面试的成垫学长也非常 nice，不过最后还是拒了。</p>
+<p>注：后来知道，学长隔年就离职去了 Seeed，确实公司近几年来走下坡路，这种太依赖国家的标准确实。</p>
+<p><img alt="" src="http://mint-blog.qiniudn.com/%E5%9B%BD%E5%90%8D%E6%8A%80%E6%9C%AF%E5%BD%95%E5%8F%96%E7%9F%AD%E4%BF%A1%E9%80%9A%E7%9F%A5.png" /></p>
+<ul>
+<li>10.11 下午 百度面试 面试官很nice，但是不对口也不会，估计无上下文了</li>
+</ul>
+<p>注：其实在去华科前准备了两份简历，一份是嵌入式，一份是算法，不过研究生期间的时间都花在前者上，所以后者确实没多大希望的，只是用来涨见识的。</p>
+<ul>
+<li>
+<p>10.12 下午 步步高 只问数电，搞得哥的身份证碎了，感觉面试官不是来招聘的额</p>
+</li>
+<li>
+<p>10.13 上午 数码视讯‘ 技术面很好，综合面准备不足：木有了解公司 第一家非IT提到的GIT的公司</p>
+</li>
+<li>
+<p>10.13 下午 希捷 太欢乐了</p>
+</li>
+<li>
+<p>10.14 晚上 深信服  C++不会，树一般，图不会 linux不会，跪</p>
+</li>
+<li>
+<p>10.15 上午 科大讯飞 面试题做了之后得回去看，然后面试还是很顺利的，不过由于 offer 发的比较晚，发在汇顶之后了，所以被拒掉了</p>
+</li>
+<li>
+<p>10.15 下午 及晶晨半导体 当场给offer签两方</p>
+</li>
+</ul>
+<p><img alt="" src="http://mint-blog.qiniudn.com/%E6%99%B6%E6%99%A8%E5%8D%8A%E5%AF%BC%E4%BD%93%E7%9F%AD%E4%BF%A1%E5%BD%95%E5%8F%96%E9%80%9A%E7%9F%A5.png" /></p>
+<ul>
+<li>
+<p>10.15 下午 联影，其实不管笔试，还是面试，也都是蛮顺利的，去之前还对医疗器械进行了调查，也是蛮有前途的一家公司，但是</p>
+</li>
+<li>
+<p>10.18 上午 飞思卡尔 毕业设计和项目不符的话就不要说了，如果hr说：不管你能不能进来，估计就不没戏了。 面试的是一个比较老的工程师，和他聊的是比较久的，因为后来 HR 都来催了，⊙﹏⊙b汗。不过问的问题是，调度点问题和汇编问题，来来来，如果用汇编来优化实现这个过程，该咋做，直接跪了。</p>
+</li>
+<li>
+<p>10.18 海康威视  自我介绍，笔试做的太挫了，基础不行，偏网络</p>
+</li>
+<li>
+<p>10.19 下午 炬力集成 补码，饭吗，原子操作 为什么拒掉别家offer？ “感谢你参加本次面试” 宣讲会最好去听，言多必失，心态问题</p>
+</li>
+<li>
+<p>10.20 中午 浙江大华 辗转相除法 memcpy和strncpy区别 双向链表的插入 最擅长：定义一个函数指针 KMP linux常用命令，顺利拿到 offer <br />
+<img alt="" src="http://mint-blog.qiniudn.com/%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%8D%8E%E5%BD%95%E5%8F%96%E7%9F%AD%E4%BF%A1%E9%80%9A%E7%9F%A5.png" /></p>
+</li>
+<li>
+<p>10.20 下午 汇顶科技 链表排序 GPIO模式，笔试的题目特别多和特别杂，最后也去了这家公司，主要是地理位置在深圳，是我想去的，还有就是行业是拿到 offer 里面，近些年最后发展潜力的。</p>
+</li>
+<li>
+<p>10.22 上午 希捷 1. 英文了解希捷 2. 英文口语，希捷的面试是最有意思的，有蛮多的环节，不过在武大主要是招销售类的，我投的固件类的，HR 说在全国只招一个，最后虽然拿到 offer，但是太晚了，是11.11的下午拿到希捷科技offer，拒掉了。</p>
+</li>
+</ul>
+<p><img alt="" src="http://mint-blog.qiniudn.com/%E5%B8%8C%E6%8D%B7%E5%BD%95%E5%8F%96%E5%9B%9E%E5%A4%8D.jpg" /></p>
+<p>注：现在看起来，那个下午基本是人生的一个转折点，不过却又是那么的不经意。</p>
+<h3 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>总结流程</h3>
+<ol>
+<li>
+<p>自我介绍</p>
+</li>
+<li>
+<p>你认为最成功的项目是什么？</p>
+</li>
+<li>
+<p>你对我有问题想问的么？（技术+综合）</p>
+</li>
+</ol>
+<h3 id="_5"><a name="user-content-_5" href="#_5" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>总结感受</h3>
+<ol>
+<li>
+<p>一定要有自信，说到自己都感觉自己还是蛮牛的，虽然事实~~~这对我来说需要海面来克服。说多了之后，自我介绍，最成功的项目都可以背来背去了，多抄几遍项目中的核心代码，现场就可以写出来了，这是可以加分的。想问的问题后来面试的时候都会准备了。</p>
+</li>
+<li>
+<p>搞嵌入式的，如果知晓C+ARM+Linux（RTOS），基本都可以拿下，外企的话最好懂一些E文口语。我的组合是C+ARM，Cortex-M3+UCOS（Mint OS），其中Mint OS是我自己写的一个实时内核，写一个简单的任务调度器其实不是太难，实现的难度主要是在移植（网上一搜一大片）和任务切换过程的理解，欢迎到我的 GitHub 和博客上交流（地址在下面），最近开始写内存管理（Memory Management），有兴趣的可以过来交流。</p>
+</li>
+<li>
+<p>最好有自己的博客，如csdn和 GitHub ，这个其实也是对自己的督促，真正关心的技术的企业的技术hr会看这个的，这也是我对企业的考察，如果这家公司说，把的博客地址写下来，我瞅瞅，我就会对这家公司产生好感，要是问我 GitHub 的，我就更高兴了，我面试的公司中，主动问我要地址只有：联影和汇顶，这两家也是我最后选择的对象。</p>
+</li>
+<li>
+<p>关注TMT的一些咨询，积累一些谈资和自己对当前新技术的看法，并且也可以从这个侧面看出你不是一个书呆子，这方面的网站，有36氪，虎嗅，腾讯TMT，爱范儿，创业家等等，下一个多看阅读上面都有免费的杂志，排版还很好看，我也主要在多看上看的，不过这个看个人兴趣了，从我的面试经历看，和电子类和IC类的hr谈谈这些还是不错，毕竟大行业还是相关的，比如问你平时干点啥啊，就可以和他聊聊。</p>
+</li>
+<li>
+<p>对面试和笔试过程中碰到的不会的问题和笔试题记下来，回去查，我就记在手机里（详细见正文面试篇），主要是在面试笔试这个过程中，很多题目都会重复的，因为企业要搞一套独特的笔试题和面试要花不少心思，所以~~~这也是我建议一开始海面，海笔的原因，涨经验，锻炼心理素质啊~O(∩_∩)O~就像你在考试中突然看到一道自己做过的题目一样，心中立马就安心了许多，整个过程的表现都会不一样的。</p>
+</li>
+</ol>
+<h2 id="_6"><a name="user-content-_6" href="#_6" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>事前资料准备篇</h2>
+<ul>
+<li>
+<p>关注网站：haitou.cc，大街</p>
+</li>
+<li>
+<p>C语言学习书目：C语言相关的经典书籍(附Ebook)（<a href="http://blog.csdn.net/fovwin/article/details/9208377">http://blog.csdn.net/fovwin/article/details/9208377</a>）</p>
+</li>
+<li>
+<p>临时抱佛脚参考书目：程序员面试笔试宝典，程序员面试宝典，编程之美，剑指offer。</p>
+</li>
+<li>
+<p>个人博客和 GitHub ，欢迎交流：<a href="http://blog.csdn.net/fovwin">http://blog.csdn.net/fovwin</a>，https:// GitHub .com/mintist</p>
+</li>
+<li>
+<p>tower.im：可以和小伙伴一起分享面试题，其实蛮多都蛮像的</p>
+</li>
 </ul></article></body></html>
