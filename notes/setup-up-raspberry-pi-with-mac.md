@@ -125,6 +125,22 @@ sudo /etc/init.d/netatalk start
 
 ![](http://mint-blog.qiniudn.com/raspberry-pi-netatalk-connect.png)
 
+## 问题
+
+1. 获取 Mac 地址
+```
+$ cat /sys/class/net/eth0/address
+# 有线网卡地址
+$ cat /sys/class/net/wlan0/address
+# 无线网卡地址
+# http://www.raspberrypi-spy.co.uk/2012/06/finding-the-mac-address-of-a-raspberry-pi/
+$ sudo ifconfig
+# 必须加 **sudo** 命令，否则找不到命令
+$ sudo ip addr show
+# 加 sudo 命令不是必须
+# http://raspberrypi.stackexchange.com/questions/1409/easiest-way-to-show-my-ip-address
+```
+
 ## 参考链接
 
 - [Official RaspbianMirrors](http://www.raspbian.org/RaspbianMirrors)

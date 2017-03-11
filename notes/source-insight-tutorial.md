@@ -46,6 +46,37 @@
 
 ![](http://mint-blog.qiniudn.com/si-problem3.gif)
 
+## 用 Astyle 格式化当前代码格式
+
+下载 Astyle 在 Windows 下的可执行文件，并将其添加到系统环境变量中，然后将以下命令添加到自定义的 Command 中：
+
+```
+AStyle --style=linux -s4 -S -N -L -m0 -M40 --suffix=none --convert-tabs %f
+```
+
+![](http://mint-blog.qiniudn.com/si-astyle.jpg)
+
+并设置快捷键，然后就可以方便按压快捷键格式化当前文件的代码了。
+
+
+## 调用 KEIL 的编译和下载
+
+用 Source Insight 写代码方便，但是编译和下载代码需要切换到 KEIL 界面，这样的工作流不是太流畅，要是能在写完代码后，直接能够在 SI 界面编译和下载就不错了。
+
+幸好 KEIL 提供了简单的命令来调用，所以在我们将 KEIL 的 UV4.exe 添加到环境变量后，就可以按着 Astyle 的方法来调用。
+
+编译：`UV4.exe -b ..\[project_name_dir]\[project_name_dir].uvproj -o Build_Output.txt` 
+
+![](http://mint-blog.qiniudn.com/si-uv4-compile.png)
+
+![](http://mint-blog.qiniudn.com/si-uv4-compile-key.jpg)
+
+下载：`UV4.exe -f ..\[project_name_dir]\[project_name_dir].uvproj -o Build_Output.txt`
+![](http://mint-blog.qiniudn.com/si-uv4-download.png)
+
+![](http://mint-blog.qiniudn.com/si-uv4-download-key.jpg)
+
+
 ## 使用小技巧
 
 - 按住"ctrl", 再用鼠标指向某个变量，点击一下，就能进入这个变量的定义。
@@ -78,3 +109,7 @@
 
 [Download ExtraBlack](http://mint-blog.qiniudn.com/siExtraBlack.CF3)
 
+## 参考资料
+
+- [AStyle代码格式工具在source insight中的使用](http://www.cnblogs.com/redspider110/archive/2012/06/22/2558563.html)
+- [Keil Command Line](http://www.keil.com/support/man/docs/uv4/uv4_commandline.htm)
