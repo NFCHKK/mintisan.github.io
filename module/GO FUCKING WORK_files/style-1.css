@@ -1,7 +1,12 @@
 body {
-    overflow-y: scroll;
-    overflow-x: hidden;
 
+    text-align:left;
+    font-size:18px;
+    position: absolute;
+    font-weight:10;
+    margin-left:5%;
+    margin-right:5%;
+    margin-top:5%;
 }
 
 h1,
@@ -13,7 +18,7 @@ h6,
 p,
 a {
     font-family: "Montserrat", sans-serif;
-    font-weight: 400;
+    font-weight: 40;
 }
 
 a,
@@ -53,32 +58,32 @@ footer {
 }
 
 #quote{
-    text-align:center;
-    font-size:90px;
+    text-align:left;
+    font-size:18px;
     position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height:220px;
-    margin: auto;
-    font-weight:800;
+    font-weight:10;
     margin-left:5%;
     margin-right:5%;
+    margin-top:5%;
 }
-
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top:5%;
+}
 #footer{
-    position: absolute;
+    text-align:center;
+    position: fixed;
+    margin-left:0%;
     bottom: 5px;
-    left: 20px;
     font-size: 10px;
-   
+
 }
 #footer-text{
- margin: 0 auto;   
+ margin: 0 auto;
 }
  @media screen and (max-width:480px){
       #quote{
-       font-size:60px;   
+       font-size:60px;
       }
     }
