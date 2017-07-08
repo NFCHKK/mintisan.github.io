@@ -14,6 +14,7 @@
     <!--JS-->
     <script async="" src="./GO FUCKING WORK_files/analytics.js"></script><script src="./GO FUCKING WORK_files/jquery-2.1.4.min.js"></script>
     <script src="./GO FUCKING WORK_files/functions.js"></script>
+    <script src="./GO FUCKING WORK_files/hammer.min.js"></script>
 
 
 </head>
@@ -26,8 +27,60 @@
     </div>
 
     <script>
-        document.write(getTextTag());
-        document.write(getImageTag());
+
+        var min = 0;
+        var max = textCotents.length-1;
+        randomIndex = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        var mode = readCookie('mode')
+
+        if (mode == null) {
+            //alert("intial mode")
+        } else if (mode == 'random') {
+            //alert("random mode")
+        } else if (mode == 'swiperight') {
+            randomIndex = parseInt(readCookie('random_index'),10)
+            //alert("next mode")
+        } else if (mode == 'swipeleft') {
+            randomIndex = parseInt(readCookie('random_index'),10)
+            //alert("previous mode")
+        }
+
+        //alert(randomIndex)
+
+        document.write(getTextTag(randomIndex));
+        document.write(getImageTag(randomIndex));
+
+
+        createCookie('mode','random',1);
+        //eraseCookie('mode')
+
+        var element = document.getElementById('footer');
+        var hammertime = Hammer(element).on("swipeleft swiperight", function(event) {
+            //alert(event.type);
+            createCookie('mode',event.type,1);
+
+            switch(event.type) {
+                case 'swiperight':
+                    if (randomIndex == max)
+                        randomIndex = min
+                    else
+                        randomIndex = (randomIndex + 1) % max
+
+                    break;
+
+                case 'swipeleft':
+
+                    if (randomIndex == min)
+                        randomIndex = max
+                    else
+                        randomIndex = (randomIndex - 1) % max
+
+                    break;
+            }
+            createCookie('random_index',randomIndex,1);
+            location.reload();
+        });
         /*
         $(function () {
             getQuote(function (response) {
