@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)http://gofuckingwork.com/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>滚的越远越好，是我的最大梦想。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CSS -->
+    <link href="./GO FUCKING WORK_files/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./GO FUCKING WORK_files/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="./GO FUCKING WORK_files/style-1.css">
+
+
+    <!--JS-->
+    <script async="" src="./GO FUCKING WORK_files/analytics.js"></script><script src="./GO FUCKING WORK_files/jquery-2.1.4.min.js"></script>
+    <script src="./GO FUCKING WORK_files/functions-ocwang.js"></script>
+    <script src="./GO FUCKING WORK_files/hammer.min.js"></script>
+
+
+</head>
+
+<body>
+    <div class="container" id="footer">
+        <div class="row">
+            <p>Collected by <a href="https://mintisan.farbox.com/" target="_blank">Mintisan</a></p>
+        </div>
+    </div>
+
+    <script>
+
+        var min = 0;
+        var max = textCotents.length-1;
+        randomIndex = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        //alert(textCotents.length)
+        //alert(imageURLs.length)
+
+        var mode = readCookie('mode')
+
+        if (mode == null) {
+            //alert("intial mode")
+        } else if (mode == 'random') {
+            //alert("random mode")
+        } else if (mode == 'swiperight') {
+            randomIndex = parseInt(readCookie('random_index'),10)
+            //alert("next mode")
+        } else if (mode == 'swipeleft') {
+            randomIndex = parseInt(readCookie('random_index'),10)
+            //alert("previous mode")
+        }
+
+        //alert(randomIndex)
+
+        document.write(getTextTag(randomIndex));
+        //document.write(getImageTag(randomIndex));
+
+
+        createCookie('mode','random',1);
+        //eraseCookie('mode')
+
+        var element = document.getElementById('footer');
+        var hammertime = Hammer(element).on("swipeleft swiperight", function(event) {
+            //alert(event.type);
+            createCookie('mode',event.type,1);
+
+            switch(event.type) {
+                case 'swiperight':
+                    if (randomIndex == max)
+                        randomIndex = min
+                    else
+                        randomIndex = (randomIndex + 1) % max
+
+                    break;
+
+                case 'swipeleft':
+
+                    if (randomIndex == min)
+                        randomIndex = max
+                    else
+                        randomIndex = (randomIndex - 1) % max
+
+                    break;
+            }
+            createCookie('random_index',randomIndex,1);
+            location.reload();
+        });
+        /*
+        $(function () {
+            getQuote(function (response) {
+                $("#quote").text(response);
+            });
+        });
+        */
+    </script>
+</body>
+
+</html>
